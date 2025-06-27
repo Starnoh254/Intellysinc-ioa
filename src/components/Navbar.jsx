@@ -4,16 +4,10 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const [activeGroup, setActiveGroup] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const navbarRef = useRef(null);
   const location = useLocation();
-
-  useEffect(() => {
-    document.body.setAttribute('data-theme', darkMode ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
-  }, [darkMode]);
 
   useEffect(() => {
     // Close mobile menu when route changes
@@ -181,20 +175,6 @@ const Navbar = () => {
             </div>
           ))}
         </nav>
-
-        <div className="theme-toggle">
-          <label>
-            <input
-              type="checkbox"
-              checked={darkMode}
-              onChange={() => setDarkMode(!darkMode)}
-              aria-label="Toggle dark mode"
-            />
-            <span className="toggle-label" role="button" tabIndex={0}>
-              {darkMode ? '🌙' : '☀️'}
-            </span>
-          </label>
-        </div>
       </div>
     </header>
   );
