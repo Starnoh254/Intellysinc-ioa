@@ -1,0 +1,23 @@
+{
+  "name": "intellisync-react",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://Alphadoane.github.io/intellisync-ioa",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run prebuild && vite build",
+    "prebuild": "node scripts/check-imports.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "canvas": "^3.1.2",
+    "framer-motion": "^10.16.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.4",
+    "vite": "^5.2.0"
+  }
+}

@@ -1,0 +1,276 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fefefe;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Hero Section */
+.home-hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background-image: url('/images/intelli0101.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.home-hero * {
+  position: relative;
+  z-index: 1;
+}
+
+.home-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.home-hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* CTA Buttons */
+.cta-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.primary {
+  background: #007bff;
+  color: #fff;
+}
+
+.secondary {
+  background: #6c757d;
+  color: #fff;
+}
+
+.home-hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Features Section */
+.features {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  color: white;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.feature-card-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  backdrop-filter: blur(2px);
+}
+
+.feature-card-overlay h3 {
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.feature-card-overlay p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #2193b0, #6dd5ed); /* Teal sky gradient */
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  color: white;
+}
+
+.testimonial-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  height: 250px;
+  max-width: 400px;
+  flex: 1 1 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: flex-end;
+}
+
+.testimonial-card-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  backdrop-filter: blur(2px);
+}
+
+.testimonial-card-overlay p {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.testimonial-card-overlay span {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #343a40;
+  color: #fff;
+}
+
+.footer-links,
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer p {
+  margin-top: 1.5rem;
+  color: #adb5bd;
+}
+
+/* Animations */
+section {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav {
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home-hero h1 {
+    font-size: 2rem;
+  }
+
+  .home-hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+}

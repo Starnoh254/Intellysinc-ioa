@@ -1,0 +1,92 @@
+/* General Page Layout */
+.company-info-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-image: url('/images/intelli0104.jpg'); /* ✅ Fixed path for public folder */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #060606;
+  animation: fadeIn 1s ease forwards;
+  min-height: 100vh;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Card Styles */
+.company-info-card {
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px) brightness(1.05);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 900px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 12px rgba(6, 6, 6, 0.4);
+  color: #060606fe;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Hover effect with bright glow */
+.company-info-card:hover {
+  box-shadow: 0 0 30px rgba(22, 1, 254, 0.8), 0 0 60px rgba(22, 1, 254, 0.4);
+  transform: translateY(-5px);
+}
+
+/* Headings */
+.company-info-card h2,
+.company-info-card h3 {
+  color: #003cff;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Paragraphs and Lists */
+.company-info-card p,
+.company-info-card li {
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Lists */
+.company-info-card ul,
+.company-info-card ol {
+  padding-left: 1.5rem;
+  text-align: left;
+  margin: 1rem auto;
+  max-width: 90%;
+}
+
+/* List Items */
+.company-info-card li::marker {
+  color: #00bfff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .company-info-card {
+    padding: 1.5rem;
+  }
+
+  .company-info-page {
+    padding: 2rem 1rem;
+  }
+}
