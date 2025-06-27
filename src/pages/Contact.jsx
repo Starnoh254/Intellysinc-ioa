@@ -47,34 +47,41 @@ const Contact = () => {
       icon: "📧",
       title: "Email Us",
       details: [
-        "info@intellisync-ioa.com",
-        "support@intellisync-ioa.com"
+        { text: "info@intellisync-ioa.com", link: "mailto:info@intellisync-ioa.com" },
+        { text: "support@intellisync-ioa.com", link: "mailto:support@intellisync-ioa.com" }
       ]
     },
     {
       icon: "📞",
       title: "Call Us",
       details: [
-        "+254 722952138",
+        { text: "+254 722952138", link: "tel:+254722952138" }
       ]
     },
     {
       icon: "📍",
       title: "Visit Us",
       details: [
-        "P.O Box 27345-00100",
-        "Nairobi, Kenya",
-        "Intellisync Office Automation LTD"
+        { text: "P.O Box 27345-00100", link: null },
+        { text: "Nairobi, Kenya", link: null },
+        { text: "Intellisync Office Automation LTD", link: null }
       ]
     },
     {
       icon: "🕒",
       title: "Business Hours",
       details: [
-        "Mon - Fri: 8:00 AM - 4:00 PM",
-        "Sat: 9:00 AM - 1:00 PM"
+        { text: "Mon - Fri: 8:00 AM - 4:00 PM", link: null },
+        { text: "Sat: 9:00 AM - 1:00 PM", link: null }
       ]
     }
+  ];
+
+  const socialLinks = [
+    { icon: "fab fa-linkedin", url: "https://linkedin.com/company/intellisync-ioa", label: "LinkedIn" },
+    { icon: "fab fa-twitter", url: "https://twitter.com/intellisync_ioa", label: "Twitter" },
+    { icon: "fab fa-facebook", url: "https://facebook.com/intellisync.ioa", label: "Facebook" },
+    { icon: "fab fa-instagram", url: "https://instagram.com/intellisync_ioa", label: "Instagram" }
   ];
 
   return (
@@ -232,7 +239,20 @@ const Contact = () => {
                   <div className="info-content">
                     <h3>{info.title}</h3>
                     {info.details.map((detail, idx) => (
-                      <p key={idx}>{detail}</p>
+                      <div key={idx}>
+                        {detail.link ? (
+                          <a 
+                            href={detail.link}
+                            className="clickable-link"
+                            target={detail.link.startsWith('mailto:') || detail.link.startsWith('tel:') ? '_self' : '_blank'}
+                            rel={detail.link.startsWith('mailto:') || detail.link.startsWith('tel:') ? '' : 'noopener noreferrer'}
+                          >
+                            {detail.text}
+                          </a>
+                        ) : (
+                          <p>{detail.text}</p>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </motion.div>
@@ -242,18 +262,18 @@ const Contact = () => {
             <div className="social-links">
               <h3>Follow Us</h3>
               <div className="social-icons">
-                <a href="#" aria-label="LinkedIn">
-                  <i className="fab fa-linkedin"></i>
-                </a>
-                <a href="#" aria-label="Twitter">
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a href="#" aria-label="Facebook">
-                  <i className="fab fa-facebook"></i>
-                </a>
-                <a href="#" aria-label="Instagram">
-                  <i className="fab fa-instagram"></i>
-                </a>
+                {socialLinks.map((social, index) => (
+                  <a 
+                    key={index}
+                    href={social.url}
+                    aria-label={social.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link"
+                  >
+                    <i className={social.icon}></i>
+                  </a>
+                ))}
               </div>
             </div>
           </motion.div>
