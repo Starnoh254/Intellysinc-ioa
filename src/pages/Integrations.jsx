@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './Integrations.css';
+import '../styles/Integrations.css';
 
 function Integrations() {
   const integrationCategories = [

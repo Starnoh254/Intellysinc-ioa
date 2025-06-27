@@ -6,6 +6,28 @@
   font-family: 'Segoe UI', Arial, sans-serif;
   color: #333;
   line-height: 1.6;
+  background-image: url('/images/freepik/modern-tech-background-networking-connections.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+}
+
+.blog-post-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+}
+
+.blog-post-page > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* Post Header */

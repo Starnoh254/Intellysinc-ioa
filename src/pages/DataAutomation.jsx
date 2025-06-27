@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './DataAutomation.css';
+import '../styles/DataAutomation.css';
 
 function DataAutomation() {
   const automationTypes = [

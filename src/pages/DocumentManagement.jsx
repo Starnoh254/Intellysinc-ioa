@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './DocumentManagement.css';
+import '../styles/DocumentManagement.css';
 
 function DocumentManagement() {
   const features = [

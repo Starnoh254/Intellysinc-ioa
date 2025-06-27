@@ -1,5 +1,5 @@
 import React from 'react';
-import './BlogPost.css';
+import '../styles/BlogPost.css';
 
 const BlogPost = () => {
   // Sample blog post data

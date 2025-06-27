@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './CompanyInfo.css'; // ✅ Ensure the filename matches exactly (case-sensitive)
+import '../styles/CompanyInfo.css'; // ✅ Ensure the filename matches exactly (case-sensitive)
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -73,7 +73,7 @@ function CompanyInfo() {
       </Section>
 
       <Section title="Vision">
-        <p>To be the world’s most trusted office automation partner.</p>
+        <p>To be the world's most trusted office automation partner.</p>
       </Section>
 
       <Section title="Core Values">

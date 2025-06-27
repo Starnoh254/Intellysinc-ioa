@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Blog.css';
+import '../styles/Blog.css';
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState('All');

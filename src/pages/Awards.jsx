@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './Awards.css'; // Fixed case sensitivity to match actual filename
+import '../styles/Awards.css'; // Fixed case sensitivity to match actual filename
 
 const Awards = () => {
   // CTA Button with updated class names

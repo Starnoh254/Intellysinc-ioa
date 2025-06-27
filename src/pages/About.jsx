@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './About.css'; // Ensure this filename matches exactly (case-sensitive)
+import '../styles/About.css'; // Ensure this filename matches exactly (case-sensitive)
 
 const About = () => {
   // CTA Button with updated class names

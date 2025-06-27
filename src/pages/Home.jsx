@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './Home.css'; // CSS import
+import '../styles/Home.css'; // CSS import
 
 const Home = () => {
   // Reusable CTA Button Component

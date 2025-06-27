@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import './Testimonials.css';
+import '../styles/Testimonials.css';
 
 function Testimonials() {
   const [activeCategory, setActiveCategory] = useState('all');

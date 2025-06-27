@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './BusinessIntelligence.css';
+import '../styles/BusinessIntelligence.css';
 
 function BusinessIntelligence() {
   const features = [

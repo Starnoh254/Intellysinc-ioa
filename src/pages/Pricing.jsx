@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import './Pricing.css';
+import '../styles/Pricing.css';
 
 function Pricing() {
   const [billingCycle, setBillingCycle] = useState('monthly');
