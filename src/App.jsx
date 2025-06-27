@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
+import ProtectedRoute from './components/ProtectedRoute';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
@@ -26,6 +27,8 @@ const BlogPost = lazy(() => import('./pages/BlogPost'));
 const Resources = lazy(() => import('./pages/Resources'));
 const Support = lazy(() => import('./pages/Support'));
 const CompanyInfo = lazy(() => import('./pages/CompanyInfo'));
+const AdminBlogManager = lazy(() => import('./components/AdminBlogManager'));
+const AdminAccess = lazy(() => import('./components/AdminAccess'));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -48,10 +51,21 @@ function AnimatedRoutes() {
           <Route path="/CaseStudies" element={<CaseStudies />} />
           <Route path="/Pricing" element={<Pricing />} />
           <Route path="/Blog" element={<Blog />} />
-          <Route path="/BlogPost" element={<BlogPost />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/Resources" element={<Resources />} />
           <Route path="/Support" element={<Support />} />
           <Route path="/CompanyInfo" element={<CompanyInfo />} />
+          
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<AdminAccess />} />
+          <Route 
+            path="/admin/blog" 
+            element={
+              <ProtectedRoute>
+                <AdminBlogManager />
+              </ProtectedRoute>
+            } 
+          />
         </Routes>
       </Suspense>
     </AnimatePresence>
