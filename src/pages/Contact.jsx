@@ -293,7 +293,7 @@ const Contact = () => {
             <div className="map-content">
               <i className="fas fa-map-marker-alt"></i>
               <h3>Nairobi, Kenya</h3>
-              <p>Office Technology Integration</p>
+              <p>PWC Tower, Westlands</p>
               <p>We're located in the heart of Nairobi's business district.</p>
             </div>
           </div>
