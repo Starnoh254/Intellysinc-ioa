@@ -47,31 +47,31 @@ const Contact = () => {
       icon: "📧",
       title: "Email Us",
       details: [
-        "info@intellisync.com",
-        "support@intellisync.com"
+        "info@intellisync-ioa.com",
+        "support@intellisync-ioa.com"
       ]
     },
     {
       icon: "📞",
       title: "Call Us",
       details: [
-        "+254 700 000 000",
-        "+254 733 000 000"
+        "+254 722952138",
       ]
     },
     {
       icon: "📍",
       title: "Visit Us",
       details: [
+        "P.O Box 27345-00100",
         "Nairobi, Kenya",
-        "Office Technology Integration"
+        "Intellisync Office Automation LTD"
       ]
     },
     {
       icon: "🕒",
       title: "Business Hours",
       details: [
-        "Mon - Fri: 8:00 AM - 6:00 PM",
+        "Mon - Fri: 8:00 AM - 4:00 PM",
         "Sat: 9:00 AM - 1:00 PM"
       ]
     }
