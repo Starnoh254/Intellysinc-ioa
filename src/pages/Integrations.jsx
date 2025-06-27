@@ -100,10 +100,10 @@ function Integrations() {
         >
           Connect all your business systems and applications for unified data flow and automated workflows
         </motion.p>
-        <motion.div
+    <motion.div
           className="hero-cta"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
           <button className="primary-btn">Explore Integrations</button>
@@ -284,7 +284,7 @@ function Integrations() {
           <h2>Ready to Connect Your Systems?</h2>
           <p>Start integrating your business applications today and unlock the power of unified data</p>
           <button className="cta-btn">Start Integration</button>
-        </motion.div>
+    </motion.div>
       </section>
     </div>
   );

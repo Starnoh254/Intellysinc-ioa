@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import '../styles/Contact.css';
 
+const API_URL = 'http://localhost:5000/api/contact'; // Change to your backend URL in production
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -13,6 +15,8 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMsg, setSuccessMsg] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -24,22 +28,38 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        subject: '',
-        message: ''
+    setSuccessMsg('');
+    setErrorMsg('');
+
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        })
       });
-      alert('Thank you for your message! We will get back to you soon.');
-    }, 1000);
+      const data = await response.json();
+      if (response.ok) {
+        setSuccessMsg('Thank you for your message! We will get back to you soon.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        setErrorMsg(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setErrorMsg('Could not send message. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -108,9 +128,9 @@ const Contact = () => {
 
       {/* Main Contact Section */}
       <section className="contact-main">
-        <div className="contact-container">
-          {/* Contact Form */}
-          <motion.div 
+      <div className="contact-container">
+        {/* Contact Form */}
+        <motion.div 
             className="contact-form-section"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -123,24 +143,24 @@ const Contact = () => {
             
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-row">
-                <div className="form-group">
+            <div className="form-group">
                   <label htmlFor="name">Full Name *</label>
                   <input
                     type="text"
-                    id="name"
+                id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
                     placeholder="Enter your full name"
-                  />
-                </div>
-                
-                <div className="form-group">
+              />
+            </div>
+
+            <div className="form-group">
                   <label htmlFor="email">Email Address *</label>
                   <input
                     type="email"
-                    id="email"
+                id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
@@ -160,10 +180,10 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Enter your phone number"
-                  />
-                </div>
-                
-                <div className="form-group">
+              />
+            </div>
+
+            <div className="form-group">
                   <label htmlFor="company">Company</label>
                   <input
                     type="text"
@@ -180,19 +200,19 @@ const Contact = () => {
                 <label htmlFor="subject">Subject *</label>
                 <input
                   type="text"
-                  id="subject"
+                id="subject"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   required
                   placeholder="What is this regarding?"
-                />
-              </div>
-              
-              <div className="form-group">
+              />
+            </div>
+
+            <div className="form-group">
                 <label htmlFor="message">Message *</label>
                 <textarea
-                  id="message"
+                id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
@@ -200,35 +220,37 @@ const Contact = () => {
                   required
                   placeholder="Tell us more about your inquiry..."
                 ></textarea>
-              </div>
-              
-              <motion.button
-                type="submit"
+            </div>
+
+            <motion.button
+              type="submit"
                 className="submit-button"
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
+              whileTap={{ scale: 0.98 }}
+            >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
-              </motion.button>
-            </form>
-          </motion.div>
+            </motion.button>
+          </form>
+            {successMsg && <div className="form-success">{successMsg}</div>}
+            {errorMsg && <div className="form-error">{errorMsg}</div>}
+        </motion.div>
 
           {/* Contact Information */}
-          <motion.div 
+        <motion.div 
             className="contact-info-section"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div className="info-header">
-              <h2>Contact Information</h2>
+          <h2>Contact Information</h2>
               <p>Reach out to us through any of these channels.</p>
-            </div>
-            
+          </div>
+
             <div className="contact-info-grid">
               {contactInfo.map((info, index) => (
-                <motion.div 
+            <motion.div 
                   key={index}
                   className="contact-info-item"
                   initial={{ opacity: 0, y: 20 }}
@@ -252,14 +274,14 @@ const Contact = () => {
                         ) : (
                           <p>{detail.text}</p>
                         )}
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
             </div>
+                    ))}
+          </div>
+            </motion.div>
+              ))}
+          </div>
 
-            <div className="social-links">
+          <div className="social-links">
               <h3>Follow Us</h3>
               <div className="social-icons">
                 {socialLinks.map((social, index) => (
@@ -275,9 +297,9 @@ const Contact = () => {
                   </a>
                 ))}
               </div>
-            </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
+      </div>
       </section>
 
       {/* Map Section */}

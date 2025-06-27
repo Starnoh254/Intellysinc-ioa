@@ -1,0 +1,127 @@
+.livechat-toggle {
+  position: fixed;
+  bottom: 100px;
+  right: 32px;
+  z-index: 1100;
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.livechat-toggle:hover {
+  background: #005fa3;
+}
+
+.livechat-container {
+  position: fixed;
+  bottom: 170px;
+  right: 32px;
+  width: 340px;
+  max-width: 90vw;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeInUp 0.3s;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.livechat-header {
+  background: #0078d4;
+  color: #fff;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.livechat-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.livechat-messages {
+  flex: 1;
+  padding: 16px;
+  background: #f7fafd;
+  overflow-y: auto;
+  max-height: 320px;
+}
+.livechat-message {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.livechat-message.user .livechat-message-content {
+  align-self: flex-end;
+  background: #e3f1ff;
+  color: #0078d4;
+}
+.livechat-message.admin .livechat-message-content {
+  align-self: flex-start;
+  background: #f1f1f1;
+  color: #222;
+}
+.livechat-message-content {
+  padding: 10px 14px;
+  border-radius: 16px;
+  min-width: 40px;
+  max-width: 80%;
+  font-size: 1rem;
+  margin-bottom: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.livechat-message-time {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 2px;
+  align-self: flex-end;
+}
+
+.livechat-input {
+  display: flex;
+  border-top: 1px solid #e5e5e5;
+  background: #fff;
+  padding: 10px;
+}
+.livechat-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #f7fafd;
+  margin-right: 8px;
+}
+.livechat-input button {
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.livechat-input button:hover {
+  background: #005fa3;
+} 

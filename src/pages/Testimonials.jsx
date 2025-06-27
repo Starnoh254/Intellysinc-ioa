@@ -92,8 +92,8 @@ function Testimonials() {
       {/* Hero Section */}
       <motion.section 
         className="testimonials-hero"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         <motion.h1
@@ -235,7 +235,7 @@ function Testimonials() {
             <button className="primary-cta-btn">Start Free Trial</button>
             <button className="secondary-cta-btn">Schedule Demo</button>
           </div>
-        </motion.div>
+    </motion.div>
       </section>
     </div>
   );

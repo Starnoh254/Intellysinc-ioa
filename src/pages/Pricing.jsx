@@ -106,10 +106,10 @@ function Pricing() {
         </motion.p>
         
         {/* Billing Toggle */}
-        <motion.div
+    <motion.div
           className="billing-toggle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
           <span className={billingCycle === 'monthly' ? 'active' : ''}>Monthly</span>
@@ -136,7 +136,7 @@ function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-            >
+  >
               {plan.popular && <div className="popular-badge">Most Popular</div>}
               <div className="plan-header">
                 <div className="plan-icon">{plan.icon}</div>
@@ -253,7 +253,7 @@ function Pricing() {
             <button className="primary-cta-btn">Start Free Trial</button>
             <button className="secondary-cta-btn">Contact Sales</button>
           </div>
-        </motion.div>
+    </motion.div>
       </section>
     </div>
   );

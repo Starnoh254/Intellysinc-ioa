@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useRef } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
@@ -6,6 +6,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
 import ProtectedRoute from './components/ProtectedRoute';
+import LiveChatWidget from './components/LiveChatWidget';
+import AdminLiveChat from './components/AdminLiveChat';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
@@ -73,6 +75,14 @@ function AnimatedRoutes() {
 }
 
 function App() {
+  const liveChatRef = useRef();
+
+  const handleOpenLiveChat = () => {
+    if (liveChatRef.current && liveChatRef.current.open) {
+      liveChatRef.current.open();
+    }
+  };
+
   return (
     <Router>
       <div className="app-container" style={{
@@ -89,7 +99,8 @@ function App() {
           <AnimatedRoutes />
         </main>
         <Footer />
-        <Chatbot />
+        <Chatbot onOpenLiveChat={handleOpenLiveChat} />
+        <LiveChatWidget ref={liveChatRef} />
       </div>
     </Router>
   );

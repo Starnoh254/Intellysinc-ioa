@@ -77,10 +77,10 @@ function DataAutomation() {
         >
           Transform manual processes into intelligent, automated workflows that drive efficiency and accuracy
         </motion.p>
-        <motion.div
+    <motion.div
           className="hero-cta"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
           <button className="primary-btn">Start Automation</button>
@@ -244,7 +244,7 @@ function DataAutomation() {
           <h2>Ready to Automate Your Business?</h2>
           <p>Discover how data automation can transform your operations and boost productivity</p>
           <button className="cta-btn">Get Free Assessment</button>
-        </motion.div>
+    </motion.div>
       </section>
     </div>
   );

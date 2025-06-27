@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/Chatbot.css';
 
-const Chatbot = () => {
+const Chatbot = ({ onOpenLiveChat }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
@@ -241,6 +241,13 @@ const Chatbot = () => {
                 }, 1000);
               }}>
                 🎯 Demo
+              </button>
+            </div>
+
+            {/* Live Chat Button */}
+            <div className="chatbot-livechat-btn-wrapper">
+              <button className="chatbot-livechat-btn" onClick={onOpenLiveChat}>
+                💬 Live Chat with Human
               </button>
             </div>
 
