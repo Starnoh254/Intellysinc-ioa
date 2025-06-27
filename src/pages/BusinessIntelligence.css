@@ -99,14 +99,40 @@
   margin: 0 auto;
 }
 
-.feature-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 40px 30px;
-  border-radius: 20px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease;
+/* Unique backgrounds for BI feature cards */
+.features-grid .feature-card {
+  position: relative;
+  color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 220px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  z-index: 1;
+}
+.features-grid .feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+.features-grid .feature-card > * {
+  position: relative;
+  z-index: 2;
+}
+.features-grid .feature-card:nth-child(1) {
+  background-image: url('/images/freepik/digital-techno-background-with-connecting-lines-dots.jpg');
+}
+.features-grid .feature-card:nth-child(2) {
+  background-image: url('/images/freepik/3d-render-abstract-background-with-low-poly-plexus-design.jpg');
+}
+.features-grid .feature-card:nth-child(3) {
+  background-image: url('/images/freepik/gradient-painted-texture-illustration.jpg');
+}
+.features-grid .feature-card:nth-child(4) {
+  background-image: url('/images/freepik/graphic-2d-colorful-wallpaper-with-grainy-gradients.jpg');
 }
 
 .feature-card:hover {
