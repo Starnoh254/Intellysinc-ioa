@@ -15,7 +15,7 @@ const Blog = () => {
       date: "May 15, 2024",
       readTime: "5 min read",
       author: "Sarah Johnson",
-      image: "/placeholder-dev.jpg",
+      image: "/images/freepik/rm378-03c.jpg",
       slug: "website-performance-tips"
     },
     {
@@ -26,7 +26,7 @@ const Blog = () => {
       date: "April 28, 2024",
       readTime: "8 min read",
       author: "Michael Chen",
-      image: "/placeholder-marketing.jpg",
+      image: "/images/freepik/3470.jpg",
       slug: "content-marketing-guide"
     },
     {
@@ -37,7 +37,7 @@ const Blog = () => {
       date: "April 10, 2024",
       readTime: "6 min read",
       author: "David Wilson",
-      image: "/placeholder-react.jpg",
+      image: "/images/freepik/59271.jpg",
       slug: "react-dark-mode"
     },
     {
@@ -48,7 +48,7 @@ const Blog = () => {
       date: "March 22, 2024",
       readTime: "7 min read",
       author: "Emily Rodriguez",
-      image: "/placeholder-seo.jpg",
+      image: "/images/freepik/9a08a347-2600-41e0-b051-d92ba877761b.jpg",
       slug: "seo-trends-2024"
     }
   ];

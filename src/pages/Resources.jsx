@@ -16,7 +16,7 @@ const Resources = () => {
       description: "Comprehensive analysis of emerging trends in digital marketing",
       link: "#",
       gated: true,
-      thumbnail: "/placeholder-report.jpg"
+      thumbnail: "/images/freepik/ddx6.jpg"
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ const Resources = () => {
       description: "Step-by-step guide to configuring your account",
       link: "#",
       gated: false,
-      thumbnail: "/placeholder-video.jpg"
+      thumbnail: "/images/freepik/9.jpg"
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ const Resources = () => {
       description: "Complete reference for integrating with our API",
       link: "#",
       gated: false,
-      thumbnail: "/placeholder-api.jpg"
+      thumbnail: "/images/freepik/3333.jpg"
     },
     {
       id: 4,
@@ -49,7 +49,7 @@ const Resources = () => {
       description: "How XYZ Corp increased revenue by 150% using our solution",
       link: "#",
       gated: true,
-      thumbnail: "/placeholder-case-study.jpg"
+      thumbnail: "/images/freepik/v980-au-08-a.jpg"
     }
   ];
 
