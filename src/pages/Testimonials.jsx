@@ -8,11 +8,19 @@ function Testimonials() {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const handleStartFreeTrial = () => {
-    navigate('/Contact?subject=Free Trial Request - Testimonials');
+    navigate('/Contact?subject=Start Free Trial - Join 500+ Happy Customers Using IntelliSync');
   };
 
   const handleScheduleDemo = () => {
-    navigate('/Contact?subject=Demo Scheduling Request - Testimonials');
+    navigate('/Contact?subject=Schedule Demo - See How We Achieve 95% Customer Satisfaction');
+  };
+
+  const handleLearnMore = () => {
+    navigate('/Contact?subject=Learn More - How IntelliSync Delivers 10x Productivity Increase');
+  };
+
+  const handleGetQuote = () => {
+    navigate('/Contact?subject=Get Custom Quote - Transform Your Business Like Our Success Stories');
   };
 
   const testimonials = [
@@ -102,8 +110,8 @@ function Testimonials() {
       {/* Hero Section */}
       <motion.section 
         className="testimonials-hero"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         <motion.h1
@@ -207,6 +215,14 @@ function Testimonials() {
             <div className="story-icon">📈</div>
             <h3>300% Increase in Efficiency</h3>
             <p>A manufacturing company achieved a 300% increase in operational efficiency by automating their document processing workflows.</p>
+            <motion.button 
+              className="story-cta-btn"
+              onClick={() => navigate('/Contact?subject=Efficiency Improvement - Learn How to Achieve 300% Increase')}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Learn How
+            </motion.button>
           </motion.div>
           <motion.div
             className="story-card"
@@ -217,6 +233,14 @@ function Testimonials() {
             <div className="story-icon">💰</div>
             <h3>$500K Annual Savings</h3>
             <p>A healthcare provider saved over $500,000 annually by automating their administrative processes and reducing manual errors.</p>
+            <motion.button 
+              className="story-cta-btn"
+              onClick={() => navigate('/Contact?subject=Cost Savings - Discover How to Save $500K Annually')}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Save Money
+            </motion.button>
           </motion.div>
           <motion.div
             className="story-card"
@@ -227,6 +251,14 @@ function Testimonials() {
             <div className="story-icon">⏰</div>
             <h3>90% Time Reduction</h3>
             <p>A retail chain reduced their reporting time from 8 hours to 45 minutes with automated data collection and analysis.</p>
+            <motion.button 
+              className="story-cta-btn"
+              onClick={() => navigate('/Contact?subject=Time Savings - Reduce Reporting Time by 90%')}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Save Time
+            </motion.button>
           </motion.div>
         </div>
       </section>
@@ -240,12 +272,42 @@ function Testimonials() {
           viewport={{ once: true }}
         >
           <h2>Join Our Success Stories</h2>
-          <p>Ready to transform your business operations? Start your journey with IntelliSync today.</p>
+          <p>Ready to transform your business operations? Start your journey with IntelliSync today and join 500+ satisfied customers.</p>
           <div className="cta-buttons">
-            <button className="primary-cta-btn" onClick={handleStartFreeTrial}>Start Free Trial</button>
-            <button className="secondary-cta-btn" onClick={handleScheduleDemo}>Schedule Demo</button>
+            <motion.button 
+              className="primary-cta-btn" 
+              onClick={handleStartFreeTrial}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Start Free Trial
+            </motion.button>
+            <motion.button 
+              className="secondary-cta-btn" 
+              onClick={handleScheduleDemo}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Schedule Demo
+            </motion.button>
+            <motion.button 
+              className="secondary-cta-btn" 
+              onClick={handleLearnMore}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Learn More
+            </motion.button>
+            <motion.button 
+              className="secondary-cta-btn" 
+              onClick={handleGetQuote}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Get Quote
+            </motion.button>
           </div>
-    </motion.div>
+        </motion.div>
       </section>
     </div>
   );
