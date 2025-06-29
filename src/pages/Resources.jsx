@@ -4,6 +4,7 @@ import '../styles/Resources.css';
 const Resources = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [email, setEmail] = useState('');
+  const [newsletterEmail, setNewsletterEmail] = useState('');
 
   // Sample resource data
   const resources = [
@@ -68,6 +69,25 @@ const Resources = () => {
     setEmail('');
   };
 
+  // Handle newsletter subscription
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    if (newsletterEmail.trim()) {
+      alert(`Thank you! You've been subscribed to our newsletter with: ${newsletterEmail}`);
+      setNewsletterEmail('');
+    }
+  };
+
+  // Handle resource download/view
+  const handleResourceAction = (resource) => {
+    if (resource.gated) {
+      alert('Please enter your email to download this resource.');
+    } else {
+      alert(`Opening ${resource.title}...`);
+      // You can implement actual download/view functionality here
+    }
+  };
+
   return (
     <div className="resource-page">
       {/* Hero Section */}
@@ -128,9 +148,12 @@ const Resources = () => {
                   <button type="submit">Download</button>
                 </form>
               ) : (
-                <a href={resource.link} className="view-button">
+                <button 
+                  className="view-button"
+                  onClick={() => handleResourceAction(resource)}
+                >
                   {resource.format === 'Video' ? 'Watch Now' : 'View Now'}
-                </a>
+                </button>
               )}
             </div>
           </div>
@@ -142,8 +165,14 @@ const Resources = () => {
         <div className="cta-content">
           <h2>Get More Resources</h2>
           <p>Subscribe to receive our latest guides and industry insights</p>
-          <form className="newsletter-form">
-            <input type="email" placeholder="Enter your email" />
+          <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
+              required
+            />
             <button type="submit">Subscribe</button>
           </form>
         </div>

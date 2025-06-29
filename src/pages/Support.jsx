@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Support.css';
 
 const Support = () => {
+  const navigate = useNavigate();
   const [activeAccordion, setActiveAccordion] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -36,6 +38,32 @@ const Support = () => {
     setActiveAccordion(activeAccordion === id ? null : id);
   };
 
+  // Handle search
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      // You can implement search functionality here
+      console.log('Searching for:', searchQuery);
+      // For now, just show an alert
+      alert(`Searching for: ${searchQuery}`);
+    }
+  };
+
+  // Handle live chat
+  const handleLiveChat = () => {
+    // You can implement live chat functionality here
+    alert('Live chat feature coming soon!');
+  };
+
+  // Handle email support
+  const handleEmailSupport = () => {
+    window.location.href = 'mailto:support@intellisync-ioa.com?subject=Support Request';
+  };
+
+  // Handle phone support
+  const handlePhoneSupport = () => {
+    window.location.href = 'tel:+254722952138';
+  };
+
   return (
     <div className="support-page">
       {/* Hero Section */}
@@ -52,8 +80,9 @@ const Support = () => {
             placeholder="Describe your issue..." 
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
           />
-          <button className="search-button">Search</button>
+          <button className="search-button" onClick={handleSearch}>Search</button>
         </div>
 
         <p className="hero-subtext">
@@ -106,36 +135,33 @@ const Support = () => {
         <div className="contact-options">
           
           <div className="contact-card">
-            <a href="/live-chat" className="contact-card"></a>
             <div className="contact-icon live-chat">
               <svg viewBox="0 0 24 24" width="24" height="24">
                 <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
               </svg>
             </div>
             <h3>Live Chat</h3>
-            <button>Start Chat</button>
+            <button onClick={handleLiveChat}>Start Chat</button>
           </div>
           
           <div className="contact-card">
-            <a href="mailto:support@intellisync-ioa.com" className="contact-card"></a>
             <div className="contact-icon email">
               <svg viewBox="0 0 24 24" width="24" height="24">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
               </svg>
             </div>
             <h3>Email Us</h3>
-            <button>Send Email</button>
+            <button onClick={handleEmailSupport}>Send Email</button>
           </div>
           
           <div className="contact-card">
-            <a href="tel:+254722952138" className="contact-card"></a>
             <div className="contact-icon phone">
               <svg viewBox="0 0 24 24" width="24" height="24">
                 <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
               </svg>
             </div>
             <h3>Call Support</h3>
-            <button>+254 (722) 952-138</button>
+            <button onClick={handlePhoneSupport}>+254 (722) 952-138</button>
           </div>
         </div>
       </section>

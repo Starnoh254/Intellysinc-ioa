@@ -11,6 +11,7 @@ const BlogPost = () => {
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [newsletterEmail, setNewsletterEmail] = useState('');
 
   useEffect(() => {
     loadBlogPost();
@@ -19,41 +20,30 @@ const BlogPost = () => {
   const loadBlogPost = () => {
     setLoading(true);
     setError(null);
-
-    if (!slug) {
-      setError('No blog post specified');
-      setLoading(false);
-      return;
-    }
-
-    const blogPost = blogService.getBlogBySlug(slug);
     
-    if (!blogPost) {
-      setError('Blog post not found');
+    try {
+      const blogPost = blogService.getBlogBySlug(slug);
+      if (blogPost) {
+        setPost(blogPost);
+        // Get related posts (same category, excluding current post)
+        const related = blogService.getPublishedBlogs()
+          .filter(p => p.category === blogPost.category && p.slug !== slug)
+          .slice(0, 3);
+        setRelatedPosts(related);
+      } else {
+        setError('Blog post not found');
+      }
+    } catch (err) {
+      setError('Failed to load blog post');
+    } finally {
       setLoading(false);
-      return;
     }
-
-    if (!blogPost.published) {
-      setError('This blog post is not published');
-      setLoading(false);
-      return;
-    }
-
-    setPost(blogPost);
-    
-    // Load related posts
-    const related = blogService.getRelatedBlogs(blogPost.id, 3);
-    setRelatedPosts(related);
-    
-    setLoading(false);
   };
 
   const handleShare = (platform) => {
     const url = window.location.href;
     const title = post.title;
-    
-    let shareUrl = '';
+    let shareUrl;
     
     switch (platform) {
       case 'twitter':
@@ -71,6 +61,15 @@ const BlogPost = () => {
     }
     
     window.open(shareUrl, '_blank');
+  };
+
+  // Handle newsletter subscription
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    if (newsletterEmail.trim()) {
+      alert(`Thank you! You've been subscribed to our newsletter with: ${newsletterEmail}`);
+      setNewsletterEmail('');
+    }
   };
 
   if (loading) {
@@ -224,8 +223,14 @@ const BlogPost = () => {
         <div className="newsletter-cta">
           <h3>Enjoyed this article?</h3>
           <p>Subscribe to our newsletter for more content like this</p>
-          <form className="newsletter-form">
-            <input type="email" placeholder="Your email address" />
+          <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
+            <input 
+              type="email" 
+              placeholder="Your email address" 
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
+              required
+            />
             <button type="submit">Subscribe</button>
           </form>
         </div>

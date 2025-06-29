@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Testimonials.css';
 
 function Testimonials() {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState('all');
+
+  const handleStartFreeTrial = () => {
+    navigate('/Contact?subject=Free Trial Request - Testimonials');
+  };
+
+  const handleScheduleDemo = () => {
+    navigate('/Contact?subject=Demo Scheduling Request - Testimonials');
+  };
 
   const testimonials = [
     {
@@ -232,8 +242,8 @@ function Testimonials() {
           <h2>Join Our Success Stories</h2>
           <p>Ready to transform your business operations? Start your journey with IntelliSync today.</p>
           <div className="cta-buttons">
-            <button className="primary-cta-btn">Start Free Trial</button>
-            <button className="secondary-cta-btn">Schedule Demo</button>
+            <button className="primary-cta-btn" onClick={handleStartFreeTrial}>Start Free Trial</button>
+            <button className="secondary-cta-btn" onClick={handleScheduleDemo}>Schedule Demo</button>
           </div>
     </motion.div>
       </section>

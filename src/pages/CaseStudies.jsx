@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/CaseStudies.css';
 
 const CaseStudies = () => {
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('All');
   const [expandedStudy, setExpandedStudy] = useState(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    challenge: ''
+  });
 
   // Case study data
   const caseStudies = [
@@ -54,6 +63,35 @@ const CaseStudies = () => {
   // Toggle expanded view
   const toggleExpand = (id) => {
     setExpandedStudy(expandedStudy === id ? null : id);
+  };
+
+  // Handle download case study
+  const handleDownloadCaseStudy = (study) => {
+    alert(`Downloading case study: ${study.title}`);
+    // You can implement actual download functionality here
+  };
+
+  // Handle form submission
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (formData.name && formData.email) {
+      alert(`Thank you ${formData.name}! We'll contact you at ${formData.email} to discuss your challenge.`);
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        phone: '',
+        challenge: ''
+      });
+    }
+  };
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   return (
@@ -146,7 +184,10 @@ const CaseStudies = () => {
                   </blockquote>
                 </div>
 
-                <button className="download-button">
+                <button 
+                  className="download-button"
+                  onClick={() => handleDownloadCaseStudy(study)}
+                >
                   Download Full Case Study
                 </button>
               </div>
@@ -160,16 +201,47 @@ const CaseStudies = () => {
         <div className="cta-content">
           <h2>Ready to achieve similar results?</h2>
           <p>Let's discuss how we can help solve your business challenges</p>
-          <form className="cta-form">
+          <form className="cta-form" onSubmit={handleFormSubmit}>
             <div className="form-group">
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Work Email" required />
+              <input 
+                type="text" 
+                name="name"
+                placeholder="Your Name" 
+                value={formData.name}
+                onChange={handleInputChange}
+                required 
+              />
+              <input 
+                type="email" 
+                name="email"
+                placeholder="Work Email" 
+                value={formData.email}
+                onChange={handleInputChange}
+                required 
+              />
             </div>
             <div className="form-group">
-              <input type="text" placeholder="Company Name" />
-              <input type="tel" placeholder="Phone Number" />
+              <input 
+                type="text" 
+                name="company"
+                placeholder="Company Name" 
+                value={formData.company}
+                onChange={handleInputChange}
+              />
+              <input 
+                type="tel" 
+                name="phone"
+                placeholder="Phone Number" 
+                value={formData.phone}
+                onChange={handleInputChange}
+              />
             </div>
-            <textarea placeholder="Tell us about your challenge..."></textarea>
+            <textarea 
+              name="challenge"
+              placeholder="Tell us about your challenge..."
+              value={formData.challenge}
+              onChange={handleInputChange}
+            ></textarea>
             <button type="submit">Request Consultation</button>
           </form>
         </div>

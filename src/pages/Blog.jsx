@@ -9,6 +9,7 @@ const Blog = () => {
   const [blogPosts, setBlogPosts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [newsletterEmail, setNewsletterEmail] = useState('');
 
   useEffect(() => {
     loadBlogs();
@@ -31,6 +32,15 @@ const Blog = () => {
                          post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  // Handle newsletter subscription
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    if (newsletterEmail.trim()) {
+      alert(`Thank you! You've been subscribed to our newsletter with: ${newsletterEmail}`);
+      setNewsletterEmail('');
+    }
+  };
 
   if (loading) {
     return (
@@ -179,8 +189,14 @@ const Blog = () => {
         <div className="cta-content">
           <h2>Stay Updated</h2>
           <p>Subscribe to our newsletter for the latest blog posts and news</p>
-          <form className="newsletter-form">
-            <input type="email" placeholder="Enter your email" />
+          <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
+              required
+            />
             <button type="submit">Subscribe</button>
           </form>
         </div>
