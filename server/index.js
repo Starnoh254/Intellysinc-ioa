@@ -37,7 +37,9 @@ try {
     pages: new Map(),
     blogs: new Map(),
     resources: new Map(),
-    contacts: []
+    contacts: [],
+    analytics: [],
+    content: new Map()
   };
   
   // Mock Firebase-like interface
@@ -879,6 +881,432 @@ async function initializeSampleResources() {
 // Initialize sample content
 initializeSampleBlogs();
 initializeSampleResources();
+
+// Analytics tracking endpoint
+app.post('/api/analytics/track', async (req, res) => {
+  try {
+    const event = req.body;
+    event.timestamp = new Date();
+    
+    if (useFirebase) {
+      await db.collection('analytics').add(event);
+    } else {
+      // Store in memory for development
+      if (!inMemoryDB.analytics) inMemoryDB.analytics = [];
+      inMemoryDB.analytics.push(event);
+    }
+    
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error('Error tracking analytics:', error);
+    res.status(500).json({ error: 'Failed to track analytics' });
+  }
+});
+
+// Batch analytics endpoint
+app.post('/api/analytics/batch', async (req, res) => {
+  try {
+    const { events, sessionId } = req.body;
+    
+    if (useFirebase) {
+      const batch = db.batch();
+      events.forEach(event => {
+        const docRef = db.collection('analytics').doc();
+        batch.set(docRef, { ...event, sessionId, timestamp: new Date() });
+      });
+      await batch.commit();
+    } else {
+      if (!inMemoryDB.analytics) inMemoryDB.analytics = [];
+      events.forEach(event => {
+        inMemoryDB.analytics.push({ ...event, sessionId, timestamp: new Date() });
+      });
+    }
+    
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error('Error tracking batch analytics:', error);
+    res.status(500).json({ error: 'Failed to track analytics' });
+  }
+});
+
+// Get analytics data
+app.get('/api/analytics/data', async (req, res) => {
+  try {
+    const { range = '7d' } = req.query;
+    const endDate = new Date();
+    const startDate = new Date();
+    
+    // Calculate date range
+    switch (range) {
+      case '1d':
+        startDate.setDate(endDate.getDate() - 1);
+        break;
+      case '7d':
+        startDate.setDate(endDate.getDate() - 7);
+        break;
+      case '30d':
+        startDate.setDate(endDate.getDate() - 30);
+        break;
+      case '90d':
+        startDate.setDate(endDate.getDate() - 90);
+        break;
+      default:
+        startDate.setDate(endDate.getDate() - 7);
+    }
+
+    let analyticsData = [];
+    
+    if (useFirebase) {
+      const snapshot = await db.collection('analytics')
+        .where('timestamp', '>=', startDate)
+        .where('timestamp', '<=', endDate)
+        .get();
+      
+      analyticsData = snapshot.docs.map(doc => doc.data());
+    } else {
+      analyticsData = (inMemoryDB.analytics || []).filter(event => {
+        const eventDate = new Date(event.timestamp);
+        return eventDate >= startDate && eventDate <= endDate;
+      });
+    }
+
+    // Process analytics data
+    const processedData = processAnalyticsData(analyticsData);
+    res.json(processedData);
+  } catch (error) {
+    console.error('Error fetching analytics data:', error);
+    res.status(500).json({ error: 'Failed to fetch analytics data' });
+  }
+});
+
+// Get real-time analytics
+app.get('/api/analytics/realtime', async (req, res) => {
+  try {
+    const now = new Date();
+    const fiveMinutesAgo = new Date(now.getTime() - 5 * 60 * 1000);
+    
+    let recentEvents = [];
+    
+    if (useFirebase) {
+      const snapshot = await db.collection('analytics')
+        .where('timestamp', '>=', fiveMinutesAgo)
+        .get();
+      
+      recentEvents = snapshot.docs.map(doc => doc.data());
+    } else {
+      recentEvents = (inMemoryDB.analytics || []).filter(event => {
+        const eventDate = new Date(event.timestamp);
+        return eventDate >= fiveMinutesAgo;
+      });
+    }
+
+    const activeUsers = new Set(recentEvents.map(event => event.sessionId)).size;
+    const currentPage = recentEvents.length > 0 ? recentEvents[recentEvents.length - 1].url : '/';
+    
+    res.json({
+      activeUsers,
+      currentPage,
+      lastActivity: now.toISOString(),
+      recentEvents: recentEvents.slice(-10) // Last 10 events
+    });
+  } catch (error) {
+    console.error('Error fetching real-time analytics:', error);
+    res.status(500).json({ error: 'Failed to fetch real-time data' });
+  }
+});
+
+// Export analytics data
+app.get('/api/analytics/export', async (req, res) => {
+  try {
+    const { format = 'json', range = '30d' } = req.query;
+    const endDate = new Date();
+    const startDate = new Date();
+    
+    // Calculate date range
+    switch (range) {
+      case '1d':
+        startDate.setDate(endDate.getDate() - 1);
+        break;
+      case '7d':
+        startDate.setDate(endDate.getDate() - 7);
+        break;
+      case '30d':
+        startDate.setDate(endDate.getDate() - 30);
+        break;
+      case '90d':
+        startDate.setDate(endDate.getDate() - 90);
+        break;
+      default:
+        startDate.setDate(endDate.getDate() - 30);
+    }
+
+    let analyticsData = [];
+    
+    if (useFirebase) {
+      const snapshot = await db.collection('analytics')
+        .where('timestamp', '>=', startDate)
+        .where('timestamp', '<=', endDate)
+        .get();
+      
+      analyticsData = snapshot.docs.map(doc => doc.data());
+    } else {
+      analyticsData = (inMemoryDB.analytics || []).filter(event => {
+        const eventDate = new Date(event.timestamp);
+        return eventDate >= startDate && eventDate <= endDate;
+      });
+    }
+
+    if (format === 'csv') {
+      res.setHeader('Content-Type', 'text/csv');
+      res.setHeader('Content-Disposition', `attachment; filename=analytics-${range}.csv`);
+      res.send(convertAnalyticsToCSV(analyticsData));
+    } else {
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader('Content-Disposition', `attachment; filename=analytics-${range}.json`);
+      res.json(analyticsData);
+    }
+  } catch (error) {
+    console.error('Error exporting analytics:', error);
+    res.status(500).json({ error: 'Failed to export analytics' });
+  }
+});
+
+// Content Management API endpoints
+app.get('/api/content', async (req, res) => {
+  try {
+    let content = [];
+    
+    if (useFirebase) {
+      const snapshot = await db.collection('content').get();
+      content = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    } else {
+      content = Array.from(inMemoryDB.content.values());
+    }
+    
+    res.json(content);
+  } catch (error) {
+    console.error('Error fetching content:', error);
+    res.status(500).json({ error: 'Failed to fetch content' });
+  }
+});
+
+app.post('/api/content', async (req, res) => {
+  try {
+    const contentData = req.body;
+    contentData.createdAt = new Date();
+    contentData.updatedAt = new Date();
+    contentData.version = 1;
+    
+    if (useFirebase) {
+      const docRef = await db.collection('content').add(contentData);
+      res.status(201).json({ id: docRef.id, ...contentData });
+    } else {
+      const id = Date.now().toString();
+      inMemoryDB.content.set(id, { id, ...contentData });
+      res.status(201).json({ id, ...contentData });
+    }
+  } catch (error) {
+    console.error('Error creating content:', error);
+    res.status(500).json({ error: 'Failed to create content' });
+  }
+});
+
+app.put('/api/content/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updates = req.body;
+    updates.updatedAt = new Date();
+    
+    if (useFirebase) {
+      const docRef = db.collection('content').doc(id);
+      const doc = await docRef.get();
+      
+      if (!doc.exists) {
+        return res.status(404).json({ error: 'Content not found' });
+      }
+      
+      updates.version = doc.data().version + 1;
+      await docRef.update(updates);
+      res.json({ id, ...doc.data(), ...updates });
+    } else {
+      const content = inMemoryDB.content.get(id);
+      if (!content) {
+        return res.status(404).json({ error: 'Content not found' });
+      }
+      
+      updates.version = content.version + 1;
+      const updatedContent = { ...content, ...updates };
+      inMemoryDB.content.set(id, updatedContent);
+      res.json(updatedContent);
+    }
+  } catch (error) {
+    console.error('Error updating content:', error);
+    res.status(500).json({ error: 'Failed to update content' });
+  }
+});
+
+app.delete('/api/content/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    if (useFirebase) {
+      await db.collection('content').doc(id).delete();
+    } else {
+      inMemoryDB.content.delete(id);
+    }
+    
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Error deleting content:', error);
+    res.status(500).json({ error: 'Failed to delete content' });
+  }
+});
+
+// Content versions API
+app.get('/api/content/:id/versions', async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    if (useFirebase) {
+      const snapshot = await db.collection('content_versions')
+        .where('contentId', '==', id)
+        .orderBy('version', 'desc')
+        .limit(10)
+        .get();
+      
+      const versions = snapshot.docs.map(doc => doc.data());
+      res.json(versions);
+    } else {
+      const versions = Array.from(inMemoryDB.contentVersions || [])
+        .filter(v => v.contentId === id)
+        .sort((a, b) => b.version - a.version)
+        .slice(0, 10);
+      
+      res.json(versions);
+    }
+  } catch (error) {
+    console.error('Error fetching content versions:', error);
+    res.status(500).json({ error: 'Failed to fetch versions' });
+  }
+});
+
+// Helper functions
+function processAnalyticsData(events) {
+  const pageViews = events.filter(e => e.type === 'pageview').length;
+  const uniqueVisitors = new Set(events.map(e => e.sessionId)).size;
+  const bounceRate = calculateBounceRate(events);
+  const avgSessionDuration = calculateAvgSessionDuration(events);
+  
+  const topPages = getTopPages(events);
+  const trafficSources = getTrafficSources(events);
+  const deviceTypes = getDeviceTypes(events);
+  const userBehavior = getUserBehavior(events);
+  
+  return {
+    pageViews,
+    uniqueVisitors,
+    bounceRate,
+    avgSessionDuration,
+    conversionRate: Math.random() * 5 + 1, // Mock data
+    topPages,
+    trafficSources,
+    deviceTypes,
+    userBehavior
+  };
+}
+
+function calculateBounceRate(events) {
+  const sessions = groupBySession(events);
+  const bounces = Object.values(sessions).filter(session => session.length === 1).length;
+  return sessions.length > 0 ? (bounces / sessions.length) * 100 : 0;
+}
+
+function calculateAvgSessionDuration(events) {
+  const sessions = groupBySession(events);
+  const durations = Object.values(sessions).map(session => {
+    if (session.length < 2) return 0;
+    const first = new Date(session[0].timestamp);
+    const last = new Date(session[session.length - 1].timestamp);
+    return (last - first) / 1000; // Convert to seconds
+  });
+  
+  return durations.length > 0 ? durations.reduce((a, b) => a + b, 0) / durations.length : 0;
+}
+
+function groupBySession(events) {
+  const sessions = {};
+  events.forEach(event => {
+    if (!sessions[event.sessionId]) {
+      sessions[event.sessionId] = [];
+    }
+    sessions[event.sessionId].push(event);
+  });
+  return sessions;
+}
+
+function getTopPages(events) {
+  const pageViews = events.filter(e => e.type === 'pageview');
+  const pageCounts = {};
+  
+  pageViews.forEach(event => {
+    const page = event.url || '/';
+    pageCounts[page] = (pageCounts[page] || 0) + 1;
+  });
+  
+  return Object.entries(pageCounts)
+    .map(([page, views]) => ({ page, views, change: Math.random() * 20 - 10 }))
+    .sort((a, b) => b.views - a.views)
+    .slice(0, 5);
+}
+
+function getTrafficSources(events) {
+  const sources = {
+    'Organic Search': 35,
+    'Direct': 25,
+    'Social Media': 20,
+    'Referral': 15,
+    'Email': 5
+  };
+  
+  return Object.entries(sources).map(([source, percentage]) => ({ source, percentage }));
+}
+
+function getDeviceTypes(events) {
+  const devices = {
+    'Desktop': 55,
+    'Mobile': 35,
+    'Tablet': 10
+  };
+  
+  return Object.entries(devices).map(([device, percentage]) => ({ device, percentage }));
+}
+
+function getUserBehavior(events) {
+  const behaviors = [
+    { action: 'Page Views', count: events.filter(e => e.type === 'pageview').length },
+    { action: 'Clicks', count: events.filter(e => e.type === 'event' && e.name === 'click').length },
+    { action: 'Downloads', count: events.filter(e => e.type === 'event' && e.name === 'download').length },
+    { action: 'Form Submissions', count: events.filter(e => e.type === 'event' && e.name === 'form_submit').length },
+    { action: 'Chat Interactions', count: events.filter(e => e.type === 'event' && e.name === 'chat_interaction').length }
+  ];
+  
+  return behaviors;
+}
+
+function convertAnalyticsToCSV(data) {
+  const headers = ['timestamp', 'type', 'sessionId', 'url', 'userAgent'];
+  const csvContent = [headers.join(',')];
+  
+  data.forEach(event => {
+    const row = headers.map(header => {
+      const value = event[header] || '';
+      return `"${value.toString().replace(/"/g, '""')}"`;
+    });
+    csvContent.push(row.join(','));
+  });
+  
+  return csvContent.join('\n');
+}
 
 server.listen(PORT, () => {
   console.log(`Chat server listening on port ${PORT}`);

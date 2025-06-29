@@ -8,6 +8,7 @@ import Chatbot from './components/Chatbot';
 import ProtectedRoute from './components/ProtectedRoute';
 import LiveChatWidget from './components/LiveChatWidget';
 import AdminLiveChat from './components/AdminLiveChat';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
@@ -32,6 +33,11 @@ const CompanyInfo = lazy(() => import('./pages/CompanyInfo'));
 const AdminBlogManager = lazy(() => import('./components/AdminBlogManager'));
 const AdminAccess = lazy(() => import('./components/AdminAccess'));
 
+// New Analytics and Content Management Components
+const AnalyticsDashboard = lazy(() => import('./components/AnalyticsDashboard'));
+const AdvancedContentManager = lazy(() => import('./components/AdvancedContentManager'));
+const TestNewFeatures = lazy(() => import('./components/TestNewFeatures'));
+
 function AnimatedRoutes() {
   const location = useLocation();
   return (
@@ -46,7 +52,11 @@ function AnimatedRoutes() {
           <Route path="/Clients" element={<Clients />} />
           <Route path="/Testimonials" element={<Testimonials />} />
           <Route path="/BusinessIntelligence" element={<BusinessIntelligence />} />
-          <Route path="/DataAutomation" element={<DataAutomation />} />
+          <Route path="/DataAutomation" element={
+            <ErrorBoundary>
+              <DataAutomation />
+            </ErrorBoundary>
+          } />
           <Route path="/DocumentManagement" element={<DocumentManagement />} />
           <Route path="/Integrations" element={<Integrations />} />
           <Route path="/Solutions" element={<Solutions />} />
@@ -58,6 +68,9 @@ function AnimatedRoutes() {
           <Route path="/Support" element={<Support />} />
           <Route path="/CompanyInfo" element={<CompanyInfo />} />
           
+          {/* Test route for new features */}
+          <Route path="/test-features" element={<TestNewFeatures />} />
+          
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminAccess />} />
           <Route 
@@ -65,6 +78,24 @@ function AnimatedRoutes() {
             element={
               <ProtectedRoute>
                 <AdminBlogManager />
+              </ProtectedRoute>
+            } 
+          />
+          
+          {/* New Analytics and Content Management Routes */}
+          <Route 
+            path="/admin/analytics" 
+            element={
+              <ProtectedRoute>
+                <AnalyticsDashboard />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/admin/content" 
+            element={
+              <ProtectedRoute>
+                <AdvancedContentManager />
               </ProtectedRoute>
             } 
           />

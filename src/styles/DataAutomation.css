@@ -1,6 +1,51 @@
+/* CSS Custom Properties for Theming and Performance */
+:root {
+  --primary-gradient: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  --secondary-gradient: linear-gradient(45deg, #667eea, #764ba2);
+  --accent-color: #ffed4e;
+  --text-light: rgba(255, 255, 255, 0.9);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  
+  /* Background images for performance */
+  --hero-bg: url('/images/da-hero-bg.jpg');
+  --automation-bg: url('/images/da-automation-bg.jpg');
+  --benefits-bg: url('/images/da-benefits-bg.jpg');
+  --process-bg: url('/images/da-process-bg.jpg');
+  --use-cases-bg: url('/images/da-use-cases-bg.jpg');
+  --cta-bg: url('/images/da-cta-bg.jpg');
+}
+
+/* Accessibility: Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Shared Component Styles */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+}
+
+.gradient-btn {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
 .data-automation-page {
   min-height: 100vh;
-  background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), url('/images/da-hero-bg.jpg');
+  background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), var(--hero-bg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -13,7 +58,7 @@
 .da-hero {
   text-align: center;
   padding: 120px 20px 80px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('/images/da-hero-overlay.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), var(--hero-bg);
   background-size: cover;
   background-position: center;
 }
@@ -55,13 +100,19 @@
 }
 
 .primary-btn {
-  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  background: var(--primary-gradient);
   color: white;
 }
 
 .primary-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+.primary-btn:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
 }
 
 .secondary-btn {
@@ -76,10 +127,16 @@
   transform: translateY(-2px);
 }
 
+.secondary-btn:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
 /* Automation Types Section */
 .da-automation-types {
   padding: 80px 20px;
-  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('/images/da-automation-bg.jpg');
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), var(--automation-bg);
   background-size: cover;
   background-position: center;
 }
@@ -110,7 +167,16 @@
   background-position: center;
   box-shadow: 0 4px 24px rgba(0,0,0,0.10);
   z-index: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 30px;
 }
+
+.automation-grid .automation-card:focus-within {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
 .automation-grid .automation-card::before {
   content: '';
   position: absolute;
@@ -118,21 +184,35 @@
   background: rgba(0,0,0,0.45);
   z-index: 1;
 }
+
 .automation-grid .automation-card > * {
   position: relative;
   z-index: 2;
 }
+
 .automation-grid .automation-card:nth-child(1) {
   background-image: url('/images/freepik/3d-plexus-background-with-low-poly.jpg');
 }
+
 .automation-grid .automation-card:nth-child(2) {
   background-image: url('/images/freepik/modern-tech-background-networking-connections.jpg');
 }
+
 .automation-grid .automation-card:nth-child(3) {
   background-image: url('/images/freepik/digital-techno-background-with-connecting-lines-dots.jpg');
 }
+
 .automation-grid .automation-card:nth-child(4) {
   background-image: url('/images/freepik/vivid-blurred-colorful-wallpaper-background.jpg');
+}
+
+.automation-grid .automation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.automation-grid .automation-card:hover .card-icon {
+  transform: rotate(5deg);
 }
 
 .card-header {
@@ -144,6 +224,7 @@
 .card-icon {
   font-size: 2.5rem;
   margin-right: 15px;
+  transition: transform 0.3s ease;
 }
 
 .card-header h3 {
@@ -174,14 +255,14 @@
   content: "✓";
   position: absolute;
   left: 0;
-  color: #ffd700;
+  color: var(--accent-color);
   font-weight: bold;
 }
 
 /* Benefits Section */
 .da-benefits {
   padding: 80px 20px;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/da-benefits-bg.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), var(--benefits-bg);
   background-size: cover;
   background-position: center;
 }
@@ -204,17 +285,30 @@
 .benefit-card {
   text-align: center;
   padding: 40px 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
 }
 
 .benefit-value {
   font-size: 3rem;
   font-weight: 700;
-  color: #ffd700;
+  color: var(--accent-color);
   margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-value {
+  transform: scale(1.1);
+  color: #ffed4e;
 }
 
 .benefit-card h3 {
@@ -231,7 +325,7 @@
 /* Process Section */
 .da-process {
   padding: 80px 20px;
-  background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), url('/images/da-process-bg.jpg');
+  background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), var(--process-bg);
   background-size: cover;
   background-position: center;
 }
@@ -254,12 +348,39 @@
 .process-step {
   text-align: center;
   padding: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 25px;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  position: relative;
+}
+
+.process-step::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  right: -15px;
+  width: 30px;
+  height: 2px;
+  background: var(--primary-gradient);
+}
+
+.process-step:last-child::after {
+  display: none;
+}
+
+.process-step:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
 }
 
 .step-number {
   width: 60px;
   height: 60px;
-  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  background: var(--primary-gradient);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -273,7 +394,7 @@
 .process-step h3 {
   font-size: 1.3rem;
   margin-bottom: 15px;
-  color: #ffd700;
+  color: var(--accent-color);
 }
 
 .process-step p {
@@ -284,7 +405,7 @@
 /* Use Cases Section */
 .da-use-cases {
   padding: 80px 20px;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/da-use-cases-bg.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), var(--use-cases-bg);
   background-size: cover;
   background-position: center;
 }
@@ -305,17 +426,26 @@
 }
 
 .use-case {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
   padding: 30px;
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.use-case:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
 }
 
 .use-case h3 {
   font-size: 1.3rem;
   margin-bottom: 15px;
-  color: #ffd700;
+  color: var(--accent-color);
 }
 
 .use-case p {
@@ -326,7 +456,7 @@
 /* CTA Section */
 .da-cta {
   padding: 80px 20px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/da-cta-bg.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--cta-bg);
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -345,7 +475,7 @@
 }
 
 .cta-btn {
-  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  background: var(--primary-gradient);
   color: white;
   padding: 18px 40px;
   border: none;
@@ -361,15 +491,357 @@
   box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
 }
 
-/* Responsive Design */
+.cta-btn:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+/* Enhanced Card Interactions */
+.learn-more-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.learn-more-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.learn-more-btn:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Enhanced Process Steps */
+.step-details-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.step-details-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.step-details-btn:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Enhanced Use Cases */
+.explore-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.explore-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.explore-btn:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Enhanced CTA Section */
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.secondary-cta-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary-cta-btn:hover {
+  background: white;
+  color: #667eea;
+  transform: translateY(-2px);
+}
+
+.secondary-cta-btn:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #333;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.modal-close:focus {
+  outline: 2px solid #333;
+  outline-offset: 2px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 30px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.modal-header h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 0;
+}
+
+.step-number-large {
+  width: 60px;
+  height: 60px;
+  background: var(--secondary-gradient);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal-description {
+  padding: 20px 30px;
+  line-height: 1.7;
+  color: #555;
+  font-size: 1rem;
+}
+
+.modal-benefits,
+.modal-features {
+  padding: 0 30px 20px;
+}
+
+.modal-benefits h3,
+.modal-features h3 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.modal-benefits ul,
+.modal-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-benefits li,
+.modal-features li {
+  padding: 8px 0;
+  color: #555;
+  position: relative;
+  padding-left: 20px;
+}
+
+.modal-benefits li::before,
+.modal-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.modal-cta {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px 30px 30px;
+  width: calc(100% - 60px);
+}
+
+.modal-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+.modal-cta:focus {
+  outline: 2px solid #333;
+  outline-offset: 2px;
+}
+
+/* Loading Skeleton */
+.loading-skeleton {
+  min-height: 100vh;
+  background: var(--secondary-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Print Styles */
+@media print {
+  .data-automation-page {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .da-hero,
+  .da-cta {
+    display: none;
+  }
+  
+  .automation-card,
+  .benefit-card,
+  .process-step,
+  .use-case {
+    background: white !important;
+    color: black !important;
+    border: 1px solid #ccc !important;
+  }
+}
+
+/* Responsive Design for Modals */
 @media (max-width: 768px) {
+  .modal-content {
+    margin: 10px;
+    max-height: 95vh;
+  }
+  
+  .modal-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .modal-description,
+  .modal-benefits,
+  .modal-features {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .modal-cta {
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .da-hero {
+    padding: 80px 15px 60px;
+  }
+  
   .da-hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    line-height: 1.2;
   }
   
   .hero-cta {
     flex-direction: column;
     align-items: center;
+    gap: 15px;
+  }
+  
+  .primary-btn,
+  .secondary-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
   }
   
   .automation-grid,
@@ -379,11 +851,28 @@
     grid-template-columns: 1fr;
   }
   
+  .automation-card {
+    padding: 20px 15px;
+    min-height: 160px;
+  }
+  
   .da-automation-types h2,
   .da-benefits h2,
   .da-process h2,
   .da-use-cases h2,
   .cta-content h2 {
     font-size: 2rem;
+  }
+  
+  .benefit-value {
+    font-size: 2.5rem;
+  }
+  
+  .process-step {
+    padding: 20px 15px;
+  }
+  
+  .process-step::after {
+    display: none;
   }
 } 

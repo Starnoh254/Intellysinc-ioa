@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import '../styles/BusinessIntelligence.css';
 
 function BusinessIntelligence() {
+  const navigate = useNavigate();
+
   const features = [
     {
       title: "Real-time Analytics",
@@ -45,6 +48,22 @@ function BusinessIntelligence() {
     }
   ];
 
+  const handleGetStarted = () => {
+    navigate('/Contact');
+  };
+
+  const handleWatchDemo = () => {
+    navigate('/Solutions');
+  };
+
+  const handleScheduleConsultation = () => {
+    navigate('/Contact');
+  };
+
+  const handleLearnMore = () => {
+    navigate('/Solutions');
+  };
+
   return (
     <div className="business-intelligence-page">
       {/* Hero Section */}
@@ -75,8 +94,8 @@ function BusinessIntelligence() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          <button className="primary-btn">Get Started</button>
-          <button className="secondary-btn">Watch Demo</button>
+          <button className="primary-btn" onClick={handleGetStarted}>Get Started</button>
+          <button className="secondary-btn" onClick={handleWatchDemo}>Watch Demo</button>
         </motion.div>
       </motion.section>
 
@@ -96,6 +115,7 @@ function BusinessIntelligence() {
               <div className="feature-icon">{feature.icon}</div>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
+              <button className="learn-more-btn" onClick={handleLearnMore}>Learn More</button>
             </motion.div>
           ))}
         </div>
@@ -116,6 +136,7 @@ function BusinessIntelligence() {
             >
               <h3>{useCase.title}</h3>
               <p>{useCase.description}</p>
+              <button className="explore-btn" onClick={handleLearnMore}>Explore</button>
             </motion.div>
           ))}
         </div>
@@ -165,7 +186,7 @@ function BusinessIntelligence() {
         >
           <h2>Ready to Transform Your Business Intelligence?</h2>
           <p>Start your journey towards data-driven decision making today</p>
-          <button className="cta-btn">Schedule a Consultation</button>
+          <button className="cta-btn" onClick={handleScheduleConsultation}>Schedule a Consultation</button>
         </motion.div>
       </section>
     </div>
