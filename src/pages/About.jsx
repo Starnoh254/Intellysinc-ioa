@@ -25,7 +25,7 @@ const About = () => {
   };
 
   const handleContactUs = () => {
-    navigate('/Contact');
+    navigate('/Contact?subject=General Inquiry');
   };
 
   return (

@@ -49,7 +49,7 @@ function BusinessIntelligence() {
   ];
 
   const handleGetStarted = () => {
-    navigate('/Contact');
+    navigate('/Contact?subject=Business Intelligence Solution Inquiry');
   };
 
   const handleWatchDemo = () => {
@@ -57,7 +57,7 @@ function BusinessIntelligence() {
   };
 
   const handleScheduleConsultation = () => {
-    navigate('/Contact');
+    navigate('/Contact?subject=Business Intelligence Consultation Request');
   };
 
   const handleLearnMore = () => {

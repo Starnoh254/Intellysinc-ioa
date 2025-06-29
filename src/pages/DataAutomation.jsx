@@ -174,7 +174,7 @@ function DataAutomation() {
   const handleAssessmentClick = () => {
     trackButtonClick('assessment_button');
     // Navigate to Contact page for assessment request
-    navigate('/Contact');
+    navigate('/Contact?subject=Data Automation Assessment Request');
   };
 
   const handleLearnMoreClick = (itemType) => {
@@ -198,7 +198,7 @@ function DataAutomation() {
   const handleGetStartedClick = () => {
     trackButtonClick('get_started_modal');
     // Navigate to Contact page
-    navigate('/Contact');
+    navigate('/Contact?subject=Data Automation Solution Inquiry');
   };
 
   if (isLoading) {

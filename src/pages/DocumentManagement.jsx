@@ -111,7 +111,7 @@ function DocumentManagement() {
   // Button handlers
   const handleGetStarted = () => {
     trackButtonClick('get_started');
-    navigate('/Contact');
+    navigate('/Contact?subject=Document Management Solution Inquiry');
   };
   const handleRequestDemo = () => {
     trackButtonClick('request_demo');
@@ -119,7 +119,7 @@ function DocumentManagement() {
   };
   const handleScheduleConsultation = () => {
     trackButtonClick('schedule_consultation');
-    navigate('/Contact');
+    navigate('/Contact?subject=Document Management Consultation Request');
   };
   const handleLearnMore = (featureTitle) => {
     trackButtonClick(`learn_more_${featureTitle}`);

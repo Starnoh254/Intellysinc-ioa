@@ -1,9 +1,23 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Pricing.css';
 
 function Pricing() {
+  const navigate = useNavigate();
   const [billingCycle, setBillingCycle] = useState('monthly');
+
+  const handleGetStarted = (planName) => {
+    navigate(`/Contact?subject=${planName} Plan Inquiry`);
+  };
+
+  const handleContactSales = () => {
+    navigate('/Contact?subject=Sales Inquiry');
+  };
+
+  const handleAddToPlan = (addonName) => {
+    navigate(`/Contact?subject=${addonName} Add-on Inquiry`);
+  };
 
   const plans = [
     {
@@ -156,7 +170,7 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <button className={`plan-btn ${plan.popular ? 'popular-btn' : ''}`}>
+              <button className={`plan-btn ${plan.popular ? 'popular-btn' : ''}`} onClick={() => handleGetStarted(plan.name)}>
                 {plan.popular ? 'Start Free Trial' : 'Get Started'}
               </button>
             </motion.div>
@@ -187,7 +201,7 @@ function Pricing() {
                 </div>
               </div>
               <p>{addon.description}</p>
-              <button className="addon-btn">Add to Plan</button>
+              <button className="addon-btn" onClick={() => handleAddToPlan(addon.name)}>Add to Plan</button>
             </motion.div>
           ))}
         </div>
@@ -250,8 +264,8 @@ function Pricing() {
           <h2>Ready to Get Started?</h2>
           <p>Join thousands of businesses that have transformed their operations with our automation solutions</p>
           <div className="cta-buttons">
-            <button className="primary-cta-btn">Start Free Trial</button>
-            <button className="secondary-cta-btn">Contact Sales</button>
+            <button className="primary-cta-btn" onClick={() => handleGetStarted('Professional')}>Start Free Trial</button>
+            <button className="secondary-cta-btn" onClick={handleContactSales}>Contact Sales</button>
           </div>
     </motion.div>
       </section>

@@ -93,7 +93,7 @@ const Awards = () => {
   };
 
   const handleContactUs = () => {
-    navigate('/Contact');
+    navigate('/Contact?subject=General Inquiry');
   };
 
   const handleAwardClick = (award) => {

@@ -1,22 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import '../styles/Contact.css';
 
 const API_URL = 'http://localhost:5000/api/contact'; // Change to your backend URL in production
 
 const Contact = () => {
+  const location = useLocation();
+  
+  // Get subject from URL parameters
+  const urlParams = new URLSearchParams(location.search);
+  const subjectFromUrl = urlParams.get('subject') || '';
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     company: '',
-    subject: '',
+    subject: subjectFromUrl,
     message: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+
+  // Update subject when URL parameters change
+  useEffect(() => {
+    if (subjectFromUrl) {
+      setFormData(prev => ({
+        ...prev,
+        subject: subjectFromUrl
+      }));
+    }
+  }, [subjectFromUrl]);
 
   const handleChange = (e) => {
     setFormData({
@@ -38,6 +55,7 @@ const Contact = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          subject: formData.subject,
           message: formData.message
         })
       });
