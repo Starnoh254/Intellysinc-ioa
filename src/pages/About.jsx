@@ -1,19 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import '../styles/About.css'; // Ensure this filename matches exactly (case-sensitive)
 
 const About = () => {
-  // CTA Button with updated class names
-  const CTAButton = ({ text, primary = false }) => {
+  const navigate = useNavigate();
+
+  // CTA Button with updated class names and navigation functionality
+  const CTAButton = ({ text, primary = false, onClick }) => {
     return (
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className={`about-cta-button ${primary ? 'about-primary' : 'about-secondary'}`}
+        onClick={onClick}
       >
         {text}
       </motion.button>
     );
+  };
+
+  const handleLearnMore = () => {
+    navigate('/CompanyInfo');
+  };
+
+  const handleContactUs = () => {
+    navigate('/Contact');
   };
 
   return (
@@ -40,8 +52,8 @@ const About = () => {
           Headquartered in Nairobi, Kenya
         </motion.p>
         <div className="about-hero-cta">
-          <CTAButton text="Learn More" primary={true} />
-          <CTAButton text="Contact Us" />
+          <CTAButton text="Learn More" primary={true} onClick={handleLearnMore} />
+          <CTAButton text="Contact Us" onClick={handleContactUs} />
         </div>
       </motion.section>
     </div>
