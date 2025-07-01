@@ -271,18 +271,26 @@ body {
 
 @media (max-width: 600px) {
   .about-partner-logos-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
   }
   .about-partner-logo-card {
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
-    min-width: 80px;
-    min-height: 90px;
+    padding: 0.5rem 0;
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .about-partner-logo-img {
-    max-width: 48px;
-    max-height: 40px;
+    max-width: 90vw;
+    width: 100%;
+    height: auto;
     padding: 4px;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 }
 
@@ -382,65 +390,7 @@ body {
   }
 }
 
-.about-partner-marquee {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  margin-top: 2rem;
-  background: none;
-  min-height: 90px;
-  border: 2px dashed #f59e0b; /* Debug border, remove later */
-}
-.about-partner-marquee-inner {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  animation: marquee-scroll 32s linear infinite;
-  will-change: transform;
-  min-height: 90px;
-  border: 1px solid #10b981; /* Debug border, remove later */
-}
-@keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.about-partner-logo-card {
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  transition: none;
-}
-.about-partner-logo-img {
-  width: 100%;
-  max-width: 80px;
-  max-height: 64px;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 0.5rem;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
-  background: #fff;
-  border-radius: 0.5rem;
-  padding: 8px;
-  display: block;
-  box-sizing: border-box;
-}
-@media (max-width: 600px) {
-  .about-partner-marquee-inner {
-    gap: 1.2rem;
-    animation-duration: 18s;
-  }
-  .about-partner-logo-img {
-    max-width: 48px;
-    max-height: 40px;
-    padding: 4px;
-  }
-}
+
 
 .about-highlight-card {
   background: linear-gradient(90deg, #e0e7ff 60%, #f3f4f6 100%);
