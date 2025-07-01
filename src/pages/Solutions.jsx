@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { FaRocket, FaChartLine, FaShieldAlt, FaUsers, FaCogs, FaLightbulb } from "react-icons/fa";
+import { 
+  FaRocket, FaChartLine, FaShieldAlt, FaUsers, FaCogs, FaLightbulb, 
+  FaFileAlt, FaDatabase, FaCloud, FaMobile, FaDesktop, FaServer,
+  FaSearch, FaLock, FaSync, FaRobot, FaBrain, FaNetworkWired,
+  FaIndustry, FaHospital, FaUniversity, FaCar, FaTruck, FaBuilding,
+  FaCalculator, FaChartBar, FaClipboardList, FaEnvelope, FaPhone,
+  FaGlobe, FaMapMarkerAlt, FaClock, FaCheckCircle, FaArrowRight
+} from "react-icons/fa";
 import Toast from "../components/Toast";
 import ErrorBoundary from "../components/ErrorBoundary";
 import performanceMonitor, { trackButtonClick, trackCardInteraction } from "../utils/performance";
@@ -12,17 +19,18 @@ function Solutions() {
   const [toast, setToast] = useState(null);
   const [selectedSolution, setSelectedSolution] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [activeCategory, setActiveCategory] = useState('all');
 
   // SEO and meta tags
   useEffect(() => {
     performanceMonitor.trackPageLoad();
     
-    document.title = "Business Solutions | IntelliSync";
+    document.title = "Comprehensive Business Solutions | IntelliSync IOA";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
         'content', 
-        'Comprehensive business solutions including Business Intelligence, Data Automation, Document Management, and System Integration. Transform your operations with IntelliSync.'
+        'Complete office automation solutions including Document Management, Workflow Automation, Business Intelligence, Data Processing, and System Integration. Transform your business with IntelliSync IOA.'
       );
     }
 
@@ -30,15 +38,15 @@ function Solutions() {
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Business Solutions",
-      "description": "Comprehensive business automation and analytics solutions",
+      "name": "Office Automation Solutions",
+      "description": "Comprehensive office automation and business process solutions",
       "provider": {
         "@type": "Organization",
-        "name": "IntelliSync"
+        "name": "IntelliSync Office Automation Limited"
       },
       "offers": {
         "@type": "Offer",
-        "description": "Business Intelligence, Data Automation, Document Management, and System Integration services"
+        "description": "Document Management, Workflow Automation, Business Intelligence, Data Processing, and System Integration services"
       }
     };
 
@@ -53,75 +61,373 @@ function Solutions() {
     };
   }, []);
 
-  const solutions = [
+  // Comprehensive solutions based on MFI Solutions (excluding Pro Print)
+  const allSolutions = [
+    // Document Management Solutions
     {
-      icon: <FaRocket />,
-      title: "Business Intelligence",
-      description: "Transform your data into actionable insights with our advanced analytics platform.",
-      features: ["Real-time dashboards", "Predictive analytics", "Custom reporting", "Data visualization"],
-      path: "/BusinessIntelligence"
+      category: 'document-management',
+      icon: <FaFileAlt />,
+      title: "Document Management System (DMS)",
+      description: "Complete document lifecycle management with secure storage, version control, and collaboration tools.",
+      features: ["Secure document storage", "Version control", "Collaboration tools", "Compliance management", "Advanced search", "Workflow automation"],
+      path: "/DocumentManagement",
+      industry: "All Industries"
     },
     {
-      icon: <FaChartLine />,
-      title: "Data Automation",
-      description: "Streamline your workflows and eliminate manual data entry with intelligent automation.",
-      features: ["Workflow automation", "Data integration", "Process optimization", "Error reduction"],
-      path: "/DataAutomation"
+      category: 'document-management',
+      icon: <FaFileAlt />,
+      title: "Document Capture & Processing",
+      description: "Automated document scanning, OCR, and intelligent data extraction from various document types.",
+      features: ["OCR technology", "Data extraction", "Batch processing", "Multi-format support", "Quality assurance", "Integration ready"],
+      path: "/DocumentManagement",
+      industry: "All Industries"
     },
     {
-      icon: <FaShieldAlt />,
-      title: "Document Management",
-      description: "Secure, organize, and streamline your document workflows with enterprise-grade solutions.",
-      features: ["Secure storage", "Version control", "Collaboration tools", "Compliance management"],
-      path: "/DocumentManagement"
+      category: 'document-management',
+      icon: <FaFileAlt />,
+      title: "Records Management",
+      description: "Comprehensive records management with retention policies, archiving, and compliance features.",
+      features: ["Retention policies", "Automated archiving", "Compliance tracking", "Audit trails", "Secure disposal", "Legal hold"],
+      path: "/DocumentManagement",
+      industry: "Legal, Healthcare, Finance"
     },
     {
-      icon: <FaUsers />,
-      title: "Team Collaboration",
-      description: "Enhance team productivity with integrated communication and project management tools.",
-      features: ["Real-time messaging", "Project tracking", "File sharing", "Team analytics"],
-      path: "/Contact"
+      category: 'document-management',
+      icon: <FaFileAlt />,
+      title: "Contract Management",
+      description: "End-to-end contract lifecycle management with approval workflows and compliance tracking.",
+      features: ["Contract templates", "Approval workflows", "Version tracking", "Renewal alerts", "Compliance monitoring", "Analytics"],
+      path: "/Contact",
+      industry: "Legal, Finance, Real Estate"
     },
+
+    // Workflow Automation Solutions
     {
+      category: 'workflow-automation',
       icon: <FaCogs />,
-      title: "System Integration",
-      description: "Seamlessly connect your existing systems and applications for unified operations.",
-      features: ["API integration", "Data synchronization", "Custom connectors", "Scalable architecture"],
-      path: "/Integrations"
+      title: "Business Process Automation",
+      description: "Automate complex business processes with intelligent workflows and decision engines.",
+      features: ["Visual workflow designer", "Decision engines", "Task automation", "Approval workflows", "Performance monitoring", "Process analytics"],
+      path: "/DataAutomation",
+      industry: "All Industries"
     },
     {
-      icon: <FaLightbulb />,
-      title: "AI-Powered Insights",
-      description: "Leverage artificial intelligence to discover patterns and optimize your business processes.",
-      features: ["Machine learning", "Pattern recognition", "Predictive modeling", "Intelligent recommendations"],
-      path: "/Contact"
+      category: 'workflow-automation',
+      icon: <FaCogs />,
+      title: "Invoice Processing Automation",
+      description: "Automated invoice capture, processing, and approval workflows with intelligent data extraction.",
+      features: ["Invoice capture", "Data extraction", "Approval workflows", "Payment processing", "Exception handling", "Analytics"],
+      path: "/DataAutomation",
+      industry: "Finance, Manufacturing, Retail"
+    },
+    {
+      category: 'workflow-automation',
+      icon: <FaCogs />,
+      title: "Purchase-to-Pay Automation",
+      description: "Complete purchase order to payment automation with integrated procurement workflows.",
+      features: ["Purchase orders", "Vendor management", "Approval workflows", "Receiving", "Invoice matching", "Payment processing"],
+      path: "/DataAutomation",
+      industry: "Manufacturing, Retail, Services"
+    },
+    {
+      category: 'workflow-automation',
+      icon: <FaCogs />,
+      title: "Employee Onboarding Automation",
+      description: "Streamlined employee onboarding with automated document collection and workflow management.",
+      features: ["Document collection", "Task assignments", "Progress tracking", "Compliance checks", "Integration with HR systems", "Reporting"],
+      path: "/Contact",
+      industry: "All Industries"
+    },
+
+    // Business Intelligence Solutions
+    {
+      category: 'business-intelligence',
+      icon: <FaChartLine />,
+      title: "Business Intelligence & Analytics",
+      description: "Transform data into actionable insights with advanced analytics and reporting capabilities.",
+      features: ["Real-time dashboards", "Custom reports", "Data visualization", "Predictive analytics", "KPI monitoring", "Drill-down capabilities"],
+      path: "/BusinessIntelligence",
+      industry: "All Industries"
+    },
+    {
+      category: 'business-intelligence',
+      icon: <FaChartLine />,
+      title: "Performance Management",
+      description: "Monitor and optimize business performance with comprehensive analytics and reporting.",
+      features: ["KPI tracking", "Performance dashboards", "Goal setting", "Progress monitoring", "Alerts and notifications", "Trend analysis"],
+      path: "/BusinessIntelligence",
+      industry: "All Industries"
+    },
+    {
+      category: 'business-intelligence',
+      icon: <FaChartLine />,
+      title: "Data Analytics & Reporting",
+      description: "Advanced data analytics with customizable reports and interactive visualizations.",
+      features: ["Data mining", "Statistical analysis", "Interactive charts", "Scheduled reports", "Data export", "Mobile access"],
+      path: "/BusinessIntelligence",
+      industry: "All Industries"
+    },
+
+    // Data Processing Solutions
+    {
+      category: 'data-processing',
+      icon: <FaDatabase />,
+      title: "Data Entry Automation",
+      description: "Automate manual data entry tasks with intelligent OCR and data validation.",
+      features: ["OCR technology", "Data validation", "Error correction", "Batch processing", "Integration APIs", "Quality monitoring"],
+      path: "/DataAutomation",
+      industry: "All Industries"
+    },
+    {
+      category: 'data-processing',
+      icon: <FaDatabase />,
+      title: "Forms Processing",
+      description: "Automated processing of forms and applications with intelligent data extraction.",
+      features: ["Form recognition", "Data extraction", "Validation rules", "Approval workflows", "Status tracking", "Integration"],
+      path: "/DataAutomation",
+      industry: "Healthcare, Finance, Government"
+    },
+    {
+      category: 'data-processing',
+      icon: <FaDatabase />,
+      title: "Email Management",
+      description: "Automated email processing, classification, and response management.",
+      features: ["Email classification", "Auto-routing", "Response templates", "Follow-up tracking", "Integration", "Analytics"],
+      path: "/Contact",
+      industry: "All Industries"
+    },
+
+    // Quality Management Solutions
+    {
+      category: 'quality-management',
+      icon: <FaCheckCircle />,
+      title: "Quality Management System",
+      description: "Comprehensive quality management with process control and compliance monitoring.",
+      features: ["Process control", "Quality metrics", "Compliance tracking", "Audit management", "Corrective actions", "Reporting"],
+      path: "/Contact",
+      industry: "Manufacturing, Healthcare, Food"
+    },
+    {
+      category: 'quality-management',
+      icon: <FaCheckCircle />,
+      title: "Compliance Management",
+      description: "Automated compliance monitoring and reporting for regulatory requirements.",
+      features: ["Regulatory tracking", "Compliance reporting", "Audit trails", "Risk assessment", "Policy management", "Training tracking"],
+      path: "/Contact",
+      industry: "Finance, Healthcare, Legal"
+    },
+
+    // Sales & Marketing Solutions
+    {
+      category: 'sales-marketing',
+      icon: <FaUsers />,
+      title: "Sales Order Processing",
+      description: "Automated sales order processing with integrated customer management.",
+      features: ["Order entry", "Customer management", "Inventory checking", "Pricing automation", "Order tracking", "Reporting"],
+      path: "/Contact",
+      industry: "Retail, Manufacturing, Services"
+    },
+    {
+      category: 'sales-marketing',
+      icon: <FaUsers />,
+      title: "Customer Relationship Management",
+      description: "Integrated CRM with automated lead management and customer engagement.",
+      features: ["Lead management", "Customer profiles", "Communication tracking", "Sales pipeline", "Analytics", "Mobile access"],
+      path: "/Contact",
+      industry: "All Industries"
+    },
+
+    // Integration Solutions
+    {
+      category: 'integration',
+      icon: <FaNetworkWired />,
+      title: "System Integration",
+      description: "Seamless integration with existing ERP, CRM, and business systems.",
+      features: ["API integration", "Data synchronization", "Custom connectors", "Real-time sync", "Error handling", "Monitoring"],
+      path: "/Integrations",
+      industry: "All Industries"
+    },
+    {
+      category: 'integration',
+      icon: <FaNetworkWired />,
+      title: "Cloud Integration",
+      description: "Connect on-premise and cloud applications with secure data exchange.",
+      features: ["Cloud connectors", "Data migration", "Hybrid deployment", "Security protocols", "Scalability", "Monitoring"],
+      path: "/Integrations",
+      industry: "All Industries"
+    },
+
+    // Mobile Solutions
+    {
+      category: 'mobile',
+      icon: <FaMobile />,
+      title: "Mobile Document Access",
+      description: "Secure mobile access to documents and workflows from anywhere.",
+      features: ["Mobile apps", "Offline access", "Secure authentication", "Push notifications", "Touch optimization", "Cross-platform"],
+      path: "/Contact",
+      industry: "All Industries"
+    },
+    {
+      category: 'mobile',
+      icon: <FaMobile />,
+      title: "Field Service Management",
+      description: "Mobile solutions for field service teams with real-time updates and document access.",
+      features: ["Field apps", "GPS tracking", "Real-time updates", "Document access", "Photo capture", "Offline sync"],
+      path: "/Contact",
+      industry: "Services, Manufacturing, Utilities"
+    },
+
+    // Security Solutions
+    {
+      category: 'security',
+      icon: <FaLock />,
+      title: "Document Security",
+      description: "Advanced security features for document protection and access control.",
+      features: ["Encryption", "Access control", "Audit trails", "Watermarking", "Digital signatures", "Compliance"],
+      path: "/DocumentManagement",
+      industry: "All Industries"
+    },
+    {
+      category: 'security',
+      icon: <FaLock />,
+      title: "Data Protection",
+      description: "Comprehensive data protection with backup, recovery, and disaster planning.",
+      features: ["Backup automation", "Disaster recovery", "Data encryption", "Access monitoring", "Compliance", "Testing"],
+      path: "/Contact",
+      industry: "All Industries"
     }
   ];
 
-  const industries = [
-    { name: "Healthcare", icon: "🏥" },
-    { name: "Finance", icon: "💰" },
-    { name: "Manufacturing", icon: "🏭" },
-    { name: "Retail", icon: "🛍️" },
-    { name: "Education", icon: "🎓" },
-    { name: "Technology", icon: "💻" }
+  // Filter solutions based on active category
+  const filteredSolutions = activeCategory === 'all' 
+    ? allSolutions 
+    : allSolutions.filter(solution => solution.category === activeCategory);
+
+  // Categories for filtering
+  const categories = [
+    { id: 'all', name: 'All Solutions', icon: <FaRocket /> },
+    { id: 'document-management', name: 'Document Management', icon: <FaFileAlt /> },
+    { id: 'workflow-automation', name: 'Workflow Automation', icon: <FaCogs /> },
+    { id: 'business-intelligence', name: 'Business Intelligence', icon: <FaChartLine /> },
+    { id: 'data-processing', name: 'Data Processing', icon: <FaDatabase /> },
+    { id: 'quality-management', name: 'Quality Management', icon: <FaCheckCircle /> },
+    { id: 'sales-marketing', name: 'Sales & Marketing', icon: <FaUsers /> },
+    { id: 'integration', name: 'System Integration', icon: <FaNetworkWired /> },
+    { id: 'mobile', name: 'Mobile Solutions', icon: <FaMobile /> },
+    { id: 'security', name: 'Security', icon: <FaLock /> }
   ];
 
-  const caseStudies = [
+  // Industry-specific solutions
+  const industrySolutions = [
     {
-      title: "Healthcare Provider",
-      description: "Reduced patient wait times by 40% through intelligent scheduling automation.",
-      results: ["40% faster scheduling", "Improved patient satisfaction", "Reduced administrative overhead"]
+      industry: "Healthcare",
+      icon: "🏥",
+      solutions: ["Document Management", "Compliance Management", "Patient Records", "Quality Management", "Mobile Access"]
     },
     {
-      title: "Financial Services",
-      description: "Streamlined compliance reporting with automated data collection and analysis.",
-      results: ["90% faster reporting", "100% compliance accuracy", "Reduced audit time"]
+      industry: "Finance",
+      icon: "💰",
+      solutions: ["Invoice Processing", "Compliance Management", "Document Security", "Business Intelligence", "Risk Management"]
     },
     {
-      title: "Manufacturing",
-      description: "Optimized production processes with real-time monitoring and predictive maintenance.",
-      results: ["25% increased efficiency", "Reduced downtime by 60%", "Lower maintenance costs"]
+      industry: "Manufacturing",
+      icon: "🏭",
+      solutions: ["Quality Management", "Purchase-to-Pay", "Inventory Management", "Performance Analytics", "Field Service"]
+    },
+    {
+      industry: "Legal",
+      icon: "⚖️",
+      solutions: ["Contract Management", "Document Management", "Compliance Tracking", "Records Management", "Case Management"]
+    },
+    {
+      industry: "Education",
+      icon: "🎓",
+      solutions: ["Student Records", "Document Management", "Compliance Management", "Mobile Access", "Analytics"]
+    },
+    {
+      industry: "Government",
+      icon: "🏛️",
+      solutions: ["Records Management", "Compliance Management", "Document Security", "Workflow Automation", "Public Access"]
+    },
+    {
+      industry: "Real Estate",
+      icon: "🏢",
+      solutions: ["Contract Management", "Document Management", "Property Records", "Client Management", "Mobile Access"]
+    },
+    {
+      industry: "Retail",
+      icon: "🛍️",
+      solutions: ["Sales Order Processing", "Inventory Management", "Customer Management", "Analytics", "Mobile Solutions"]
+    }
+  ];
+
+  // Use cases by department
+  const departmentUseCases = [
+    {
+      department: "Finance & Accounting",
+      icon: <FaCalculator />,
+      useCases: [
+        "Automated Invoice Processing",
+        "Purchase-to-Pay Automation",
+        "Financial Reporting",
+        "Compliance Management",
+        "Expense Management"
+      ]
+    },
+    {
+      department: "Human Resources",
+      icon: <FaUsers />,
+      useCases: [
+        "Employee Onboarding",
+        "Document Management",
+        "Performance Management",
+        "Compliance Tracking",
+        "Benefits Administration"
+      ]
+    },
+    {
+      department: "Operations",
+      icon: <FaCogs />,
+      useCases: [
+        "Process Automation",
+        "Quality Management",
+        "Performance Monitoring",
+        "Workflow Optimization",
+        "Resource Planning"
+      ]
+    },
+    {
+      department: "Sales & Marketing",
+      icon: <FaChartBar />,
+      useCases: [
+        "Sales Order Processing",
+        "Customer Relationship Management",
+        "Lead Management",
+        "Sales Analytics",
+        "Marketing Automation"
+      ]
+    },
+    {
+      department: "IT & Technology",
+      icon: <FaServer />,
+      useCases: [
+        "System Integration",
+        "Data Management",
+        "Security Management",
+        "Cloud Integration",
+        "Mobile Solutions"
+      ]
+    },
+    {
+      department: "Compliance & Legal",
+      icon: <FaShieldAlt />,
+      useCases: [
+        "Compliance Management",
+        "Contract Management",
+        "Records Management",
+        "Audit Trails",
+        "Risk Management"
+      ]
     }
   ];
 
@@ -137,7 +443,7 @@ function Solutions() {
   };
 
   const handleLearnMore = (solution) => {
-    trackButtonClick(`learn_more_${solution.title.toLowerCase().replace(' ', '_')}`);
+    trackButtonClick(`learn_more_${solution.title.toLowerCase().replace(/\s+/g, '_')}`);
     if (solution.path) {
       if (solution.path === '/Contact') {
         navigate(`/Contact?subject=${solution.title} Solution Inquiry`);
@@ -170,6 +476,11 @@ function Solutions() {
     navigate('/Contact?subject=Demo Scheduling Request');
   };
 
+  const handleCategoryFilter = (categoryId) => {
+    setActiveCategory(categoryId);
+    trackButtonClick(`filter_category_${categoryId}`);
+  };
+
   return (
     <ErrorBoundary>
       <div className="solutions-page">
@@ -182,7 +493,7 @@ function Solutions() {
               transition={{ duration: 0.8 }}
               className="hero-title"
             >
-              Comprehensive Business Solutions
+              Comprehensive Office Automation Solutions
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
@@ -216,6 +527,40 @@ function Solutions() {
           </div>
         </section>
 
+        {/* Category Filter */}
+        <section className="category-filter">
+          <div className="container">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="filter-header"
+            >
+              <h2>Explore Solutions by Category</h2>
+              <p>Find the perfect solution for your business needs</p>
+            </motion.div>
+
+            <div className="category-buttons">
+              {categories.map((category) => (
+                <motion.button
+                  key={category.id}
+                  className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
+                  onClick={() => handleCategoryFilter(category.id)}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: categories.indexOf(category) * 0.1 }}
+                  viewport={{ once: true }}
+                  aria-label={`Filter by ${category.name}`}
+                >
+                  <span className="category-icon">{category.icon}</span>
+                  {category.name}
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Core Solutions */}
         <section className="core-solutions">
           <div className="container">
@@ -226,12 +571,12 @@ function Solutions() {
               viewport={{ once: true }}
               className="section-header"
             >
-              <h2>Our Core Solutions</h2>
+              <h2>Our Solutions</h2>
               <p>Comprehensive tools designed to address your most critical business challenges</p>
             </motion.div>
 
             <div className="solutions-grid">
-              {solutions.map((solution, index) => (
+              {filteredSolutions.map((solution, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
@@ -249,8 +594,11 @@ function Solutions() {
                   <div className="solution-icon">{solution.icon}</div>
                   <h3>{solution.title}</h3>
                   <p>{solution.description}</p>
+                  <div className="solution-industry">
+                    <span className="industry-tag">{solution.industry}</span>
+                  </div>
                   <ul className="solution-features">
-                    {solution.features.map((feature, featureIndex) => (
+                    {solution.features.slice(0, 4).map((feature, featureIndex) => (
                       <li key={featureIndex}>{feature}</li>
                     ))}
                   </ul>
@@ -262,7 +610,7 @@ function Solutions() {
                     }}
                     aria-label={`Learn more about ${solution.title}`}
                   >
-                    Learn More
+                    Learn More <FaArrowRight />
                   </button>
                 </motion.div>
               ))}
@@ -285,7 +633,7 @@ function Solutions() {
             </motion.div>
 
             <div className="industries-grid">
-              {industries.map((industry, index) => (
+              {industrySolutions.map((industry, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -294,19 +642,24 @@ function Solutions() {
                   viewport={{ once: true }}
                   className="industry-card"
                   tabIndex={0}
-                  aria-label={`${industry.name} industry solutions`}
+                  aria-label={`${industry.industry} industry solutions`}
                   style={{ outline: 'none' }}
                 >
                   <div className="industry-icon">{industry.icon}</div>
-                  <h3>{industry.name}</h3>
+                  <h3>{industry.industry}</h3>
+                  <ul className="industry-solutions">
+                    {industry.solutions.map((solution, solIndex) => (
+                      <li key={solIndex}>{solution}</li>
+                    ))}
+                  </ul>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Case Studies */}
-        <section className="case-studies">
+        {/* Department Use Cases */}
+        <section className="department-use-cases">
           <div className="container">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -315,33 +668,30 @@ function Solutions() {
               viewport={{ once: true }}
               className="section-header"
             >
-              <h2>Success Stories</h2>
-              <p>Real results from real businesses</p>
+              <h2>Solutions by Department</h2>
+              <p>Address specific departmental challenges with targeted solutions</p>
             </motion.div>
 
-            <div className="case-studies-grid">
-              {caseStudies.map((study, index) => (
+            <div className="department-grid">
+              {departmentUseCases.map((dept, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="case-study-card"
+                  className="department-card"
                   tabIndex={0}
-                  aria-label={`Case study: ${study.title}`}
+                  aria-label={`${dept.department} solutions`}
                   style={{ outline: 'none' }}
                 >
-                  <h3>{study.title}</h3>
-                  <p>{study.description}</p>
-                  <div className="results">
-                    <h4>Key Results:</h4>
-                    <ul>
-                      {study.results.map((result, resultIndex) => (
-                        <li key={resultIndex}>{result}</li>
-                      ))}
-                    </ul>
-                  </div>
+                  <div className="department-icon">{dept.icon}</div>
+                  <h3>{dept.department}</h3>
+                  <ul className="use-cases-list">
+                    {dept.useCases.map((useCase, useCaseIndex) => (
+                      <li key={useCaseIndex}>{useCase}</li>
+                    ))}
+                  </ul>
                 </motion.div>
               ))}
             </div>
@@ -358,7 +708,7 @@ function Solutions() {
               viewport={{ once: true }}
               className="section-header"
             >
-              <h2>Why Choose IntelliSync</h2>
+              <h2>Why Choose IntelliSync IOA</h2>
               <p>The advantages that set us apart</p>
             </motion.div>
 
@@ -374,7 +724,7 @@ function Solutions() {
                 style={{ outline: 'none' }}
               >
                 <h3>Proven Expertise</h3>
-                <p>Over 10 years of experience in business automation and analytics</p>
+                <p>Over 10 years of experience in office automation and business process optimization</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -387,7 +737,7 @@ function Solutions() {
                 style={{ outline: 'none' }}
               >
                 <h3>Scalable Solutions</h3>
-                <p>Grow with confidence - our solutions scale with your business</p>
+                <p>Grow with confidence - our solutions scale with your business needs</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -430,7 +780,7 @@ function Solutions() {
               className="cta-content"
             >
               <h2>Ready to Transform Your Business?</h2>
-              <p>Join thousands of businesses that have already revolutionized their operations with IntelliSync</p>
+              <p>Join thousands of businesses that have already revolutionized their operations with IntelliSync IOA</p>
               <div className="cta-actions">
                 <button 
                   className="cta-button primary"
@@ -461,6 +811,7 @@ function Solutions() {
               <div className="modal-header">
                 <div className="solution-icon">{selectedSolution.icon}</div>
                 <h2>{selectedSolution.title}</h2>
+                <span className="solution-industry-modal">{selectedSolution.industry}</span>
               </div>
               <div className="modal-description">
                 <p>{selectedSolution.description}</p>
@@ -491,58 +842,6 @@ function Solutions() {
             onClose={() => setToast(null)}
           />
         )}
-
-        {/* Solutions Grid Section (existing) */}
-        <section className="solutions-grid-section">
-          {/* ...existing solutions grid code... */}
-        </section>
-
-        {/* Explore Solutions By Category Section */}
-        <section className="solutions-categories-section">
-          <h2 className="categories-title">Explore Solutions By</h2>
-          <div className="categories-grid">
-            <div className="category-column">
-              <h3>By Use Case</h3>
-              <ul>
-                <li>Automated Invoice Processing</li>
-                <li>Purchase-to-Pay</li>
-                <li>Document Management</li>
-                <li>Contract Management</li>
-                <li>Quality Management</li>
-                <li>Sales Order Processing</li>
-                <li>Employee File Management</li>
-                <li>Secure document archiving</li>
-              </ul>
-            </div>
-            <div className="category-column">
-              <h3>By Industry</h3>
-              <ul>
-                <li>Auto dealerships</li>
-                <li>Financial Services</li>
-                <li>Healthcare</li>
-                <li>Higher Education</li>
-                <li>Manufacturing</li>
-                <li>State and local government</li>
-                <li>Transportation and logistics</li>
-              </ul>
-            </div>
-            <div className="category-column">
-              <h3>By Department</h3>
-              <ul>
-                <li>Finance & accounting</li>
-                <li>Sales & marketing</li>
-              </ul>
-            </div>
-            <div className="category-column">
-              <h3>By Company Size</h3>
-              <ul>
-                <li>Small and mid-sized businesses</li>
-                <li>Large enterprises</li>
-                <li>Mobile workforce</li>
-              </ul>
-            </div>
-          </div>
-        </section>
       </div>
     </ErrorBoundary>
   );
