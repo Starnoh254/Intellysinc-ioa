@@ -33,6 +33,14 @@ const CompanyInfo = lazy(() => import('./pages/CompanyInfo'));
 const AdminBlogManager = lazy(() => import('./components/AdminBlogManager'));
 const AdminAccess = lazy(() => import('./components/AdminAccess'));
 
+// New Service Pages
+const WorkflowAutomation = lazy(() => import('./pages/WorkflowAutomation'));
+const DataProcessing = lazy(() => import('./pages/DataProcessing'));
+const QualityManagement = lazy(() => import('./pages/QualityManagement'));
+const SalesMarketing = lazy(() => import('./pages/SalesMarketing'));
+const MobileSolutions = lazy(() => import('./pages/MobileSolutions'));
+const SecurityServices = lazy(() => import('./pages/SecurityServices'));
+
 // New Analytics and Content Management Components
 const AnalyticsDashboard = lazy(() => import('./components/AnalyticsDashboard'));
 const AdvancedContentManager = lazy(() => import('./components/AdvancedContentManager'));
@@ -59,6 +67,12 @@ function AnimatedRoutes() {
           } />
           <Route path="/DocumentManagement" element={<DocumentManagement />} />
           <Route path="/Integrations" element={<Integrations />} />
+          <Route path="/WorkflowAutomation" element={<WorkflowAutomation />} />
+          <Route path="/DataProcessing" element={<DataProcessing />} />
+          <Route path="/QualityManagement" element={<QualityManagement />} />
+          <Route path="/SalesMarketing" element={<SalesMarketing />} />
+          <Route path="/MobileSolutions" element={<MobileSolutions />} />
+          <Route path="/SecurityServices" element={<SecurityServices />} />
           <Route path="/Solutions" element={<Solutions />} />
           <Route path="/CaseStudies" element={<CaseStudies />} />
           <Route path="/Pricing" element={<Pricing />} />
