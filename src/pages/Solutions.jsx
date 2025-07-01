@@ -503,7 +503,7 @@ function Solutions() {
               transition={{ duration: 1, ease: "easeOut" }}
               className="hero-badge"
             >
-              <span>✨ Innovative Solutions</span>
+              <span>🏢 Enterprise-Grade Solutions</span>
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
@@ -511,7 +511,7 @@ function Solutions() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="hero-title"
             >
-              <span className="gradient-text">Revolutionary</span> Office Automation
+              Enterprise <span className="gradient-text">Solutions</span> for Modern Business
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
@@ -519,7 +519,7 @@ function Solutions() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="hero-subtitle"
             >
-              Experience the future of business with our cutting-edge intelligent automation and analytics solutions
+              Comprehensive office automation and business process solutions designed for enterprise efficiency and growth
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -577,11 +577,11 @@ function Solutions() {
               className="filter-header"
             >
               <div className="section-badge">
-                <span>🎯</span>
-                <span>Categories</span>
+                <span>📋</span>
+                <span>Solution Categories</span>
               </div>
-              <h2>Explore Solutions by Category</h2>
-              <p>Discover the perfect solution tailored to your business needs</p>
+              <h2>Browse Solutions by Category</h2>
+              <p>Find the right solution for your specific business requirements</p>
             </motion.div>
 
             <div className="category-buttons">
@@ -618,11 +618,11 @@ function Solutions() {
               className="section-header"
             >
               <div className="section-badge">
-                <span>🚀</span>
-                <span>Solutions</span>
+                <span>💼</span>
+                <span>Our Solutions</span>
               </div>
-              <h2>Our Revolutionary Solutions</h2>
-              <p>Cutting-edge tools designed to transform your business operations</p>
+              <h2>Comprehensive Business Solutions</h2>
+              <p>Professional tools and systems designed to optimize your business operations</p>
             </motion.div>
 
             <div className="solutions-grid">
