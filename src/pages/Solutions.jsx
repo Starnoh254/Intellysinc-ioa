@@ -486,43 +486,82 @@ function Solutions() {
       <div className="solutions-page">
         {/* Hero Section */}
         <section className="solutions-hero">
+          <div className="hero-background">
+            <div className="hero-gradient-overlay"></div>
+            <div className="floating-shapes">
+              <div className="shape shape-1"></div>
+              <div className="shape shape-2"></div>
+              <div className="shape shape-3"></div>
+              <div className="shape shape-4"></div>
+              <div className="shape shape-5"></div>
+            </div>
+          </div>
           <div className="hero-content">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="hero-badge"
+            >
+              <span>✨ Innovative Solutions</span>
+            </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="hero-title"
             >
-              Comprehensive Office Automation Solutions
+              <span className="gradient-text">Revolutionary</span> Office Automation
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="hero-subtitle"
             >
-              Transform your business operations with our intelligent automation and analytics solutions
+              Experience the future of business with our cutting-edge intelligent automation and analytics solutions
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="hero-actions"
             >
               <button 
-                className="cta-button primary" 
+                className="cta-button primary glass-effect" 
                 onClick={handleGetStarted}
                 aria-label="Get Started with IntelliSync"
               >
-                Get Started
+                <span>Get Started</span>
+                <div className="button-glow"></div>
               </button>
               <button 
-                className="cta-button secondary" 
+                className="cta-button secondary glass-effect" 
                 onClick={handleWatchDemo}
                 aria-label="Watch Demo Video"
               >
-                Watch Demo
+                <span>Watch Demo</span>
+                <div className="play-icon">▶</div>
               </button>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="hero-stats"
+            >
+              <div className="stat-item">
+                <span className="stat-number">500+</span>
+                <span className="stat-label">Happy Clients</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">50+</span>
+                <span className="stat-label">Solutions</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">99.9%</span>
+                <span className="stat-label">Uptime</span>
+              </div>
             </motion.div>
           </div>
         </section>
@@ -537,24 +576,31 @@ function Solutions() {
               viewport={{ once: true }}
               className="filter-header"
             >
+              <div className="section-badge">
+                <span>🎯</span>
+                <span>Categories</span>
+              </div>
               <h2>Explore Solutions by Category</h2>
-              <p>Find the perfect solution for your business needs</p>
+              <p>Discover the perfect solution tailored to your business needs</p>
             </motion.div>
 
             <div className="category-buttons">
               {categories.map((category) => (
                 <motion.button
                   key={category.id}
-                  className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
+                  className={`category-btn glass-effect ${activeCategory === category.id ? 'active' : ''}`}
                   onClick={() => handleCategoryFilter(category.id)}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: categories.indexOf(category) * 0.1 }}
                   viewport={{ once: true }}
                   aria-label={`Filter by ${category.name}`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <span className="category-icon">{category.icon}</span>
-                  {category.name}
+                  <span className="category-name">{category.name}</span>
+                  <div className="category-glow"></div>
                 </motion.button>
               ))}
             </div>
@@ -571,8 +617,12 @@ function Solutions() {
               viewport={{ once: true }}
               className="section-header"
             >
-              <h2>Our Solutions</h2>
-              <p>Comprehensive tools designed to address your most critical business challenges</p>
+              <div className="section-badge">
+                <span>🚀</span>
+                <span>Solutions</span>
+              </div>
+              <h2>Our Revolutionary Solutions</h2>
+              <p>Cutting-edge tools designed to transform your business operations</p>
             </motion.div>
 
             <div className="solutions-grid">
@@ -583,34 +633,46 @@ function Solutions() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="solution-card"
+                  className="solution-card glass-effect"
                   onClick={() => handleSolutionCardClick(solution)}
                   tabIndex={0}
                   role="button"
                   aria-label={`Learn more about ${solution.title}`}
                   onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleSolutionCardClick(solution)}
                   style={{ cursor: 'pointer', outline: 'none' }}
+                  whileHover={{ 
+                    y: -10,
+                    transition: { duration: 0.3 }
+                  }}
                 >
-                  <div className="solution-icon">{solution.icon}</div>
+                  <div className="card-glow"></div>
+                  <div className="solution-icon">
+                    <div className="icon-background"></div>
+                    {solution.icon}
+                  </div>
                   <h3>{solution.title}</h3>
                   <p>{solution.description}</p>
                   <div className="solution-industry">
-                    <span className="industry-tag">{solution.industry}</span>
+                    <span className="industry-tag glass-effect">{solution.industry}</span>
                   </div>
                   <ul className="solution-features">
                     {solution.features.slice(0, 4).map((feature, featureIndex) => (
-                      <li key={featureIndex}>{feature}</li>
+                      <li key={featureIndex}>
+                        <span className="feature-icon">✓</span>
+                        {feature}
+                      </li>
                     ))}
                   </ul>
                   <button 
-                    className="learn-more-btn"
+                    className="learn-more-btn glass-effect"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleLearnMore(solution);
                     }}
                     aria-label={`Learn more about ${solution.title}`}
                   >
-                    Learn More <FaArrowRight />
+                    <span>Learn More</span>
+                    <FaArrowRight className="arrow-icon" />
                   </button>
                 </motion.div>
               ))}
