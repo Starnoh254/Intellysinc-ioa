@@ -57,7 +57,7 @@ const LiveChatWidget = forwardRef((props, ref) => {
 
   return (
     <>
-      <audio ref={audioRef} src="/notification.mp3" preload="auto" />
+              <audio ref={audioRef} src="./notification.mp3" preload="auto" />
       {isOpen && (
         <div className="livechat-container">
           <div className="livechat-header">

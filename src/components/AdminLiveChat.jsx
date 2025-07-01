@@ -82,7 +82,7 @@ const AdminLiveChat = () => {
   if (!loggedIn) {
     return (
       <div className="livechat-container" style={{ right: 400, bottom: 100 }}>
-        <audio ref={audioRef} src="/notification.mp3" preload="auto" />
+        <audio ref={audioRef} src="./notification.mp3" preload="auto" />
         <div className="livechat-header">Admin Login</div>
         <form style={{ padding: 16 }} onSubmit={handleLogin}>
           <input
@@ -100,7 +100,7 @@ const AdminLiveChat = () => {
 
   return (
     <div className="livechat-container" style={{ right: 400, bottom: 100, width: 400, maxWidth: '95vw', display: 'flex', flexDirection: 'row' }}>
-      <audio ref={audioRef} src="/notification.mp3" preload="auto" />
+              <audio ref={audioRef} src="./notification.mp3" preload="auto" />
       <div style={{ width: 120, borderRight: '1px solid #eee', background: '#f7fafd', padding: 8 }}>
         <div style={{ fontWeight: 600, marginBottom: 8 }}>Users</div>
         {users.length === 0 && <div style={{ color: '#888' }}>No users</div>}
