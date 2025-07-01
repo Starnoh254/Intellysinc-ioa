@@ -359,4 +359,121 @@
   .cta-content h2 {
     font-size: 2rem;
   }
+}
+
+/* ===== CARD SECTIONS WITH BACKGROUND IMAGES ===== */
+.dm-card-section {
+  position: relative;
+  margin: 3rem 0;
+  padding: 80px 1rem 80px 1rem;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+/* Core Capabilities */
+.dm-card-section:nth-of-type(2) {
+  background: linear-gradient(rgba(30,64,175,0.7), rgba(79,70,229,0.7)), url('/images/dm-features-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+/* Key Benefits */
+.dm-card-section:nth-of-type(3) {
+  background: linear-gradient(rgba(16,185,129,0.7), rgba(139,92,246,0.7)), url('/images/dm-benefits-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+/* Smart Capture & Workflow Automation */
+.dm-card-section:nth-of-type(4) {
+  background: linear-gradient(rgba(59,130,246,0.7), rgba(245,158,11,0.7)), url('/images/dm-workflow-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+/* Security & Compliance */
+.dm-card-section:nth-of-type(5) {
+  background: linear-gradient(rgba(31,41,55,0.7), rgba(75,85,99,0.7)), url('/images/dm-hero-overlay.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.dm-card-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.dm-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dm-info-card {
+  background: rgba(255,255,255,0.13);
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(30, 64, 175, 0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+  padding: 2rem 1.25rem 1.5rem 1.25rem;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  outline: none;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(6px);
+}
+
+.dm-info-card:focus, .dm-info-card:hover {
+  box-shadow: 0 8px 32px rgba(30, 64, 175, 0.16), 0 2px 8px rgba(0,0,0,0.08);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.dm-card-icon img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.18));
+}
+
+.dm-info-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+}
+
+.dm-info-card p {
+  font-size: 1rem;
+  color: #f3f4f6;
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 1024px) {
+  .dm-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .dm-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .dm-info-card {
+    padding: 1.25rem 0.5rem 1rem 0.5rem;
+  }
+  .dm-card-section {
+    padding: 40px 0.5rem 40px 0.5rem;
+  }
 } 

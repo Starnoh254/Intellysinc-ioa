@@ -1,135 +1,72 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import Toast from '../components/Toast';
-import performanceMonitor, { trackButtonClick } from '../utils/performance';
 import ErrorBoundary from '../components/ErrorBoundary';
 import '../styles/DocumentManagement.css';
 
-// FeatureCard component
-function FeatureCard({ feature, index, onLearnMore }) {
-  return (
-    <motion.div
-      className="feature-card"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
-      viewport={{ once: true }}
-      tabIndex={0}
-      role="button"
-      aria-label={`Learn more about ${feature.title}`}
-      onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && onLearnMore(feature.title)}
-      onClick={() => onLearnMore(feature.title)}
-      style={{ outline: 'none' }}
-    >
-      <div className="feature-icon">{feature.icon}</div>
-      <h3>{feature.title}</h3>
-      <p className="feature-description">{feature.description}</p>
-      <ul className="benefits-list">
-        {feature.benefits.map((benefit, benefitIndex) => (
-          <li key={benefitIndex}>{benefit}</li>
-        ))}
-      </ul>
-    </motion.div>
-  );
-}
+const placeholder = '/public/images/placeholder-icon.png';
 
-// DocumentTypeCard component
-function DocumentTypeCard({ docType, index }) {
+const capabilities = [
+  { img: placeholder, alt: 'Secure', title: 'Secure', desc: 'Central digital repository for your data.' },
+  { img: placeholder, alt: 'Capture', title: 'Capture', desc: 'Import from paper, digital files, and e-forms.' },
+  { img: placeholder, alt: 'Manage', title: 'Manage', desc: 'Collaborate, integrate, and set retention policies.' },
+  { img: placeholder, alt: 'Access', title: 'Access', desc: 'Retrieve your data anytime, anywhere.' },
+  { img: placeholder, alt: 'Automate', title: 'Automate', desc: 'Optimize and automate business processes.' },
+  { img: placeholder, alt: 'Analyze', title: 'Analyze', desc: 'Monitor and react to key performance indicators.' },
+];
+
+const benefits = [
+  { img: placeholder, alt: 'Productivity', title: 'Productivity', desc: 'Automate and optimize processes for speed and accuracy. Quickly create, capture, and find information to speed up customer responses.' },
+  { img: placeholder, alt: 'Security', title: 'Security', desc: 'Keep information safe, secure, and confidential in a central digital repository. Gain clear overview of your data and business-critical processes to ensure compliance.' },
+  { img: placeholder, alt: 'Flexibility', title: 'Flexibility', desc: 'Scalable solution available on-premise or as a managed cloud service. Access your information anytime, anywhere.' },
+];
+
+const automation = [
+  { img: placeholder, alt: 'AI-powered Smart Capture', title: 'AI-powered Smart Capture', desc: 'Fast, accurate data extraction and invoice processing. Replace error-prone manual processes with self-learning AI.' },
+  { img: placeholder, alt: 'AP Workflow Automation', title: 'AP Workflow Automation', desc: 'Automated Accounts Payable workflows to prevent duplicates and fraud. Easy tracking, review, and approval of invoices from anywhere.' },
+  { img: placeholder, alt: 'Content Connector', title: 'Content Connector', desc: 'Automate information flow from folders, email, and cloud storage. Integrates with Microsoft Office and Exchange.' },
+  { img: placeholder, alt: 'E-Forms', title: 'E-Forms', desc: 'Quick, intuitive data capture—internally or on customer portals. Forms adapt dynamically to responses for smarter processes.' },
+];
+
+const security = [
+  { img: placeholder, alt: 'Access Control', title: 'Access Control', desc: 'Granular access control and permissions with role-based security.' },
+  { img: placeholder, alt: 'Anti-tamper', title: 'Anti-tamper', desc: 'Authenticity of documents verified on retrieval.' },
+  { img: placeholder, alt: 'Disaster Recovery', title: 'Disaster Recovery', desc: 'Automatic backup storage for data recovery.' },
+  { img: placeholder, alt: 'Compliance', title: 'Compliance', desc: 'Compliance with GDPR and other data protection regulations. Supports GDPdU audit file requirements.' },
+];
+
+function CardGrid({ title, items }) {
   return (
-    <motion.div
-      className="document-type-card"
-      initial={{ opacity: 0, x: -50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ delay: index * 0.1 }}
-      viewport={{ once: true }}
-      tabIndex={0}
-      aria-label={docType.type}
-      style={{ outline: 'none' }}
-    >
-      <div className="doc-icon">{docType.icon}</div>
-      <h3>{docType.type}</h3>
-      <p>{docType.description}</p>
-    </motion.div>
+    <section className="dm-card-section">
+      <h2>{title}</h2>
+      <div className="dm-card-grid">
+        {items.map((item, idx) => (
+          <motion.div
+            className="dm-info-card"
+            key={item.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.08 }}
+            viewport={{ once: true }}
+            tabIndex={0}
+            aria-label={item.title}
+          >
+            <div className="dm-card-icon">
+              <img src={item.img} alt={item.alt} width="48" height="48" style={{objectFit: 'contain'}} />
+            </div>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
   );
 }
 
 function DocumentManagement() {
-  const navigate = useNavigate();
-  const [toast, setToast] = useState(null);
-
-  const features = [
-    {
-      title: "Document Capture",
-      description: "Scan, upload, and digitize documents with advanced OCR technology",
-      icon: "📷",
-      benefits: ["Multi-format support", "Batch processing", "Auto-classification", "Quality enhancement"]
-    },
-    {
-      title: "Secure Storage",
-      description: "Cloud-based document storage with enterprise-grade security and compliance",
-      icon: "🔒",
-      benefits: ["Encrypted storage", "Access controls", "Audit trails", "Backup & recovery"]
-    },
-    {
-      title: "Workflow Automation",
-      description: "Streamline document approval processes with intelligent routing and notifications",
-      icon: "⚡",
-      benefits: ["Approval workflows", "Task assignment", "Status tracking", "Deadline management"]
-    },
-    {
-      title: "Search & Retrieval",
-      description: "Find documents instantly with powerful search and indexing capabilities",
-      icon: "🔍",
-      benefits: ["Full-text search", "Metadata filtering", "Version control", "Quick access"]
-    }
-  ];
-
-  const documentTypes = [
-    {
-      type: "Invoices & Receipts",
-      icon: "💰",
-      description: "Automated processing and approval workflows"
-    },
-    {
-      type: "Contracts & Agreements",
-      icon: "📋",
-      description: "Secure storage with digital signatures and version control"
-    },
-    {
-      type: "Reports & Analytics",
-      icon: "📊",
-      description: "Automated generation and distribution of business reports"
-    },
-    {
-      type: "Forms & Applications",
-      icon: "📝",
-      description: "Digital form processing with data extraction and validation"
-    }
-  ];
-
-  // Button handlers
-  const handleGetStarted = () => {
-    trackButtonClick('get_started');
-    navigate('/Contact?subject=Document Management Solution Inquiry');
-  };
-  const handleRequestDemo = () => {
-    trackButtonClick('request_demo');
-    setToast({ message: 'Demo feature coming soon!', type: 'info' });
-  };
-  const handleScheduleConsultation = () => {
-    trackButtonClick('schedule_consultation');
-    navigate('/Contact?subject=Document Management Consultation Request');
-  };
-  const handleLearnMore = (featureTitle) => {
-    trackButtonClick(`learn_more_${featureTitle}`);
-    setToast({ message: `Learn more about ${featureTitle} - This feature is coming soon!`, type: 'info' });
-  };
-
   return (
     <ErrorBoundary>
       <div className="document-management-page">
-        {/* Hero Section */}
+        {/* Hero/Overview Section */}
         <motion.section 
           className="dm-hero"
           initial={{ opacity: 0 }}
@@ -141,7 +78,7 @@ function DocumentManagement() {
             animate={{ y: 0 }}
             transition={{ delay: 0.2, type: 'spring' }}
           >
-            Document Management System
+            IntelliSync-IOA Document Management System
           </motion.h1>
           <motion.p
             initial={{ y: 50 }}
@@ -149,161 +86,13 @@ function DocumentManagement() {
             transition={{ delay: 0.4, type: 'spring' }}
             className="hero-subtitle"
           >
-            Streamline document workflows, enhance security, and boost productivity with our comprehensive document management solution
+            Transform the way you manage and share business documents. IntelliSync-IOA helps you stay ahead in a competitive marketplace by organizing and structuring your data and processes for efficiency, security, and strategic advantage.
           </motion.p>
-          <motion.div
-            className="hero-cta"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-          >
-            <button className="primary-btn" onClick={handleGetStarted} aria-label="Get Started">Get Started</button>
-            <button className="secondary-btn" onClick={handleRequestDemo} aria-label="Request Demo">Request Demo</button>
-          </motion.div>
         </motion.section>
-
-        {/* Features Section */}
-        <section className="dm-features">
-          <h2>Comprehensive Document Management</h2>
-          <div className="features-grid">
-            {features.map((feature, index) => (
-              <FeatureCard key={index} feature={feature} index={index} onLearnMore={handleLearnMore} />
-            ))}
-          </div>
-        </section>
-
-        {/* Document Types Section */}
-        <section className="dm-document-types">
-          <h2>Support for All Document Types</h2>
-          <div className="document-types-grid">
-            {documentTypes.map((docType, index) => (
-              <DocumentTypeCard key={index} docType={docType} index={index} />
-            ))}
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="dm-benefits">
-          <h2>Why Choose Our Document Management?</h2>
-          <div className="benefits-content">
-            <motion.div
-              className="benefit-item"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h3>🚀 Increased Efficiency</h3>
-              <p>Reduce document processing time by up to 90% with automated workflows</p>
-            </motion.div>
-            <motion.div
-              className="benefit-item"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h3>🔒 Enhanced Security</h3>
-              <p>Protect sensitive documents with enterprise-grade encryption and access controls</p>
-            </motion.div>
-            <motion.div
-              className="benefit-item"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h3>💰 Cost Savings</h3>
-              <p>Eliminate paper costs and reduce storage expenses by up to 70%</p>
-            </motion.div>
-            <motion.div
-              className="benefit-item"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h3>📱 Remote Access</h3>
-              <p>Access documents from anywhere, anytime with secure cloud-based storage</p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Workflow Section */}
-        <section className="dm-workflow">
-          <h2>Document Workflow Process</h2>
-          <div className="workflow-steps">
-            <motion.div
-              className="workflow-step"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              tabIndex={0}
-              aria-label="Capture step"
-            >
-              <div className="step-number">1</div>
-              <h3>Capture</h3>
-              <p>Scan or upload documents with automatic OCR processing</p>
-            </motion.div>
-            <motion.div
-              className="workflow-step"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              viewport={{ once: true }}
-              tabIndex={0}
-              aria-label="Process step"
-            >
-              <div className="step-number">2</div>
-              <h3>Process</h3>
-              <p>Extract data, classify documents, and apply business rules</p>
-            </motion.div>
-            <motion.div
-              className="workflow-step"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              viewport={{ once: true }}
-              tabIndex={0}
-              aria-label="Store step"
-            >
-              <div className="step-number">3</div>
-              <h3>Store</h3>
-              <p>Securely store documents with proper indexing and metadata</p>
-            </motion.div>
-            <motion.div
-              className="workflow-step"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              viewport={{ once: true }}
-              tabIndex={0}
-              aria-label="Retrieve step"
-            >
-              <div className="step-number">4</div>
-              <h3>Retrieve</h3>
-              <p>Quickly find and access documents with powerful search capabilities</p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="dm-cta">
-          <motion.div
-            className="cta-content"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2>Ready to Transform Your Document Management?</h2>
-            <p>Start your journey towards paperless, efficient document workflows today</p>
-            <button className="cta-btn" onClick={handleScheduleConsultation} aria-label="Schedule Consultation">Schedule Consultation</button>
-          </motion.div>
-        </section>
-        {/* Toast Notifications */}
-        {toast && (
-          <Toast
-            message={toast.message}
-            type={toast.type}
-            onClose={() => setToast(null)}
-          />
-        )}
+        <CardGrid title="Core Capabilities" items={capabilities} />
+        <CardGrid title="Key Benefits" items={benefits} />
+        <CardGrid title="Smart Capture & Workflow Automation" items={automation} />
+        <CardGrid title="Security & Compliance" items={security} />
       </div>
     </ErrorBoundary>
   );

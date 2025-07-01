@@ -491,6 +491,58 @@ function Solutions() {
             onClose={() => setToast(null)}
           />
         )}
+
+        {/* Solutions Grid Section (existing) */}
+        <section className="solutions-grid-section">
+          {/* ...existing solutions grid code... */}
+        </section>
+
+        {/* Explore Solutions By Category Section */}
+        <section className="solutions-categories-section">
+          <h2 className="categories-title">Explore Solutions By</h2>
+          <div className="categories-grid">
+            <div className="category-column">
+              <h3>By Use Case</h3>
+              <ul>
+                <li>Automated Invoice Processing</li>
+                <li>Purchase-to-Pay</li>
+                <li>Document Management</li>
+                <li>Contract Management</li>
+                <li>Quality Management</li>
+                <li>Sales Order Processing</li>
+                <li>Employee File Management</li>
+                <li>Secure document archiving</li>
+              </ul>
+            </div>
+            <div className="category-column">
+              <h3>By Industry</h3>
+              <ul>
+                <li>Auto dealerships</li>
+                <li>Financial Services</li>
+                <li>Healthcare</li>
+                <li>Higher Education</li>
+                <li>Manufacturing</li>
+                <li>State and local government</li>
+                <li>Transportation and logistics</li>
+              </ul>
+            </div>
+            <div className="category-column">
+              <h3>By Department</h3>
+              <ul>
+                <li>Finance & accounting</li>
+                <li>Sales & marketing</li>
+              </ul>
+            </div>
+            <div className="category-column">
+              <h3>By Company Size</h3>
+              <ul>
+                <li>Small and mid-sized businesses</li>
+                <li>Large enterprises</li>
+                <li>Mobile workforce</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
     </ErrorBoundary>
   );
