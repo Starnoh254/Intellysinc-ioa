@@ -72,8 +72,7 @@ function Solutions() {
       color: "#3B82F6",
       gradient: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
       solutions: ["Document Management System (DMS)", "Document Capture & Processing", "Records Management", "Contract Management"],
-      features: ["Secure Storage", "Version Control", "Compliance", "Collaboration"],
-      stats: { clients: "2,500+", efficiency: "85%", uptime: "99.9%" }
+      features: ["Secure Storage", "Version Control", "Compliance", "Collaboration"]
     },
     {
       id: 'workflow-automation',
@@ -85,8 +84,7 @@ function Solutions() {
       color: "#8B5CF6",
       gradient: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)",
       solutions: ["Business Process Automation", "Invoice Processing", "Purchase-to-Pay Automation", "Employee Onboarding"],
-      features: ["AI-Powered", "Visual Designer", "Analytics", "Integration"],
-      stats: { clients: "1,800+", efficiency: "90%", uptime: "99.9%" }
+      features: ["AI-Powered", "Visual Designer", "Analytics", "Integration"]
     },
     {
       id: 'business-intelligence',
@@ -98,8 +96,7 @@ function Solutions() {
       color: "#10B981",
       gradient: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
       solutions: ["Business Intelligence & Analytics", "Performance Management", "Data Analytics & Reporting"],
-      features: ["Real-time Dashboards", "Predictive Analytics", "Custom Reports", "KPI Monitoring"],
-      stats: { clients: "1,200+", efficiency: "75%", uptime: "99.9%" }
+      features: ["Real-time Dashboards", "Predictive Analytics", "Custom Reports", "KPI Monitoring"]
     },
     {
       id: 'data-processing',
@@ -111,8 +108,7 @@ function Solutions() {
       color: "#F59E0B",
       gradient: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
       solutions: ["Data Entry Automation", "Forms Processing", "Email Management"],
-      features: ["OCR Technology", "Data Validation", "Batch Processing", "Quality Monitoring"],
-      stats: { clients: "900+", efficiency: "95%", uptime: "99.9%" }
+      features: ["OCR Technology", "Data Validation", "Batch Processing", "Quality Monitoring"]
     },
     {
       id: 'quality-management',
@@ -124,8 +120,7 @@ function Solutions() {
       color: "#EF4444",
       gradient: "linear-gradient(135deg, #EF4444 0%, #DC2626 100%)",
       solutions: ["Quality Management System", "Compliance Management"],
-      features: ["Process Control", "Compliance Tracking", "Audit Management", "Risk Assessment"],
-      stats: { clients: "600+", efficiency: "80%", uptime: "99.9%" }
+      features: ["Process Control", "Compliance Tracking", "Audit Management", "Risk Assessment"]
     },
     {
       id: 'sales-marketing',
@@ -137,8 +132,7 @@ function Solutions() {
       color: "#EC4899",
       gradient: "linear-gradient(135deg, #EC4899 0%, #DB2777 100%)",
       solutions: ["Sales Order Processing", "Customer Relationship Management"],
-      features: ["Lead Management", "Sales Pipeline", "Customer Analytics", "Marketing Automation"],
-      stats: { clients: "750+", efficiency: "70%", uptime: "99.9%" }
+      features: ["Lead Management", "Sales Pipeline", "Customer Analytics", "Marketing Automation"]
     },
     {
       id: 'mobile-solutions',
@@ -150,8 +144,7 @@ function Solutions() {
       color: "#06B6D4",
       gradient: "linear-gradient(135deg, #06B6D4 0%, #0891B2 100%)",
       solutions: ["Mobile Document Access", "Field Service Management"],
-      features: ["Mobile Apps", "Offline Access", "Secure Authentication", "Push Notifications"],
-      stats: { clients: "1,100+", efficiency: "65%", uptime: "99.9%" }
+      features: ["Mobile Apps", "Offline Access", "Secure Authentication", "Push Notifications"]
     },
     {
       id: 'security-services',
@@ -163,8 +156,7 @@ function Solutions() {
       color: "#6B7280",
       gradient: "linear-gradient(135deg, #6B7280 0%, #4B5563 100%)",
       solutions: ["Document Security", "Data Protection"],
-      features: ["Encryption", "Access Control", "Audit Trails", "Compliance"],
-      stats: { clients: "1,500+", efficiency: "100%", uptime: "99.9%" }
+      features: ["Encryption", "Access Control", "Audit Trails", "Compliance"]
     },
     {
       id: 'integrations',
@@ -176,8 +168,7 @@ function Solutions() {
       color: "#8B5CF6",
       gradient: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)",
       solutions: ["System Integration", "Cloud Integration"],
-      features: ["API Integration", "Data Synchronization", "Custom Connectors", "Real-time Sync"],
-      stats: { clients: "800+", efficiency: "85%", uptime: "99.9%" }
+      features: ["API Integration", "Data Synchronization", "Custom Connectors", "Real-time Sync"]
     },
     {
       id: 'data-automation',
@@ -189,8 +180,7 @@ function Solutions() {
       color: "#10B981",
       gradient: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
       solutions: ["Data Entry Automation", "Forms Processing", "Email Management"],
-      features: ["AI-Powered", "Machine Learning", "Process Mining", "Intelligent Routing"],
-      stats: { clients: "1,300+", efficiency: "92%", uptime: "99.9%" }
+      features: ["AI-Powered", "Machine Learning", "Process Mining", "Intelligent Routing"]
     }
   ];
 
@@ -355,29 +345,7 @@ function Solutions() {
                 <span>Watch Demo</span>
               </button>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="hero-stats"
-            >
-              <div className="stat-item">
-                <span className="stat-number">10,000+</span>
-                <span className="stat-label">Happy Clients</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">50+</span>
-                <span className="stat-label">Solutions</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">99.9%</span>
-                <span className="stat-label">Uptime</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">24/7</span>
-                <span className="stat-label">Support</span>
-              </div>
-            </motion.div>
+
           </div>
         </section>
 
@@ -470,20 +438,6 @@ function Solutions() {
                         {category.features.map((feature, featureIndex) => (
                           <span key={featureIndex} className="feature-tag">{feature}</span>
                         ))}
-                      </div>
-                    </div>
-                    <div className="category-stats">
-                      <div className="stat">
-                        <span className="stat-value">{category.stats.clients}</span>
-                        <span className="stat-label">Clients</span>
-                      </div>
-                      <div className="stat">
-                        <span className="stat-value">{category.stats.efficiency}</span>
-                        <span className="stat-label">Efficiency</span>
-                      </div>
-                      <div className="stat">
-                        <span className="stat-value">{category.stats.uptime}</span>
-                        <span className="stat-label">Uptime</span>
                       </div>
                     </div>
                   </div>
