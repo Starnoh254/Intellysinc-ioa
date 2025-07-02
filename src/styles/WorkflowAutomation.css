@@ -57,7 +57,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #93c5fd 100%);
   z-index: 1;
 }
 
@@ -150,7 +150,7 @@
 
 .cta-button.primary {
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  color: var(--primary-blue);
+  color: var(--secondary-blue);
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -249,7 +249,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  background: var(--primary-blue);
+  background: var(--secondary-blue);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 2rem;
   color: white;
@@ -306,14 +306,14 @@
 
 .feature-icon,
 .benefit-icon {
-  color: var(--primary-blue);
+  color: var(--secondary-blue);
   font-size: 0.8rem;
   margin-top: 0.2rem;
   flex-shrink: 0;
 }
 
 .learn-more-btn {
-  background: var(--primary-blue);
+  background: var(--secondary-blue);
   color: white;
   border: none;
   padding: 0.875rem 1.5rem;
@@ -330,13 +330,70 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
 .learn-more-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
-  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+/* ===== WORKFLOW FEATURES ===== */
+.workflow-features {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%);
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--secondary-blue);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--secondary-blue);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.feature-card p {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.6;
 }
 
 /* ===== INDUSTRIES SERVED ===== */
@@ -367,7 +424,7 @@
 .industry-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--accent-green);
+  border-color: var(--secondary-blue);
 }
 
 .industry-icon {
@@ -414,12 +471,12 @@
 .advantage-item:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--accent-orange);
+  border-color: var(--accent-purple);
 }
 
 .advantage-icon {
   font-size: 2.5rem;
-  color: var(--primary-blue);
+  color: var(--secondary-blue);
   margin-bottom: 1rem;
 }
 
@@ -441,7 +498,7 @@
 /* ===== CALL TO ACTION ===== */
 .workflow-cta {
   padding: 5rem 0;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  background: linear-gradient(135deg, var(--secondary-blue) 0%, #60a5fa 100%);
   color: white;
   text-align: center;
   position: relative;
@@ -511,6 +568,10 @@
     grid-template-columns: 1fr;
   }
 
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
   .industries-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
@@ -526,6 +587,7 @@
 }
 
 @media (max-width: 480px) {
+  .features-grid,
   .industries-grid {
     grid-template-columns: 1fr;
   }
@@ -534,6 +596,7 @@
     padding: 2rem 1.5rem;
   }
 
+  .feature-icon,
   .industry-icon {
     font-size: 2.5rem;
   }
@@ -554,6 +617,7 @@
 
 @media (prefers-contrast: high) {
   .service-card,
+  .feature-card,
   .industry-card,
   .advantage-item {
     border: 2px solid var(--text-dark);
@@ -566,11 +630,12 @@
 
 /* ===== FOCUS STATES ===== */
 .service-card:focus,
+.feature-card:focus,
 .industry-card:focus,
 .advantage-item:focus,
 .cta-button:focus,
 .learn-more-btn:focus {
-  outline: 2px solid var(--primary-blue);
+  outline: 2px solid var(--secondary-blue);
   outline-offset: 2px;
 }
 

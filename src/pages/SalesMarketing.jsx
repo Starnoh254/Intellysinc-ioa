@@ -6,7 +6,7 @@ import {
   FaShieldAlt, FaClock, FaMobile, FaCloud, FaBrain, FaNetworkWired,
   FaLightbulb, FaChartLine, FaIndustry, FaHospital, FaUniversity, 
   FaCar, FaTruck, FaBuilding, FaCalculator, FaClipboardList, 
-  FaEnvelope, FaPhone, FaGlobe, FaMapMarkerAlt, FaClock, 
+  FaEnvelope, FaPhone, FaGlobe, FaMapMarkerAlt, 
   FaSearch, FaLock, FaSync, FaRobot, FaDesktop, FaServer
 } from "react-icons/fa";
 import Toast from "../components/Toast";

@@ -1,4 +1,4 @@
-/* ===== DATA PROCESSING PAGE STYLES ===== */
+/* ===== SECURITY SERVICES PAGE STYLES ===== */
 
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -11,6 +11,7 @@
   --accent-green: #10b981;
   --accent-purple: #8b5cf6;
   --accent-orange: #f59e0b;
+  --accent-red: #ef4444;
   --text-dark: #1f2937;
   --text-gray: #6b7280;
   --text-light: #9ca3af;
@@ -25,7 +26,7 @@
 }
 
 /* Base Styles */
-.data-processing-page {
+.security-services-page {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: var(--text-dark);
@@ -40,7 +41,7 @@
 }
 
 /* ===== HERO SECTION ===== */
-.data-hero {
+.security-hero {
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -57,7 +58,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #818cf8 100%);
+  background: linear-gradient(135deg, #ef4444 0%, #f87171 50%, #fca5a5 100%);
   z-index: 1;
 }
 
@@ -150,7 +151,7 @@
 
 .cta-button.primary {
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  color: var(--primary-indigo);
+  color: var(--accent-red);
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -249,7 +250,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  background: var(--primary-indigo);
+  background: var(--accent-red);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 2rem;
   color: white;
@@ -306,14 +307,14 @@
 
 .feature-icon,
 .benefit-icon {
-  color: var(--primary-indigo);
+  color: var(--accent-red);
   font-size: 0.8rem;
   margin-top: 0.2rem;
   flex-shrink: 0;
 }
 
 .learn-more-btn {
-  background: var(--primary-indigo);
+  background: var(--accent-red);
   color: white;
   border: none;
   padding: 0.875rem 1.5rem;
@@ -330,17 +331,17 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
 }
 
 .learn-more-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
-  background: linear-gradient(135deg, #4338ca, #4f46e5);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+  background: linear-gradient(135deg, #dc2626, #ef4444);
 }
 
-/* ===== PROCESSING FEATURES ===== */
-.processing-features {
+/* ===== SECURITY FEATURES ===== */
+.security-features {
   padding: 5rem 0;
   background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%);
   text-align: center;
@@ -367,12 +368,12 @@
 .feature-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--primary-indigo);
+  border-color: var(--accent-red);
 }
 
 .feature-icon {
   font-size: 2.5rem;
-  color: var(--primary-indigo);
+  color: var(--accent-red);
   margin-bottom: 1rem;
   transition: transform 0.3s ease;
 }
@@ -424,7 +425,7 @@
 .industry-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--primary-indigo);
+  border-color: var(--accent-red);
 }
 
 .industry-icon {
@@ -476,7 +477,7 @@
 
 .advantage-icon {
   font-size: 2.5rem;
-  color: var(--primary-indigo);
+  color: var(--accent-red);
   margin-bottom: 1rem;
 }
 
@@ -496,16 +497,16 @@
 }
 
 /* ===== CALL TO ACTION ===== */
-.data-cta {
+.security-cta {
   padding: 5rem 0;
-  background: linear-gradient(135deg, var(--primary-indigo) 0%, #6366f1 100%);
+  background: linear-gradient(135deg, var(--accent-red) 0%, #f87171 100%);
   color: white;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-.data-cta::before {
+.security-cta::before {
   content: '';
   position: absolute;
   top: 0;
@@ -550,7 +551,7 @@
     padding: 0 1rem;
   }
 
-  .data-hero {
+  .security-hero {
     min-height: 80vh;
   }
 
@@ -635,7 +636,7 @@
 .advantage-item:focus,
 .cta-button:focus,
 .learn-more-btn:focus {
-  outline: 2px solid var(--primary-indigo);
+  outline: 2px solid var(--accent-red);
   outline-offset: 2px;
 }
 
