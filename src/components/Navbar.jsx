@@ -118,7 +118,7 @@ const Navbar = () => {
     <header className={`navbar-fixed ${isScrolled ? 'scrolled' : ''}`} ref={navbarRef}>
       <div className="navbar-container">
         <Link to="/" className="logo" onClick={handleLinkClick}>
-          IntelliSync-IOA
+          IntelliSync-OA
         </Link>
 
         <button

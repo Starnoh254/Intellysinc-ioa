@@ -22,7 +22,7 @@ function MobileSolutions() {
   useEffect(() => {
     performanceMonitor.trackPageLoad();
     
-    document.title = "Mobile Solutions Services | IntelliSync IOA";
+    document.title = "Mobile Solutions Services | IntelliSync OA";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(

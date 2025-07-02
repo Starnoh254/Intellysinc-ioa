@@ -22,7 +22,7 @@ function SalesMarketing() {
   useEffect(() => {
     performanceMonitor.trackPageLoad();
     
-    document.title = "Sales & Marketing Services | IntelliSync IOA";
+    document.title = "Sales & Marketing Services | IntelliSync OA";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(

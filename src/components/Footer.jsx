@@ -41,16 +41,16 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Connect</h4>
           <div className="social-icons">
-            <a href="https://linkedin.com/company/intellisync-ioa" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://linkedin.com/company/intellisync-oa" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <i className="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://twitter.com/intellisync_ioa" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <a href="https://twitter.com/intellisync_oa" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <i className="fab fa-x-twitter"></i>
             </a>
-            <a href="https://facebook.com/intellisync.ioa" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a href="https://facebook.com/intellisync.oa" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="https://instagram.com/intellisync_ioa" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://instagram.com/intellisync_oa" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <i className="fab fa-instagram"></i>
             </a>
           </div>

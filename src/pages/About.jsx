@@ -161,7 +161,7 @@ const About = () => {
       {/* Hero Section */}
       <motion.section className="about-hero" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.8 }}>
         <motion.h1 animate={{ x: [-50, 0] }} transition={{ type: 'spring', stiffness: 100 }}>
-          IntelliSync Office Automation Limited (IOA)
+          IntelliSync Office Automation Limited (OA)
         </motion.h1>
         <motion.p animate={{ x: [50, 0] }} transition={{ type: 'spring', stiffness: 100 }}>
           "Synchronizing Your Office, Maximizing Your Productivity"<br />
@@ -177,7 +177,7 @@ const About = () => {
             <div>
               <h2>Company Overview</h2>
               <p>
-                IntelliSync Office Automation Limited is an end-to-end leading office automation solutions provider. Seamlessly integrating software, hardware, processes, and business workflows, IOA empowers organizations to achieve higher productivity, minimize errors, and optimize resource utilization. Our tailored solutions address the unique challenges of modern workplaces—helping clients transform routine tasks into efficient, digitally driven processes.
+                IntelliSync Office Automation Limited is an end-to-end leading office automation solutions provider. Seamlessly integrating software, hardware, processes, and business workflows, OA empowers organizations to achieve higher productivity, minimize errors, and optimize resource utilization. Our tailored solutions address the unique challenges of modern workplaces—helping clients transform routine tasks into efficient, digitally driven processes.
               </p>
             </div>
           </div>
@@ -301,7 +301,7 @@ const About = () => {
             <div>
               <h2>Quality Assurance</h2>
               <p>
-                Quality is at the heart of every IOA engagement. From initial consultation through post-go-live support, we employ rigorous testing protocols, performance benchmarks, and customer satisfaction surveys to uphold our commitment to excellence.
+                Quality is at the heart of every OA engagement. From initial consultation through post-go-live support, we employ rigorous testing protocols, performance benchmarks, and customer satisfaction surveys to uphold our commitment to excellence.
               </p>
             </div>
           </div>
@@ -315,7 +315,7 @@ const About = () => {
             <div className="about-leadership-info">
               <h2>Leadership & Expertise</h2>
               <p>
-                Our leadership team combines decades of experience in software engineering, systems integration, process improvement, and change management. Supported by certified project managers, business analysts, and technical specialists, IOA delivers results-driven solutions on schedule and within budget.
+                Our leadership team combines decades of experience in software engineering, systems integration, process improvement, and change management. Supported by certified project managers, business analysts, and technical specialists, OA delivers results-driven solutions on schedule and within budget.
               </p>
               <blockquote className="about-leadership-quote">
                 "Expertise is not just what we know, but how we deliver results for our clients."
@@ -328,12 +328,12 @@ const About = () => {
         </section>
       </div>
 
-      {/* Why IOA / Key Components */}
+      {/* Why OA / Key Components */}
       <div className="about-main-card about-components-card">
         <section className="about-section">
           <h2>Why IntelliSync Office Automation</h2>
           <p className="about-components-intro">
-            IOA leverages the use of technology to streamline and improve office tasks and workflows. By integrating Software, Hardware, Processes and Businesses to reduce errors, and optimize resource management.
+            OA leverages the use of technology to streamline and improve office tasks and workflows. By integrating Software, Hardware, Processes and Businesses to reduce errors, and optimize resource management.
           </p>
           <div className="about-cards-grid about-components-features">
             {keyComponents.map((comp) => (
@@ -369,13 +369,13 @@ const About = () => {
           <h2>Contact Us</h2>
           <div className="about-contact-flex">
             <div className="about-contact-info">
-              <div><FaEnvelope /> <a href="mailto:info@intellisync-ioa.com">info@intellisync-ioa.com</a></div>
+              <div><FaEnvelope /> <a href="mailto:info@intellisync-oa.com">info@intellisync-oa.com</a></div>
               <div><FaPhone /> +254 722 952 138 | +254 746 657 031 | +254 735 993 939</div>
-              <div><FaGlobe /> <a href="https://www.intellisync-ioa.com" target="_blank" rel="noopener noreferrer">www.intellisync-ioa.com</a></div>
+              <div><FaGlobe /> <a href="https://www.intellisync-oa.com" target="_blank" rel="noopener noreferrer">www.intellisync-oa.com</a></div>
               <div>P. O. Box 27346-0100, Nairobi, Kenya</div>
             </div>
             <div className="about-contact-cta">
-              <a href="mailto:info@intellisync-ioa.com" className="about-contact-btn">Get in Touch</a>
+              <a href="mailto:info@intellisync-oa.com" className="about-contact-btn">Get in Touch</a>
             </div>
           </div>
         </section>

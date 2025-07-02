@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { 
+  FaRobot, FaCogs, FaDatabase, FaChartLine, FaPlay, FaPause, FaStop,
+  FaEye, FaEdit, FaDownload, FaUpload, FaCheckCircle, FaArrowRight,
+  FaLightbulb, FaCode, FaSitemap, FaNetworkWired, FaCloud, FaMobile
+} from 'react-icons/fa';
 import '../styles/DataAutomation.css';
 import performanceMonitor, { trackButtonClick, trackCardInteraction, trackModalInteraction } from '../utils/performance';
 import Toast from '../components/Toast';
@@ -10,6 +15,8 @@ function DataAutomation() {
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [toast, setToast] = useState(null);
+  const [activeStep, setActiveStep] = useState(0);
+  const [isAutomationRunning, setIsAutomationRunning] = useState(false);
   const navigate = useNavigate();
 
   // SEO and meta tags
@@ -58,88 +65,159 @@ function DataAutomation() {
     };
   }, []);
 
+  // Interactive automation process
+  const automationProcess = [
+    {
+      step: 1,
+      title: "Data Input",
+      icon: <FaUpload />,
+      description: "Capture data from multiple sources",
+      status: "completed",
+      details: "Automatically capture data from emails, documents, forms, and databases",
+      metrics: { speed: "10x faster", accuracy: "99.2%" }
+    },
+    {
+      step: 2,
+      title: "Processing",
+      icon: <FaCogs />,
+      description: "AI-powered data processing",
+      status: "active",
+      details: "Intelligent processing with OCR, validation, and classification",
+      metrics: { speed: "5x faster", accuracy: "98.7%" }
+    },
+    {
+      step: 3,
+      title: "Validation",
+      icon: <FaCheckCircle />,
+      description: "Quality assurance checks",
+      status: "pending",
+      details: "Automated validation rules and error detection",
+      metrics: { speed: "3x faster", accuracy: "99.8%" }
+    },
+    {
+      step: 4,
+      title: "Output",
+      icon: <FaDownload />,
+      description: "Deliver processed data",
+      status: "pending",
+      details: "Export to systems, generate reports, or trigger workflows",
+      metrics: { speed: "8x faster", accuracy: "99.5%" }
+    }
+  ];
+
+  // Automation types with interactive previews
   const automationTypes = [
     {
       title: "Document Processing",
       description: "Automatically extract, classify, and process documents using AI and OCR technology",
-      icon: "📄",
+      icon: <FaUpload />,
       features: ["OCR & Text Extraction", "Document Classification", "Data Validation", "Workflow Routing"],
       benefits: ["80% faster processing", "99% accuracy rate", "24/7 availability", "Scalable solution"],
-      useCases: ["Invoice processing", "Contract analysis", "Form data extraction", "Report generation"]
+      useCases: ["Invoice processing", "Contract analysis", "Form data extraction", "Report generation"],
+      preview: {
+        input: "📄 Invoice.pdf",
+        process: "🔍 OCR Processing → 📊 Data Extraction → ✅ Validation",
+        output: "📋 Structured Data"
+      }
     },
     {
       title: "Workflow Automation",
       description: "Streamline business processes with intelligent workflow automation and approval systems",
-      icon: "⚡",
+      icon: <FaSitemap />,
       features: ["Process Mapping", "Approval Workflows", "Task Assignment", "Status Tracking"],
       benefits: ["Reduced manual errors", "Faster approvals", "Better compliance", "Process visibility"],
-      useCases: ["Employee onboarding", "Purchase approvals", "Customer service routing", "Quality control"]
+      useCases: ["Employee onboarding", "Purchase approvals", "Customer service routing", "Quality control"],
+      preview: {
+        input: "👤 New Employee",
+        process: "📝 Document Collection → 🔍 Background Check → ✅ Approval",
+        output: "🎉 Onboarded Employee"
+      }
     },
     {
       title: "Data Integration",
       description: "Seamlessly connect and synchronize data across multiple systems and platforms",
-      icon: "🔗",
+      icon: <FaNetworkWired />,
       features: ["API Integration", "Real-time Sync", "Data Transformation", "Error Handling"],
       benefits: ["Unified data view", "Real-time updates", "Reduced data silos", "Improved decision making"],
-      useCases: ["CRM integration", "ERP connectivity", "Marketing automation", "Analytics dashboards"]
+      useCases: ["CRM integration", "ERP connectivity", "Marketing automation", "Analytics dashboards"],
+      preview: {
+        input: "🔄 Multiple Systems",
+        process: "🔗 API Connection → 🔄 Data Sync → 📊 Unified View",
+        output: "📈 Integrated Data"
+      }
     },
     {
       title: "Reporting Automation",
       description: "Generate and distribute reports automatically with scheduled delivery and custom dashboards",
-      icon: "📊",
+      icon: <FaChartLine />,
       features: ["Scheduled Reports", "Custom Dashboards", "Email Distribution", "Mobile Access"],
       benefits: ["Timely insights", "Reduced manual work", "Consistent reporting", "Better accessibility"],
-      useCases: ["Financial reporting", "Sales analytics", "Performance metrics", "Compliance reports"]
+      useCases: ["Financial reporting", "Sales analytics", "Performance metrics", "Compliance reports"],
+      preview: {
+        input: "📊 Raw Data",
+        process: "📈 Analysis → 📋 Report Generation → 📧 Distribution",
+        output: "📄 Automated Reports"
+      }
     }
   ];
 
-  const benefits = [
+  // Performance metrics
+  const performanceMetrics = [
     {
       title: "Time Savings",
       value: "80%",
-      description: "Reduce manual data entry and processing time"
+      description: "Reduce manual data entry and processing time",
+      icon: <FaPlay />,
+      trend: "up"
     },
     {
       title: "Error Reduction",
       value: "95%",
-      description: "Minimize human errors in data processing"
+      description: "Minimize human errors in data processing",
+      icon: <FaCheckCircle />,
+      trend: "up"
     },
     {
       title: "Cost Efficiency",
       value: "60%",
-      description: "Lower operational costs through automation"
+      description: "Lower operational costs through automation",
+      icon: <FaChartLine />,
+      trend: "up"
     },
     {
       title: "Scalability",
       value: "10x",
-      description: "Handle increased workloads without additional staff"
+      description: "Handle increased workloads without additional staff",
+      icon: <FaRobot />,
+      trend: "up"
     }
   ];
 
-  const processSteps = [
+  // Industry applications
+  const industryApplications = [
     {
-      step: 1,
-      title: "Assessment",
-      description: "Analyze your current processes and identify automation opportunities",
-      details: "Our experts conduct a comprehensive analysis of your existing workflows, identify bottlenecks, and map out automation opportunities. We assess data sources, integration points, and compliance requirements to create a tailored automation strategy."
+      industry: "Healthcare",
+      icon: "🏥",
+      automations: ["Patient Records", "Claims Processing", "Appointment Scheduling", "Billing Automation"],
+      benefits: ["HIPAA Compliance", "Reduced Errors", "Faster Processing", "Better Patient Care"]
     },
     {
-      step: 2,
-      title: "Design",
-      description: "Create custom automation workflows tailored to your business needs",
-      details: "We design custom automation workflows that align with your business objectives. This includes process mapping, user interface design, integration planning, and security considerations to ensure seamless implementation."
+      industry: "Finance",
+      icon: "💰",
+      automations: ["Loan Processing", "Risk Assessment", "Compliance Monitoring", "Customer Onboarding"],
+      benefits: ["Regulatory Compliance", "Risk Mitigation", "Faster Processing", "Improved Accuracy"]
     },
     {
-      step: 3,
-      title: "Implementation",
-      description: "Deploy and configure automation solutions with minimal disruption",
-      details: "Our team implements the automation solutions with careful attention to detail. We ensure minimal disruption to your operations while providing comprehensive training and support during the transition period."
+      industry: "Manufacturing",
+      icon: "🏭",
+      automations: ["Quality Control", "Inventory Management", "Production Planning", "Maintenance Scheduling"],
+      benefits: ["Reduced Downtime", "Improved Quality", "Cost Optimization", "Better Planning"]
     },
     {
-      step: 4,
-      title: "Optimization",
-      description: "Monitor performance and continuously improve automation efficiency",
-      details: "We continuously monitor the performance of your automation solutions, gather feedback, and implement improvements. Our ongoing support ensures your automation processes remain efficient and aligned with your evolving business needs."
+      industry: "Retail",
+      icon: "🛍️",
+      automations: ["Order Fulfillment", "Inventory Replenishment", "Customer Service", "Returns Processing"],
+      benefits: ["Improved CX", "Inventory Optimization", "Operational Efficiency", "Faster Processing"]
     }
   ];
 
@@ -153,10 +231,12 @@ function DataAutomation() {
     setShowModal(true);
   };
 
-  const handleProcessStepClick = (step) => {
-    trackCardInteraction(`step_${step.step}`, 'click');
-    setSelectedItem(step);
-    setShowModal(true);
+  const handleStepClick = (step) => {
+    setActiveStep(step.step - 1);
+  };
+
+  const toggleAutomation = () => {
+    setIsAutomationRunning(!isAutomationRunning);
   };
 
   const closeModal = () => {
@@ -167,38 +247,17 @@ function DataAutomation() {
 
   const handleDemoClick = () => {
     trackButtonClick('demo_button');
-    // Navigate to Case Studies page for demo examples
     navigate('/CaseStudies');
   };
 
   const handleAssessmentClick = () => {
     trackButtonClick('assessment_button');
-    // Navigate to Contact page for assessment request
     navigate('/Contact?subject=Data Automation Assessment Request');
-  };
-
-  const handleLearnMoreClick = (itemType) => {
-    trackButtonClick(`learn_more_${itemType}`);
-    // Show a toast message
-    showToast(`Learn more about ${itemType.replace('_', ' ')} - This feature is coming soon!`, 'info');
-  };
-
-  const handleExploreClick = (useCase) => {
-    trackButtonClick(`explore_${useCase}`);
-    // Navigate to Solutions page for more details
-    navigate('/Solutions');
-  };
-
-  const handleViewDetailsClick = (stepNumber) => {
-    trackButtonClick(`view_details_step_${stepNumber}`);
-    // Show a toast message
-    showToast(`Detailed information for step ${stepNumber} - This feature is coming soon!`, 'info');
   };
 
   const handleGetStartedClick = () => {
     trackButtonClick('get_started_modal');
-    // Navigate to Contact page
-    navigate('/Contact?subject=Data Automation Solution Inquiry');
+    navigate('/Contact?subject=Data Automation Inquiry');
   };
 
   if (isLoading) {
@@ -217,277 +276,322 @@ function DataAutomation() {
 
   return (
     <div className="data-automation-page">
-      {/* Hero Section */}
-      <motion.section 
-        className="da-hero"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <motion.h1
-          initial={{ y: -50 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 0.2, type: 'spring' }}
-        >
-          Data Automation Solutions
-        </motion.h1>
-        <motion.p
-          initial={{ y: 50 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 0.4, type: 'spring' }}
-          className="hero-subtitle"
-        >
-          Transform manual processes into intelligent, automated workflows that drive efficiency and accuracy
-        </motion.p>
-        <motion.div
-          className="hero-cta"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          <button className="primary-btn" onClick={handleAssessmentClick}>
-            Start Automation
-          </button>
-          <button className="secondary-btn" onClick={handleDemoClick}>
-            View Demo
-          </button>
-        </motion.div>
-      </motion.section>
-
-      {/* Automation Types Section */}
-      <section className="da-automation-types">
-        <h2>Comprehensive Automation Solutions</h2>
-        <div className="automation-grid">
-          {automationTypes.map((type, index) => (
-            <motion.div
-              key={index}
-              className="automation-card"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-              onClick={() => handleCardClick(type)}
-              tabIndex={0}
-              role="button"
-              aria-label={`Learn more about ${type.title}`}
-            >
-              <div className="card-header">
-                <div className="card-icon">{type.icon}</div>
-                <h3>{type.title}</h3>
+      {/* Hero Section with Automation Preview */}
+      <section className="da-hero">
+        <div className="hero-background">
+          <div className="automation-preview">
+            <div className="preview-header">
+              <div className="preview-controls">
+                <button 
+                  className={`control-btn ${isAutomationRunning ? 'running' : ''}`}
+                  onClick={toggleAutomation}
+                >
+                  {isAutomationRunning ? <FaPause /> : <FaPlay />}
+                </button>
+                <button className="control-btn">
+                  <FaStop />
+                </button>
+                <button className="control-btn">
+                  <FaEye />
+                </button>
               </div>
-              <p className="card-description">{type.description}</p>
-              <ul className="feature-list">
-                {type.features.map((feature, featureIndex) => (
-                  <li key={featureIndex}>{feature}</li>
-                ))}
-              </ul>
-              <button 
-                className="learn-more-btn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleLearnMoreClick(type.title.toLowerCase().replace(' ', '_'));
-                }}
+              <div className="preview-title">Live Automation Preview</div>
+              <div className="preview-status">
+                <span className={`status-indicator ${isAutomationRunning ? 'active' : 'idle'}`}></span>
+                {isAutomationRunning ? 'Running' : 'Idle'}
+              </div>
+            </div>
+            <div className="preview-content">
+              <div className="automation-flow">
+                <div className="flow-step">📄 Input</div>
+                <div className="flow-arrow">→</div>
+                <div className="flow-step">⚙️ Process</div>
+                <div className="flow-arrow">→</div>
+                <div className="flow-step">✅ Output</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="hero-content">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="hero-badge"
+          >
+            <FaRobot />
+            <span>Data Automation</span>
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hero-title"
+          >
+            Transform Manual Processes into <span className="gradient-text">Intelligent Automation</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="hero-subtitle"
+          >
+            Reduce processing time by 80% with AI-powered data automation that learns and adapts to your business needs
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="hero-actions"
+          >
+            <button className="cta-button primary" onClick={handleAssessmentClick}>
+              <span>Start Assessment</span>
+              <FaArrowRight />
+            </button>
+            <button className="cta-button secondary" onClick={handleDemoClick}>
+              <FaPlay />
+              <span>Watch Demo</span>
+            </button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Interactive Process Visualization */}
+      <section className="process-visualization">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="section-header"
+          >
+            <h2>See Automation in Action</h2>
+            <p>Watch how data flows through our intelligent automation process</p>
+          </motion.div>
+
+          <div className="process-timeline">
+            {automationProcess.map((step, index) => (
+              <motion.div
+                key={step.step}
+                className={`process-step ${step.status} ${activeStep === index ? 'active' : ''}`}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                onClick={() => handleStepClick(step)}
+                whileHover={{ y: -5, scale: 1.02 }}
               >
-                Learn More
-              </button>
-            </motion.div>
-          ))}
+                <div className="step-number">{step.step}</div>
+                <div className="step-icon">{step.icon}</div>
+                <div className="step-content">
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                  <div className="step-details">
+                    <p>{step.details}</p>
+                    <div className="step-metrics">
+                      <span className="metric">
+                        <strong>{step.metrics.speed}</strong> faster
+                      </span>
+                      <span className="metric">
+                        <strong>{step.metrics.accuracy}</strong> accuracy
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="step-status">
+                  <span className={`status-badge ${step.status}`}>
+                    {step.status === 'completed' ? '✓' : step.status === 'active' ? '⟳' : '○'}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="da-benefits">
-        <h2>Measurable Results</h2>
-        <div className="benefits-grid">
-          {benefits.map((benefit, index) => (
-            <motion.div
-              key={index}
-              className="benefit-card"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="benefit-value">{benefit.value}</div>
-              <h3>{benefit.title}</h3>
-              <p>{benefit.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      {/* Automation Types with Interactive Previews */}
+      <section className="automation-types">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="section-header"
+          >
+            <h2>Comprehensive Automation Solutions</h2>
+            <p>Choose the right automation type for your specific needs</p>
+          </motion.div>
 
-      {/* Process Section */}
-      <section className="da-process">
-        <h2>Our Automation Process</h2>
-        <div className="process-steps">
-          {processSteps.map((step, index) => (
-            <motion.div
-              key={index}
-              className="process-step"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.2 }}
-              viewport={{ once: true }}
-              onClick={() => handleProcessStepClick(step)}
-              tabIndex={0}
-              role="button"
-              aria-label={`Learn more about step ${step.step}: ${step.title}`}
-            >
-              <div className="step-number">{step.step}</div>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-              <button 
-                className="step-details-btn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleViewDetailsClick(step.step);
-                }}
+          <div className="automation-grid">
+            {automationTypes.map((type, index) => (
+              <motion.div
+                key={index}
+                className="automation-card"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                onClick={() => handleCardClick(type)}
+                whileHover={{ y: -10, scale: 1.02 }}
               >
-                View Details
-              </button>
-            </motion.div>
-          ))}
+                <div className="card-header">
+                  <div className="card-icon">{type.icon}</div>
+                  <h3>{type.title}</h3>
+                </div>
+                <p className="card-description">{type.description}</p>
+                
+                <div className="automation-preview">
+                  <div className="preview-step">
+                    <span className="step-label">Input:</span>
+                    <span className="step-content">{type.preview.input}</span>
+                  </div>
+                  <div className="preview-step">
+                    <span className="step-label">Process:</span>
+                    <span className="step-content">{type.preview.process}</span>
+                  </div>
+                  <div className="preview-step">
+                    <span className="step-label">Output:</span>
+                    <span className="step-content">{type.preview.output}</span>
+                  </div>
+                </div>
+
+                <div className="card-features">
+                  <h4>Key Features:</h4>
+                  <div className="features-list">
+                    {type.features.map((feature, idx) => (
+                      <span key={idx} className="feature-tag">{feature}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="card-benefits">
+                  <h4>Benefits:</h4>
+                  <ul>
+                    {type.benefits.map((benefit, idx) => (
+                      <li key={idx}>{benefit}</li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section className="da-use-cases">
-        <h2>Automation Use Cases</h2>
-        <div className="use-cases-content">
+      {/* Performance Metrics */}
+      <section className="performance-metrics">
+        <div className="container">
           <motion.div
-            className="use-case"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="section-header"
           >
-            <h3>📧 Email Processing</h3>
-            <p>Automatically categorize emails, extract attachments, and route to appropriate departments</p>
-            <button 
-              className="explore-btn"
-              onClick={() => handleExploreClick('email_processing')}
-            >
-              Explore Solution
-            </button>
+            <h2>Proven Performance Results</h2>
+            <p>Real metrics from organizations using our automation solutions</p>
           </motion.div>
+
+          <div className="metrics-grid">
+            {performanceMetrics.map((metric, index) => (
+              <motion.div
+                key={index}
+                className="metric-card"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5, scale: 1.05 }}
+              >
+                <div className="metric-icon">{metric.icon}</div>
+                <div className="metric-value">{metric.value}</div>
+                <h3>{metric.title}</h3>
+                <p>{metric.description}</p>
+                <div className="metric-trend">
+                  <span className={`trend-indicator ${metric.trend}`}>
+                    {metric.trend === 'up' ? '↗' : '↘'}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Applications */}
+      <section className="industry-applications">
+        <div className="container">
           <motion.div
-            className="use-case"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="section-header"
           >
-            <h3>📋 Form Processing</h3>
-            <p>Extract data from forms, validate information, and populate databases automatically</p>
-            <button 
-              className="explore-btn"
-              onClick={() => handleExploreClick('form_processing')}
-            >
-              Explore Solution
-            </button>
+            <h2>Industry-Specific Solutions</h2>
+            <p>Tailored automation solutions for your industry's unique challenges</p>
           </motion.div>
-          <motion.div
-            className="use-case"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h3>💰 Invoice Processing</h3>
-            <p>Automate invoice data extraction, approval workflows, and payment processing</p>
-            <button 
-              className="explore-btn"
-              onClick={() => handleExploreClick('invoice_processing')}
-            >
-              Explore Solution
-            </button>
-          </motion.div>
-          <motion.div
-            className="use-case"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <h3>📊 Report Generation</h3>
-            <p>Create and distribute reports automatically with real-time data integration</p>
-            <button 
-              className="explore-btn"
-              onClick={() => handleExploreClick('report_generation')}
-            >
-              Explore Solution
-            </button>
-          </motion.div>
+
+          <div className="applications-grid">
+            {industryApplications.map((app, index) => (
+              <motion.div
+                key={index}
+                className="application-card"
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="app-icon">{app.icon}</div>
+                <h3>{app.industry}</h3>
+                <div className="automations-list">
+                  <h4>Key Automations:</h4>
+                  <ul>
+                    {app.automations.map((automation, idx) => (
+                      <li key={idx}>{automation}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="benefits-list">
+                  {app.benefits.map((benefit, idx) => (
+                    <span key={idx} className="benefit-tag">{benefit}</span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="da-cta">
-        <motion.div
-          className="cta-content"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2>Ready to Automate Your Business?</h2>
-          <p>Discover how data automation can transform your operations and boost productivity</p>
-          <div className="cta-buttons">
-            <button className="cta-btn" onClick={handleAssessmentClick}>
-              Get Free Assessment
-            </button>
-            <button className="secondary-cta-btn" onClick={handleDemoClick}>
-              Schedule Demo
-            </button>
-          </div>
-        </motion.div>
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="cta-content"
+          >
+            <h2>Ready to Automate Your Data Processes?</h2>
+            <p>Join thousands of organizations that have transformed their operations with intelligent automation</p>
+            <div className="cta-actions">
+              <button className="cta-button primary" onClick={handleGetStartedClick}>
+                <span>Get Started Today</span>
+                <FaArrowRight />
+              </button>
+              <button className="cta-button secondary" onClick={handleAssessmentClick}>
+                <FaEye />
+                <span>Free Assessment</span>
+              </button>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
-      {/* Modal */}
-      {showModal && selectedItem && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal} aria-label="Close modal">
-              ×
-            </button>
-            <div className="modal-header">
-              {selectedItem.icon && (
-                <div className="card-icon">{selectedItem.icon}</div>
-              )}
-              {selectedItem.step && (
-                <div className="step-number-large">{selectedItem.step}</div>
-              )}
-              <h2>{selectedItem.title}</h2>
-            </div>
-            <div className="modal-description">
-              {selectedItem.details || selectedItem.description}
-            </div>
-            {selectedItem.benefits && (
-              <div className="modal-benefits">
-                <h3>Key Benefits</h3>
-                <ul>
-                  {selectedItem.benefits.map((benefit, index) => (
-                    <li key={index}>{benefit}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            {selectedItem.useCases && (
-              <div className="modal-features">
-                <h3>Use Cases</h3>
-                <ul>
-                  {selectedItem.useCases.map((useCase, index) => (
-                    <li key={index}>{useCase}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            <button className="modal-cta" onClick={handleGetStartedClick}>
-              Get Started Today
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* Toast Notifications */}
       {toast && (
         <Toast
           message={toast.message}

@@ -85,24 +85,26 @@ const Contact = () => {
       icon: "📧",
       title: "Email Us",
       details: [
-        { text: "info@intellisync-ioa.com", link: "mailto:info@intellisync-ioa.com" },
-        { text: "support@intellisync-ioa.com", link: "mailto:support@intellisync-ioa.com" }
+        { text: "info@intellisync-oa.com", link: "mailto:info@intellisync-oa.com" },
+        { text: "support@intellisync-oa.com", link: "mailto:support@intellisync-oa.com" }
       ]
     },
     {
       icon: "📞",
       title: "Call Us",
       details: [
-        { text: "+254 722952138", link: "tel:+254722952138" }
+        { text: "+254 722952138", link: "tel:+254722952138" },
+        { text: "+254 746657031", link: "tel:+254746657031" },
+        { text: "+254 735993939", link: "tel:+254735993939" }
       ]
     },
     {
       icon: "📍",
       title: "Visit Us",
       details: [
-        { text: "P.O Box 27345-00100", link: null },
-        { text: "Nairobi, Kenya", link: null },
-        { text: "Intellisync Office Automation LTD", link: null }
+        { text: "PwC Tower Waiyaki Way / Chiromo Road Westlands.", link: null },
+        { text: "P.O Box 27346-00100", link: null },
+        { text: "Nairobi, Kenya", link: null }
       ]
     },
     {
@@ -116,10 +118,10 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: "fab fa-linkedin", url: "https://linkedin.com/company/intellisync-ioa", label: "LinkedIn" },
-    { icon: "fab fa-twitter", url: "https://twitter.com/intellisync_ioa", label: "Twitter" },
-    { icon: "fab fa-facebook", url: "https://facebook.com/intellisync.ioa", label: "Facebook" },
-    { icon: "fab fa-instagram", url: "https://instagram.com/intellisync_ioa", label: "Instagram" }
+    { icon: "fab fa-linkedin", url: "https://linkedin.com/company/intellisync-oa", label: "LinkedIn" },
+    { icon: "fab fa-twitter", url: "https://twitter.com/intellisync_oa", label: "Twitter" },
+    { icon: "fab fa-facebook", url: "https://facebook.com/intellisync.oa", label: "Facebook" },
+    { icon: "fab fa-instagram", url: "https://instagram.com/intellisync_oa", label: "Instagram" }
   ];
 
   return (
@@ -329,13 +331,24 @@ const Contact = () => {
       >
         <div className="map-container">
           <h2>Find Us</h2>
-          <div className="map-placeholder">
-            <div className="map-content">
-              <i className="fas fa-map-marker-alt"></i>
-              <h3>Nairobi, Kenya</h3>
-              <p>PWC Tower, Westlands</p>
-              <p>We're located in the heart of Nairobi's business district.</p>
-            </div>
+          <div className="map-embed" style={{ width: '100%', height: '350px', borderRadius: '1rem', overflow: 'hidden', marginBottom: '1rem' }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.18621173663!2d36.8026506!3d-1.2644061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f173e2e2e3b2d%3A0x7e2e8e9e06cfaf4a!2sPWC%20Tower%2C%20Westlands%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1715440000000!5m2!1sen!2ske"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Intellisync OA Location"
+            ></iframe>
+          </div>
+          <div className="map-content">
+            <i className="fas fa-map-marker-alt"></i>
+            <h3>Nairobi, Kenya</h3>
+            <p>PWC Tower, Westlands</p>
+            <p>We're located in the heart of Nairobi's business district.</p>
+            <a href="https://maps.app.goo.gl/p4odq7613tWCxq9j9" target="_blank" rel="noopener noreferrer" className="map-link">View on Google Maps</a>
           </div>
         </div>
       </motion.section>

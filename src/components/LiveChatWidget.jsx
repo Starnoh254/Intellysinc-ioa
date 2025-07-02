@@ -18,20 +18,51 @@ const LiveChatWidget = forwardRef((props, ref) => {
   }));
 
   useEffect(() => {
-    // Connect to Socket.IO server
-    socketRef.current = io('http://localhost:5000'); // Update if backend runs elsewhere
-    socketRef.current.emit('user join');
-    socketRef.current.on('chat message', (msg) => {
-      setMessages((prev) => [...prev, { ...msg, sender: msg.sender || 'admin', timestamp: new Date() }]);
-      // Play sound if message is from admin
-      if (msg.sender === 'admin' && audioRef.current) {
-        audioRef.current.currentTime = 0;
-        audioRef.current.play();
-      }
-    });
-    return () => {
-      socketRef.current.disconnect();
-    };
+    // Connect to Socket.IO server with error handling
+    try {
+      socketRef.current = io('http://localhost:5000', {
+        timeout: 5000,
+        forceNew: true
+      });
+      
+      socketRef.current.on('connect', () => {
+        console.log('Connected to chat server');
+        socketRef.current.emit('user join');
+      });
+      
+      socketRef.current.on('connect_error', (error) => {
+        console.log('Chat server connection failed:', error.message);
+        // Add a fallback message when server is not available
+        setMessages([{
+          text: "Chat server is currently unavailable. Please contact us via email or phone.",
+          sender: 'admin',
+          timestamp: new Date()
+        }]);
+      });
+      
+      socketRef.current.on('chat message', (msg) => {
+        setMessages((prev) => [...prev, { ...msg, sender: msg.sender || 'admin', timestamp: new Date() }]);
+        // Play sound if message is from admin
+        if (msg.sender === 'admin' && audioRef.current) {
+          audioRef.current.currentTime = 0;
+          audioRef.current.play();
+        }
+      });
+      
+      return () => {
+        if (socketRef.current) {
+          socketRef.current.disconnect();
+        }
+      };
+    } catch (error) {
+      console.log('Failed to initialize chat:', error);
+      // Add a fallback message
+      setMessages([{
+        text: "Chat is currently unavailable. Please contact us via email or phone.",
+        sender: 'admin',
+        timestamp: new Date()
+      }]);
+    }
   }, []);
 
   useEffect(() => {

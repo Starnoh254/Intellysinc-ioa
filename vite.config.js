@@ -6,6 +6,6 @@ export default defineConfig(({ command }) => {
   
   return {
     plugins: [react()],
-    base: isProduction ? '/Intellysinc-ioa/' : '/',
+    base: isProduction ? '/Intellisync-oa/' : '/',
   };
 });

@@ -23,7 +23,7 @@ function QualityManagement() {
   useEffect(() => {
     performanceMonitor.trackPageLoad();
     
-    document.title = "Quality Management Services | IntelliSync IOA";
+    document.title = "Quality Management Services | IntelliSync OA";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(

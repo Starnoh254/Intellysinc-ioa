@@ -16,38 +16,61 @@ const AdminLiveChat = () => {
 
   useEffect(() => {
     if (!loggedIn) return;
-    socketRef.current = io('http://localhost:5000');
-    socketRef.current.emit('admin join');
-    socketRef.current.on('user list', (userList) => {
-      setUsers(userList);
-    });
-    socketRef.current.on('user joined', (userId) => {
-      setUsers((prev) => [...prev, userId]);
-    });
-    socketRef.current.on('user left', (userId) => {
-      setUsers((prev) => prev.filter((id) => id !== userId));
-      setMessages((prev) => {
-        const copy = { ...prev };
-        delete copy[userId];
-        return copy;
+    
+    try {
+      socketRef.current = io('http://localhost:5000', {
+        timeout: 5000,
+        forceNew: true
       });
-      if (selectedUser === userId) setSelectedUser(null);
-    });
-    socketRef.current.on('chat message', (msg) => {
-      if (!msg.userId) return;
-      setMessages((prev) => {
-        const prevMsgs = prev[msg.userId] || [];
-        return { ...prev, [msg.userId]: [...prevMsgs, msg] };
+      
+      socketRef.current.on('connect', () => {
+        console.log('Admin connected to chat server');
+        socketRef.current.emit('admin join');
       });
-      // Play sound if message is from user
-      if (msg.sender === 'user' && audioRef.current) {
-        audioRef.current.currentTime = 0;
-        audioRef.current.play();
-      }
-    });
-    return () => {
-      socketRef.current.disconnect();
-    };
+      
+      socketRef.current.on('connect_error', (error) => {
+        console.log('Admin chat server connection failed:', error.message);
+        // Show error message to admin
+        alert('Chat server is currently unavailable. Please try again later.');
+      });
+      
+      socketRef.current.on('user list', (userList) => {
+        setUsers(userList);
+      });
+      socketRef.current.on('user joined', (userId) => {
+        setUsers((prev) => [...prev, userId]);
+      });
+      socketRef.current.on('user left', (userId) => {
+        setUsers((prev) => prev.filter((id) => id !== userId));
+        setMessages((prev) => {
+          const copy = { ...prev };
+          delete copy[userId];
+          return copy;
+        });
+        if (selectedUser === userId) setSelectedUser(null);
+      });
+      socketRef.current.on('chat message', (msg) => {
+        if (!msg.userId) return;
+        setMessages((prev) => {
+          const prevMsgs = prev[msg.userId] || [];
+          return { ...prev, [msg.userId]: [...prevMsgs, msg] };
+        });
+        // Play sound if message is from user
+        if (msg.sender === 'user' && audioRef.current) {
+          audioRef.current.currentTime = 0;
+          audioRef.current.play();
+        }
+      });
+      
+      return () => {
+        if (socketRef.current) {
+          socketRef.current.disconnect();
+        }
+      };
+    } catch (error) {
+      console.log('Failed to initialize admin chat:', error);
+      alert('Failed to connect to chat server. Please try again later.');
+    }
   }, [loggedIn]);
 
   const handleLogin = (e) => {

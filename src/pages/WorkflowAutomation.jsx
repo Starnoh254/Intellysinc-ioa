@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { 
   FaCogs, FaFileInvoice, FaShoppingCart, FaUsers, FaChartLine,
   FaCheckCircle, FaArrowRight, FaRocket, FaShieldAlt, FaClock,
-  FaMobile, FaCloud, FaDatabase, FaNetworkWired, FaLightbulb
+  FaMobile, FaCloud, FaDatabase, FaNetworkWired, FaLightbulb,
+  FaPlay, FaPause, FaStop, FaEdit, FaEye, FaCode, FaSitemap
 } from "react-icons/fa";
 import Toast from "../components/Toast";
 import ErrorBoundary from "../components/ErrorBoundary";
@@ -14,12 +15,14 @@ import "../styles/WorkflowAutomation.css";
 function WorkflowAutomation() {
   const navigate = useNavigate();
   const [toast, setToast] = useState(null);
+  const [activeWorkflow, setActiveWorkflow] = useState('invoice');
+  const [isPlaying, setIsPlaying] = useState(false);
 
   // SEO and meta tags
   useEffect(() => {
     performanceMonitor.trackPageLoad();
     
-    document.title = "Workflow Automation Services | IntelliSync IOA";
+    document.title = "Workflow Automation Services | IntelliSync OA";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
@@ -55,96 +58,101 @@ function WorkflowAutomation() {
     };
   }, []);
 
-  // Workflow automation services
-  const workflowServices = [
-    {
+  // Interactive workflow processes
+  const workflowProcesses = {
+    invoice: {
+      name: "Invoice Processing",
       icon: <FaFileInvoice />,
-      title: "Invoice Processing Automation",
-      description: "Automated invoice capture, processing, and approval workflows with intelligent data extraction.",
-      features: [
-        "OCR-powered invoice capture",
-        "Intelligent data extraction",
-        "Automated approval workflows",
-        "Exception handling",
-        "Payment processing integration",
-        "Real-time analytics and reporting"
+      steps: [
+        { id: 1, name: "Document Capture", status: "completed", time: "0.5s" },
+        { id: 2, name: "OCR Processing", status: "completed", time: "2.1s" },
+        { id: 3, name: "Data Validation", status: "completed", time: "1.8s" },
+        { id: 4, name: "Approval Routing", status: "active", time: "5.2s" },
+        { id: 5, name: "Payment Processing", status: "pending", time: "0s" }
       ],
-      benefits: [
-        "Reduce processing time by 80%",
-        "Eliminate manual data entry errors",
-        "Improve compliance and audit trails",
-        "Enhance vendor relationships"
-      ]
+      metrics: { timeSaved: "80%", accuracy: "99.2%", costReduction: "65%" }
     },
-    {
+    purchase: {
+      name: "Purchase-to-Pay",
       icon: <FaShoppingCart />,
-      title: "Purchase-to-Pay Automation",
-      description: "Complete purchase order to payment automation with integrated procurement workflows.",
-      features: [
-        "Purchase order automation",
-        "Vendor management system",
-        "Automated approval workflows",
-        "Receiving and inspection",
-        "Invoice matching and reconciliation",
-        "Payment processing automation"
+      steps: [
+        { id: 1, name: "PO Creation", status: "completed", time: "1.2s" },
+        { id: 2, name: "Vendor Approval", status: "completed", time: "3.5s" },
+        { id: 3, name: "Order Processing", status: "active", time: "8.1s" },
+        { id: 4, name: "Receiving", status: "pending", time: "0s" },
+        { id: 5, name: "Invoice Matching", status: "pending", time: "0s" },
+        { id: 6, name: "Payment", status: "pending", time: "0s" }
       ],
-      benefits: [
-        "Streamline procurement processes",
-        "Reduce cycle times by 60%",
-        "Improve spend visibility",
-        "Enhance supplier collaboration"
-      ]
+      metrics: { timeSaved: "75%", accuracy: "98.7%", costReduction: "70%" }
     },
-    {
+    onboarding: {
+      name: "Employee Onboarding",
       icon: <FaUsers />,
-      title: "Employee Onboarding Automation",
-      description: "Streamlined employee onboarding with automated document collection and workflow management.",
-      features: [
-        "Automated document collection",
-        "Task assignment and tracking",
-        "Progress monitoring dashboard",
-        "Compliance checks and validation",
-        "HR system integration",
-        "Customizable workflows"
+      steps: [
+        { id: 1, name: "Application Review", status: "completed", time: "2.0s" },
+        { id: 2, name: "Document Collection", status: "completed", time: "4.5s" },
+        { id: 3, name: "Background Check", status: "active", time: "12.3s" },
+        { id: 4, name: "System Access Setup", status: "pending", time: "0s" },
+        { id: 5, name: "Training Assignment", status: "pending", time: "0s" }
       ],
-      benefits: [
-        "Reduce onboarding time by 70%",
-        "Ensure compliance and completeness",
-        "Improve new hire experience",
-        "Reduce administrative burden"
-      ]
+      metrics: { timeSaved: "70%", accuracy: "99.5%", costReduction: "55%" }
+    }
+  };
+
+  // Automation capabilities
+  const automationCapabilities = [
+    {
+      icon: <FaCode />,
+      title: "Visual Workflow Designer",
+      description: "Drag-and-drop interface for creating complex workflows without coding",
+      features: ["Intuitive Interface", "Pre-built Templates", "Custom Logic", "Version Control"]
     },
     {
-      icon: <FaCogs />,
-      title: "Business Process Automation",
-      description: "Automate complex business processes with intelligent workflows and decision engines.",
-      features: [
-        "Visual workflow designer",
-        "Decision engines and rules",
-        "Task automation and routing",
-        "Approval workflows",
-        "Performance monitoring",
-        "Process analytics and optimization"
-      ],
-      benefits: [
-        "Increase operational efficiency",
-        "Reduce manual errors",
-        "Improve process visibility",
-        "Enable rapid process changes"
-      ]
+      icon: <FaSitemap />,
+      title: "Process Orchestration",
+      description: "Coordinate multiple systems and applications in a single workflow",
+      features: ["Multi-system Integration", "Error Handling", "Retry Logic", "Monitoring"]
+    },
+    {
+      icon: <FaLightbulb />,
+      title: "AI-Powered Decisions",
+      description: "Intelligent decision engines that learn and adapt to your business rules",
+      features: ["Machine Learning", "Pattern Recognition", "Predictive Analytics", "Auto-optimization"]
+    },
+    {
+      icon: <FaChartLine />,
+      title: "Real-time Analytics",
+      description: "Monitor workflow performance and identify optimization opportunities",
+      features: ["Live Dashboards", "Performance Metrics", "Bottleneck Detection", "ROI Tracking"]
     }
   ];
 
-  // Industries served
-  const industries = [
-    { name: "Manufacturing", icon: "🏭" },
-    { name: "Finance", icon: "💰" },
-    { name: "Healthcare", icon: "🏥" },
-    { name: "Retail", icon: "🛍️" },
-    { name: "Legal", icon: "⚖️" },
-    { name: "Education", icon: "🎓" },
-    { name: "Government", icon: "🏛️" },
-    { name: "Real Estate", icon: "🏢" }
+  // Industry applications
+  const industryApplications = [
+    {
+      industry: "Manufacturing",
+      icon: "🏭",
+      workflows: ["Quality Control", "Inventory Management", "Production Planning", "Maintenance Scheduling"],
+      benefits: ["Reduced Downtime", "Improved Quality", "Cost Optimization"]
+    },
+    {
+      industry: "Healthcare",
+      icon: "🏥",
+      workflows: ["Patient Intake", "Claims Processing", "Medication Management", "Appointment Scheduling"],
+      benefits: ["Better Patient Care", "Compliance", "Reduced Errors"]
+    },
+    {
+      industry: "Finance",
+      icon: "💰",
+      workflows: ["Loan Processing", "Risk Assessment", "Compliance Monitoring", "Customer Onboarding"],
+      benefits: ["Faster Processing", "Risk Mitigation", "Regulatory Compliance"]
+    },
+    {
+      industry: "Retail",
+      icon: "🛍️",
+      workflows: ["Order Fulfillment", "Inventory Replenishment", "Customer Service", "Returns Processing"],
+      benefits: ["Improved CX", "Inventory Optimization", "Operational Efficiency"]
+    }
   ];
 
   // Button handlers
@@ -158,9 +166,13 @@ function WorkflowAutomation() {
     setToast({ message: 'Demo video coming soon!', type: 'info' });
   };
 
-  const handleLearnMore = (service) => {
-    trackButtonClick(`learn_more_${service.title.toLowerCase().replace(/\s+/g, '_')}`);
-    navigate(`/Contact?subject=${service.title} Service Inquiry`);
+  const handleWorkflowChange = (workflow) => {
+    setActiveWorkflow(workflow);
+    setIsPlaying(false);
+  };
+
+  const togglePlayback = () => {
+    setIsPlaying(!isPlaying);
   };
 
   const handleStartFreeTrial = () => {
@@ -176,9 +188,14 @@ function WorkflowAutomation() {
   return (
     <ErrorBoundary>
       <div className="workflow-automation-page">
-        {/* Hero Section */}
+        {/* Hero Section with Animated Background */}
         <section className="workflow-hero">
           <div className="hero-background">
+            <div className="animated-grid">
+              {[...Array(20)].map((_, i) => (
+                <div key={i} className="grid-cell" style={{ animationDelay: `${i * 0.1}s` }}></div>
+              ))}
+            </div>
             <div className="hero-gradient-overlay"></div>
           </div>
           <div className="hero-content">
@@ -188,7 +205,8 @@ function WorkflowAutomation() {
               transition={{ duration: 1, ease: "easeOut" }}
               className="hero-badge"
             >
-              <span>⚡ Workflow Automation</span>
+              <FaCogs />
+              <span>Workflow Automation</span>
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
@@ -196,7 +214,7 @@ function WorkflowAutomation() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="hero-title"
             >
-              Streamline Your <span className="gradient-text">Business Processes</span>
+              Automate Your <span className="gradient-text">Business Processes</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
@@ -204,7 +222,7 @@ function WorkflowAutomation() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="hero-subtitle"
             >
-              Automate complex workflows, reduce manual tasks, and boost productivity with our intelligent process automation solutions
+              Transform manual workflows into intelligent, automated processes that save time, reduce errors, and boost productivity
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -217,23 +235,23 @@ function WorkflowAutomation() {
                 onClick={handleGetStarted}
                 aria-label="Get Started with Workflow Automation"
               >
-                <span>Get Started</span>
+                <span>Start Automating</span>
                 <FaArrowRight className="arrow-icon" />
               </button>
               <button 
                 className="cta-button secondary" 
                 onClick={handleWatchDemo}
-                aria-label="Watch Workflow Automation Demo"
+                aria-label="Watch Demo Video"
               >
+                <FaPlay className="play-icon" />
                 <span>Watch Demo</span>
-                <div className="play-icon">▶</div>
               </button>
             </motion.div>
           </div>
         </section>
 
-        {/* Services Overview */}
-        <section className="services-overview">
+        {/* Interactive Workflow Preview */}
+        <section className="workflow-preview">
           <div className="container">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -242,64 +260,125 @@ function WorkflowAutomation() {
               viewport={{ once: true }}
               className="section-header"
             >
-              <h2>Workflow Automation Services</h2>
-              <p>Comprehensive automation solutions designed to transform your business operations</p>
+              <h2>See Automation in Action</h2>
+              <p>Watch how our workflows transform complex processes into streamlined operations</p>
             </motion.div>
 
-            <div className="services-grid">
-              {workflowServices.map((service, index) => (
+            <div className="workflow-selector">
+              {Object.keys(workflowProcesses).map((key) => (
+                <button
+                  key={key}
+                  className={`workflow-tab ${activeWorkflow === key ? 'active' : ''}`}
+                  onClick={() => handleWorkflowChange(key)}
+                >
+                  {workflowProcesses[key].icon}
+                  <span>{workflowProcesses[key].name}</span>
+                </button>
+              ))}
+            </div>
+
+            <div className="workflow-display">
+              <div className="workflow-controls">
+                <button 
+                  className={`control-btn ${isPlaying ? 'playing' : ''}`}
+                  onClick={togglePlayback}
+                >
+                  {isPlaying ? <FaPause /> : <FaPlay />}
+                </button>
+                <button className="control-btn">
+                  <FaStop />
+                </button>
+                <button className="control-btn">
+                  <FaEdit />
+                </button>
+              </div>
+
+              <div className="process-flow">
+                {workflowProcesses[activeWorkflow].steps.map((step, index) => (
+                  <motion.div
+                    key={step.id}
+                    className={`process-step ${step.status}`}
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="step-number">{step.id}</div>
+                    <div className="step-content">
+                      <h4>{step.name}</h4>
+                      <div className="step-status">
+                        <span className={`status-indicator ${step.status}`}></span>
+                        <span className="step-time">{step.time}</span>
+                      </div>
+                    </div>
+                    {index < workflowProcesses[activeWorkflow].steps.length - 1 && (
+                      <div className="step-connector"></div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="workflow-metrics">
+                <div className="metric">
+                  <span className="metric-value">{workflowProcesses[activeWorkflow].metrics.timeSaved}</span>
+                  <span className="metric-label">Time Saved</span>
+                </div>
+                <div className="metric">
+                  <span className="metric-value">{workflowProcesses[activeWorkflow].metrics.accuracy}</span>
+                  <span className="metric-label">Accuracy</span>
+                </div>
+                <div className="metric">
+                  <span className="metric-value">{workflowProcesses[activeWorkflow].metrics.costReduction}</span>
+                  <span className="metric-label">Cost Reduction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Automation Capabilities */}
+        <section className="automation-capabilities">
+          <div className="container">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="section-header"
+            >
+              <h2>Powerful Automation Capabilities</h2>
+              <p>Everything you need to build, deploy, and manage intelligent workflows</p>
+            </motion.div>
+
+            <div className="capabilities-grid">
+              {automationCapabilities.map((capability, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="service-card"
+                  className="capability-card"
+                  whileHover={{ y: -10, scale: 1.02 }}
                 >
-                  <div className="service-icon">{service.icon}</div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                  
-                  <div className="service-features">
-                    <h4>Key Features</h4>
-                    <ul>
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex}>
-                          <FaCheckCircle className="feature-icon" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="capability-icon">
+                    {capability.icon}
                   </div>
-
-                  <div className="service-benefits">
-                    <h4>Benefits</h4>
-                    <ul>
-                      {service.benefits.map((benefit, benefitIndex) => (
-                        <li key={benefitIndex}>
-                          <FaRocket className="benefit-icon" />
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
+                  <h3>{capability.title}</h3>
+                  <p>{capability.description}</p>
+                  <div className="capability-features">
+                    {capability.features.map((feature, idx) => (
+                      <span key={idx} className="feature-tag">{feature}</span>
+                    ))}
                   </div>
-
-                  <button 
-                    className="learn-more-btn"
-                    onClick={() => handleLearnMore(service)}
-                    aria-label={`Learn more about ${service.title}`}
-                  >
-                    <span>Learn More</span>
-                    <FaArrowRight className="arrow-icon" />
-                  </button>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Industries Served */}
-        <section className="industries-served">
+        {/* Industry Applications */}
+        <section className="industry-applications">
           <div className="container">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -308,124 +387,68 @@ function WorkflowAutomation() {
               viewport={{ once: true }}
               className="section-header"
             >
-              <h2>Industries We Serve</h2>
-              <p>Our workflow automation solutions are designed for diverse industry needs</p>
+              <h2>Industry-Specific Solutions</h2>
+              <p>Tailored workflow automation for your industry's unique challenges</p>
             </motion.div>
 
-            <div className="industries-grid">
-              {industries.map((industry, index) => (
+            <div className="applications-grid">
+              {industryApplications.map((app, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="industry-card"
+                  className="application-card"
+                  whileHover={{ y: -5 }}
                 >
-                  <div className="industry-icon">{industry.icon}</div>
-                  <h3>{industry.name}</h3>
+                  <div className="industry-icon">{app.icon}</div>
+                  <h3>{app.industry}</h3>
+                  <div className="workflows-list">
+                    <h4>Key Workflows:</h4>
+                    <ul>
+                      {app.workflows.map((workflow, idx) => (
+                        <li key={idx}>{workflow}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="benefits-list">
+                    {app.benefits.map((benefit, idx) => (
+                      <span key={idx} className="benefit-tag">{benefit}</span>
+                    ))}
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <section className="why-choose-us">
-          <div className="container">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="section-header"
-            >
-              <h2>Why Choose Our Workflow Automation</h2>
-              <p>The advantages that set our solutions apart</p>
-            </motion.div>
-
-            <div className="advantages-grid">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="advantage-item"
-              >
-                <FaShieldAlt className="advantage-icon" />
-                <h3>Enterprise Security</h3>
-                <p>Bank-level security with encryption, access controls, and compliance standards</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="advantage-item"
-              >
-                <FaCloud className="advantage-icon" />
-                <h3>Cloud-Native</h3>
-                <p>Built for the cloud with scalability, reliability, and global accessibility</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="advantage-item"
-              >
-                <FaNetworkWired className="advantage-icon" />
-                <h3>Easy Integration</h3>
-                <p>Seamless integration with your existing systems and applications</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="advantage-item"
-              >
-                <FaLightbulb className="advantage-icon" />
-                <h3>AI-Powered</h3>
-                <p>Intelligent automation with machine learning and predictive analytics</p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action */}
+        {/* CTA Section */}
         <section className="workflow-cta">
           <div className="container">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="cta-content"
             >
               <h2>Ready to Automate Your Workflows?</h2>
-              <p>Join hundreds of businesses that have transformed their operations with our workflow automation solutions</p>
+              <p>Join thousands of organizations that have transformed their operations with intelligent automation</p>
               <div className="cta-actions">
-                <button 
-                  className="cta-button primary"
-                  onClick={handleStartFreeTrial}
-                  aria-label="Start Free Trial"
-                >
-                  Start Free Trial
+                <button className="cta-button primary" onClick={handleStartFreeTrial}>
+                  <span>Start Free Trial</span>
+                  <FaArrowRight />
                 </button>
-                <button 
-                  className="cta-button secondary"
-                  onClick={handleScheduleDemo}
-                  aria-label="Schedule Demo"
-                >
-                  Schedule Demo
+                <button className="cta-button secondary" onClick={handleScheduleDemo}>
+                  <FaEye />
+                  <span>Schedule Demo</span>
                 </button>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Toast Notifications */}
         {toast && (
           <Toast
             message={toast.message}

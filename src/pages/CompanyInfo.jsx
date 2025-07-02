@@ -33,16 +33,16 @@ function CompanyInfo() {
         className="company-info-heading"
       >
         <br />
-        INTELLISYNC OFFICE AUTOMATION LTD.
+        OA OFFICE AUTOMATION LTD.
       </motion.h1>
 
-      <Section title="Why IntelliSync Office Automation">
+      <Section title="Why OA Office Automation">
         <p>
-          IOA leverages technology to streamline office tasks by integrating software, hardware, processes, and workflows to boost productivity, reduce errors, and optimize resource use.
+          OA leverages technology to streamline office tasks by integrating software, hardware, processes, and workflows to boost productivity, reduce errors, and optimize resource use.
         </p>
       </Section>
 
-      <Section title="Key Components of IntelliSync Office Automation">
+      <Section title="Key Components of OA Office Automation">
         <ol>
           <li><strong>Document Management:</strong> Easy creation, storage, and sharing of documents.</li>
           <li><strong>Workflow Automation:</strong> Automates approvals, notifications, and tasks.</li>
@@ -64,7 +64,7 @@ function CompanyInfo() {
 
       <Section title="Company Overview">
         <p>
-          IntelliSync provides end-to-end office automation solutions by integrating software, hardware, and workflows to improve operations.
+          OA provides end-to-end office automation solutions by integrating software, hardware, and workflows to improve operations.
         </p>
       </Section>
 
@@ -130,10 +130,10 @@ function CompanyInfo() {
 
       <Section title="Contact Us">
         <p>
-          IntelliSync Office Automation Limited<br />
+          OA Office Automation Limited<br />
           P.O.Box 27346-0100, Nairobi, Kenya<br />
           Phone: <a href="tel:+254722952138">+254 722952138</a><br />
-          Email: <a href="mailto:info@intellisync-ioa.com">info@intellisync-ioa.com</a><br />
+          Email: <a href="mailto:info@intellisync-oa.com">info@intellisync-oa.com</a><br />
         </p>
       </Section>
     </div>

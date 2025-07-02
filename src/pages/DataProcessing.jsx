@@ -19,7 +19,7 @@ function DataProcessing() {
   useEffect(() => {
     performanceMonitor.trackPageLoad();
     
-    document.title = "Data Processing Services | IntelliSync IOA";
+    document.title = "Data Processing Services | IntelliSync OA";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(

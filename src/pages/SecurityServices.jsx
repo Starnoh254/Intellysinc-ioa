@@ -22,7 +22,7 @@ function SecurityServices() {
   useEffect(() => {
     performanceMonitor.trackPageLoad();
     
-    document.title = "Security Services | IntelliSync IOA";
+    document.title = "Security Services | IntelliSync OA";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(

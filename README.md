@@ -1,7 +1,7 @@
-# IntelliSync IOA
+# IntelliSync OA
 
 ## Overview
-IntelliSync IOA is a full-stack web platform for intelligent business automation, featuring:
+IntelliSync OA is a full-stack web platform for intelligent business automation, featuring:
 - A dynamic, content-managed website (React + Vite frontend)
 - A Node.js/Express backend with Firebase Firestore (or in-memory dev mode)
 - A full-featured Admin Management System (separate React app) for editing all site content, blogs, resources, media, and live chat
@@ -38,7 +38,7 @@ IntelliSync IOA is a full-stack web platform for intelligent business automation
 ## Project Structure
 
 ```
-intellisync-ioa/
+intellisync-oa/
   admin-panel/         # React admin dashboard (Create React App)
   public/              # Public assets for main site
   server/              # Node.js/Express backend (API, chat, Firebase)
@@ -52,8 +52,8 @@ intellisync-ioa/
 
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/Alphadoane/Intellysinc-ioa.git
-cd Intellysinc-ioa
+git clone https://github.com/Alphadoane/intellisync-oa.git
+cd intellisync-oa
 ```
 
 ### 2. Install Dependencies
@@ -147,7 +147,7 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ## 🚀 Live Demo
 
-Visit the live website: [https://Alphadoane.github.io/intellisync-ioa](https://Alphadoane.github.io/intellisync-ioa)
+Visit the live website: [https://Alphadoane.github.io/intellisync-oa](https://Alphadoane.github.io/intellisync-oa)
 
 ## 🛠️ Tech Stack
 
@@ -160,7 +160,7 @@ Visit the live website: [https://Alphadoane.github.io/intellisync-ioa](https://A
 ## 📁 Project Structure
 
 ```
-intellisync-ioa/
+intellisync-oa/
 ├── src/
 │   ├── components/     # Reusable React components
 │   ├── pages/         # Page components and their CSS
@@ -184,8 +184,8 @@ intellisync-ioa/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Alphadoane/intellisync-ioa.git
-cd intellisync-ioa
+git clone https://github.com/Alphadoane/intellisync-oa.git
+cd intellisync-oa
 ```
 
 2. Install dependencies:
@@ -214,7 +214,7 @@ This project is automatically deployed to GitHub Pages using GitHub Actions. Eve
 
 If the automatic deployment isn't working, follow these steps:
 
-1. **Go to your GitHub repository**: [https://github.com/Alphadoane/intellisync-ioa](https://github.com/Alphadoane/intellisync-ioa)
+1. **Go to your GitHub repository**: [https://github.com/Alphadoane/intellisync-oa](https://github.com/Alphadoane/intellisync-oa)
 
 2. **Navigate to Settings**:
    - Click on the "Settings" tab in your repository
@@ -275,5 +275,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- Website: [https://Alphadoane.github.io/intellisync-ioa](https://Alphadoane.github.io/intellisync-ioa)
-- GitHub: [https://github.com/Alphadoane/intellisync-ioa](https://github.com/Alphadoane/intellisync-ioa) 
+- Website: [https://Alphadoane.github.io/intellisync-oa](https://Alphadoane.github.io/intellisync-oa)
+- GitHub: [https://github.com/Alphadoane/intellisync-oa](https://github.com/Alphadoane/intellisync-oa) 
