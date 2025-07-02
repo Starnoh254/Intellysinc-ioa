@@ -2,7 +2,7 @@
   "name": "intellisync-react",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://Alphadoane.github.io/intellisync-oa",
+  "homepage": "https://Alphadoane.github.io/Intellysinc-ioa",
   "scripts": {
     "dev": "vite",
     "build": "npm run prebuild && vite build",
