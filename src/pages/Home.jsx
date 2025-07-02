@@ -53,17 +53,17 @@ const Home = () => {
       {
         title: "Eco-friendly solutions",
         desc: "Redefine Office Document Intelligence.",
-        image: "/Intellisync-oa/images/intelli0201.jpg"
+        image: "/images/intelli0201.jpg"
       },
       {
         title: "24/7 Support",
         desc: "We are always here to help.",
-        image: "/Intellisync-oa/images/intelli0202.jpg"
+        image: "/images/intelli0202.jpg"
       },
       {
         title: "Quality Services",
         desc: "Excellence in Technology and Functionality.",
-        image: "/Intellisync-oa/images/intelli0203.jpg"
+        image: "/images/intelli0203.jpg"
       }
     ];
 
@@ -105,12 +105,12 @@ const Home = () => {
       {
         name: "John Doe",
         quote: "Amazing service!",
-        image: "/Intellisync-oa/images/intelli0301.jpg"
+        image: "/images/intelli0301.jpg"
       },
       {
         name: "Jane Smith",
         quote: "Highly recommended!",
-        image: "/Intellisync-oa/images/intelli0302.jpg"
+        image: "/images/intelli0302.jpg"
       }
     ];
 
