@@ -1,6 +1,7 @@
 {
   "name": "intellisync-react",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "homepage": "https://Alphadoane.github.io/Intellysinc-ioa",
   "scripts": {
