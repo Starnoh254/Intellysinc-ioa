@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run prebuild && vite build",
-    "prebuild": "node scripts/check-imports.js",
+    "prebuild": "node scripts/check-imports.cjs",
     "preview": "vite preview"
   },
   "dependencies": {
