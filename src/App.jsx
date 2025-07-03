@@ -36,7 +36,6 @@ const AdminAccess = lazy(() => import('./components/AdminAccess'));
 
 // New Service Pages
 const WorkflowAutomation = lazy(() => import('./pages/WorkflowAutomation'));
-const DataAutomation_Processing = lazy(() => import('./pages/DataAutomation_Processing'));
 const QualityManagement = lazy(() => import('./pages/QualityManagement'));
 const SalesMarketing = lazy(() => import('./pages/SalesMarketing'));
 const MobileSolutions = lazy(() => import('./pages/MobileSolutions'));
@@ -70,7 +69,6 @@ function AnimatedRoutes() {
           <Route path="/DocumentManagement" element={<DocumentManagement />} />
           <Route path="/Integrations" element={<Integrations />} />
           <Route path="/WorkflowAutomation" element={<WorkflowAutomation />} />
-          <Route path="/DataProcessing" element={<DataAutomation_Processing />} />
           <Route path="/QualityManagement" element={<QualityManagement />} />
           <Route path="/SalesMarketing" element={<SalesMarketing />} />
           <Route path="/MobileSolutions" element={<MobileSolutions />} />
