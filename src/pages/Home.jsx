@@ -2,6 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import '../styles/Home.css'; // CSS import
 
+// Import images for proper asset handling
+import intelli0201 from '/images/intelli0201.jpg';
+import intelli0202 from '/images/intelli0202.jpg';
+import intelli0203 from '/images/intelli0203.jpg';
+import intelli0301 from '/images/intelli0301.jpg';
+import intelli0302 from '/images/intelli0302.jpg';
+
 const Home = () => {
   // Reusable CTA Button Component
   const CTAButton = ({ text, primary = false, onClick }) => {
@@ -53,17 +60,17 @@ const Home = () => {
       {
         title: "Eco-friendly solutions",
         desc: "Redefine Office Document Intelligence.",
-        image: "/images/intelli0201.jpg"
+        image: intelli0201
       },
       {
         title: "24/7 Support",
         desc: "We are always here to help.",
-        image: "/images/intelli0202.jpg"
+        image: intelli0202
       },
       {
         title: "Quality Services",
         desc: "Excellence in Technology and Functionality.",
-        image: "/images/intelli0203.jpg"
+        image: intelli0203
       }
     ];
 
@@ -105,12 +112,12 @@ const Home = () => {
       {
         name: "John Doe",
         quote: "Amazing service!",
-        image: "/images/intelli0301.jpg"
+        image: intelli0301
       },
       {
         name: "Jane Smith",
         quote: "Highly recommended!",
-        image: "/images/intelli0302.jpg"
+        image: intelli0302
       }
     ];
 
