@@ -88,17 +88,17 @@
 }
 
 .bi-hero {
-  background: #fff !important;
-  min-height: 340px;
+  height: 100vh; /* ensures full screen height */
+  background: url('/images/bi-hero-bg.jpg') center center / cover no-repeat;
+  background-attachment: scroll; /* prevents image clipping on mobile */
+  background-size: cover;
+  background-position: center;
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 80px 0 60px 0;
-  position: relative;
-  box-shadow: none;
 }
+
 
 .hero-title {
   font-size: 3.5rem;

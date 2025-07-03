@@ -11,11 +11,17 @@
 
 /* Hero Section */
 .int-hero {
+  position: relative;
   text-align: center;
-  padding: 120px 20px 80px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('/images/int-hero-overlay.jpg');
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('/images/int-hero-overlay.jpg') no-repeat center center;
   background-size: cover;
-  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
 }
 
 .int-hero h1 {

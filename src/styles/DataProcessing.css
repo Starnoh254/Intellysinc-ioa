@@ -41,15 +41,20 @@
 
 /* ===== HERO SECTION ===== */
 .data-hero {
+  height: 100vh; /* Ensures full viewport height */
   position: relative;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   overflow: hidden;
   text-align: center;
+  background: url('/images/data-hero-bg.jpg') center center / cover no-repeat; /* Add your actual image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 .hero-background {
   position: absolute;

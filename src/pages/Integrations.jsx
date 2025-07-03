@@ -3,12 +3,13 @@ import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
 import ErrorBoundary from '../components/ErrorBoundary';
 import '../styles/DocumentManagement.css';
+import '../styles/DataAutomation.css';
 import { useNavigate } from 'react-router-dom';
 
 function Integrations() {
   const navigate = useNavigate();
 
-  // Section data (from original Integrations)
+  // Section data
   const integrationCategories = [
     { icon: '👥', title: 'CRM Systems', desc: 'Connect with popular CRM platforms to sync customer data and automate workflows.' },
     { icon: '💰', title: 'Accounting Software', desc: 'Integrate with accounting systems for automated financial data processing and reporting.' },
@@ -36,88 +37,72 @@ function Integrations() {
 
   return (
     <ErrorBoundary>
-      <div className="document-management-page">
-        {/* Hero Section */}
-        <section className="dm-hero">
-          <div className="hero-content">
-            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="hero-title">
-              System Integrations
-            </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="hero-subtitle">
-              Connect all your business systems and applications for unified data flow and automated workflows. Seamless integrations with CRM, accounting, cloud storage, and communication tools.
-            </motion.p>
-          </div>
-        </section>
+      <div className="data-automation-page">
+        <div className="main-content">
+          {/* Hero Section */}
+          <section className="da-hero" style={{ background: "url('/images/integrations.jpg') center center/cover no-repeat" }}>
+            <div className="hero-overlay" />
+            <div className="hero-content">
+              <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="hero-title">
+                System Integrations
+              </motion.h1>
+              <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="hero-subtitle">
+                Connect all your business systems and applications for unified data flow and automated workflows. Seamless integrations with CRM, accounting, cloud storage, and communication tools.
+              </motion.p>
+            </div>
+          </section>
 
-        {/* Integration Categories Section */}
-        <section className="dm-section">
-          <div className="container section-flex">
-            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-content">
+          {/* Split Section 1: Integration Categories & Features */}
+          <section className="split-section">
+            <div className="split-half">
               <h2 className="section-header gradient-underline">Integration Categories</h2>
               <ul className="dm-feature-list lively-list">
                 {integrationCategories.map((cat, i) => (
-                  <li key={i}><span className="feature-icon">{cat.icon}</span><strong>{cat.title}:</strong> {cat.desc}</li>
+                  <li key={cat.title}><span className="feature-icon">{cat.icon}</span><strong>{cat.title}:</strong> {cat.desc}</li>
                 ))}
               </ul>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="dm-section alt">
-          <div className="container section-flex">
-            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-content">
+            </div>
+            <div className="split-half">
               <h2 className="section-header gradient-underline">Key Features</h2>
               <ul className="dm-feature-list lively-list">
                 {features.map((f, i) => (
-                  <li key={i}><span className="feature-icon">{f.icon}</span><strong>{f.title}:</strong> {f.desc}</li>
+                  <li key={f.title}><span className="feature-icon">{f.icon}</span><strong>{f.title}:</strong> {f.desc}</li>
                 ))}
               </ul>
-            </motion.div>
-          </div>
-        </section>
+            </div>
+          </section>
 
-        {/* Benefits Section */}
-        <section className="dm-section">
-          <div className="container section-flex">
-            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-content">
+          {/* Split Section 2: Benefits & Setup Steps */}
+          <section className="split-section">
+            <div className="split-half">
               <h2 className="section-header gradient-underline">Benefits</h2>
               <ul className="dm-feature-list lively-list">
                 {benefits.map((b, i) => (
-                  <li key={i}><span className="feature-icon">{b.icon}</span><strong>{b.title}:</strong> <span className="highlight">{b.value}</span> {b.desc}</li>
+                  <li key={b.title}><span className="feature-icon">{b.icon}</span><strong>{b.title}:</strong> <span className="highlight">{b.value}</span> {b.desc}</li>
                 ))}
               </ul>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Setup Steps Section */}
-        <section className="dm-section alt">
-          <div className="container section-flex">
-            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-content">
+            </div>
+            <div className="split-half">
               <h2 className="section-header gradient-underline">How to Get Started</h2>
               <ul className="dm-feature-list lively-list">
                 {setupSteps.map((s, i) => (
-                  <li key={i}><span className="feature-icon">{s.icon}</span><strong>{s.title}:</strong> {s.desc}</li>
+                  <li key={s.title}><span className="feature-icon">{s.icon}</span><strong>{s.title}:</strong> {s.desc}</li>
                 ))}
               </ul>
-            </motion.div>
-          </div>
-        </section>
-
+            </div>
+          </section>
+        </div>
         {/* CTA Section */}
         <section className="dm-cta">
-          <div className="container">
-            <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="cta-content">
-              <h2>Ready to Integrate Your Systems?</h2>
-              <p>Discover how IntelliSync can unify your business platforms.</p>
-              <div className="cta-actions">
-                <button className="cta-button primary" onClick={() => navigate('/Contact')} type="button">
-                  <span>Contact us today for a demo!</span>
-                  <FaArrowRight />
-                </button>
-              </div>
-            </motion.div>
+          <div className="cta-content">
+            <h2>Ready to Integrate Your Systems?</h2>
+            <p>Discover how IntelliSync can unify your business platforms.</p>
+            <div className="cta-actions">
+              <button className="cta-button primary" onClick={() => navigate('/Contact')} type="button">
+                <span>Contact us today for a demo!</span>
+                <FaArrowRight />
+              </button>
+            </div>
           </div>
         </section>
       </div>

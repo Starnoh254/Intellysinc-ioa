@@ -20,12 +20,21 @@ body,
 
 /* Hero Section */
 .dm-hero {
+  width: 100%;
+  min-height: 100vh; /* Ensure it covers the full viewport */
   text-align: center;
-  padding: 120px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 20px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('/images/dm-hero-overlay.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  color: white;
 }
+
 
 .dm-hero h1 {
   font-size: 3.5rem;
@@ -790,4 +799,21 @@ body,
 
 .dm-section, .dm-section.alt {
   text-align: center;
+} 
+
+/* Force all text in Data Automation page to be white or near-white for visibility on dark backgrounds */
+.data-automation-page,
+.data-automation-page * {
+  color: #fff !important;
+}
+
+.data-automation-page strong,
+.data-automation-page .section-header,
+.data-automation-page .gradient-underline {
+  color: #00eaff !important;
+}
+
+.data-automation-page .highlight {
+  color: #ffe082 !important;
+  font-weight: bold;
 } 

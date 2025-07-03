@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { 
+import {
   FaCogs, FaFileInvoice, FaShoppingCart, FaUsers, FaChartLine,
   FaCheckCircle, FaArrowRight, FaRocket, FaShieldAlt, FaClock,
   FaMobile, FaCloud, FaDatabase, FaNetworkWired, FaLightbulb,
@@ -9,29 +9,25 @@ import {
 } from "react-icons/fa";
 import Toast from "../components/Toast";
 import ErrorBoundary from "../components/ErrorBoundary";
-import performanceMonitor, { trackButtonClick, trackCardInteraction } from "../utils/performance";
+import performanceMonitor, { trackButtonClick } from "../utils/performance";
 import "../styles/DocumentManagement.css";
+import "../styles/DataAutomation.css";
 
 function WorkflowAutomation() {
   const navigate = useNavigate();
   const [toast, setToast] = useState(null);
   const [activeWorkflow, setActiveWorkflow] = useState('invoice');
-  const [isPlaying, setIsPlaying] = useState(false);
 
-  // SEO and meta tags
   useEffect(() => {
     performanceMonitor.trackPageLoad();
-    
     document.title = "Workflow Automation Services | IntelliSync OA";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
-        'content', 
+        'content',
         'Streamline your business processes with our comprehensive workflow automation solutions. From invoice processing to employee onboarding, we automate it all.'
       );
     }
-
-    // Add structured data
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "Service",
@@ -46,229 +42,122 @@ function WorkflowAutomation() {
         "description": "Invoice Processing, Purchase-to-Pay, Employee Onboarding, and Business Process Automation"
       }
     };
-
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.text = JSON.stringify(structuredData);
     document.head.appendChild(script);
-
     return () => {
       document.head.removeChild(script);
       performanceMonitor.sendMetrics();
     };
   }, []);
 
-  // Interactive workflow processes
-  const workflowProcesses = {
-    invoice: {
-      name: "Invoice Processing",
-      icon: <FaFileInvoice />,
-      steps: [
-        { id: 1, name: "Document Capture", status: "completed", time: "0.5s" },
-        { id: 2, name: "OCR Processing", status: "completed", time: "2.1s" },
-        { id: 3, name: "Data Validation", status: "completed", time: "1.8s" },
-        { id: 4, name: "Approval Routing", status: "active", time: "5.2s" },
-        { id: 5, name: "Payment Processing", status: "pending", time: "0s" }
-      ],
-      metrics: { timeSaved: "80%", accuracy: "99.2%", costReduction: "65%" }
-    },
-    purchase: {
-      name: "Purchase-to-Pay",
-      icon: <FaShoppingCart />,
-      steps: [
-        { id: 1, name: "PO Creation", status: "completed", time: "1.2s" },
-        { id: 2, name: "Vendor Approval", status: "completed", time: "3.5s" },
-        { id: 3, name: "Order Processing", status: "active", time: "8.1s" },
-        { id: 4, name: "Receiving", status: "pending", time: "0s" },
-        { id: 5, name: "Invoice Matching", status: "pending", time: "0s" },
-        { id: 6, name: "Payment", status: "pending", time: "0s" }
-      ],
-      metrics: { timeSaved: "75%", accuracy: "98.7%", costReduction: "70%" }
-    },
-    onboarding: {
-      name: "Employee Onboarding",
-      icon: <FaUsers />,
-      steps: [
-        { id: 1, name: "Application Review", status: "completed", time: "2.0s" },
-        { id: 2, name: "Document Collection", status: "completed", time: "4.5s" },
-        { id: 3, name: "Background Check", status: "active", time: "12.3s" },
-        { id: 4, name: "System Access Setup", status: "pending", time: "0s" },
-        { id: 5, name: "Training Assignment", status: "pending", time: "0s" }
-      ],
-      metrics: { timeSaved: "70%", accuracy: "99.5%", costReduction: "55%" }
-    }
-  };
+  // Workflow processes summary
+  const workflowSummaries = [
+    { icon: <FaFileInvoice />, title: "Invoice Processing", desc: "Automate invoice capture, validation, and payment workflows." },
+    { icon: <FaShoppingCart />, title: "Purchase-to-Pay", desc: "Streamline procurement, approvals, and payment cycles." },
+    { icon: <FaUsers />, title: "Employee Onboarding", desc: "Digitize onboarding, document collection, and access setup." }
+  ];
 
   // Automation capabilities
   const automationCapabilities = [
-    {
-      icon: <FaCode />,
-      title: "Visual Workflow Designer",
-      description: "Drag-and-drop interface for creating complex workflows without coding",
-      features: ["Intuitive Interface", "Pre-built Templates", "Custom Logic", "Version Control"]
-    },
-    {
-      icon: <FaSitemap />,
-      title: "Process Orchestration",
-      description: "Coordinate multiple systems and applications in a single workflow",
-      features: ["Multi-system Integration", "Error Handling", "Retry Logic", "Monitoring"]
-    },
-    {
-      icon: <FaLightbulb />,
-      title: "AI-Powered Decisions",
-      description: "Intelligent decision engines that learn and adapt to your business rules",
-      features: ["Machine Learning", "Pattern Recognition", "Predictive Analytics", "Auto-optimization"]
-    },
-    {
-      icon: <FaChartLine />,
-      title: "Real-time Analytics",
-      description: "Monitor workflow performance and identify optimization opportunities",
-      features: ["Live Dashboards", "Performance Metrics", "Bottleneck Detection", "ROI Tracking"]
-    }
+    { icon: <FaCode />, title: "Visual Workflow Designer", desc: "Drag-and-drop interface for creating complex workflows without coding." },
+    { icon: <FaSitemap />, title: "Process Orchestration", desc: "Coordinate multiple systems and applications in a single workflow." },
+    { icon: <FaLightbulb />, title: "AI-Powered Decisions", desc: "Intelligent decision engines that learn and adapt to your business rules." },
+    { icon: <FaChartLine />, title: "Real-time Analytics", desc: "Monitor workflow performance and identify optimization opportunities." }
   ];
 
   // Industry applications
   const industryApplications = [
-    {
-      industry: "Manufacturing",
-      icon: "🏭",
-      workflows: ["Quality Control", "Inventory Management", "Production Planning", "Maintenance Scheduling"],
-      benefits: ["Reduced Downtime", "Improved Quality", "Cost Optimization"]
-    },
-    {
-      industry: "Healthcare",
-      icon: "🏥",
-      workflows: ["Patient Intake", "Claims Processing", "Medication Management", "Appointment Scheduling"],
-      benefits: ["Better Patient Care", "Compliance", "Reduced Errors"]
-    },
-    {
-      industry: "Finance",
-      icon: "💰",
-      workflows: ["Loan Processing", "Risk Assessment", "Compliance Monitoring", "Customer Onboarding"],
-      benefits: ["Faster Processing", "Risk Mitigation", "Regulatory Compliance"]
-    },
-    {
-      industry: "Retail",
-      icon: "🛍️",
-      workflows: ["Order Fulfillment", "Inventory Replenishment", "Customer Service", "Returns Processing"],
-      benefits: ["Improved CX", "Inventory Optimization", "Operational Efficiency"]
-    }
+    { icon: "🏭", title: "Manufacturing", desc: "Quality Control, Inventory Management, Production Planning, Maintenance Scheduling" },
+    { icon: "🏥", title: "Healthcare", desc: "Patient Intake, Claims Processing, Medication Management, Appointment Scheduling" },
+    { icon: "💰", title: "Finance", desc: "Loan Processing, Risk Assessment, Compliance Monitoring, Customer Onboarding" },
+    { icon: "🛍️", title: "Retail", desc: "Order Fulfillment, Inventory Replenishment, Customer Service, Returns Processing" }
   ];
 
-  // Button handlers
+  // Key metrics
+  const metrics = [
+    { icon: <FaChartLine />, title: "Time Savings", value: "80%", desc: "Reduce process cycle times." },
+    { icon: <FaCheckCircle />, title: "Accuracy", value: "99%", desc: "Achieve near-perfect workflow accuracy." },
+    { icon: <FaRocket />, title: "Productivity", value: "4x", desc: "Boost team productivity." },
+    { icon: <FaCloud />, title: "Scalability", value: "Unlimited", desc: "Scale automation across departments." }
+  ];
+
   const handleGetStarted = () => {
     trackButtonClick('get_started_workflow');
     navigate('/Contact?subject=Workflow Automation Inquiry');
   };
 
-  const handleWatchDemo = () => {
-    trackButtonClick('watch_demo_workflow');
-    setToast({ message: 'Demo video coming soon!', type: 'info' });
-  };
-
-  const handleWorkflowChange = (workflow) => {
-    setActiveWorkflow(workflow);
-    setIsPlaying(false);
-  };
-
-  const togglePlayback = () => {
-    setIsPlaying(!isPlaying);
-  };
-
-  const handleStartFreeTrial = () => {
-    trackButtonClick('start_free_trial_workflow');
-    navigate('/Contact?subject=Workflow Automation Free Trial');
-  };
-
-  const handleScheduleDemo = () => {
-    trackButtonClick('schedule_demo_workflow');
-    navigate('/Contact?subject=Workflow Automation Demo');
-  };
-
   return (
     <ErrorBoundary>
-      <div className="document-management-page">
-        {/* Hero Section */}
-        <section className="dm-hero">
-          <div className="hero-content">
-            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="hero-title">
-              Workflow Automation
-            </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="hero-subtitle">
-              Streamline your business processes with our comprehensive workflow automation solutions. From invoice processing to employee onboarding, we automate it all.
-            </motion.p>
-          </div>
-        </section>
+      <div className="data-automation-page">
+        <div className="main-content">
+          {/* Hero Section */}
+          <section className="da-hero" style={{ background: "url('/images/workflow-automation.jpg') center center/cover no-repeat" }}>
+            <div className="hero-overlay" />
+            <div className="hero-content">
+              <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="hero-title">
+                Workflow Automation
+              </motion.h1>
+              <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="hero-subtitle">
+                Streamline your business processes with our comprehensive workflow automation solutions. From invoice processing to employee onboarding, we automate it all.
+              </motion.p>
+            </div>
+          </section>
 
-        {/* Workflow Processes Section */}
-        <section className="dm-section">
-          <div className="container section-flex">
-            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-content">
-              <h2 className="section-header gradient-underline">Workflow Processes</h2>
+          {/* Split Section 1: Workflow Summaries & Capabilities */}
+          <section className="split-section">
+            <div className="split-half">
+              <h2 className="section-header gradient-underline">Workflow Solutions</h2>
               <ul className="dm-feature-list lively-list">
-                {Object.values(workflowProcesses).map((proc, i) => (
-                  <li key={i}><span className="feature-icon">{proc.icon}</span><strong>{proc.name}:</strong> {proc.steps.map(step => step.name).join(', ')}</li>
+                {workflowSummaries.map((item) => (
+                  <li key={item.title}><span className="feature-icon">{item.icon}</span><strong>{item.title}:</strong> {item.desc}</li>
                 ))}
               </ul>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Capabilities Section */}
-        <section className="dm-section alt">
-          <div className="container section-flex">
-            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-content">
-              <h2 className="section-header gradient-underline">Key Capabilities</h2>
+            </div>
+            <div className="split-half">
+              <h2 className="section-header gradient-underline">Automation Capabilities</h2>
               <ul className="dm-feature-list lively-list">
-                {automationCapabilities.map((cap, i) => (
-                  <li key={i}><span className="feature-icon">{cap.icon}</span><strong>{cap.title}:</strong> {cap.description}</li>
+                {automationCapabilities.map((item) => (
+                  <li key={item.title}><span className="feature-icon">{item.icon}</span><strong>{item.title}:</strong> {item.desc}</li>
                 ))}
               </ul>
-            </motion.div>
-          </div>
-        </section>
+            </div>
+          </section>
 
-        {/* Industries Section */}
-        <section className="dm-section">
-          <div className="container section-flex">
-            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-content">
-              <h2 className="section-header gradient-underline">Industries We Serve</h2>
+          {/* Split Section 2: Industry Applications & Metrics */}
+          <section className="split-section">
+            <div className="split-half">
+              <h2 className="section-header gradient-underline">Industry Applications</h2>
               <ul className="dm-feature-list lively-list">
-                {industryApplications.map((ind, i) => (
-                  <li key={i}><span className="feature-icon">{ind.icon}</span> {ind.industry}</li>
+                {industryApplications.map((item) => (
+                  <li key={item.title}><span className="feature-icon">{item.icon}</span> {item.title}: {item.desc}</li>
                 ))}
               </ul>
-            </motion.div>
-          </div>
-        </section>
-
+            </div>
+            <div className="split-half">
+              <h2 className="section-header gradient-underline">Key Metrics</h2>
+              <ul className="dm-feature-list lively-list">
+                {metrics.map((metric) => (
+                  <li key={metric.title}><span className="feature-icon">{metric.icon}</span><strong>{metric.title}:</strong> <span className="highlight">{metric.value}</span> {metric.desc}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        </div>
         {/* CTA Section */}
         <section className="dm-cta">
-          <div className="container">
-            <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="cta-content">
-              <h2>Ready to Automate Your Workflows?</h2>
-              <p>Discover how IntelliSync can streamline your business processes.</p>
-              <div className="cta-actions">
-                <button className="cta-button primary" onClick={handleStartFreeTrial}>
-                  <span>Start Free Trial</span>
-                  <FaArrowRight />
-                </button>
-                <button className="cta-button secondary" onClick={handleScheduleDemo}>
-                  <FaEye />
-                  <span>Schedule Demo</span>
-                </button>
-              </div>
-            </motion.div>
+          <div className="cta-content">
+            <h2>Ready to Automate Your Workflows?</h2>
+            <p>Discover how IntelliSync can streamline your business processes.</p>
+            <div className="cta-actions">
+              <button className="cta-button primary" onClick={handleGetStarted} type="button">
+                <span>Contact us today for a demo!</span>
+                <FaArrowRight />
+              </button>
+            </div>
           </div>
         </section>
-
-        {toast && (
-          <Toast
-            message={toast.message}
-            type={toast.type}
-            onClose={() => setToast(null)}
-          />
-        )}
       </div>
     </ErrorBoundary>
   );
