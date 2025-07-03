@@ -77,10 +77,10 @@ const Navbar = () => {
       links: [
         { name: 'BusinessIntelligence', path: '/BusinessIntelligence' },
         { name: 'DataAutomation', path: '/DataAutomation' },
+        { name: 'DataProcessing', path: '/DataProcessing' },
         { name: 'DocumentManagement', path: '/DocumentManagement' },
         { name: 'Integrations', path: '/Integrations' },
         { name: 'WorkflowAutomation', path: '/WorkflowAutomation' },
-        { name: 'DataProcessing', path: '/DataProcessing' },
         { name: 'QualityManagement', path: '/QualityManagement' },
         { name: 'SalesMarketing', path: '/SalesMarketing' },
         { name: 'MobileSolutions', path: '/MobileSolutions' },

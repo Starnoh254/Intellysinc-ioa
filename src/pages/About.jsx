@@ -184,6 +184,46 @@ const About = () => {
         </section>
       </div>
 
+      {/* Platform Overview Section */}
+      <section className="platform-overview-section">
+        <div className="platform-overview-columns">
+          <div className="platform-overview-col">
+            <h3>The Platform</h3>
+            <ul>
+              <li>Cloud & On-Premises Deployment</li>
+              <li>Mobile Access & Remote Work</li>
+              <li>Enterprise-Grade Security</li>
+              <li>Compliance & Audit Trails</li>
+              <li>Unified Document Management</li>
+              <li>Scalable & Customizable Solutions</li>
+            </ul>
+          </div>
+          <div className="platform-overview-col">
+            <h3>Capabilities</h3>
+            <ul>
+              <li>Intelligent Document Processing</li>
+              <li>Workflow Automation</li>
+              <li>Smart Indexing & Search</li>
+              <li>Secure Electronic Signatures</li>
+              <li>Digital Forms & Data Collection</li>
+              <li>Analytics & Reporting Dashboards</li>
+              <li>Bulk Import & Export</li>
+            </ul>
+          </div>
+          <div className="platform-overview-col">
+            <h3>Integrations</h3>
+            <ul>
+              <li>Microsoft Teams & Outlook</li>
+              <li>Google Drive, OneDrive, Dropbox</li>
+              <li>SAP & ERP Systems</li>
+              <li>Salesforce, HubSpot, Slack</li>
+              <li>API & Custom Connectors</li>
+              <li>Legacy System Integration</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* Mission & Vision */}
       <div className="about-main-card about-mission-card">
         <section className="about-section about-mission-vision">

@@ -103,6 +103,56 @@ const Team = () => {
           ))}
         </div>
       </section>
+
+      {/* Who We Serve Section */}
+      <section className="who-we-serve-section">
+        <h2 className="who-we-serve-title">Who We Serve</h2>
+        <div className="who-we-serve-columns">
+          <div className="who-we-serve-col">
+            <h3>By Use Case</h3>
+            <ul>
+              <li>Automated Invoice Processing</li>
+              <li>Purchase-to-Pay Automation</li>
+              <li>Document Management & Archiving</li>
+              <li>Contract Management & E-signature</li>
+              <li>Quality Management & Compliance</li>
+              <li>Sales Order Processing</li>
+              <li>Employee Onboarding & File Management</li>
+              <li>Customer Support Automation</li>
+            </ul>
+          </div>
+          <div className="who-we-serve-col">
+            <h3>By Industry</h3>
+            <ul>
+              <li>Financial Services & Banking</li>
+              <li>Healthcare & Medical Records</li>
+              <li>Education & Research</li>
+              <li>Manufacturing & Supply Chain</li>
+              <li>Public Sector & Government</li>
+              <li>Professional Services (Legal, HR, Consulting)</li>
+              <li>Retail & Distribution</li>
+            </ul>
+          </div>
+          <div className="who-we-serve-col">
+            <h3>By Department</h3>
+            <ul>
+              <li>Finance & Accounting</li>
+              <li>Sales & Marketing</li>
+              <li>Human Resources</li>
+              <li>Operations & Administration</li>
+              <li>IT & Compliance</li>
+            </ul>
+          </div>
+          <div className="who-we-serve-col">
+            <h3>By Company Size</h3>
+            <ul>
+              <li>Small and Mid-sized Businesses</li>
+              <li>Large Enterprises</li>
+              <li>Distributed & Mobile Workforces</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

@@ -260,3 +260,73 @@ body {
   color: #0d47a1;
   text-decoration: underline;
 }
+
+/* Who We Serve Section */
+.who-we-serve-section {
+  background: #f7f8fa;
+  padding: 3rem 2rem 2.5rem 2rem;
+  margin-top: 2.5rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px rgba(30,40,90,0.08), 0 1.5px 6px rgba(30,40,90,0.04);
+}
+.who-we-serve-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #232946;
+  margin-bottom: 2.2rem;
+}
+.who-we-serve-columns {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.who-we-serve-col {
+  min-width: 180px;
+  flex: 1 1 180px;
+  margin: 0 1rem;
+}
+.who-we-serve-col h3 {
+  color: #232946;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+  letter-spacing: -0.5px;
+}
+.who-we-serve-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.who-we-serve-col li {
+  color: #444;
+  font-size: 1.02rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  transition: color 0.2s;
+}
+.who-we-serve-col li:hover {
+  color: #007bff;
+}
+
+@media (max-width: 900px) {
+  .who-we-serve-columns {
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 700px) {
+  .who-we-serve-section {
+    padding: 2rem 0.5rem 1.5rem 0.5rem;
+  }
+  .who-we-serve-columns {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: stretch;
+  }
+  .who-we-serve-col {
+    margin: 0 0 1.2rem 0;
+  }
+}

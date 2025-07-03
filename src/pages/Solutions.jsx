@@ -15,7 +15,6 @@ const Solutions = () => {
           </p>
         </div>
       </section>
-
       {/* Business Intelligence & Analytics */}
       <section className="solutions-section modern-card">
         <h2>Business Intelligence & Analytics</h2>
@@ -63,6 +62,7 @@ const Solutions = () => {
           <li>Capture, process, store, access, collaborate, and archive documents</li>
           <li>Enterprise security, mobile access, analytics & insights, compliance-ready (GDPR, HIPAA, SOX)</li>
           <li><strong>Use Cases:</strong> Patient records, case files, financial docs, quality documentation</li>
+          <li><strong>Capabilities:</strong> Intelligent Document Processing, Intelligent indexing, Workflow Management, Task Manager, Document import, Electronic signature, Electronic forms</li>
         </ul>
         <div style={{textAlign: 'center', marginTop: '1.5rem'}}>
           <Link to="/DocumentManagement" className="modern-cta-btn">Learn More</Link>
@@ -79,6 +79,7 @@ const Solutions = () => {
           <li>Automated processes: invoice processing, purchase-to-pay, onboarding, business process automation</li>
           <li>Visual workflow designer, process orchestration, AI-powered decisions, real-time analytics</li>
           <li><strong>Industries:</strong> Manufacturing, healthcare, finance, retail</li>
+          <li><strong>Capabilities:</strong> Intelligent Document Processing, Intelligent indexing, Workflow Management, Task Manager, Document import, Electronic signature, Electronic forms</li>
         </ul>
         <div style={{textAlign: 'center', marginTop: '1.5rem'}}>
           <Link to="/WorkflowAutomation" className="modern-cta-btn">Learn More</Link>
@@ -97,6 +98,7 @@ const Solutions = () => {
           <li>Cloud Storage (Google Drive, Dropbox, OneDrive, Box, etc.)</li>
           <li>Communication Tools (Slack, Teams, Zoom, etc.)</li>
           <li>API-first architecture, real-time sync, custom workflows, secure data flow</li>
+          <li><strong>Integrations:</strong> Overview integrations, Teams integration, Outlook integration, SAP integration, Generic email integration, One-click integration, Index data export, Data synchronization, iPaaS connector</li>
         </ul>
         <div style={{textAlign: 'center', marginTop: '1.5rem'}}>
           <Link to="/Integrations" className="modern-cta-btn">Learn More</Link>

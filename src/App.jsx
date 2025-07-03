@@ -20,6 +20,7 @@ const Clients = lazy(() => import('./pages/Clients'));
 const Testimonials = lazy(() => import('./pages/Testimonials'));
 const BusinessIntelligence = lazy(() => import('./pages/BusinessIntelligence'));
 const DataAutomation = lazy(() => import('./pages/DataAutomation'));
+const DataProcessing = lazy(() => import('./pages/DataProcessing'));
 const DocumentManagement = lazy(() => import('./pages/DocumentManagement'));
 const Integrations = lazy(() => import('./pages/Integrations'));
 const Solutions = lazy(() => import('./pages/Solutions'));
@@ -35,7 +36,7 @@ const AdminAccess = lazy(() => import('./components/AdminAccess'));
 
 // New Service Pages
 const WorkflowAutomation = lazy(() => import('./pages/WorkflowAutomation'));
-const DataProcessing = lazy(() => import('./pages/DataProcessing'));
+const DataAutomation_Processing = lazy(() => import('./pages/DataAutomation_Processing'));
 const QualityManagement = lazy(() => import('./pages/QualityManagement'));
 const SalesMarketing = lazy(() => import('./pages/SalesMarketing'));
 const MobileSolutions = lazy(() => import('./pages/MobileSolutions'));
@@ -65,10 +66,11 @@ function AnimatedRoutes() {
               <DataAutomation />
             </ErrorBoundary>
           } />
+          <Route path="/DataProcessing" element={<DataProcessing />} />
           <Route path="/DocumentManagement" element={<DocumentManagement />} />
           <Route path="/Integrations" element={<Integrations />} />
           <Route path="/WorkflowAutomation" element={<WorkflowAutomation />} />
-          <Route path="/DataProcessing" element={<DataProcessing />} />
+          <Route path="/DataProcessing" element={<DataAutomation_Processing />} />
           <Route path="/QualityManagement" element={<QualityManagement />} />
           <Route path="/SalesMarketing" element={<SalesMarketing />} />
           <Route path="/MobileSolutions" element={<MobileSolutions />} />

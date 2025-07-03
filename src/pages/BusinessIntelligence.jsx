@@ -193,33 +193,7 @@ function BusinessIntelligence() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="hero-background">
-          <div className="professional-overlay"></div>
-          <div className="expert-elements">
-            <div className="expert-badge">
-              <FaAward />
-              <span>Gartner Magic Quadrant Leader</span>
-            </div>
-            <div className="expert-badge">
-              <FaShieldAlt />
-              <span>SOC 2 Type II Certified</span>
-            </div>
-            <div className="expert-badge">
-              <FaRocket />
-              <span>Enterprise Ready</span>
-            </div>
-          </div>
-        </div>
         <div className="hero-content">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="hero-badge"
-          >
-            <FaChartLine />
-            <span>Enterprise Business Intelligence</span>
-          </motion.div>
           <motion.h1
             initial={{ y: -50 }}
             animate={{ y: 0 }}
