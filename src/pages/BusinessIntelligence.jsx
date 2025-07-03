@@ -15,7 +15,6 @@ function BusinessIntelligence() {
   const [activeDashboard, setActiveDashboard] = useState('sales');
   const [isLive, setIsLive] = useState(true);
 
-
   useEffect(() => {
     document.title = "Enterprise Business Intelligence Solutions | IntelliSync IOA";
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -161,7 +160,6 @@ function BusinessIntelligence() {
   ];
 
 
-
   const handleGetStarted = () => {
     navigate('/Contact?subject=Enterprise BI Solution Inquiry');
   };
@@ -181,7 +179,6 @@ function BusinessIntelligence() {
   const toggleLiveMode = () => {
     setIsLive(!isLive);
   };
-
 
 
   return (
@@ -228,7 +225,6 @@ function BusinessIntelligence() {
           </motion.div>
         </div>
       </motion.section>
-
 
 
       {/* Interactive Dashboard Showcase */}
@@ -290,7 +286,6 @@ function BusinessIntelligence() {
                 </button>
               </div>
             </div>
-
 
 
             <div className="charts-grid">

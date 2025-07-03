@@ -10,7 +10,7 @@ import {
 import Toast from "../components/Toast";
 import ErrorBoundary from "../components/ErrorBoundary";
 import performanceMonitor, { trackButtonClick, trackCardInteraction } from "../utils/performance";
-import "../styles/WorkflowAutomation.css";
+import "../styles/DocumentManagement.css";
 
 function WorkflowAutomation() {
   const navigate = useNavigate();
@@ -187,254 +187,67 @@ function WorkflowAutomation() {
 
   return (
     <ErrorBoundary>
-      <div className="workflow-automation-page">
-        {/* Hero Section with Animated Background */}
-        <section className="workflow-hero">
-          <div className="hero-background">
-            <div className="animated-grid">
-              {[...Array(20)].map((_, i) => (
-                <div key={i} className="grid-cell" style={{ animationDelay: `${i * 0.1}s` }}></div>
-              ))}
-            </div>
-            <div className="hero-gradient-overlay"></div>
-          </div>
+      <div className="document-management-page">
+        {/* Hero Section */}
+        <section className="dm-hero">
           <div className="hero-content">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="hero-badge"
-            >
-              <FaCogs />
-              <span>Workflow Automation</span>
-            </motion.div>
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="hero-title"
-            >
-              Automate Your <span className="gradient-text">Business Processes</span>
+            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="hero-title">
+              Workflow Automation
             </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="hero-subtitle"
-            >
-              Transform manual workflows into intelligent, automated processes that save time, reduce errors, and boost productivity
+            <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="hero-subtitle">
+              Streamline your business processes with our comprehensive workflow automation solutions. From invoice processing to employee onboarding, we automate it all.
             </motion.p>
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="hero-actions"
-            >
-              <button 
-                className="cta-button primary" 
-                onClick={handleGetStarted}
-                aria-label="Get Started with Workflow Automation"
-              >
-                <span>Start Automating</span>
-                <FaArrowRight className="arrow-icon" />
-              </button>
-              <button 
-                className="cta-button secondary" 
-                onClick={handleWatchDemo}
-                aria-label="Watch Demo Video"
-              >
-                <FaPlay className="play-icon" />
-                <span>Watch Demo</span>
-              </button>
-            </motion.div>
           </div>
         </section>
 
-        {/* Interactive Workflow Preview */}
-        <section className="workflow-preview">
-          <div className="container">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="section-header"
-            >
-              <h2>See Automation in Action</h2>
-              <p>Watch how our workflows transform complex processes into streamlined operations</p>
-            </motion.div>
-
-            <div className="workflow-selector">
-              {Object.keys(workflowProcesses).map((key) => (
-                <button
-                  key={key}
-                  className={`workflow-tab ${activeWorkflow === key ? 'active' : ''}`}
-                  onClick={() => handleWorkflowChange(key)}
-                >
-                  {workflowProcesses[key].icon}
-                  <span>{workflowProcesses[key].name}</span>
-                </button>
-              ))}
-            </div>
-
-            <div className="workflow-display">
-              <div className="workflow-controls">
-                <button 
-                  className={`control-btn ${isPlaying ? 'playing' : ''}`}
-                  onClick={togglePlayback}
-                >
-                  {isPlaying ? <FaPause /> : <FaPlay />}
-                </button>
-                <button className="control-btn">
-                  <FaStop />
-                </button>
-                <button className="control-btn">
-                  <FaEdit />
-                </button>
-              </div>
-
-              <div className="process-flow">
-                {workflowProcesses[activeWorkflow].steps.map((step, index) => (
-                  <motion.div
-                    key={step.id}
-                    className={`process-step ${step.status}`}
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="step-number">{step.id}</div>
-                    <div className="step-content">
-                      <h4>{step.name}</h4>
-                      <div className="step-status">
-                        <span className={`status-indicator ${step.status}`}></span>
-                        <span className="step-time">{step.time}</span>
-                      </div>
-                    </div>
-                    {index < workflowProcesses[activeWorkflow].steps.length - 1 && (
-                      <div className="step-connector"></div>
-                    )}
-                  </motion.div>
+        {/* Workflow Processes Section */}
+        <section className="dm-section">
+          <div className="container section-flex">
+            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-content">
+              <h2 className="section-header gradient-underline">Workflow Processes</h2>
+              <ul className="dm-feature-list lively-list">
+                {Object.values(workflowProcesses).map((proc, i) => (
+                  <li key={i}><span className="feature-icon">{proc.icon}</span><strong>{proc.name}:</strong> {proc.steps.map(step => step.name).join(', ')}</li>
                 ))}
-              </div>
-
-              <div className="workflow-metrics">
-                <div className="metric">
-                  <span className="metric-value">{workflowProcesses[activeWorkflow].metrics.timeSaved}</span>
-                  <span className="metric-label">Time Saved</span>
-                </div>
-                <div className="metric">
-                  <span className="metric-value">{workflowProcesses[activeWorkflow].metrics.accuracy}</span>
-                  <span className="metric-label">Accuracy</span>
-                </div>
-                <div className="metric">
-                  <span className="metric-value">{workflowProcesses[activeWorkflow].metrics.costReduction}</span>
-                  <span className="metric-label">Cost Reduction</span>
-                </div>
-              </div>
-            </div>
+              </ul>
+            </motion.div>
           </div>
         </section>
 
-        {/* Automation Capabilities */}
-        <section className="automation-capabilities">
-          <div className="container">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="section-header"
-            >
-              <h2>Powerful Automation Capabilities</h2>
-              <p>Everything you need to build, deploy, and manage intelligent workflows</p>
+        {/* Capabilities Section */}
+        <section className="dm-section alt">
+          <div className="container section-flex">
+            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-content">
+              <h2 className="section-header gradient-underline">Key Capabilities</h2>
+              <ul className="dm-feature-list lively-list">
+                {automationCapabilities.map((cap, i) => (
+                  <li key={i}><span className="feature-icon">{cap.icon}</span><strong>{cap.title}:</strong> {cap.description}</li>
+                ))}
+              </ul>
             </motion.div>
-
-            <div className="capabilities-grid">
-              {automationCapabilities.map((capability, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="capability-card"
-                  whileHover={{ y: -10, scale: 1.02 }}
-                >
-                  <div className="capability-icon">
-                    {capability.icon}
-                  </div>
-                  <h3>{capability.title}</h3>
-                  <p>{capability.description}</p>
-                  <div className="capability-features">
-                    {capability.features.map((feature, idx) => (
-                      <span key={idx} className="feature-tag">{feature}</span>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
-        {/* Industry Applications */}
-        <section className="industry-applications">
-          <div className="container">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="section-header"
-            >
-              <h2>Industry-Specific Solutions</h2>
-              <p>Tailored workflow automation for your industry's unique challenges</p>
+        {/* Industries Section */}
+        <section className="dm-section">
+          <div className="container section-flex">
+            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-content">
+              <h2 className="section-header gradient-underline">Industries We Serve</h2>
+              <ul className="dm-feature-list lively-list">
+                {industryApplications.map((ind, i) => (
+                  <li key={i}><span className="feature-icon">{ind.icon}</span> {ind.industry}</li>
+                ))}
+              </ul>
             </motion.div>
-
-            <div className="applications-grid">
-              {industryApplications.map((app, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="application-card"
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="industry-icon">{app.icon}</div>
-                  <h3>{app.industry}</h3>
-                  <div className="workflows-list">
-                    <h4>Key Workflows:</h4>
-                    <ul>
-                      {app.workflows.map((workflow, idx) => (
-                        <li key={idx}>{workflow}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="benefits-list">
-                    {app.benefits.map((benefit, idx) => (
-                      <span key={idx} className="benefit-tag">{benefit}</span>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="workflow-cta">
+        <section className="dm-cta">
           <div className="container">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="cta-content"
-            >
+            <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="cta-content">
               <h2>Ready to Automate Your Workflows?</h2>
-              <p>Join thousands of organizations that have transformed their operations with intelligent automation</p>
+              <p>Discover how IntelliSync can streamline your business processes.</p>
               <div className="cta-actions">
                 <button className="cta-button primary" onClick={handleStartFreeTrial}>
                   <span>Start Free Trial</span>

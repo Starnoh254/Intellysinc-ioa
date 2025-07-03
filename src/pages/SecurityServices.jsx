@@ -12,7 +12,7 @@ import {
 import Toast from "../components/Toast";
 import ErrorBoundary from "../components/ErrorBoundary";
 import performanceMonitor, { trackButtonClick, trackCardInteraction } from "../utils/performance";
-import "../styles/SecurityServices.css";
+import "../styles/DocumentManagement.css";
 
 function SecurityServices() {
   const navigate = useNavigate();
@@ -150,283 +150,71 @@ function SecurityServices() {
 
   return (
     <ErrorBoundary>
-      <div className="security-services-page">
+      <div className="document-management-page">
         {/* Hero Section */}
-        <section className="security-hero">
-          <div className="hero-background">
-            <div className="hero-gradient-overlay"></div>
-          </div>
+        <section className="dm-hero">
           <div className="hero-content">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="hero-badge"
-            >
-              <span>🔒 Security Services</span>
-            </motion.div>
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="hero-title"
-            >
-              Enterprise <span className="gradient-text">Security Solutions</span>
+            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="hero-title">
+              Security Services
             </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="hero-subtitle"
-            >
-              Protect your business data with enterprise-grade security solutions and comprehensive data protection
+            <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="hero-subtitle">
+              Enterprise-grade document security and data protection solutions. Secure your business data with advanced encryption and compliance features.
             </motion.p>
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="hero-actions"
-            >
-              <button 
-                className="cta-button primary" 
-                onClick={handleGetStarted}
-                aria-label="Get Started with Security Services"
-              >
-                <span>Get Started</span>
-                <FaArrowRight className="arrow-icon" />
-              </button>
-              <button 
-                className="cta-button secondary" 
-                onClick={handleWatchDemo}
-                aria-label="Watch Security Services Demo"
-              >
-                <span>Watch Demo</span>
-                <div className="play-icon">▶</div>
-              </button>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="dm-section">
+          <div className="container section-flex">
+            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-content">
+              <h2 className="section-header gradient-underline">Our Security Services</h2>
+              <ul className="dm-feature-list lively-list">
+                {securityServices.map((service, i) => (
+                  <li key={i}><span className="feature-icon">{service.icon}</span><strong>{service.title}:</strong> {service.description}</li>
+                ))}
+              </ul>
             </motion.div>
           </div>
         </section>
 
-        {/* Services Overview */}
-        <section className="services-overview">
-          <div className="container">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="section-header"
-            >
-              <h2>Security Services</h2>
-              <p>Comprehensive security solutions designed to protect your business data and ensure compliance</p>
+        {/* Industries Section */}
+        <section className="dm-section alt">
+          <div className="container section-flex">
+            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-content">
+              <h2 className="section-header gradient-underline">Industries We Serve</h2>
+              <ul className="dm-feature-list lively-list">
+                {industries.map((ind, i) => (
+                  <li key={i}><span className="feature-icon">{ind.icon}</span> {ind.name}</li>
+                ))}
+              </ul>
             </motion.div>
-
-            <div className="services-grid">
-              {securityServices.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="service-card"
-                >
-                  <div className="service-icon">{service.icon}</div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                  
-                  <div className="service-features">
-                    <h4>Key Features</h4>
-                    <ul>
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex}>
-                          <FaCheckCircle className="feature-icon" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="service-benefits">
-                    <h4>Benefits</h4>
-                    <ul>
-                      {service.benefits.map((benefit, benefitIndex) => (
-                        <li key={benefitIndex}>
-                          <FaRocket className="benefit-icon" />
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <button 
-                    className="learn-more-btn"
-                    onClick={() => handleLearnMore(service)}
-                    aria-label={`Learn more about ${service.title}`}
-                  >
-                    <span>Learn More</span>
-                    <FaArrowRight className="arrow-icon" />
-                  </button>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
-        {/* Security Standards */}
-        <section className="security-standards">
-          <div className="container">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="section-header"
-            >
-              <h2>Security Standards We Support</h2>
-              <p>Our solutions help you meet and exceed industry security standards and compliance requirements</p>
+        {/* Security Standards Section */}
+        <section className="dm-section">
+          <div className="container section-flex">
+            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-content">
+              <h2 className="section-header gradient-underline">Security Standards</h2>
+              <ul className="dm-feature-list lively-list">
+                {securityStandards.map((s, i) => (
+                  <li key={i}><span className="feature-icon">{s.icon}</span><strong>{s.name}:</strong> {s.description}</li>
+                ))}
+              </ul>
             </motion.div>
-
-            <div className="standards-grid">
-              {securityStandards.map((standard, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="standard-card"
-                >
-                  <div className="standard-icon">🛡️</div>
-                  <h3>{standard.name}</h3>
-                  <p>{standard.description}</p>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
-        {/* Industries Served */}
-        <section className="industries-served">
+        {/* CTA Section */}
+        <section className="dm-cta">
           <div className="container">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="section-header"
-            >
-              <h2>Industries We Serve</h2>
-              <p>Our security solutions are designed for regulated and security-conscious industries</p>
-            </motion.div>
-
-            <div className="industries-grid">
-              {industries.map((industry, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="industry-card"
-                >
-                  <div className="industry-icon">{industry.icon}</div>
-                  <h3>{industry.name}</h3>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us */}
-        <section className="why-choose-us">
-          <div className="container">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="section-header"
-            >
-              <h2>Why Choose Our Security Solutions</h2>
-              <p>The advantages that set our security solutions apart</p>
-            </motion.div>
-
-            <div className="advantages-grid">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="advantage-item"
-              >
-                <FaShieldAlt className="advantage-icon" />
-                <h3>Enterprise Security</h3>
-                <p>Bank-level security with advanced encryption and access controls</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="advantage-item"
-              >
-                <FaBrain className="advantage-icon" />
-                <h3>AI-Powered Monitoring</h3>
-                <p>Intelligent threat detection and automated security monitoring</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="advantage-item"
-              >
-                <FaNetworkWired className="advantage-icon" />
-                <h3>Compliance Ready</h3>
-                <p>Built-in compliance features for major regulatory standards</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="advantage-item"
-              >
-                <FaLightbulb className="advantage-icon" />
-                <h3>24/7 Protection</h3>
-                <p>Round-the-clock security monitoring and incident response</p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action */}
-        <section className="security-cta">
-          <div className="container">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="cta-content"
-            >
+            <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="cta-content">
               <h2>Ready to Secure Your Business?</h2>
-              <p>Join organizations that trust our security solutions to protect their critical business data</p>
+              <p>Discover how IntelliSync can protect your data and ensure compliance.</p>
               <div className="cta-actions">
-                <button 
-                  className="cta-button primary"
-                  onClick={handleStartFreeTrial}
-                  aria-label="Start Free Trial"
-                >
-                  Start Free Trial
-                </button>
-                <button 
-                  className="cta-button secondary"
-                  onClick={handleScheduleDemo}
-                  aria-label="Schedule Demo"
-                >
-                  Schedule Demo
+                <button className="cta-button primary" onClick={() => navigate('/Contact')} type="button">
+                  <span>Contact us today for a demo!</span>
+                  <FaArrowRight />
                 </button>
               </div>
             </motion.div>
