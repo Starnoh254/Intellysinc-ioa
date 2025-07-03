@@ -18,6 +18,20 @@ const LiveChatWidget = forwardRef((props, ref) => {
   }));
 
   useEffect(() => {
+    // Only connect to Socket.IO server in development or if backend is available
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    
+    // Skip Socket.IO connection on GitHub Pages (production without backend)
+    if (!isDevelopment && !isLocalhost) {
+      setMessages([{
+        text: "Live chat is not available on this platform. Please contact us via email or phone for support.",
+        sender: 'admin',
+        timestamp: new Date()
+      }]);
+      return;
+    }
+
     // Connect to Socket.IO server with error handling
     try {
       socketRef.current = io('http://localhost:5000', {

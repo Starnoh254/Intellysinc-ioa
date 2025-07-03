@@ -17,6 +17,17 @@ const AdminLiveChat = () => {
   useEffect(() => {
     if (!loggedIn) return;
     
+    // Only connect to Socket.IO server in development or if backend is available
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    
+    // Skip Socket.IO connection on GitHub Pages (production without backend)
+    if (!isDevelopment && !isLocalhost) {
+      alert('Admin chat is not available on this platform. Please use localhost for admin features.');
+      setLoggedIn(false);
+      return;
+    }
+    
     try {
       socketRef.current = io('http://localhost:5000', {
         timeout: 5000,
