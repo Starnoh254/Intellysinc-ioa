@@ -33,16 +33,16 @@ function CompanyInfo() {
         className="company-info-heading"
       >
         <br />
-        OA OFFICE AUTOMATION LTD.
+        INTELLISYNC OFFICE AUTOMATION LTD. (IOA)
       </motion.h1>
 
-      <Section title="Why OA Office Automation">
+      <Section title="Why IOA ?">
         <p>
           OA leverages technology to streamline office tasks by integrating software, hardware, processes, and workflows to boost productivity, reduce errors, and optimize resource use.
         </p>
       </Section>
 
-      <Section title="Key Components of OA Office Automation">
+      <Section title="Key Components of IOA ">
         <ol>
           <li><strong>Document Management:</strong> Easy creation, storage, and sharing of documents.</li>
           <li><strong>Workflow Automation:</strong> Automates approvals, notifications, and tasks.</li>
@@ -52,7 +52,7 @@ function CompanyInfo() {
         </ol>
       </Section>
 
-      <Section title="Benefits of Office Automation">
+      <Section title="Benefits of IOA">
         <ul>
           <li>Increased productivity</li>
           <li>Cost savings</li>
