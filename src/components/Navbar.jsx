@@ -92,9 +92,7 @@ const Navbar = () => {
       links: [
         { name: 'Solutions', path: '/Solutions' },
         { name: 'CaseStudies', path: '/CaseStudies' },
-        { name: 'Clients', path: '/Clients' },
         { name: 'Testimonials', path: '/Testimonials' },
-        { name: 'Pricing', path: '/Pricing' },
       ],
     },
     {
@@ -118,7 +116,20 @@ const Navbar = () => {
     <header className={`navbar-fixed ${isScrolled ? 'scrolled' : ''}`} ref={navbarRef}>
       <div className="navbar-container">
         <Link to="/" className="logo" onClick={handleLinkClick}>
-          <img src="/images/logo-intellisync.png" alt="IntelliSync IOA Logo" style={{ height: '40px', width: 'auto' }} />
+          <img
+            src="/images/logo-intellisync.svg"
+            alt="IntelliSync OA Logo"
+            style={{
+              height: '48px',
+              width: 'auto',
+              filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))',
+              background: 'transparent',
+              padding: '4px 0',
+              display: 'block',
+              maxWidth: '180px',
+              objectFit: 'contain',
+            }}
+          />
         </Link>
 
         <button

@@ -95,7 +95,7 @@ function SecurityServices() {
       <div className="data-automation-page">
         <div className="main-content">
           {/* Hero Section */}
-          <section className="da-hero" style={{ background: "url('./images/security-services.jpg') center center/cover no-repeat" }}>
+          <section className="da-hero" style={{ background: "url('/images/security-services.jpg') center center/cover no-repeat" }}>
             <div className="hero-overlay" />
             <div className="hero-content">
               <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="hero-title">

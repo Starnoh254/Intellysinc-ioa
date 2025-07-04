@@ -16,7 +16,6 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Team = lazy(() => import('./pages/Team'));
 const Awards = lazy(() => import('./pages/Awards'));
-const Clients = lazy(() => import('./pages/Clients'));
 const Testimonials = lazy(() => import('./pages/Testimonials'));
 const BusinessIntelligence = lazy(() => import('./pages/BusinessIntelligence'));
 const DataAutomation = lazy(() => import('./pages/DataAutomation'));
@@ -25,7 +24,6 @@ const DocumentManagement = lazy(() => import('./pages/DocumentManagement'));
 const Integrations = lazy(() => import('./pages/Integrations'));
 const Solutions = lazy(() => import('./pages/Solutions'));
 const CaseStudies = lazy(() => import('./pages/CaseStudies'));
-const Pricing = lazy(() => import('./pages/Pricing'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const Resources = lazy(() => import('./pages/Resources'));
@@ -57,7 +55,6 @@ function AnimatedRoutes() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Team" element={<Team />} />
           <Route path="/Awards" element={<Awards />} />
-          <Route path="/Clients" element={<Clients />} />
           <Route path="/Testimonials" element={<Testimonials />} />
           <Route path="/BusinessIntelligence" element={<BusinessIntelligence />} />
           <Route path="/DataAutomation" element={
@@ -75,7 +72,6 @@ function AnimatedRoutes() {
           <Route path="/SecurityServices" element={<SecurityServices />} />
           <Route path="/Solutions" element={<Solutions />} />
           <Route path="/CaseStudies" element={<CaseStudies />} />
-          <Route path="/Pricing" element={<Pricing />} />
           <Route path="/Blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/Resources" element={<Resources />} />

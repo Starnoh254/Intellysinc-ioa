@@ -42,15 +42,15 @@ function DocumentManagement() {
       <div className="data-automation-page">
         <div className="main-content">
           {/* Hero Section */}
-          <section className="da-hero" style={{ background: "url('./images/document-management.jpg') center center/cover no-repeat" }}>
+          <section className="da-hero" style={{ background: "url('/images/document-management.jpg') center center/cover no-repeat" }}>
             <div className="hero-overlay" />
             <div className="hero-content">
               <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="hero-title">
                 Content & Process Management Solution
               </motion.h1>
               <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="hero-subtitle">
-                <br />Transform Your Business with <span className="highlight">Intelligent Document Management</span><br /> <br />
-                In today's fast-paced business environment, staying competitive requires streamlined processes and strategic information management. <br /><br /><span className="highlight">Intellisync-OA</span> empowers organizations—from small businesses to large enterprises—to optimize efficiency, enhance security, and reduce operational costs by structuring data and workflows intelligently.
+                <br />Transform Your Business with Intelligent Document Management<br /> <br />
+                In today's fast-paced business environment, staying competitive requires streamlined processes and strategic information management. <br /><br />Intellisync-OA empowers organizations—from small businesses to large enterprises—to optimize efficiency, enhance security, and reduce operational costs by structuring data and workflows intelligently.
               </motion.p>
             </div>
           </section>

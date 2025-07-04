@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import '../styles/Home.css'; // CSS import
 
-// Import images for proper asset handling
-import intelli0201 from '/images/intelli0201.jpg';
-import intelli0202 from '/images/intelli0202.jpg';
-import intelli0203 from '/images/intelli0203.jpg';
-import intelli0301 from '/images/intelli0301.jpg';
-import intelli0302 from '/images/intelli0302.jpg';
+// Image paths for public folder assets
+const intelli0201 = '/images/intelli0201.jpg';
+const intelli0202 = '/images/intelli0202.jpg';
+const intelli0203 = '/images/intelli0203.jpg';
+const intelli0301 = '/images/intelli0301.jpg';
+const intelli0302 = '/images/intelli0302.jpg';
 
 const Home = () => {
   // Reusable CTA Button Component
