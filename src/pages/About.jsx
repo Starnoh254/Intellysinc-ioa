@@ -322,10 +322,10 @@ const About = () => {
             {partnerLogos.map((p) => (
               <div className="about-partner-logo-card" key={p.name}>
                 <img
-                  src={`./images/${p.file}`}
+                  src={`${import.meta.env.BASE_URL}images/${p.file}`}
                   alt={p.name + ' logo'}
                   className="about-partner-logo-img"
-                  onError={e => { e.target.onerror = null; e.target.src = './images/placeholder.png'; }}
+                  onError={e => { e.target.onerror = null; e.target.src = `${import.meta.env.BASE_URL}images/placeholder.png`; }}
                 />
               </div>
             ))}

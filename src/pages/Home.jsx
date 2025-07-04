@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import '../styles/Home.css'; // CSS import
 
 // Image paths for public folder assets
-const intelli0201 = '/images/intelli0201.jpg';
-const intelli0202 = '/images/intelli0202.jpg';
-const intelli0203 = '/images/intelli0203.jpg';
-const intelli0301 = '/images/intelli0301.jpg';
-const intelli0302 = '/images/intelli0302.jpg';
+const intelli0201 = import.meta.env.BASE_URL + 'images/intelli0201.jpg';
+const intelli0202 = import.meta.env.BASE_URL + 'images/intelli0202.jpg';
+const intelli0203 = import.meta.env.BASE_URL + 'images/intelli0203.jpg';
+const intelli0301 = import.meta.env.BASE_URL + 'images/intelli0301.jpg';
+const intelli0302 = import.meta.env.BASE_URL + 'images/intelli0302.jpg';
 
 const Home = () => {
   // Reusable CTA Button Component
@@ -39,7 +39,7 @@ const Home = () => {
           style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '56px' }}
         >
           <img
-            src="/images/logo-intellisync.svg"
+            src={`${import.meta.env.BASE_URL}images/logo-intellisync.svg`}
             alt="IntelliSync OA Logo"
             style={{ height: '96px', width: 'auto', maxWidth: '480px', objectFit: 'contain', display: 'block' }}
           />
