@@ -9,6 +9,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import LiveChatWidget from './components/LiveChatWidget';
 import AdminLiveChat from './components/AdminLiveChat';
 import ErrorBoundary from './components/ErrorBoundary';
+import { AuthProvider } from './contexts/AuthContext';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
@@ -123,25 +124,27 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="app-container" style={{
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-        paddingTop: '80px', // Add padding for fixed navbar
-        backgroundColor: 'var(--page-bg)',
-        color: 'var(--text-color)',
-        transition: 'background-color 0.3s ease, color 0.3s ease'
-      }}>
-        <Navbar />
-        <main style={{ flex: 1 }}>
-          <AnimatedRoutes />
-        </main>
-        <Footer />
-        <Chatbot onOpenLiveChat={handleOpenLiveChat} />
-        <LiveChatWidget ref={liveChatRef} />
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="app-container" style={{
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+          paddingTop: '80px', // Add padding for fixed navbar
+          backgroundColor: 'var(--page-bg)',
+          color: 'var(--text-color)',
+          transition: 'background-color 0.3s ease, color 0.3s ease'
+        }}>
+          <Navbar />
+          <main style={{ flex: 1 }}>
+            <AnimatedRoutes />
+          </main>
+          <Footer />
+          <Chatbot onOpenLiveChat={handleOpenLiveChat} />
+          <LiveChatWidget ref={liveChatRef} />
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 

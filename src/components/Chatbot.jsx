@@ -10,45 +10,50 @@ const Chatbot = ({ onOpenLiveChat }) => {
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
-  // Predefined responses for common queries
-  const responses = {
-    greeting: [
-      "Hello! Welcome to IntelliSync. How can I help you today?",
-      "Hi there! I'm your IntelliSync assistant. What can I do for you?",
-      "Welcome! I'm here to help with any questions about our services."
-    ],
-    pricing: [
-      "We offer flexible pricing plans starting from $29/month. Would you like me to show you our pricing page?",
-      "Our pricing varies based on your needs. We have Starter, Professional, and Enterprise plans.",
-      "I'd be happy to discuss pricing options. We offer competitive rates with no hidden fees."
-    ],
-    features: [
-      "IntelliSync offers Business Intelligence, Data Automation, Document Management, and System Integrations.",
-      "Our key features include real-time analytics, automated workflows, secure document storage, and seamless integrations.",
-      "We specialize in office automation solutions. Our main features are BI dashboards, data processing, and API integrations."
-    ],
-    contact: [
-      "You can reach our support team at support@intellisync.com or call us at +254-700-000-000.",
-      "For immediate assistance, call us at +254-700-000-000. For general inquiries, email us at info@intellisync.com",
-      "Our customer support is available 24/7. Call us or send an email - we'll get back to you within 2 hours."
-    ],
-    demo: [
-      "Absolutely! I can schedule a demo for you. What's your preferred date and time?",
-      "Great choice! Our demos typically last 30 minutes and cover all our key features.",
-      "I'd love to show you IntelliSync in action! Let me know your availability."
-    ],
-    default: [
-      "I'm not sure I understand. Could you rephrase that or ask about our services, pricing, or contact info?",
-      "I'm still learning! Try asking about our features, pricing, or how to get in touch.",
-      "I didn't catch that. You can ask me about our services, pricing, demos, or contact information."
-    ]
+  // Simple response system
+  const getResponse = (message) => {
+    const text = message.toLowerCase();
+    
+    if (text.includes('hello') || text.includes('hi') || text.includes('hey')) {
+      return "Hello! Welcome to IntelliSync. How can I help you today?";
+    }
+    
+    if (text.includes('price') || text.includes('cost') || text.includes('pricing')) {
+      return "We offer Starter ($29/month), Professional ($79/month), and Enterprise (custom pricing) plans. What size is your organization?";
+    }
+    
+    if (text.includes('feature') || text.includes('service') || text.includes('what')) {
+      return "IntelliSync offers Business Intelligence, Data Automation, Document Management, and System Integrations. Our platform provides real-time analytics, automated workflows, and secure document storage.";
+    }
+    
+    if (text.includes('contact') || text.includes('support') || text.includes('help')) {
+      return "You can reach us at support@intellisync.com or call +254-722-952-138. We're available 24/7 for urgent issues.";
+    }
+    
+    if (text.includes('demo') || text.includes('trial') || text.includes('test')) {
+      return "I'd be happy to schedule a demo! Our demos typically last 30-45 minutes and cover all key features. What's your preferred time?";
+    }
+    
+    if (text.includes('business intelligence') || text.includes('bi') || text.includes('analytics')) {
+      return "Our Business Intelligence service provides enterprise-grade analytics with advanced dashboards, predictive modeling, and real-time insights. We offer executive dashboards and integration with 200+ enterprise systems.";
+    }
+    
+    if (text.includes('data automation') || text.includes('automation')) {
+      return "Our Data Automation service automates data entry, forms processing, and email management. We achieve 90% time savings, 99% accuracy improvement, and 5x productivity increase.";
+    }
+    
+    if (text.includes('document management') || text.includes('document')) {
+      return "Our Document Management service provides secure digital repositories with enterprise-grade security, smart capture automation, and collaborative workflows. We ensure compliance with regulatory standards.";
+    }
+    
+    return "I'm here to help! You can ask me about our services, pricing, demos, or contact information. What would you like to know?";
   };
 
   // Welcome message
   useEffect(() => {
     if (isOpen && messages.length === 0) {
       setTimeout(() => {
-        addBotMessage(responses.greeting[Math.floor(Math.random() * responses.greeting.length)]);
+        addBotMessage("Hello! Welcome to IntelliSync. I'm your AI assistant. How can I help you today?");
       }, 500);
     }
   }, [isOpen]);
@@ -67,43 +72,19 @@ const Chatbot = ({ onOpenLiveChat }) => {
     setMessages(prev => [...prev, { text, sender: 'user', timestamp: new Date() }]);
   };
 
-  const getBotResponse = (userMessage) => {
-    const message = userMessage.toLowerCase();
-    
-    if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
-      return responses.greeting[Math.floor(Math.random() * responses.greeting.length)];
-    }
-    
-    if (message.includes('price') || message.includes('cost') || message.includes('plan')) {
-      return responses.pricing[Math.floor(Math.random() * responses.pricing.length)];
-    }
-    
-    if (message.includes('feature') || message.includes('service') || message.includes('what')) {
-      return responses.features[Math.floor(Math.random() * responses.features.length)];
-    }
-    
-    if (message.includes('contact') || message.includes('support') || message.includes('help')) {
-      return responses.contact[Math.floor(Math.random() * responses.contact.length)];
-    }
-    
-    if (message.includes('demo') || message.includes('trial') || message.includes('test')) {
-      return responses.demo[Math.floor(Math.random() * responses.demo.length)];
-    }
-    
-    return responses.default[Math.floor(Math.random() * responses.default.length)];
-  };
-
   const handleSendMessage = () => {
     if (!inputValue.trim()) return;
     
-    addUserMessage(inputValue);
+    const userMessage = inputValue;
+    addUserMessage(userMessage);
     setInputValue('');
     setIsTyping(true);
     
+    // Fast response
     setTimeout(() => {
-      const response = getBotResponse(inputValue);
+      const response = getResponse(userMessage);
       addBotMessage(response);
-    }, 1000 + Math.random() * 1000);
+    }, 600);
   };
 
   const handleKeyPress = (e) => {
@@ -114,6 +95,25 @@ const Chatbot = ({ onOpenLiveChat }) => {
 
   const formatTime = (timestamp) => {
     return timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  };
+
+  const handleQuickAction = (action) => {
+    const actions = {
+      pricing: "Tell me about pricing",
+      features: "What features do you offer?",
+      demo: "I want a demo",
+      contact: "How can I contact you?"
+    };
+
+    const message = actions[action];
+    addUserMessage(message);
+    setInputValue('');
+    setIsTyping(true);
+    
+    setTimeout(() => {
+      const response = getResponse(message);
+      addBotMessage(response);
+    }, 600);
   };
 
   return (
@@ -158,8 +158,8 @@ const Chatbot = ({ onOpenLiveChat }) => {
                 </svg>
               </div>
               <div className="chatbot-info">
-                <h3>IntelliSync Assistant</h3>
-                <span className="status">Online</span>
+                <h3>IntelliSync AI Assistant</h3>
+                <span className="status">🤖 Fast & Responsive</span>
               </div>
               <button 
                 className="chatbot-close"
@@ -212,35 +212,17 @@ const Chatbot = ({ onOpenLiveChat }) => {
 
             {/* Quick Actions */}
             <div className="chatbot-quick-actions">
-              <button onClick={() => {
-                addUserMessage("Tell me about pricing");
-                setInputValue('');
-                setIsTyping(true);
-                setTimeout(() => {
-                  addBotMessage(responses.pricing[Math.floor(Math.random() * responses.pricing.length)]);
-                }, 1000);
-              }}>
+              <button onClick={() => handleQuickAction('pricing')}>
                 💰 Pricing
               </button>
-              <button onClick={() => {
-                addUserMessage("What features do you offer?");
-                setInputValue('');
-                setIsTyping(true);
-                setTimeout(() => {
-                  addBotMessage(responses.features[Math.floor(Math.random() * responses.features.length)]);
-                }, 1000);
-              }}>
+              <button onClick={() => handleQuickAction('features')}>
                 ⚡ Features
               </button>
-              <button onClick={() => {
-                addUserMessage("I want a demo");
-                setInputValue('');
-                setIsTyping(true);
-                setTimeout(() => {
-                  addBotMessage(responses.demo[Math.floor(Math.random() * responses.demo.length)]);
-                }, 1000);
-              }}>
+              <button onClick={() => handleQuickAction('demo')}>
                 🎯 Demo
+              </button>
+              <button onClick={() => handleQuickAction('contact')}>
+                📞 Contact
               </button>
             </div>
 
@@ -256,7 +238,7 @@ const Chatbot = ({ onOpenLiveChat }) => {
               <input
                 ref={inputRef}
                 type="text"
-                placeholder="Type your message..."
+                placeholder="Ask me anything about IntelliSync..."
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
@@ -280,4 +262,4 @@ const Chatbot = ({ onOpenLiveChat }) => {
   );
 };
 
-export default Chatbot; 
+export default Chatbot;
