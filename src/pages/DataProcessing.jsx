@@ -92,6 +92,12 @@ function DataProcessing() {
     navigate('/Contact?subject=Data Processing Services Inquiry');
   };
 
+  // Split industries into two rows of 4 columns each
+  const industriesGrid = [];
+  for (let i = 0; i < industries.length; i += 4) {
+    industriesGrid.push(industries.slice(i, i + 4));
+  }
+
   return (
     <ErrorBoundary>
       <div className="data-automation-page">
@@ -143,7 +149,7 @@ function DataProcessing() {
               <h2 className="section-header gradient-underline">Performance Metrics</h2>
               <ul className="dm-feature-list lively-list">
                 {metrics.map((metric, i) => (
-                  <li key={metric.title}><span className="feature-icon">{metric.icon}</span><strong>{metric.title}:</strong> <span className="highlight">{metric.value}</span> {metric.desc}</li>
+                  <li key={metric.title}><span className="feature-icon">{metric.icon}</span><strong>{metric.title}:</strong> {metric.value} {metric.desc}</li>
                 ))}
               </ul>
             </div>

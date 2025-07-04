@@ -14,14 +14,14 @@ function DataAutomation() {
   const navigate = useNavigate();
 
   const automationProcess = [
-    { icon: <FaUpload />, title: 'Data Input', desc: 'Capture data from multiple sources' },
+    { icon: <FaDownload />, title: 'Data Input', desc: 'Capture data from multiple sources' },
     { icon: <FaCogs />, title: 'Processing', desc: 'AI-powered data processing' },
     { icon: <FaCheckCircle />, title: 'Validation', desc: 'Quality assurance checks' },
-    { icon: <FaDownload />, title: 'Output', desc: 'Deliver processed data' },
+    { icon: <FaUpload />, title: 'Output', desc: 'Deliver processed data' },
   ];
 
   const automationTypes = [
-    { icon: <FaUpload />, title: 'Document Processing', desc: 'Extract, classify, and process documents using AI and OCR.' },
+    { icon: <FaDatabase />, title: 'Document Processing', desc: 'Extract, classify, and process documents using AI and OCR.' },
     { icon: <FaSitemap />, title: 'Workflow Automation', desc: 'Streamline business processes with intelligent workflow automation.' },
     { icon: <FaNetworkWired />, title: 'Data Integration', desc: 'Connect and synchronize data across multiple systems.' },
     { icon: <FaChartLine />, title: 'Reporting Automation', desc: 'Generate and distribute reports automatically.' },
@@ -91,7 +91,7 @@ function DataAutomation() {
               {performanceMetrics.map((metric) => (
                 <li key={metric.title}>
                   <span className="feature-icon">{metric.icon}</span>
-                  <strong>{metric.title}:</strong> <span className="highlight">{metric.value}</span> {metric.desc}
+                  <strong>{metric.title}:</strong> {metric.value} {metric.desc}
                 </li>
               ))}
             </ul>

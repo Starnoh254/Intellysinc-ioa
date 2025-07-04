@@ -141,7 +141,7 @@ function SecurityServices() {
               <h2 className="section-header gradient-underline">Key Benefits</h2>
               <ul className="dm-feature-list lively-list">
                 {benefits.map((benefit) => (
-                  <li key={benefit.title}><span className="feature-icon">{benefit.icon}</span><strong>{benefit.title}:</strong> <span className="highlight">{benefit.value}</span> {benefit.desc}</li>
+                  <li key={benefit.title}><span className="feature-icon">{benefit.icon}</span><strong>{benefit.title}:</strong> {benefit.value} {benefit.desc}</li>
                 ))}
               </ul>
             </div>

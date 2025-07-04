@@ -140,12 +140,53 @@
   border-radius: 20px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s, max-height 0.4s, background 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  max-height: 180px;
+  position: relative;
+}
+
+.testimonial-card .testimonial-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 0;
+  z-index: 2;
+}
+
+.testimonial-card .testimonial-info h3,
+.testimonial-card .testimonial-info .company {
+  color: white;
+}
+
+.testimonial-card .testimonial-content {
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.4s, max-height 0.4s;
+  pointer-events: none;
 }
 
 .testimonial-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.03);
+  background: rgba(0, 123, 255, 0.15);
+  max-height: 500px;
+  box-shadow: 0 8px 24px rgba(0, 123, 255, 0.18);
+}
+
+.testimonial-card:hover .testimonial-content {
+  opacity: 1;
+  max-height: 200px;
+  pointer-events: auto;
+  margin-top: 15px;
+}
+
+.testimonial-card .testimonial-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  font-style: italic;
+  color: #fff;
 }
 
 .testimonial-header {

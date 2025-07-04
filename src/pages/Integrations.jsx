@@ -78,7 +78,7 @@ function Integrations() {
               <h2 className="section-header gradient-underline">Benefits</h2>
               <ul className="dm-feature-list lively-list">
                 {benefits.map((b, i) => (
-                  <li key={b.title}><span className="feature-icon">{b.icon}</span><strong>{b.title}:</strong> <span className="highlight">{b.value}</span> {b.desc}</li>
+                  <li key={b.title}><span className="feature-icon">{b.icon}</span><strong>{b.title}:</strong> {b.value} {b.desc}</li>
                 ))}
               </ul>
             </div>

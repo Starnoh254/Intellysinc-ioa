@@ -817,3 +817,13 @@ body,
   color: #ffe082 !important;
   font-weight: bold;
 } 
+
+.lively-list li, .dm-feature-list li {
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #222;
+} 

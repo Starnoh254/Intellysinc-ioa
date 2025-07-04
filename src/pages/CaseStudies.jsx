@@ -104,97 +104,29 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* Filter Controls */}
-      <div className="case-filters">
-        {industries.map(industry => (
-          <button
-            key={industry}
-            className={activeFilter === industry ? 'active' : ''}
-            onClick={() => setActiveFilter(industry)}
-          >
-            {industry}
-          </button>
-        ))}
-      </div>
-
-      {/* Case Studies Grid */}
-      <div className="case-studies-grid">
-        {filteredStudies.map(study => (
-          <div 
-            key={study.id} 
-            className={`case-study-card ${expandedStudy === study.id ? 'expanded' : ''}`}
-          >
-            <div className="card-header">
-              <div className="client-logo">
-                <img src={study.logo} alt={`${study.client} logo`} />
-              </div>
-              <div className="card-title">
-                <span className="industry">{study.industry}</span>
-                <h2>{study.title}</h2>
-              </div>
-              <button 
-                className="toggle-button"
-                onClick={() => toggleExpand(study.id)}
-                aria-label={expandedStudy === study.id ? 'Collapse case study' : 'Expand case study'}
-              >
-                {expandedStudy === study.id ? '−' : '+'}
-              </button>
+      {/* Sample Case Studies Section */}
+      <section className="sample-case-studies">
+        <div className="sample-studies-content">
+          <h2>Sample Case Studies</h2>
+          <div className="sample-studies-grid">
+            <div className="sample-study-card">
+              <h3>Automating Invoice Processing</h3>
+              <p className="company">Acme Corp</p>
+              <p>Reduced manual invoice entry time by 80% and improved accuracy with our AI-powered automation solution.</p>
             </div>
-
-            <div className="card-preview">
-              <div className="thumbnail">
-                <img src={study.thumbnail} alt={study.title} />
-              </div>
-              <div className="preview-results">
-                {study.results.slice(0, 2).map((result, index) => (
-                  <div key={index} className="mini-metric">
-                    <span className="value">{result.metric}</span>
-                    <span className="label">{result.label}</span>
-                  </div>
-                ))}
-              </div>
+            <div className="sample-study-card">
+              <h3>Seamless System Integration</h3>
+              <p className="company">Global Manufacturing</p>
+              <p>Connected ERP, CRM, and document management systems for real-time data flow and improved decision-making.</p>
             </div>
-
-            {/* Expanded Content */}
-            {expandedStudy === study.id && (
-              <div className="expanded-content">
-                <div className="content-section">
-                  <h3>The Challenge</h3>
-                  <p>{study.challenge}</p>
-                </div>
-
-                <div className="content-section">
-                  <h3>Our Solution</h3>
-                  <p>{study.solution}</p>
-                </div>
-
-                <div className="results-grid">
-                  {study.results.map((result, index) => (
-                    <div key={index} className="result-metric">
-                      <span className="metric-value">{result.metric}</span>
-                      <span className="metric-label">{result.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="testimonial">
-                  <blockquote>
-                    <p>"{study.testimonial}"</p>
-                    <cite>— {study.author}</cite>
-                  </blockquote>
-                </div>
-
-                <button 
-                  className="download-button"
-                  onClick={() => handleDownloadCaseStudy(study)}
-                >
-                  Download Full Case Study
-                </button>
-              </div>
-            )}
+            <div className="sample-study-card">
+              <h3>Document Compliance Automation</h3>
+              <p className="company">HealthFirst Medical</p>
+              <p>Automated compliance tracking and document workflows, ensuring regulatory requirements are always met.</p>
+            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="case-studies-cta">
