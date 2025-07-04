@@ -234,8 +234,8 @@ body {
 }
 
 .award-icon img {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -270,12 +270,45 @@ body {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
+.award-hover-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.award-card:hover .award-hover-content {
+  opacity: 1;
+  max-height: 500px;
+}
+
 .award-description {
   color: #f0f0f0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.6;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
   font-weight: 500;
+}
+
+.award-details {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.award-details h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+.award-details p {
+  color: #f0f0f0;
+  line-height: 1.5;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  font-weight: 400;
+  font-size: 0.9rem;
 }
 
 .award-details-btn {
@@ -351,8 +384,8 @@ body {
 }
 
 .modal-icon img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);

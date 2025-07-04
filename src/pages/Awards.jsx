@@ -13,52 +13,47 @@ const Awards = () => {
     {
       id: 1,
       title: "Bold Solutions Provider Award",
-      year: 2022,
       category: "innovation",
       organization: "Tech Excellence Forum",
       description: "Recognized for outstanding innovative solutions in contract management systems",
       details: "This award celebrates companies that demonstrate exceptional creativity and technical excellence in developing solutions that transform business processes. Our contract management system was praised for its intuitive design and powerful automation capabilities.",
-      icon: "https://via.placeholder.com/80x80/007bff/ffffff?text=🏆"
+      icon: `${import.meta.env.BASE_URL}images/bold_solutions_award.jpg`
     },
     {
       id: 2,
       title: "Best Innovative Solutions Design Architecture",
-      year: 2022,
       category: "design",
       organization: "Design & Architecture Awards",
       description: "Excellence in architectural design for enterprise solutions",
       details: "Our architectural approach was recognized for its scalability, maintainability, and user-centric design principles. The system architecture supports seamless integration with existing enterprise infrastructure.",
-      icon: "https://via.placeholder.com/80x80/28a745/ffffff?text=🏗️"
+      icon: `${import.meta.env.BASE_URL}images/innovative_solutions_award.jpg`
     },
     {
       id: 3,
       title: "Digital Transformation Excellence",
-      year: 2023,
       category: "transformation",
       organization: "Digital Innovation Council",
       description: "Leading digital transformation initiatives in East Africa",
       details: "Awarded for our comprehensive approach to digital transformation, helping organizations modernize their operations and improve efficiency through technology integration.",
-      icon: "https://via.placeholder.com/80x80/ffc107/000000?text=🚀"
+      icon: `${import.meta.env.BASE_URL}images/digital_transformation_award.jpg`
     },
     {
       id: 4,
       title: "Customer Service Excellence",
-      year: 2023,
       category: "service",
       organization: "Customer Experience Awards",
       description: "Outstanding customer support and service delivery",
       details: "Recognized for our commitment to customer success, providing exceptional support and ensuring smooth implementation of our solutions across diverse client environments.",
-      icon: "https://via.placeholder.com/80x80/dc3545/ffffff?text=⭐"
+      icon: `${import.meta.env.BASE_URL}images/customer_service_award.jpg`
     },
     {
       id: 5,
       title: "Technology Innovation Award",
-      year: 2024,
       category: "innovation",
       organization: "African Tech Summit",
       description: "Pioneering technology solutions for African markets",
       details: "Celebrated for developing technology solutions specifically tailored to address unique challenges and opportunities in the African business landscape.",
-      icon: "https://via.placeholder.com/80x80/6f42c1/ffffff?text=💡"
+      icon: `${import.meta.env.BASE_URL}images/technology_innovation_award.jpg`
     }
   ];
 
@@ -183,16 +178,21 @@ const Awards = () => {
               </div>
               <div className="award-content">
                 <h3>{award.title}</h3>
-                <p className="award-year">{award.year}</p>
                 <p className="award-organization">{award.organization}</p>
-                <p className="award-description">{award.description}</p>
-                <motion.button 
-                  className="award-details-btn"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  View Details
-                </motion.button>
+                <div className="award-hover-content">
+                  <p className="award-description">{award.description}</p>
+                  <div className="award-details">
+                    <h4>About This Award</h4>
+                    <p>{award.details}</p>
+                  </div>
+                  <motion.button 
+                    className="award-details-btn"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    View Details
+                  </motion.button>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -222,7 +222,6 @@ const Awards = () => {
                   <img src={selectedAward.icon} alt={selectedAward.title} />
                 </div>
                 <h2>{selectedAward.title}</h2>
-                <p className="modal-year">{selectedAward.year}</p>
                 <p className="modal-organization">{selectedAward.organization}</p>
                 <p className="modal-description">{selectedAward.description}</p>
                 <div className="modal-details">

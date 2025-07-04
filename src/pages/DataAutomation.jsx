@@ -52,7 +52,7 @@ function DataAutomation() {
               Data Automation Solutions
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="hero-subtitle">
-              Transform manual processes into intelligent, automated workflows. Reduce processing time by 80% with our data automation solutions.
+              Transform manual processes into intelligent, automated workflows. Reduce processing time by 80% with our digitized data automation solutions.
             </motion.p>
           </div>
         </section>
