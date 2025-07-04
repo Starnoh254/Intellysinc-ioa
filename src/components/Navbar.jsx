@@ -99,7 +99,6 @@ const Navbar = () => {
       title: 'Blogs',
       links: [
         { name: 'Blog', path: '/Blog' },
-        { name: 'BlogPost', path: '/BlogPost' },
       ],
     },
     {
@@ -116,20 +115,18 @@ const Navbar = () => {
     <header className={`navbar-fixed ${isScrolled ? 'scrolled' : ''}`} ref={navbarRef}>
       <div className="navbar-container">
         <Link to="/" className="logo" onClick={handleLinkClick}>
-          <img
-            src="/images/logo-intellisync.svg"
-            alt="IntelliSync OA Logo"
-            style={{
-              height: '48px',
-              width: 'auto',
-              filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))',
-              background: 'transparent',
-              padding: '4px 0',
-              display: 'block',
-              maxWidth: '180px',
-              objectFit: 'contain',
-            }}
-          />
+          <span style={{
+            fontWeight: 'bold',
+            fontSize: '2rem',
+            color: '#007bff',
+            letterSpacing: '1px',
+            fontFamily: 'Segoe UI, Arial, sans-serif',
+            display: 'block',
+            padding: '4px 0',
+            textShadow: '0 2px 6px rgba(0,0,0,0.15)'
+          }}>
+            IntelliSync-OA
+          </span>
         </Link>
 
         <button
