@@ -23,6 +23,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: url('/images/data-automation.jpg') center center/cover no-repeat;
 }
 
 .hero-overlay {
