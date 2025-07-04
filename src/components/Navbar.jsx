@@ -115,18 +115,11 @@ const Navbar = () => {
     <header className={`navbar-fixed ${isScrolled ? 'scrolled' : ''}`} ref={navbarRef}>
       <div className="navbar-container">
         <Link to="/" className="logo" onClick={handleLinkClick}>
-          <span style={{
-            fontWeight: 'bold',
-            fontSize: '2rem',
-            color: '#007bff',
-            letterSpacing: '1px',
-            fontFamily: 'Segoe UI, Arial, sans-serif',
-            display: 'block',
-            padding: '4px 0',
-            textShadow: '0 2px 6px rgba(0,0,0,0.15)'
-          }}>
-            IntelliSync-OA
-          </span>
+          <img
+            src={`${import.meta.env.BASE_URL}images/logo-intellisync.png`}
+            alt="IntelliSync OA Logo"
+            style={{ height: '56px', width: '180px', maxWidth: '100%', objectFit: 'cover', display: 'block' }}
+          />
         </Link>
 
         <button
