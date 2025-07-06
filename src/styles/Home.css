@@ -107,6 +107,48 @@ body {
   gap: 1rem;
 }
 
+/* Why Choose Us Section */
+.why-choose-us {
+  padding: 4rem 2rem;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+.why-choose-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4rem 2rem;
+  border-radius: 8px;
+  backdrop-filter: blur(2px);
+  position: relative;
+  z-index: 2;
+}
+
+.why-choose-overlay h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.why-choose-overlay h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
 /* Features Section */
 .features {
   padding: 4rem 2rem;
@@ -114,6 +156,97 @@ body {
   color: #ffffff;
   position: relative;
   z-index: 1;
+}
+
+/* Why Choose Us Content Styling */
+.why-choose-content {
+  margin-bottom: 4rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-description {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.lead-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sub-text {
+  font-size: 1.2rem;
+  color: #e8f4fd;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.benefit-text {
+  font-size: 1.1rem;
+  color: #d1e7ff;
+  line-height: 1.7;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.archive-section {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.archive-card {
+  background: transparent;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 600px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.archive-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.archive-card-overlay {
+  background: transparent;
+  padding: 2.5rem;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.archive-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+.archive-description {
+  font-size: 1.1rem;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .features h2 {
@@ -272,5 +405,39 @@ section {
   .home-hero-cta {
     flex-direction: column;
     align-items: center;
+  }
+
+  /* Mobile responsive styling for Why Choose Us section */
+  .why-choose-overlay h2 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  
+  .lead-text {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+  }
+  
+  .sub-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .benefit-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .archive-card {
+    margin: 0 1rem;
+    padding: 2rem;
+  }
+  
+  .archive-title {
+    font-size: 1.3rem;
+  }
+  
+  .archive-description {
+    font-size: 1rem;
   }
 }

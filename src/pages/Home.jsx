@@ -8,6 +8,8 @@ const intelli0202 = import.meta.env.BASE_URL + 'images/intelli0202.jpg';
 const intelli0203 = import.meta.env.BASE_URL + 'images/intelli0203.jpg';
 const intelli0301 = import.meta.env.BASE_URL + 'images/intelli0301.jpg';
 const intelli0302 = import.meta.env.BASE_URL + 'images/intelli0302.jpg';
+const whyChooseUs = import.meta.env.BASE_URL + 'images/why-choose-us.jpg';
+const archive = import.meta.env.BASE_URL + 'images/archive.png';
 
 const Home = () => {
   // Reusable CTA Button Component
@@ -38,13 +40,13 @@ const Home = () => {
           transition={{ type: 'spring', stiffness: 100 }}
           style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '56px' }}
         >
-          Intellisync Office Automation.
+          Intellisync Office Automation
         </motion.h1>
         <motion.p
           animate={{ x: [50, 0] }}
           transition={{ type: 'spring', stiffness: 100 }}
         >
-          Document Workflow Strategy Consultants <br />
+          Digitization and Document Workflow Strategy Consultants <br />
           Process and Cost Optimization
         </motion.p>
         <div className="home-hero-cta">
@@ -52,6 +54,72 @@ const Home = () => {
           <CTAButton text="Learn More" />
         </div>
       </motion.section>
+    );
+  };
+
+  // Why Choose Us Component
+  const WhyChooseUs = () => {
+    return (
+      <section 
+        className="why-choose-us"
+        style={{
+          backgroundImage: `url(${whyChooseUs})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+          position: 'relative'
+        }}
+      >
+        <div className="why-choose-overlay">
+          <h2>Why Choose Us?</h2>
+          
+          <motion.div 
+            className="why-choose-content"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="main-description">
+              <p className="lead-text">
+                Intellisync Office Automation is the industry-leading solution for intelligent document processing.
+              </p>
+              <p className="sub-text">
+                Leveraging a user-friendly point-and-click interface, Intellisync-OA learns to extract any field from any document after seeing just one example.
+              </p>
+              <p className="benefit-text">
+                Enables you to automate archiving, task management, and Knowledge Graph creation to reveal valuable connections between documents and drive your organization's efficiency and insights.
+              </p>
+            </div>
+
+            <motion.div 
+              className="archive-section"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div 
+                className="archive-card"
+                style={{
+                  backgroundImage: `url(${archive})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
+                <div className="archive-card-overlay">
+                  <h3 className="archive-title">Archive - Document Management</h3>
+                  <p className="archive-description">
+                    Optimize business efficiency: embrace the future with our Advanced Document Archive
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
     );
   };
 
@@ -77,7 +145,7 @@ const Home = () => {
 
     return (
       <section className="features">
-        <h2>Why Choose Us?</h2>
+        <h2>Our Features</h2>
         <div className="features-grid">
           {features.map((feature, index) => (
             <motion.div
@@ -155,6 +223,7 @@ const Home = () => {
   return (
     <div>
       <Hero />
+      <WhyChooseUs />
       <Features />
       <Testimonials />
     </div>
