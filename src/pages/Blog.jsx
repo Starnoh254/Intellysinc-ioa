@@ -131,10 +131,9 @@ const Blog = () => {
             <p className="excerpt">{filteredPosts[0].excerpt}</p>
             <div className="post-meta">
               <span>By {filteredPosts[0].author.name}</span>
-              <span>{filteredPosts[0].date}</span>
               <span>{filteredPosts[0].readTime}</span>
             </div>
-            <a href={`/blog/${filteredPosts[0].slug}`} className="read-more">Read Article →</a>
+            <a href={`#/blog/${filteredPosts[0].slug}`} className="read-more">Read Article →</a>
           </div>
         </motion.div>
       )}
@@ -156,11 +155,10 @@ const Blog = () => {
             <div className="card-content">
               <h3>{post.title}</h3>
               <p className="excerpt">{post.excerpt}</p>
-              <div className="post-meta">
-                <span>{post.date}</span>
-                <span>{post.readTime}</span>
-              </div>
-              <a href={`/blog/${post.slug}`} className="read-more">Read More →</a>
+                          <div className="post-meta">
+              <span>{post.readTime}</span>
+            </div>
+                          <a href={`#/blog/${post.slug}`} className="read-more">Read More →</a>
             </div>
           </motion.article>
         ))}
