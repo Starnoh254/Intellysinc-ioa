@@ -59,7 +59,7 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 2rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   flex-wrap: wrap;
 }
@@ -161,15 +161,19 @@ html, body {
 
 .nav-links {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
+  flex: 1;
+  justify-content: flex-start;
+  margin-left: 2rem;
 }
 
 /* Authentication Section */
 .auth-section {
   display: flex;
   align-items: center;
-  margin-left: 1rem;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .login-btn {
@@ -447,7 +451,8 @@ html, body {
   }
   
   .nav-links {
-    gap: 1.5rem;
+    gap: 2.5rem;
+    margin-left: 3rem;
   }
   
   .logo {

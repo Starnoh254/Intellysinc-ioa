@@ -106,7 +106,7 @@ const Home = () => {
                 className="archive-card"
                 style={{
                   backgroundImage: `url(${archive})`,
-                  backgroundSize: 'cover',
+                  backgroundSize: 'contain',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat'
                 }}
