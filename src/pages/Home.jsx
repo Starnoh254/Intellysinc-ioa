@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Home.css'; // CSS import
 
 // Image paths for public folder assets
@@ -12,6 +13,8 @@ const whyChooseUs = import.meta.env.BASE_URL + 'images/why-choose-us.jpg';
 const archive = import.meta.env.BASE_URL + 'images/archive.png';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   // Reusable CTA Button Component
   const CTAButton = ({ text, primary = false, onClick }) => {
     return (
@@ -51,7 +54,7 @@ const Home = () => {
         </motion.p>
         <div className="home-hero-cta">
           <CTAButton text="Get Started" primary={true} />
-          <CTAButton text="Learn More" />
+          <CTAButton text="Learn More" onClick={() => navigate('/CompanyInfo')} />
         </div>
       </motion.section>
     );
