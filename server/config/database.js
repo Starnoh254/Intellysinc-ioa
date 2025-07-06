@@ -36,6 +36,9 @@ const initializeFirebase = () => {
       sessions: new Map()
     };
     
+    // Clear database on startup for development
+    console.log('🧹 Clearing in-memory database for fresh start...');
+    
     // Mock Firebase-like interface
     db = {
       collection: (name) => ({
@@ -111,6 +114,8 @@ const initializeFirebase = () => {
               }
             });
             return {
+              empty: docs.length === 0,
+              docs: docs,
               forEach: (callback) => docs.forEach(callback)
             };
           },

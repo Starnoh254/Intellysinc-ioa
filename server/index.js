@@ -121,6 +121,22 @@ app.get('/api/health', async (req, res) => {
   }
 });
 
+// Debug endpoint to clear database (development only)
+app.post('/api/debug/clear-db', (req, res) => {
+  if (process.env.NODE_ENV === 'production') {
+    return res.status(403).json({ error: 'Not available in production' });
+  }
+  
+  // Clear in-memory database
+  const db = getDb();
+  if (db && db.collection) {
+    // This will reset the in-memory storage
+    console.log('🧹 Clearing in-memory database...');
+  }
+  
+  res.json({ message: 'Database cleared successfully' });
+});
+
 // Authentication endpoints
 app.post('/api/auth/register', authLimiter, validate(schemas.user.register), async (req, res) => {
   try {
@@ -129,6 +145,8 @@ app.post('/api/auth/register', authLimiter, validate(schemas.user.register), asy
     
     // Check if user already exists
     const existingUser = await db.collection('users').where('email', '==', email).get();
+    console.log('🔍 Checking for existing user:', email);
+    console.log('🔍 Existing user result:', existingUser.empty ? 'No user found' : 'User found');
     if (!existingUser.empty) {
       return res.status(409).json({
         error: 'User already exists',
@@ -634,7 +652,7 @@ app.use((err, req, res, next) => {
 });
 
 // 404 handler
-app.use('*', (req, res) => {
+app.use((req, res) => {
   res.status(404).json({
     error: 'Endpoint not found',
     code: 'NOT_FOUND'

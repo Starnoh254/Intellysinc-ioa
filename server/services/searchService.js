@@ -173,8 +173,8 @@ const search = async (query, type = 'all', limit = 20, offset = 0) => {
         searchResults = await searchInPages(query, limit, offset);
         break;
       case 'blogs':
-        const blogs = await getBlogsForSearch();
-        searchResults = await searchInBlogs(blogs, query);
+        const blogsData = await getBlogsForSearch();
+        searchResults = await searchInBlogs(blogsData, query);
         searchResults = searchResults.slice(offset, offset + limit);
         break;
       case 'resources':

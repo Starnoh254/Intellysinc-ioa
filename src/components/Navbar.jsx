@@ -138,7 +138,7 @@ const Navbar = () => {
             <img
               src={`${import.meta.env.BASE_URL}images/logo-intellisync.png`}
               alt="IntelliSync OA Logo"
-              style={{ height: '56px', width: '180px', maxWidth: '100%', objectFit: 'cover', display: 'block' }}
+              className="logo-image"
             />
           </Link>
 
