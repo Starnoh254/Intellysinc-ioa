@@ -114,6 +114,9 @@ body {
   position: relative;
   z-index: 1;
   min-height: 100vh;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 .why-choose-overlay {
@@ -216,6 +219,9 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 .archive-card:hover {
@@ -408,6 +414,18 @@ section {
   }
 
   /* Mobile responsive styling for Why Choose Us section */
+  .why-choose-us {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+  
+  .archive-card {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+  
   .why-choose-overlay h2 {
     font-size: 2rem;
     letter-spacing: 1px;

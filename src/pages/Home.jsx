@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Home.css'; // CSS import
 
 // Image paths for public folder assets
-const intelli0201 = import.meta.env.BASE_URL + 'images/intelli0201.jpg';
-const intelli0202 = import.meta.env.BASE_URL + 'images/intelli0202.jpg';
-const intelli0203 = import.meta.env.BASE_URL + 'images/intelli0203.jpg';
-const intelli0301 = import.meta.env.BASE_URL + 'images/intelli0301.jpg';
-const intelli0302 = import.meta.env.BASE_URL + 'images/intelli0302.jpg';
-const whyChooseUs = import.meta.env.BASE_URL + 'images/why-choose-us.jpg';
-const archive = import.meta.env.BASE_URL + 'images/archive.png';
+const intelli0201 = '/images/intelli0201.jpg';
+const intelli0202 = '/images/intelli0202.jpg';
+const intelli0203 = '/images/intelli0203.jpg';
+const intelli0301 = '/images/intelli0301.jpg';
+const intelli0302 = '/images/intelli0302.jpg';
+const whyChooseUs = '/images/why-choose-us.jpg';
+const archive = '/images/archive.png';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -70,7 +70,6 @@ const Home = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
           position: 'relative'
         }}
       >
