@@ -161,7 +161,7 @@ const About = () => {
       {/* Hero Section */}
       <motion.section className="about-hero" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.8 }}>
         <motion.h1 animate={{ x: [-50, 0] }} transition={{ type: 'spring', stiffness: 100 }}>
-          IntelliSync Office Automation Limited (OA)
+          intellisync-ioa (IOA)
         </motion.h1>
         <motion.p animate={{ x: [50, 0] }} transition={{ type: 'spring', stiffness: 100 }}>
           "Synchronizing Your Office, Maximizing Your Productivity"<br />
@@ -177,7 +177,7 @@ const About = () => {
             <div>
               <h2>Company Overview</h2>
               <p>
-                IntelliSync Office Automation Limited is an end-to-end leading office automation solutions provider. Seamlessly integrating software, hardware, processes, and business workflows, OA empowers organizations to achieve higher productivity, minimize errors, and optimize resource utilization. Our tailored solutions address the unique challenges of modern workplaces—helping clients transform routine tasks into efficient, digitally driven processes.
+                intellisync-ioa is an end-to-end leading office automation solutions provider. Seamlessly integrating software, hardware, processes, and business workflows, IOA empowers organizations—from small businesses to large enterprises—to optimize efficiency, enhance security, and reduce operational costs by structuring data and workflows intelligently.
               </p>
             </div>
           </div>
@@ -371,7 +371,7 @@ const About = () => {
       {/* Why OA / Key Components */}
       <div className="about-main-card about-components-card">
         <section className="about-section">
-          <h2>Why IntelliSync Office Automation</h2>
+          <h2>Why intellisync-ioa</h2>
           <p className="about-components-intro">
             OA leverages the use of technology to streamline and improve office tasks and workflows. By integrating Software, Hardware, Processes and Businesses to reduce errors, and optimize resource management.
           </p>
@@ -409,13 +409,13 @@ const About = () => {
           <h2>Contact Us</h2>
           <div className="about-contact-flex">
             <div className="about-contact-info">
-              <div><FaEnvelope /> <a href="mailto:info@intellisync-oa.com">info@intellisync-oa.com</a></div>
+              <div><FaEnvelope /> <a href="mailto:info@intellisync-ioa.com">info@intellisync-ioa.com</a></div>
               <div><FaPhone /> +254 722 952 138 | +254 746 657 031 | +254 735 993 939</div>
-              <div><FaGlobe /> <a href="https://www.intellisync-oa.com" target="_blank" rel="noopener noreferrer">www.intellisync-oa.com</a></div>
+              <div><FaGlobe /> <a href="https://www.intellisync-ioa.com" target="_blank" rel="noopener noreferrer">www.intellisync-ioa.com</a></div>
               <div>P. O. Box 27346-0100, Nairobi, Kenya</div>
             </div>
             <div className="about-contact-cta">
-              <a href="mailto:info@intellisync-oa.com" className="about-contact-btn">Get in Touch</a>
+              <a href="mailto:info@intellisync-ioa.com" className="about-contact-btn">Get in Touch</a>
             </div>
           </div>
         </section>

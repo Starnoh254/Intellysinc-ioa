@@ -8,7 +8,7 @@ function Testimonials() {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const handleStartFreeTrial = () => {
-    navigate('/Contact?subject=Start Free Trial - Join 500+ Happy Customers Using IntelliSync');
+    navigate('/Contact?subject=Start Free Trial - Join 500+ Happy Customers Using intellisync-ioa');
   };
 
   const handleScheduleDemo = () => {
@@ -16,7 +16,7 @@ function Testimonials() {
   };
 
   const handleLearnMore = () => {
-    navigate('/Contact?subject=Learn More - How IntelliSync Delivers 10x Productivity Increase');
+    navigate('/Contact?subject=Learn More - How intellisync-ioa Delivers 10x Productivity Increase');
   };
 
   const handleGetQuote = () => {
@@ -30,7 +30,7 @@ function Testimonials() {
       company: "TechFlow Solutions",
       category: "automation",
       rating: 5,
-      content: "IntelliSync has completely transformed our document processing workflow. What used to take hours now happens in minutes. The automation features are incredibly intuitive and the support team is always helpful.",
+      content: "intellisync-ioa has completely transformed our document processing workflow. What used to take hours now happens in minutes. The automation features are incredibly intuitive and the support team is always responsive.",
       avatar: "👩‍💼",
       industry: "Technology"
     },
@@ -70,7 +70,7 @@ function Testimonials() {
       company: "StartupInnovate",
       category: "automation",
       rating: 5,
-      content: "As a startup, efficiency is everything. IntelliSync has helped us scale our operations without adding headcount. The automation tools are game-changing for small businesses.",
+      content: "As a startup, efficiency is everything. intellisync-ioa has helped us scale our operations without adding headcount. The automation tools are game-changing for small businesses.",
       avatar: "👩‍🚀",
       industry: "Startup"
     },
@@ -272,7 +272,7 @@ function Testimonials() {
           viewport={{ once: true }}
         >
           <h2>Join Our Success Stories</h2>
-          <p>Ready to transform your business operations? Start your journey with IntelliSync today and join 500+ satisfied customers.</p>
+          <p>Ready to transform your business operations? Start your journey with intellisync-ioa today and join 500+ satisfied customers.</p>
           <div className="cta-buttons">
             <motion.button 
               className="primary-cta-btn" 

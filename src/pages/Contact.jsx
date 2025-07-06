@@ -85,8 +85,8 @@ const Contact = () => {
       icon: "📧",
       title: "Email Us",
       details: [
-        { text: "info@intellisync-oa.com", link: "mailto:info@intellisync-oa.com" },
-        { text: "support@intellisync-oa.com", link: "mailto:support@intellisync-oa.com" }
+        { text: "info@intellisync-ioa.com", link: "mailto:info@intellisync-ioa.com" },
+        { text: "support@intellisync-ioa.com", link: "mailto:support@intellisync-ioa.com" }
       ]
     },
     {
@@ -118,10 +118,10 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: "fab fa-linkedin", url: "https://linkedin.com/company/intellisync-oa", label: "LinkedIn" },
-    { icon: "fab fa-twitter", url: "https://twitter.com/intellisync_oa", label: "Twitter" },
-    { icon: "fab fa-facebook", url: "https://facebook.com/intellisync.oa", label: "Facebook" },
-    { icon: "fab fa-instagram", url: "https://instagram.com/intellisync_oa", label: "Instagram" }
+    { icon: "fab fa-linkedin", url: "https://linkedin.com/company/intellisync-ioa", label: "LinkedIn" },
+    { icon: "fab fa-twitter", url: "https://twitter.com/intellisync_ioa", label: "Twitter" },
+    { icon: "fab fa-facebook", url: "https://facebook.com/intellisync.ioa", label: "Facebook" },
+    { icon: "fab fa-instagram", url: "https://instagram.com/intellisync_ioa", label: "Instagram" }
   ];
 
   return (
@@ -340,7 +340,7 @@ const Contact = () => {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Intellisync OA Location"
+              title="intellisync-ioa Location"
             ></iframe>
           </div>
           <div className="map-content">

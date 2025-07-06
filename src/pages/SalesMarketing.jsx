@@ -18,7 +18,7 @@ function SalesMarketing() {
 
   useEffect(() => {
     performanceMonitor.trackPageLoad();
-    document.title = "Sales & Marketing Services | IntelliSync OA";
+    document.title = "Sales & Marketing Services | intellisync-ioa";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
@@ -33,7 +33,7 @@ function SalesMarketing() {
       "description": "Sales and marketing automation solutions",
       "provider": {
         "@type": "Organization",
-        "name": "IntelliSync Office Automation Limited"
+        "name": "intellisync-ioa"
       },
       "offers": {
         "@type": "Offer",
@@ -150,7 +150,7 @@ function SalesMarketing() {
         <section className="dm-cta">
           <div className="cta-content">
             <h2>Ready to Accelerate Your Sales & Marketing?</h2>
-            <p>Discover how IntelliSync can help you boost sales and customer engagement.</p>
+            <p>Discover how intellisync-ioa can help you boost sales and customer engagement.</p>
             <div className="cta-actions">
               <button className="cta-button primary" onClick={handleGetStarted} type="button">
                 <span>Contact us today for a demo!</span>

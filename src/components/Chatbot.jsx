@@ -15,7 +15,7 @@ const Chatbot = ({ onOpenLiveChat }) => {
     const text = message.toLowerCase();
     
     if (text.includes('hello') || text.includes('hi') || text.includes('hey')) {
-      return "Hello! Welcome to IntelliSync. How can I help you today?";
+      return "Hello! Welcome to intellisync-ioa. How can I help you today?";
     }
     
     if (text.includes('price') || text.includes('cost') || text.includes('pricing')) {
@@ -23,11 +23,11 @@ const Chatbot = ({ onOpenLiveChat }) => {
     }
     
     if (text.includes('feature') || text.includes('service') || text.includes('what')) {
-      return "IntelliSync offers Business Intelligence, Data Automation, Document Management, and System Integrations. Our platform provides real-time analytics, automated workflows, and secure document storage.";
+      return "intellisync-ioa offers Business Intelligence, Data Automation, Document Management, and System Integrations. Our platform provides real-time analytics, automated workflows, and secure document storage.";
     }
     
     if (text.includes('contact') || text.includes('support') || text.includes('help')) {
-      return "You can reach us at support@intellisync.com or call +254-722-952-138. We're available 24/7 for urgent issues.";
+      return "You can reach us at support@intellisync-ioa.com or call +254-722-952-138. We're available 24/7 for urgent issues.";
     }
     
     if (text.includes('demo') || text.includes('trial') || text.includes('test')) {
@@ -53,7 +53,7 @@ const Chatbot = ({ onOpenLiveChat }) => {
   useEffect(() => {
     if (isOpen && messages.length === 0) {
       setTimeout(() => {
-        addBotMessage("Hello! Welcome to IntelliSync. I'm your AI assistant. How can I help you today?");
+        addBotMessage("Hello! Welcome to intellisync-ioa. I'm your AI assistant. How can I help you today?");
       }, 500);
     }
   }, [isOpen]);
@@ -158,7 +158,7 @@ const Chatbot = ({ onOpenLiveChat }) => {
                 </svg>
               </div>
               <div className="chatbot-info">
-                <h3>IntelliSync AI Assistant</h3>
+                <h3>intellisync-ioa AI Assistant</h3>
                 <span className="status">🤖 Fast & Responsive</span>
               </div>
               <button 
@@ -238,7 +238,7 @@ const Chatbot = ({ onOpenLiveChat }) => {
               <input
                 ref={inputRef}
                 type="text"
-                placeholder="Ask me anything about IntelliSync..."
+                placeholder="Ask me anything about intellisync-ioa..."
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}

@@ -38,7 +38,7 @@ const Home = () => {
           transition={{ type: 'spring', stiffness: 100 }}
           style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '56px' }}
         >
-          Intellisync Office Automation LTD.
+          intellisync-ioa.
         </motion.h1>
         <motion.p
           animate={{ x: [50, 0] }}

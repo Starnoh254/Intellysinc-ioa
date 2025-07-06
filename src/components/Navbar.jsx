@@ -137,7 +137,7 @@ const Navbar = () => {
           <Link to="/" className="logo" onClick={handleLinkClick}>
             <img
               src={`${import.meta.env.BASE_URL}images/logo-intellisync.png`}
-              alt="IntelliSync OA Logo"
+              alt="intellisync-ioa Logo"
               className="logo-image"
             />
           </Link>

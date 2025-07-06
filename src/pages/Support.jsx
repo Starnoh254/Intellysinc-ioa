@@ -56,7 +56,7 @@ const Support = () => {
 
   // Handle email support
   const handleEmailSupport = () => {
-    window.location.href = 'mailto:support@intellisync-oa.com?subject=Support Request';
+    window.location.href = 'mailto:support@intellisync-ioa.com?subject=Support Request';
   };
 
   // Handle phone support

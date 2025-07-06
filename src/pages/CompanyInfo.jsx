@@ -33,7 +33,7 @@ function CompanyInfo() {
         className="company-info-heading"
       >
         <br />
-        INTELLISYNC OFFICE AUTOMATION LTD. (IOA)
+        INTELLISYNC-IOA (IOA)
       </motion.h1>
 
       <Section title="Why IOA ?">
@@ -133,7 +133,7 @@ function CompanyInfo() {
           OA Office Automation Limited<br />
           P.O.Box 27346-0100, Nairobi, Kenya<br />
           Phone: <a href="tel:+254722952138">+254 722952138</a><br />
-          Email: <a href="mailto:info@intellisync-oa.com">info@intellisync-oa.com</a><br />
+          Email: <a href="mailto:info@intellisync-ioa.com">info@intellisync-ioa.com</a><br />
         </p>
       </Section>
     </div>

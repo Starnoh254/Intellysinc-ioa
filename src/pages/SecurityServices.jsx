@@ -17,7 +17,7 @@ function SecurityServices() {
 
   useEffect(() => {
     performanceMonitor.trackPageLoad();
-    document.title = "Security Services | IntelliSync OA";
+    document.title = "Security Services | intellisync-ioa";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
@@ -32,7 +32,7 @@ function SecurityServices() {
       "description": "Document security and data protection solutions",
       "provider": {
         "@type": "Organization",
-        "name": "IntelliSync Office Automation Limited"
+        "name": "intellisync-ioa"
       },
       "offers": {
         "@type": "Offer",
@@ -151,7 +151,7 @@ function SecurityServices() {
         <section className="dm-cta">
           <div className="cta-content">
             <h2>Ready to Secure Your Business?</h2>
-            <p>Discover how IntelliSync can protect your data and ensure compliance.</p>
+            <p>Discover how intellisync-ioa can protect your data and ensure compliance.</p>
             <div className="cta-actions">
               <button className="cta-button primary" onClick={handleGetStarted} type="button">
                 <span>Contact us today for a demo!</span>

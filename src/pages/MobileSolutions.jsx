@@ -18,7 +18,7 @@ function MobileSolutions() {
 
   useEffect(() => {
     performanceMonitor.trackPageLoad();
-    document.title = "Mobile Solutions Services | IntelliSync OA";
+    document.title = "Mobile Solutions Services | intellisync-ioa";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
@@ -33,7 +33,7 @@ function MobileSolutions() {
       "description": "Mobile document access and field service management",
       "provider": {
         "@type": "Organization",
-        "name": "IntelliSync Office Automation Limited"
+        "name": "intellisync-ioa"
       },
       "offers": {
         "@type": "Offer",
@@ -150,7 +150,7 @@ function MobileSolutions() {
         <section className="dm-cta">
           <div className="cta-content">
             <h2>Ready to Mobilize Your Workforce?</h2>
-            <p>Discover how IntelliSync can empower your teams with secure mobile solutions.</p>
+            <p>Discover how intellisync-ioa can empower your teams with secure mobile solutions.</p>
             <div className="cta-actions">
               <button className="cta-button primary" onClick={handleGetStarted} type="button">
                 <span>Contact us today for a demo!</span>

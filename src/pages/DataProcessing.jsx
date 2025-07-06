@@ -18,7 +18,7 @@ function DataProcessing() {
 
   useEffect(() => {
     performanceMonitor.trackPageLoad();
-    document.title = "Data Processing Services | IntelliSync OA";
+    document.title = "Data Processing Services | intellisync-ioa";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
@@ -33,7 +33,7 @@ function DataProcessing() {
       "description": "Intelligent data processing and automation solutions",
       "provider": {
         "@type": "Organization",
-        "name": "IntelliSync Office Automation Limited"
+        "name": "intellisync-ioa"
       },
       "offers": {
         "@type": "Offer",
@@ -159,7 +159,7 @@ function DataProcessing() {
         <section className="dm-cta">
           <div className="cta-content">
             <h2>Ready to Automate Your Data Processing?</h2>
-            <p>Discover how IntelliSync can revolutionize your data processes.</p>
+            <p>Discover how intellisync-ioa can revolutionize your data processes.</p>
             <div className="cta-actions">
               <button className="cta-button primary" onClick={handleGetStarted} type="button">
                 <span>Contact us today for a demo!</span>

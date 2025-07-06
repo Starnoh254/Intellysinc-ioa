@@ -22,7 +22,7 @@ const Team = () => {
       expertise: "App developer, Software developer, Web developer, Data scientist",
       image: "https://via.placeholder.com/80x80?text=Photo",
       contact: {
-        email: "stanley@intellisync-oa.com",
+        email: "stanley@intellisync-ioa.com",
         linkedin: "https://linkedin.com/in/stanley"
       }
     },
@@ -31,7 +31,7 @@ const Team = () => {
       expertise: "Web & App developer, full stack developer",
       image: "https://via.placeholder.com/80x80?text=Photo",
       contact: {
-        email: "doane@intellisync-oa.com",
+        email: "doane@intellisync-ioa.com",
         linkedin: "https://linkedin.com/in/DoaneWellingtone"
       }
     }
