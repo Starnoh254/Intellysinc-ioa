@@ -147,7 +147,7 @@ const Home = () => {
 
     return (
       <section className="features">
-        <h2>Our Features</h2>
+        <h2>Our Commitment</h2>
         <div className="features-grid">
           {features.map((feature, index) => (
             <motion.div
