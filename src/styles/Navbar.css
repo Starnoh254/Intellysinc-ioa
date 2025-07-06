@@ -84,15 +84,24 @@ html, body {
 
 .logo img,
 .logo-image {
-  max-height: 70px;
-  width: auto;
-  display: block;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
-  background: transparent;
-  padding: 6px 0;
-  max-width: 220px;
-  object-fit: contain;
-  height: auto;
+  max-height: 80px !important;
+  width: auto !important;
+  display: block !important;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25)) !important;
+  background: transparent !important;
+  padding: 6px 0 !important;
+  max-width: 495px !important;
+  object-fit: contain !important;
+  height: auto !important;
+}
+
+/* More specific selector to ensure logo size */
+.navbar-container .logo img,
+.navbar-container .logo-image {
+  max-height: 80px !important;
+  max-width: 495px !important;
+  width: auto !important;
+  height: auto !important;
 }
 
 /* Hamburger Menu */
@@ -580,8 +589,8 @@ html, body {
   
   .logo img,
   .logo-image {
-    max-height: 60px;
-    max-width: 180px;
+    max-height: 70px !important;
+    max-width: 395px !important;
   }
   
   .hamburger {
@@ -614,8 +623,8 @@ html, body {
   
   .logo img,
   .logo-image {
-    max-height: 50px;
-    max-width: 150px;
+    max-height: 60px !important;
+    max-width: 335px !important;
   }
   
   .nav-group-title {
