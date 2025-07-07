@@ -27,7 +27,6 @@ const Solutions = lazy(() => import('./pages/Solutions'));
 const CaseStudies = lazy(() => import('./pages/CaseStudies'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
-const Resources = lazy(() => import('./pages/Resources'));
 const Support = lazy(() => import('./pages/Support'));
 const CompanyInfo = lazy(() => import('./pages/CompanyInfo'));
 const AdminBlogManager = lazy(() => import('./components/AdminBlogManager'));
@@ -75,7 +74,6 @@ function AnimatedRoutes() {
           <Route path="/CaseStudies" element={<CaseStudies />} />
           <Route path="/Blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
-          <Route path="/Resources" element={<Resources />} />
           <Route path="/Support" element={<Support />} />
           <Route path="/CompanyInfo" element={<CompanyInfo />} />
           

@@ -124,7 +124,6 @@ const Navbar = () => {
       title: 'Support',
       links: [
         { name: 'Contact', path: '/Contact' },
-        { name: 'Resources', path: '/Resources' },
         { name: 'Support', path: '/Support' },
       ],
     },

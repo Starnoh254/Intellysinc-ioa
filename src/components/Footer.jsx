@@ -38,17 +38,6 @@ const Footer = () => {
         </div>
 
         <div className="footer-column">
-          <h4>Resources</h4>
-          <ul>
-            <li><Link to="/Blog">Blog</Link></li>
-            <li><Link to="/CaseStudies">Case Studies</Link></li>
-            <li><Link to="/Resources">Resources</Link></li>
-            <li><Link to="/Support">Support</Link></li>
-            <li><Link to="/Testimonials">Testimonials</Link></li>
-          </ul>
-        </div>
-
-        <div className="footer-column">
           <h4>Connect</h4>
           <div className="social-icons">
             <a href="https://linkedin.com/company/intellisync-ioa" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
