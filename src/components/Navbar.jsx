@@ -114,20 +114,15 @@ const Navbar = () => {
         { name: 'Testimonials', path: '/Testimonials' },
       ],
     },
-    {
-      title: 'Blogs',
-      links: [
-        { name: 'Blog', path: '/Blog' },
-      ],
-    },
-    {
-      title: 'Support',
-      links: [
-        { name: 'Contact', path: '/Contact' },
-        { name: 'Support', path: '/Support' },
-      ],
-    },
   ];
+
+  // Add Blogs as a direct link in the navbar
+  navGroups.push({
+    title: 'Blogs',
+    links: [
+      { name: 'Blog', path: '/Blog' },
+    ],
+  });
 
   return (
     <>
@@ -161,8 +156,9 @@ const Navbar = () => {
             role="navigation"
             aria-label="Main navigation"
           >
-            {navGroups.map((group, idx) => (
-              <div key={idx} className={`nav-group ${activeGroup === idx ? 'active' : ''}`}>
+            {/* Render navGroups except Blogs */}
+            {navGroups.filter(group => group.title !== 'Blogs').map((group, idx) => (
+              <div key={group.title} className={`nav-group ${activeGroup === idx ? 'active' : ''}`}>
                 <span
                   className="nav-group-title"
                   onClick={() => handleDropdownClick(idx)}
@@ -200,6 +196,17 @@ const Navbar = () => {
                 </ul>
               </div>
             ))}
+            {/* Add Blogs as a direct link */}
+            <div className="nav-group">
+              <Link
+                to="/Blog"
+                onClick={handleLinkClick}
+                className={location.pathname === '/Blog' ? 'active' : ''}
+                style={{ padding: '1rem 0', display: 'block', fontWeight: 600 }}
+              >
+                Blogs
+              </Link>
+            </div>
 
             {/* Authentication Section */}
             <div className="auth-section">
