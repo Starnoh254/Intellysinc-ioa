@@ -186,8 +186,6 @@ const Navbar = () => {
                         to={link.path}
                         onClick={handleLinkClick}
                         className={location.pathname === link.path ? 'active' : ''}
-                        role="menuitem"
-                        tabIndex={activeGroup === idx ? 0 : -1}
                       >
                         {link.name}
                       </Link>
