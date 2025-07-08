@@ -22,7 +22,7 @@ function QualityManagement() {
 
   useEffect(() => {
     performanceMonitor.trackPageLoad();
-    document.title = "Quality Management Services | intellisync-ioa";
+    document.title = "Quality Management Services | IntelliSync Office Automation";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
@@ -37,7 +37,7 @@ function QualityManagement() {
       "description": "Quality management and compliance solutions",
       "provider": {
         "@type": "Organization",
-        "name": "intellisync-ioa"
+        "name": "IntelliSync Office Automation"
       },
       "offers": {
         "@type": "Offer",
@@ -156,7 +156,7 @@ function QualityManagement() {
         <section className="dm-cta">
           <div className="cta-content">
             <h2>Ready to Elevate Your Quality Management?</h2>
-            <p>Discover how intellisync-ioa can help you achieve compliance and excellence.</p>
+            <p>Discover how IntelliSync Office Automation can help you achieve compliance and excellence.</p>
             <div className="cta-actions">
               <button className="cta-button primary" onClick={handleGetStarted} type="button">
                 <span>Contact us today for a demo!</span>

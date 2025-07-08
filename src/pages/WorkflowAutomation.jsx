@@ -20,7 +20,7 @@ function WorkflowAutomation() {
 
   useEffect(() => {
     performanceMonitor.trackPageLoad();
-    document.title = "Workflow Automation Services | intellisync-ioa";
+    document.title = "Workflow Automation Services | IntelliSync Office Automation";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
@@ -35,7 +35,7 @@ function WorkflowAutomation() {
       "description": "Comprehensive workflow automation solutions for business processes",
       "provider": {
         "@type": "Organization",
-        "name": "intellisync-ioa"
+        "name": "IntelliSync Office Automation"
       },
       "offers": {
         "@type": "Offer",
@@ -149,7 +149,7 @@ function WorkflowAutomation() {
         <section className="dm-cta">
           <div className="cta-content">
             <h2>Ready to Automate Your Workflows?</h2>
-            <p>Discover how intellisync-ioa can streamline your business processes.</p>
+            <p>Discover how IntelliSync Office Automation can streamline your business processes.</p>
             <div className="cta-actions">
               <button className="cta-button primary" onClick={handleGetStarted} type="button">
                 <span>Contact us today for a demo!</span>

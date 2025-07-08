@@ -31,7 +31,7 @@ const Footer = () => {
             <li><Link to="/Integrations">Integrations</Link></li>
             <li><Link to="/WorkflowAutomation">Workflow Automation</Link></li>
             <li><Link to="/QualityManagement">Quality Management</Link></li>
-            <li><Link to="/SalesMarketing">Sales Marketing</Link></li>
+            <li><Link to="/SalesMarketing">Sales & Marketing</Link></li>
             <li><Link to="/MobileSolutions">Mobile Solutions</Link></li>
             <li><Link to="/SecurityServices">Security Services</Link></li>
           </ul>

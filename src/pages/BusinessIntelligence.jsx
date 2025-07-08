@@ -15,7 +15,7 @@ function BusinessIntelligence() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.title = "Enterprise Business Intelligence Solutions | intellisync-ioa";
+    document.title = "Enterprise Business Intelligence Solutions | IntelliSync Office Automation";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
@@ -121,7 +121,7 @@ function BusinessIntelligence() {
       <section className="dm-cta">
         <div className="cta-content">
           <h2>Ready to Transform Your Business Intelligence?</h2>
-          <p>Discover how intellisync-ioa can empower your organization with actionable insights.</p>
+          <p>Discover how IntelliSync Office Automation can empower your organization with actionable insights.</p>
           <div className="cta-actions">
             <button className="cta-button primary" onClick={handleGetStarted} type="button">
               <span>Contact us today for a demo!</span>

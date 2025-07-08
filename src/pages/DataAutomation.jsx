@@ -113,7 +113,7 @@ function DataAutomation() {
           <div className="container">
             <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="cta-content">
               <h2>Ready to Automate Your Data?</h2>
-              <p>Discover how intellisync-ioa can revolutionize your data processes.</p>
+              <p>Discover how IntelliSync Office Automation can revolutionize your data processes.</p>
               <div className="cta-actions">
                 <button className="cta-button primary" onClick={() => navigate('/Contact')} type="button">
                   <span>Contact us today for a demo!</span>

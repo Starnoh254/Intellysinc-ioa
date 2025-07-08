@@ -11,7 +11,7 @@ const Solutions = () => {
         <div className="solutions-hero-content">
           <h1>Our Solutions</h1>
           <p>
-            intellisync-ioa delivers a comprehensive suite of digital solutions to transform your business operations, drive efficiency, and unlock actionable insights. Explore our core offerings designed to meet the evolving needs of modern enterprises.
+            IntelliSync Office Automation delivers a comprehensive suite of digital solutions to transform your business operations, drive efficiency, and unlock actionable insights. Explore our core offerings designed to meet the evolving needs of modern enterprises.
           </p>
         </div>
       </section>
@@ -184,7 +184,7 @@ const Solutions = () => {
       {/* Call to Action */}
       <section className="solutions-cta modern-cta">
         <p>
-          Ready to transform your business? <Link to="/Contact" className="modern-cta-btn">Contact us</Link> or <Link to="/Contact?subject=Demo Request" className="modern-cta-btn">request a demo</Link> to get started with intellisync-ioa solutions.
+          Ready to transform your business? <Link to="/Contact" className="modern-cta-btn">Contact us</Link> or <Link to="/Contact?subject=Demo Request" className="modern-cta-btn">request a demo</Link> to get started with IntelliSync Office Automation solutions.
         </p>
       </section>
     </div>

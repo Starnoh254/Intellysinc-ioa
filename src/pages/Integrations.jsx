@@ -96,7 +96,7 @@ function Integrations() {
         <section className="dm-cta">
           <div className="cta-content">
             <h2>Ready to Integrate Your Systems?</h2>
-            <p>Discover how intellisync-ioa can unify your business platforms.</p>
+            <p>Discover how IntelliSync Office Automation can unify your business platforms.</p>
             <div className="cta-actions">
               <button className="cta-button primary" onClick={() => navigate('/Contact')} type="button">
                 <span>Contact us today for a demo!</span>

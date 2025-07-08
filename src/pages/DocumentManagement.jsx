@@ -50,7 +50,7 @@ function DocumentManagement() {
               </motion.h1>
               <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="hero-subtitle">
                 <br />Transform Your Business with Intelligent Document Management<br /> <br />
-                In today's fast-paced business environment, staying competitive requires streamlined processes and strategic information management. <br /><br />intellisync-ioa empowers organizations—from small businesses to large enterprises—to optimize efficiency, enhance security, and reduce operational costs by structuring data and workflows intelligently.
+                In today's fast-paced business environment, staying competitive requires streamlined processes and strategic information management. <br /><br />IntelliSync Office Automation empowers organizations—from small businesses to large enterprises—to optimize efficiency, enhance security, and reduce operational costs by structuring data and workflows intelligently.
               </motion.p>
             </div>
           </section>
@@ -99,7 +99,7 @@ function DocumentManagement() {
         <section className="dm-cta">
           <div className="cta-content">
             <h2>Ready to Optimize Your Business?</h2>
-            <p>Discover how intellisync-ioa can revolutionize your document and process management.</p>
+            <p>Discover how IntelliSync Office Automation can revolutionize your document and process management.</p>
             <div className="cta-actions">
               <button
                 className="cta-button primary"
