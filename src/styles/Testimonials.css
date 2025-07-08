@@ -14,13 +14,14 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  color: #fff;
 }
 
 .testimonials-hero h1 {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: white;
+  color: #fff;
 }
 
 .hero-subtitle {
@@ -30,6 +31,7 @@
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  color: #fff;
 }
 
 /* Stats Section */

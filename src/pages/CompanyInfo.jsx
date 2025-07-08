@@ -33,7 +33,7 @@ function CompanyInfo() {
         className="company-info-heading"
       >
         <br />
-        INTELLISYNC-IOA (IOA)
+        IntelliSync Office Automation (IOA)
       </motion.h1>
 
       <Section title="Why IOA ?">

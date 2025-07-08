@@ -161,7 +161,7 @@ const About = () => {
       {/* Hero Section */}
       <motion.section className="about-hero" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.8 }}>
         <motion.h1 animate={{ x: [-50, 0] }} transition={{ type: 'spring', stiffness: 100 }}>
-          intellisync-ioa (IOA)
+          IntelliSync Office Automation (IOA)
         </motion.h1>
         <motion.p animate={{ x: [50, 0] }} transition={{ type: 'spring', stiffness: 100 }}>
           "Synchronizing Your Office, Maximizing Your Productivity"<br />
@@ -373,7 +373,7 @@ const About = () => {
         <section className="about-section">
           <h2>Why intellisync-ioa</h2>
           <p className="about-components-intro">
-            OA leverages the use of technology to streamline and improve office tasks and workflows. By integrating Software, Hardware, Processes and Businesses to reduce errors, and optimize resource management.
+            IntelliSync Office Automation leverages the use of technology to streamline and improve office tasks and workflows. By integrating Software, Hardware, Processes and Businesses to reduce errors, and optimize resource management.
           </p>
           <div className="about-cards-grid about-components-features">
             {keyComponents.map((comp) => (
