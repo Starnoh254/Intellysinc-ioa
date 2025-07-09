@@ -15,7 +15,6 @@ import { AuthProvider } from './contexts/AuthContext';
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
-const Team = lazy(() => import('./pages/Team'));
 const Awards = lazy(() => import('./pages/Awards'));
 const Testimonials = lazy(() => import('./pages/Testimonials'));
 const BusinessIntelligence = lazy(() => import('./pages/BusinessIntelligence'));
@@ -53,7 +52,6 @@ function AnimatedRoutes() {
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/Team" element={<Team />} />
           <Route path="/Awards" element={<Awards />} />
           <Route path="/Testimonials" element={<Testimonials />} />
           <Route path="/BusinessIntelligence" element={<BusinessIntelligence />} />

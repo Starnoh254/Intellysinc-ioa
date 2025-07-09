@@ -86,7 +86,6 @@ const Navbar = () => {
       links: [
         { name: 'Home', path: '/' },
         { name: 'About', path: '/About' },
-        { name: 'Team', path: '/Team' },
         { name: 'Awards', path: '/Awards' },
         { name: 'CompanyInfo', path: '/CompanyInfo' },
       ],
