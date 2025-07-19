@@ -995,7 +995,6 @@ const AvisionScanners = () => {
           <li className="active">Avision Scanners</li>
           <li>Brother Scanners</li>
           <li>Canon Scanners</li>
-          <li>Document Management System</li>
           <li>Fujitsu-RICOH Scanners</li>
           <li>Kodak Scanners</li>
           <li>Microfilm Scanners</li>

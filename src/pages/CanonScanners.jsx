@@ -152,7 +152,6 @@ const CanonScanners = () => {
           <li>Avision Scanners</li>
           <li>Brother Scanners</li>
           <li className="active">Canon Scanners</li>
-          <li>Document Management System</li>
           <li>Fujitsu-RICOH Scanners</li>
           <li>Kodak Scanners</li>
           <li>Microfilm Scanners</li>
