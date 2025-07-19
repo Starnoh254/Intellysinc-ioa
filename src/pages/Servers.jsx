@@ -144,11 +144,63 @@ const serverProducts = [
       { label: 'Internal RAID Controller', value: 'HPE Smart Array E208i-a SR Gen10' }
     ]
   },
-  { name: 'DL380 Gen10 Plus', slug: 'dl380-gen10-plus', image: `${import.meta.env.BASE_URL}images/ID-36NEW_S36-2N.jpg`, type: 'HP Rack Server' },
-  { name: 'ProLiant DL560 Gen9', slug: 'proliant-dl560-gen9', image: `${import.meta.env.BASE_URL}images/ID-37NEW_S37-2.jpg`, type: 'HP Rack Server' },
-  { name: 'ProLiant DL160 Gen9', slug: 'proliant-dl160-gen9', image: `${import.meta.env.BASE_URL}images/ID-38NEW_S38-1N.jpg`, type: 'HP Rack Server' },
-  { name: 'ProLiant DL180 Gen9', slug: 'proliant-dl180-gen9', image: `${import.meta.env.BASE_URL}images/ID-39NEW_39-2.jpg`, type: 'HP Rack Server' },
-  { name: 'ProLiant DL60 Gen9', slug: 'proliant-dl60-gen9', image: `${import.meta.env.BASE_URL}images/ID-40NEW_40-1.jpg`, type: 'HP Rack Server' },
+  { name: 'DL380 Gen10 Plus', slug: 'dl380-gen10-plus', image: `${import.meta.env.BASE_URL}images/ID-36NEW_S36-2N.jpg`, type: 'HP Rack Server',
+    overview: `The HPE ProLiant DL380 Gen10 Plus is a versatile and budget-friendly 2U rack server tailored to handle compute-intensive workloads efficiently. With its robust processing capabilities, large memory capacity, and massive storage expandability, it offers reliable performance for a range of business applications.\n\nThe HPE DL380 Gen10 Plus server delivers superior performance, energy efficiency, and reliability in a compact 2U form factor. Ideal for virtualization, database hosting, and storage-heavy applications, it ensures optimal scalability and flexibility for growing business needs.`,
+    specs: [
+      { label: 'Form Factor', value: '2U Rack' },
+      { label: 'Processor', value: '3rd Gen Intel Xeon Scalable Processor' },
+      { label: 'Max RAM', value: '3TB DDR4' },
+      { label: 'Memory Slots', value: '32' },
+      { label: 'Max Storage', value: 'Up to 581.4TB' },
+      { label: 'Power Supply', value: 'HPE 1600W Flex Slot Platinum Hot Plug' },
+      { label: 'PCI Slots', value: '6 PCIe Gen4' },
+      { label: 'RAID Controller', value: 'HPE Smart Array P408i-a SR Gen10 Controller' },
+      { label: 'Core Options', value: '8, 10, 12, 16, 18, 20, 22, 24' }
+    ]
+  },
+  { name: 'ProLiant DL560 Gen9', slug: 'proliant-dl560-gen9', image: `${import.meta.env.BASE_URL}images/ID-37NEW_S37-2.jpg`, type: 'HP Rack Server',
+    overview: `The HPE ProLiant DL560 Gen9 is a powerful, dense, and scalable 2U rack server designed for businesses looking to optimise their IT infrastructure. With support for advanced Intel Xeon processors, high memory capacity, and efficient resource management, this server is ideal for compute-intensive applications and virtualized environments. Its compact design and robust performance make it a versatile solution for modern data centres.\n\nThe HPE ProLiant DL560 Gen9 is engineered to deliver maximum performance, scalability, and reliability in a compact design. Whether you're managing complex workloads, deploying virtual environments, or scaling your business IT infrastructure, this server is the perfect fit for high-efficiency operations.`,
+    specs: [
+      { label: 'Form Factor', value: '2U Rack' },
+      { label: 'Processor', value: 'Intel® Xeon® E5-4600 v4' },
+      { label: 'Max RAM', value: '3TB DDR4' },
+      { label: 'RAM Slots', value: '48' },
+      { label: 'Processor Sockets', value: '4' },
+      { label: 'PCI Slots', value: '7' }
+    ]
+  },
+  { name: 'ProLiant DL160 Gen9', slug: 'proliant-dl160-gen9', image: `${import.meta.env.BASE_URL}images/ID-38NEW_S38-1N.jpg`, type: 'HP Rack Server',
+    overview: `The HP ProLiant DL160 Gen9 is a compact 1U rack server, engineered to meet the demands of cloud computing, big data applications, and data-intensive workloads. Designed for performance and efficiency, it offers dual Intel Xeon processors, robust DDR4 memory support, and scalable storage options, making it an excellent choice for growing businesses.\n\nThe HP ProLiant DL160 Gen9 is an ideal solution for businesses seeking high performance in a compact and energy-efficient design. Its advanced features, coupled with iLO management and RAID capabilities, ensure seamless operations for cloud computing, virtualization, and demanding workloads.`,
+    specs: [
+      { label: 'Form Factor', value: '1U Rack' },
+      { label: 'Processor', value: 'Dual Intel® Xeon® E5-2600 v3 Series' },
+      { label: 'Max RAM', value: '512GB DDR4' },
+      { label: 'RAM Slots', value: '16' },
+      { label: 'Processor Sockets', value: '2' },
+      { label: 'Power Supply', value: 'HPE 900W Redundant Power Supply' }
+    ]
+  },
+  { name: 'ProLiant DL180 Gen9', slug: 'proliant-dl180-gen9', image: `${import.meta.env.BASE_URL}images/ID-39NEW_39-2.jpg`, type: 'HP Rack Server',
+    overview: `The HP ProLiant DL180 Gen9 server is a cost-effective, 2U rack server tailored for data storage applications and diverse workloads. Equipped with the powerful Intel Xeon E5-2600 processor family, it offers a balance of performance, scalability, and reliability. Designed for budget-conscious businesses, this server is ideal for SMBs seeking advanced technology without overspending.\n\nThe HP ProLiant DL180 Gen9 server combines affordability, reliability, and scalability, making it a perfect choice for data storage applications and SMBs. With its 2U rack design, advanced RAID capabilities, and remote management features, this server delivers excellent value for businesses looking to streamline their IT infrastructure.`,
+    specs: [
+      { label: 'Form Factor', value: '2U Rack' },
+      { label: 'Processor', value: 'Dual Intel® Xeon® E5-2600 v3 Series' },
+      { label: 'Processor Sockets', value: '2' },
+      { label: 'Max RAM', value: '512GB DDR4' },
+      { label: 'RAM Slots', value: '16' },
+      { label: 'Max Storage', value: '6TB' }
+    ]
+  },
+  { name: 'ProLiant DL60 Gen9', slug: 'proliant-dl60-gen9', image: `${import.meta.env.BASE_URL}images/ID-40NEW_40-1.jpg`, type: 'HP Rack Server',
+    overview: `The HP ProLiant DL60 Gen9 Server is an affordable, high-performance solution designed specifically for SMBs. This compact 1U rack server offers scalable storage options and efficient performance to handle diverse business applications, including messaging, file sharing, collaboration, and cloud workloads. Ideal for start-ups and growing businesses, the DL60 Gen9 provides the right balance of features and cost-effectiveness.\n\nThe HP ProLiant DL60 Gen9 Server is an excellent choice for SMBs seeking a low-cost yet reliable server to power their business applications. Its robust performance, compact design, and simplified management make it a dependable option for small and medium-sized businesses aiming to optimise their IT infrastructure efficiently.`,
+    specs: [
+      { label: 'Form Factor', value: '1U Rack' },
+      { label: 'Processor', value: 'Intel Xeon Processors' },
+      { label: 'Storage Options', value: 'Scalable' },
+      { label: 'Memory Capacity', value: 'Good Memory Capacity' },
+      { label: 'Management Interface', value: 'Standard iLO4' }
+    ]
+  },
   // HP Blade Servers
   { name: 'Apollo R2600 Gen10 Blade', slug: 'apollo-r2600-gen10-blade', image: `${import.meta.env.BASE_URL}images/ID-41NEW_41-2.jpg`, type: 'HP Blade Server' },
   // HP Tower Servers
