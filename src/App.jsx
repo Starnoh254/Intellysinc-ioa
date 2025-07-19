@@ -53,7 +53,6 @@ const CanonScanners = lazy(() => import('./pages/CanonScanners'));
 const FujitsuRicohScanners = lazy(() => import('./pages/FujitsuRicohScanners'));
 const MicrofilmScanners = lazy(() => import('./pages/MicrofilmScanners'));
 const Servers = lazy(() => import('./pages/Servers'));
-const DocumentManagementSystem = lazy(() => import('./pages/DocumentManagementSystem'));
 const ScanningSoftware = lazy(() => import('./pages/ScanningSoftware'));
 
 function AnimatedRoutes() {
@@ -95,7 +94,6 @@ function AnimatedRoutes() {
           <Route path="/fujitsu-ricoh-scanners" element={<FujitsuRicohScanners />} />
           <Route path="/microfilm-scanners" element={<MicrofilmScanners />} />
           <Route path="/servers" element={<Servers />} />
-          <Route path="/document-management-system" element={<DocumentManagementSystem />} />
           <Route path="/all-products" element={<AllProducts />} />
           <Route path="/products/:category/:productSlug" element={<ProductDetail />} />
           <Route path="/scanning-software" element={<ScanningSoftware />} />

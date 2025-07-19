@@ -14,6 +14,10 @@ const ProductInfo = ({ product, onRequestQuote, style = {} }) => {
 
   // Product specs table
   let specs = product.specs || [];
+  // If no specs but details object exists, convert details to specs array
+  if ((!specs || specs.length === 0) && product.details && typeof product.details === 'object') {
+    specs = Object.entries(product.details).map(([label, value]) => ({ label, value }));
+  }
   if ((!specs || specs.length === 0) && product.slug === 'ad225wn') {
     specs = [
       { label: 'A4 Pages Per Min', value: 'B/W @ 200dpi, A4Simplex : 25 ppm; Duplex : 50 ipm B/W @ 300dpi, A4Simplex : 25 ppm; Duplex : 50ipm Color @ 200dpi, A4Simplex : 25 ppm; Duplex : 50 ipm Color @ 300dpi, A4Simplex : 25 ppm; Duplex : 50ipm' },

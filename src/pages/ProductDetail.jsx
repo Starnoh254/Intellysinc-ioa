@@ -1,9 +1,13 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import kodakProducts from './KodakScanners';
+import { kodakProducts } from './KodakScanners';
 import { avisionProducts } from './AvisionScanners';
 import { brotherProducts } from './BrotherScanners';
 import { canonProducts } from './CanonScanners';
+import { fujitsuProducts } from './FujitsuRicohScanners';
+import { microfilmProducts } from './MicrofilmScanners';
+import { serverProducts } from './Servers';
+import { scanningSoftwareProducts } from './ScanningSoftware';
 import ProductInfo from '../components/ProductInfo';
 
 // Map category to product array
@@ -12,7 +16,10 @@ const categoryMap = {
   'avision-scanners': avisionProducts,
   'brother-scanners': brotherProducts,
   'canon-scanners': canonProducts,
-  // ...add more as needed
+  'fujitsu-ricoh-scanners': fujitsuProducts,
+  'microfilm-scanners': microfilmProducts,
+  'servers': serverProducts,
+  'scanning-software': scanningSoftwareProducts,
 };
 
 const ProductDetail = () => {
