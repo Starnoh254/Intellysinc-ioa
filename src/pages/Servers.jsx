@@ -202,12 +202,64 @@ const serverProducts = [
     ]
   },
   // HP Blade Servers
-  { name: 'Apollo R2600 Gen10 Blade', slug: 'apollo-r2600-gen10-blade', image: `${import.meta.env.BASE_URL}images/ID-41NEW_41-2.jpg`, type: 'HP Blade Server' },
+  { name: 'Apollo R2600 Gen10 Blade', slug: 'apollo-r2600-gen10-blade', image: `${import.meta.env.BASE_URL}images/ID-41NEW_41-2.jpg`, type: 'HP Blade Server',
+    overview: `The HPE Apollo R2600 Gen10 Blade Server is a high-performing, compact, and scalable solution ideal for small and medium businesses or high-performance computing (HPC) environments. Its 2U rack-mountable design and flexible configuration allow for efficient data center operations, offering shared storage and advanced processing capabilities.\n\nThe HPE Apollo R2600 Gen10 is designed for businesses that demand scalable performance and compact efficiency. Perfect for HPC workloads or small-to-medium-sized enterprises, this server ensures operational excellence, flexibility, and cost-effectiveness.`,
+    specs: [
+      { label: 'Form Factor', value: 'Rack-mountable – 2U' },
+      { label: 'Max Supported Memory', value: '128GB' },
+      { label: 'DIMM Slots', value: '64' },
+      { label: 'Processor', value: 'Intel Xeon Scalable Processor' },
+      { label: 'Supported GPUs', value: 'NVIDIA, AMD, Intel (up to 2 per server)' }
+    ]
+  },
   // HP Tower Servers
-  { name: 'ProLiant ML350 Gen11', slug: 'proliant-ml350-gen11', image: `${import.meta.env.BASE_URL}images/ID-42NEW_42-1N.jpg`, type: 'HP Tower Server' },
-  { name: 'ProLiant ML150 Gen9', slug: 'proliant-ml150-gen9', image: `${import.meta.env.BASE_URL}images/ID-43NEW_43-2N.jpg`, type: 'HP Tower Server' },
-  { name: 'ProLiant ML350 Gen9', slug: 'proliant-ml350-gen9', image: `${import.meta.env.BASE_URL}images/ID-44NEW_44.jpg`, type: 'HP Tower Server' },
-  { name: 'ProLiant ML30 Gen10', slug: 'proliant-ml30-gen10', image: `${import.meta.env.BASE_URL}images/ID-45NEW_45-1new.jpg`, type: 'HP Tower Server' },
+  { name: 'ProLiant ML350 Gen11', slug: 'proliant-ml350-gen11', image: `${import.meta.env.BASE_URL}images/ID-42NEW_42-1N.jpg`, type: 'HP Tower Server',
+    overview: `The HP ProLiant ML350 Gen11 Server is a robust and versatile 5U tower server designed for enterprise-grade applications and datacenters. Featuring dual Intel Xeon E5-2600 V3/V4 processors and a high memory capacity, this server provides unmatched performance and reliability for critical workloads.\n\nThe HP ProLiant ML350 Gen11 Server combines powerful performance, scalability, and reliability, making it the perfect solution for datacenters, enterprise-level workloads, and growing businesses.`,
+    specs: [
+      { label: 'Brand', value: 'HP' },
+      { label: 'Form Factor', value: '5U Tower' },
+      { label: 'Processor', value: 'Dual Intel Xeon E5-2600 V3/V4' },
+      { label: 'Processor Sockets', value: '2' },
+      { label: 'Memory Size', value: 'Up to 768GB' },
+      { label: 'Storage Capacity', value: 'Up to 288TB' },
+      { label: 'Internal RAID Controllers', value: 'RAID 0, RAID 1, RAID 5' },
+      { label: 'PCI Slots', value: '9' }
+    ]
+  },
+  { name: 'ProLiant ML150 Gen9', slug: 'proliant-ml150-gen9', image: `${import.meta.env.BASE_URL}images/ID-43NEW_43-2N.jpg`, type: 'HP Tower Server',
+    overview: `The HP ProLiant ML150 Gen9 Tower Server is a powerful and scalable solution, designed to meet the diverse needs of growing businesses. Equipped with Intel Xeon E5-2600 V4 processors, this server offers exceptional performance and expandability, making it ideal for handling a wide range of workloads efficiently.\n\nThe HP ProLiant ML150 Gen9 is an excellent choice for small to medium businesses (SMBs) and enterprise organizations. With its powerful configuration options and value-added services such as free tech support, installation assistance, and a three-year warranty, this server ensures an efficient and cost-effective IT infrastructure for your business needs.`,
+    specs: [
+      { label: 'Processor', value: 'Intel Xeon E5-2600 V4 (dual processors supported)' },
+      { label: 'Memory', value: 'High-capacity RAM configurations available' },
+      { label: 'Storage', value: 'Scalable and flexible storage options' },
+      { label: 'Expansion Slots', value: 'Yes, to accommodate growth' },
+      { label: 'Warranty', value: '1 year' }
+    ]
+  },
+  { name: 'ProLiant ML350 Gen9', slug: 'proliant-ml350-gen9', image: `${import.meta.env.BASE_URL}images/ID-44NEW_44.jpg`, type: 'HP Tower Server',
+    overview: `The HP ProLiant ML350 Gen9 Server is a robust and versatile 5U tower server designed for enterprise-grade applications and datacenters. Featuring dual Intel Xeon E5-2600 V3/V4 processors and a high memory capacity, this server provides unmatched performance and reliability for critical workloads.\n\nThe HP ProLiant ML350 Gen9 Server combines powerful performance, scalability, and reliability, making it the perfect solution for datacenters, enterprise-level workloads, and growing businesses. With free worldwide shipping, a price match promise, and additional configuration options, this server ensures an excellent value for your investment.`,
+    specs: [
+      { label: 'Brand', value: 'HP' },
+      { label: 'Form Factor', value: '5U Tower' },
+      { label: 'Processor', value: 'Dual Intel Xeon E5-2600 V3/V4' },
+      { label: 'Processor Sockets', value: '2' },
+      { label: 'Memory Size', value: 'Up to 768GB' },
+      { label: 'Storage Capacity', value: 'Up to 288TB' },
+      { label: 'Internal RAID Controllers', value: 'RAID 0, RAID 1, RAID 5' },
+      { label: 'PCI Slots', value: '9' }
+    ]
+  },
+  { name: 'ProLiant ML30 Gen10', slug: 'proliant-ml30-gen10', image: `${import.meta.env.BASE_URL}images/ID-45NEW_45-1new.jpg`, type: 'HP Tower Server',
+    overview: `The HPE ProLiant ML30 Gen10 Tower Server is an ideal solution for small, remote, and branch offices seeking reliable performance, robust security, and cost-effective on-premise or hybrid cloud solutions. Equipped with multi-core Intel Xeon processors and expandable DDR4 memory, this server delivers exceptional speed, efficiency, and flexibility to handle business-critical tasks.\n\nThe HPE ProLiant ML30 Gen10 Tower Server offers high performance, security, and scalability at a competitive price. With features like ISV certification, extensive quality testing, a manufacturer warranty, and fast delivery, it is a perfect investment for small and growing businesses aiming for operational efficiency and data security.`,
+    specs: [
+      { label: 'Brand', value: 'HPE' },
+      { label: 'Processor', value: 'Intel Xeon Multi-Core' },
+      { label: 'Memory', value: 'Expandable DDR4' },
+      { label: 'Storage', value: 'Reliable internal storage options' },
+      { label: 'RAID Options', value: 'Multiple RAID configurations supported' },
+      { label: 'Use Case', value: 'Small and remote offices, branch locations, hybrid cloud solutions' }
+    ]
+  },
   // Dell Rack Servers
   { name: 'PowerEdge R620 (10SFF)', slug: 'poweredge-r620-10sff', image: `${import.meta.env.BASE_URL}images/ID-46NEW_46-3.jpg`, type: 'Dell Rack Server' },
   { name: 'PowerEdge R830', slug: 'poweredge-r830', image: `${import.meta.env.BASE_URL}images/ID-47NEW_47-1n.jpg`, type: 'Dell Rack Server' },
