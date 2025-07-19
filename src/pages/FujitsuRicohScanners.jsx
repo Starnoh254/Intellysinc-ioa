@@ -5,7 +5,7 @@ import ProductInfo from '../components/ProductInfo';
 
 const fujitsuProducts = [
   // ScanSnap Series
-  { name: 'ScanSnap S1100i', slug: 'scansnap-s1100i', image: `${import.meta.env.BASE_URL}images/fujitsu-66-408.jpg`, type: 'ScanSnap Series',
+  { name: 'ScanSnap S1100i', slug: 'scansnap-s1100i', image: `${import.meta.env.BASE_URL}images/fujitsu_66_408.jpg`, type: 'ScanSnap Series',
     overview: 'The ScanSnap S1100i is an ultra-portable, USB-powered scanner designed for professionals on the go. Its compact size makes it ideal for scanning receipts, business cards, and documents wherever you are, without the need for an external power source.',
     specs: [
       { label: 'A4 Pages Per Min', value: 'Up to 8 ppm (simplex)' },
@@ -20,7 +20,7 @@ const fujitsuProducts = [
       { label: 'Standard Warranty', value: '1 Year' }
     ]
   },
-  { name: 'ScanSnap iX100', slug: 'scansnap-ix100', image: `${import.meta.env.BASE_URL}images/fujitsu-69-393.jpg`, type: 'ScanSnap Series',
+  { name: 'ScanSnap iX100', slug: 'scansnap-ix100', image: `${import.meta.env.BASE_URL}images/fujitsu_69_393.jpg`, type: 'ScanSnap Series',
     overview: 'The ScanSnap iX100 is a dramatically compact, battery-powered scanner. Whether scanning receipts, contracts, recipes, or plastic cards, the iX100 takes scanning beyond the desktop and into your mobile world. Completely wireless and weighing only 400 grams, the iX100 brings mobility and wireless scanning to your PC or Mac as well as iOS or Android device.',
     specs: [
       { label: 'A4 Pages Per Min', value: 'Auto mode*2 Simplex: 5.2 seconds per page; Normal mode Simplex: 5.2 seconds per page (150 dpi); Better mode Simplex: 5.2 seconds per page (200 dpi); Best mode Simplex: 5.2 seconds per page (300 dpi); Excellent mode Simplex: 20.4 seconds per page (600 dpi)' },
@@ -35,7 +35,7 @@ const fujitsuProducts = [
       { label: 'Standard Warranty', value: '1 Year' }
     ]
   },
-  { name: 'ScanSnap S1300i', slug: 'scansnap-s1300i', image: `${import.meta.env.BASE_URL}images/fujitsu-70-387.jpg`, type: 'ScanSnap Series',
+  { name: 'ScanSnap S1300i', slug: 'scansnap-s1300i', image: `${import.meta.env.BASE_URL}images/fujitsu_70_387.jpg`, type: 'ScanSnap Series',
     overview: 'The ScanSnap S1300i is a compact, portable document scanner designed for home offices and mobile professionals. It offers fast, double-sided scanning and is powered by USB, making it ideal for scanning documents, receipts, and business cards on the go.',
     specs: [
       { label: 'A4 Pages Per Min', value: 'Up to 12 ppm (simplex), 24 ipm (duplex)' },
@@ -50,7 +50,7 @@ const fujitsuProducts = [
       { label: 'Standard Warranty', value: '1 Year' }
     ]
   },
-  { name: 'ScanSnap SV600', slug: 'scansnap-sv600', image: `${import.meta.env.BASE_URL}images/fujitsu-73-371.jpg`, type: 'ScanSnap Series',
+  { name: 'ScanSnap SV600', slug: 'scansnap-sv600', image: `${import.meta.env.BASE_URL}images/fujitsu_73_371.jpg`, type: 'ScanSnap Series',
     overview: 'The ScanSnap SV600 is an overhead style contactless scanner that provides a new perspective on document scanning. Easily scan newspapers, magazines, books or documents of up to 30mm thick directly with the overhead LED, without cutting or damaging them.',
     specs: [
       { label: 'A4 Pages Per Min', value: 'Auto mode (2) 3 seconds / page; Normal mode 3 seconds / page (Color / Grayscale: 150 dpi, Monochrome: 300 dpi); Better mode 3 seconds / page (Color / Grayscale: 200 dpi, Monochrome: 400 dpi); Best mode 3 seconds / page (Color / Grayscale: 300 dpi, Monochrome: 600 dpi); Excellent mode 3 seconds / page (Color / Grayscale: 600 dpi, Monochrome: 1,200 dpi)' },
@@ -65,7 +65,7 @@ const fujitsuProducts = [
       { label: 'Standard Warranty', value: '1 Year' }
     ]
   },
-  { name: 'ScanSnap IX1400', slug: 'scansnap-ix1400', image: `${import.meta.env.BASE_URL}images/fujitsu-65f.jpg`, type: 'ScanSnap Series',
+  { name: 'ScanSnap IX1400', slug: 'scansnap-ix1400', image: `${import.meta.env.BASE_URL}images/fujitsu_65f.jpg`, type: 'ScanSnap Series',
     overview: 'ScanSnap iX1400 is equipped with simplicity and does not compromise on speed and image quality. Users are able to experience scanning with the push of one-button. It is a simple and secure model that comes with USB connectivity that allows customers to scan in environments where use of Wi-Fi is limited.',
     specs: [
       { label: 'A4 Pages Per Min', value: 'Auto mode*3 Simplex / Duplex: 40 ppm; Normal mode Simplex / Duplex: 40 ppm (Color / Grayscale: 150 dpi, Monochrome: 300 dpi); Better mode Simplex / Duplex: 40 ppm (Color / Grayscale: 200 dpi, Monochrome: 400 dpi); Best mode Simplex / Duplex: 40 ppm (Color / Grayscale: 300 dpi, Monochrome: 600 dpi); Excellent mode*4 Simplex / Duplex: 10 ppm (Color / Grayscale: 600 dpi, Monochrome: 1,200 dpi)' },
@@ -80,7 +80,7 @@ const fujitsuProducts = [
       { label: 'Standard Warranty', value: 'N/A' }
     ]
   },
-  { name: 'ScanSnap IX1500', slug: 'scansnap-ix1500', image: `${import.meta.env.BASE_URL}images/fujitsu-75-364.jpg`, type: 'ScanSnap Series',
+  { name: 'ScanSnap IX1500', slug: 'scansnap-ix1500', image: `${import.meta.env.BASE_URL}images/fujitsu_75_364.jpg`, type: 'ScanSnap Series',
     overview: 'The ScanSnap IX1500 is a user-friendly, touch-screen scanner designed for home and small office use. It offers fast, double-sided scanning, Wi-Fi connectivity, and a large color touch screen for easy operation and workflow customization.',
     specs: [
       { label: 'A4 Pages Per Min', value: 'Up to 30 ppm (simplex), 60 ipm (duplex)' },
@@ -95,7 +95,7 @@ const fujitsuProducts = [
       { label: 'Standard Warranty', value: '1 Year' }
     ]
   },
-  { name: 'ScanSnap iX1600', slug: 'scansnap-ix1600', image: `${import.meta.env.BASE_URL}images/fujitsu-79-343.jpg`, type: 'ScanSnap Series',
+  { name: 'ScanSnap iX1600', slug: 'scansnap-ix1600', image: `${import.meta.env.BASE_URL}images/fujitsu_79_343.jpg`, type: 'ScanSnap Series',
     overview: 'ScanSnap iX1600 is the evolved flagship model of the ScanSnap series, enabling scanning at higher speeds of 40 ppm/80 ipm (A4-size documents, color, 300dpi). It comes with the all-familiar 4.3-inch touch screen to bridge the gap where the physical and digital meets. The device comes with Wi-Fi connectivity, making it the perfect model for team sharing and combined use with cloud services.',
     specs: [
       { label: 'A4 Pages Per Min', value: 'Auto mode*2 Simplex / Duplex: 40 ppm; Normal mode Simplex / Duplex: 40 ppm (Color / Grayscale: 150 dpi, Monochrome: 300 dpi); Better mode Simplex / Duplex: 40 ppm (Color / Grayscale: 200 dpi, Monochrome: 400 dpi); Best mode Simplex / Duplex: 40 ppm (Color / Grayscale: 300 dpi, Monochrome: 600 dpi); Excellent mode*3 Simplex / Duplex: 10 ppm (Color / Grayscale: 600 dpi, Monochrome: 1,200 dpi)' },
@@ -114,7 +114,7 @@ const fujitsuProducts = [
   {
     name: 'fi-7240',
     slug: 'fi-7240',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-80-338.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_80_338.jpg`,
     type: 'Flatbed Series',
     overview: 'The fi-7240 provides high quality technology for reliable scanning and enhanced image processing functionalities to significantly empower business workflows. The device scans A4 portrait documents at 40 ppm/80 ipm (200/300 dpi), loads up to 80 sheets at a time with scanning capacity up to as many as 6,000 sheets a day. It ensures utmost efficiency with amazing scanning performance.',
     specs: [
@@ -130,7 +130,7 @@ const fujitsuProducts = [
       { label: 'Standard Warranty', value: 'N/A' }
     ]
   },
-  { name: 'fi-7260', slug: 'fi-7260', image: `${import.meta.env.BASE_URL}images/fujitsu-81-335.jpg`, type: 'Flatbed Series',
+  { name: 'fi-7260', slug: 'fi-7260', image: `${import.meta.env.BASE_URL}images/fujitsu_81_335.jpg`, type: 'Flatbed Series',
     overview: 'The fi-7260 is a versatile departmental scanner featuring both an ADF and flatbed for flexible document capture. It is ideal for offices that need to scan a variety of document types, including bound materials and fragile originals.',
     specs: [
       { label: 'A4 Pages Per Min', value: '60 ppm (simplex), 120 ipm (duplex)' },
@@ -145,7 +145,7 @@ const fujitsuProducts = [
       { label: 'Standard Warranty', value: '1 Year' }
     ]
   },
-  { name: 'fi-7280', slug: 'fi-7280', image: `${import.meta.env.BASE_URL}images/fujitsu-82-332.jpg`, type: 'Flatbed Series',
+  { name: 'fi-7280', slug: 'fi-7280', image: `${import.meta.env.BASE_URL}images/fujitsu_82_332.jpg`, type: 'Flatbed Series',
     overview: 'The fi-7280 is a high-speed scanner with both ADF and flatbed, designed for demanding office environments. It offers fast duplex scanning and advanced image processing for a wide range of document types.',
     specs: [
       { label: 'A4 Pages Per Min', value: '80 ppm (simplex), 160 ipm (duplex)' },
@@ -163,7 +163,7 @@ const fujitsuProducts = [
   {
     name: 'FI-7700S',
     slug: 'fi-7700s',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-98-262.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_98_262.jpg`,
     type: 'Flatbed Series',
     overview: 'The fi-7700S achieves scanning speeds of 75 ppm (A4 landscape, color, 200/300 dpi), is capable of loading up to 300 sheets at a time and scanning up to as many as 33,000 sheets a day. With its high quality technologies and user-friendly design, the scanner is suitable for continuous high volume scanning.',
     specs: [
@@ -182,7 +182,7 @@ const fujitsuProducts = [
   {
     name: 'fi-65F',
     slug: 'fi-65f',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-89-293.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_89_293.jpg`,
     type: 'Flatbed Series',
     overview: 'The fi-65F designed for portability and compact spaces guarantees simple and fast scanning for a variety of identification and small cards.',
     specs: [
@@ -201,7 +201,7 @@ const fujitsuProducts = [
   {
     name: 'SP-1425',
     slug: 'sp-1425',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-90-286.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_90_286.jpg`,
     type: 'Flatbed Series',
     overview: 'The SP-1425 is an A4-compatible ADF scanner equipped with a flatbed. Designed to be placed in limited spaces, the scanner delivers simple operation and reliable performance.',
     specs: [
@@ -220,7 +220,7 @@ const fujitsuProducts = [
   {
     name: 'SP-1130',
     slug: 'sp-1130',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-94-278.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_94_278.jpg`,
     type: 'Flatbed Series',
     overview: 'The SP-1130N provides high-value performance as an entry-level model for your business with scanning speeds of 30 ppm/60 ipm (A4 portrait, color, 200 / 300 dpi), ADF capacity of 50 sheets, ability to scan a wide range of documents.',
     specs: [
@@ -239,7 +239,7 @@ const fujitsuProducts = [
   {
     name: 'SP-1125',
     slug: 'sp-1125',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-95-273.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_95_273.jpg`,
     type: 'Flatbed Series',
     overview: 'The SP-1125N provides high-value performance as an entry-level model for your business with scanning speeds of 25 ppm/50 ipm (A4 portrait, color, 200 / 300 dpi), ADF capacity of 50 sheets, ability to scan a wide range of documents.',
     specs: [
@@ -258,7 +258,7 @@ const fujitsuProducts = [
   {
     name: 'SP-1120',
     slug: 'sp-1120',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-96-268.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_96_268.jpg`,
     type: 'Flatbed Series',
     overview: 'The SP-1120N provides high-value performance as an entry-level model for your business with scanning speeds of 20 ppm/40 ipm (A4 portrait, color, 200 / 300 dpi), ADF capacity of 50 sheets, ability to scan a wide range of documents.',
     specs: [
@@ -277,7 +277,7 @@ const fujitsuProducts = [
   {
     name: 'FI-800R',
     slug: 'fi-800r',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-97-265.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_97_265.jpg`,
     type: 'Flatbed Series',
     overview: 'The fi-800R achieves scanning speeds of 40 ppm/80 ipm with ADF and 3.5 seconds per sheet with Manual Feed (A4 portrait, color, 200/300 dpi), and is capable of scanning up to as many as 4,500 sheets a day. With its compact design, the scanner is ideal to use when space is limited, enabling better customer onboarding in spaces like reception desks and service counters.',
     specs: [
@@ -294,7 +294,7 @@ const fujitsuProducts = [
     ]
   },
   // Desktop Series
-  { name: 'Fi-7030', slug: 'fi-7030', image: `${import.meta.env.BASE_URL}images/fujitsu-fi-8170-2.jpg`, type: 'Desktop Series',
+  { name: 'Fi-7030', slug: 'fi-7030', image: `${import.meta.env.BASE_URL}images/fujitsu_fi_8170_2.jpg`, type: 'Desktop Series',
     overview: 'The fi-7030 is a compact desktop scanner designed for small and medium-sized businesses. It offers reliable, high-quality scanning for a variety of documents, including plastic cards and long paper.',
     specs: [
       { label: 'A4 Pages Per Min', value: '27 ppm (simplex), 54 ipm (duplex)' },
@@ -309,7 +309,7 @@ const fujitsuProducts = [
       { label: 'Standard Warranty', value: '1 Year' }
     ]
   },
-  { name: 'fi-7140', slug: 'fi-7140', image: `${import.meta.env.BASE_URL}images/fujitsu-fi-8270-2.jpg`, type: 'Desktop Series',
+  { name: 'fi-7140', slug: 'fi-7140', image: `${import.meta.env.BASE_URL}images/fujitsu_fi_8270_2.jpg`, type: 'Desktop Series',
     overview: 'The fi-7140 is a fast, reliable desktop scanner for busy workgroups. It features advanced paper handling and image processing, making it suitable for scanning a wide range of documents quickly and efficiently.',
     specs: [
       { label: 'A4 Pages Per Min', value: '40 ppm (simplex), 80 ipm (duplex)' },
@@ -324,7 +324,7 @@ const fujitsuProducts = [
       { label: 'Standard Warranty', value: '1 Year' }
     ]
   },
-  { name: 'fi-7160', slug: 'fi-7160', image: `${import.meta.env.BASE_URL}images/fujitsu-fi-8180-2.jpg`, type: 'Desktop Series',
+  { name: 'fi-7160', slug: 'fi-7160', image: `${import.meta.env.BASE_URL}images/fujitsu_fi_8180_2.jpg`, type: 'Desktop Series',
     overview: 'The fi-7160 is a robust, high-speed scanner designed for heavy-duty office use. It offers advanced feeding mechanisms and image enhancement features for reliable, high-volume scanning.',
     specs: [
       { label: 'A4 Pages Per Min', value: '60 ppm (simplex), 120 ipm (duplex)' },
@@ -342,7 +342,7 @@ const fujitsuProducts = [
   {
     name: 'Fujitsu fi-8190',
     slug: 'fi-8190',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-fi-8190-2.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_fi_8190_2.jpg`,
     type: 'Desktop Series',
     overview: 'The fi-8190 provides unmatched performance and market-leading document imaging capabilities. Compact and reliable, the scanner achieves scan speeds of 90 ppm/180 ipm (200/300 dpi, color, A4 portrait), loads up to 100 sheets at a time, and comes equipped with a capability of scanning up to as many as 13,000 sheets a day.',
     specs: [
@@ -361,7 +361,7 @@ const fujitsuProducts = [
   {
     name: 'Fujitsu fi-8290',
     slug: 'fi-8290',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-fi-8290-2.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_fi_8290_2.jpg`,
     type: 'Desktop Series',
     overview: 'The fi-8290 provides unmatched performance and market-leading document imaging capabilities. It offers versatile scanning, with flatbed and ADF, providing quick scans in just 1.7 seconds ipm (200/300 dpi) as flatbed, and 90 ppm/180 ipm (200/300 dpi, color, A4 portrait) as ADF. The scanner loads up to 100 sheets at a time, and comes equipped with a capability of scanning up to as many as 13,000 sheets a day.',
     specs: [
@@ -380,7 +380,7 @@ const fujitsuProducts = [
   {
     name: 'Fujitsu fi-8170',
     slug: 'fi-8170',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-fi-8170-2.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_fi_8170_2.jpg`,
     type: 'Desktop Series',
     overview: 'The fi-8170 offers an innovative and superior scanning experience. Compact and reliable, the scanner achieves scan speeds of 70 ppm/140 ipm (200/300 dpi, color, A4 portrait), loads up to 100 sheets at a time, and comes equipped with a capability of scanning up to as many as 10,000 sheets a day.',
     specs: [
@@ -399,7 +399,7 @@ const fujitsuProducts = [
   {
     name: 'Fujitsu fi-8270',
     slug: 'fi-8270',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-fi-8270-2.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_fi_8270_2.jpg`,
     type: 'Desktop Series',
     overview: 'The fi-8270 offers an innovative and superior experience, and comes with versatile scanning as flatbed and ADF. It provides quick scans in just 1.7 seconds ipm (200/300 dpi) as flatbed, and 70 ppm/140 ipm (200/300 dpi, color, A4 portrait) as ADF. The scanner loads up to 100 sheets at a time, and comes equipped with a capability of scanning up to as many as 10,000 sheets a day.',
     specs: [
@@ -418,7 +418,7 @@ const fujitsuProducts = [
   {
     name: 'Fujitsu fi-8150',
     slug: 'fi-8150',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-fi-8150-2.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_fi_8150_2.jpg`,
     type: 'Desktop Series',
     overview: 'The fi-8150 offers an innovative and superior scanning experience. Compact and reliable, the scanner achieves scan speeds of 50 ppm/100 ipm (200/300 dpi, color, A4 portrait), loads up to 100 sheets at a time, and comes equipped with a capability of scanning up to as many as 8,000 sheets a day.',
     specs: [
@@ -437,7 +437,7 @@ const fujitsuProducts = [
   {
     name: 'Fujitsu fi-8250',
     slug: 'fi-8250',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-fi-8250-2.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_fi_8250_2.jpg`,
     type: 'Desktop Series',
     overview: 'The fi-8250 offers an innovative and superior experience, and comes with versatile scanning as flatbed and ADF. It provides quick scans in just 1.7 seconds ipm (200/300 dpi) as flatbed, and 50 ppm/100 ipm (200/300 dpi, color, A4 portrait) as ADF. The scanner loads up to 100 sheets at a time, and comes equipped with a capability of scanning up to as many as 8,000 sheets a day.',
     specs: [
@@ -456,7 +456,7 @@ const fujitsuProducts = [
   {
     name: 'FI-8040',
     slug: 'fi-8040',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-fi-8040-overview02.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_fi_8040_overview02.jpg`,
     type: 'Desktop Series',
     overview: 'The RICOH fi-8040 is a high-speed, high-resolution document scanner designed for businesses that need to scan large amounts of documents quickly and accurately. It features Clear Image Capture, DirectScan, and Scanner Central Admin for remote management.',
     specs: [
@@ -476,7 +476,7 @@ const fujitsuProducts = [
   {
     name: 'fi-7460',
     slug: 'fi-7460',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-101-428.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_101_428.jpg`,
     type: 'Departmental Series',
     overview: 'The fi-7460 provides high quality technology for reliable scanning and enhanced image processing functionalities to significantly empower business workflows. Even with its compact size, the device scans A4 landscape documents at 60 ppm/120 ipm (200/300 dpi), and is capable of loading up to 100 sheets at a time and scanning up to as many as 18,000 sheets a day.',
     specs: [
@@ -495,7 +495,7 @@ const fujitsuProducts = [
   {
     name: 'fi-7480',
     slug: 'fi-7480',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-103-420.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_103_420.jpg`,
     type: 'Departmental Series',
     overview: 'The fi-7480 provides high quality technology for reliable scanning and enhanced image processing functionalities to significantly empower business workflows. Even with its compact size, the device scans A4 landscape documents at 80 ppm/160 ipm (200/300 dpi), and is capable of loading up to 100 sheets at a time and scanning up to as many as 24,000 sheets a day.',
     specs: [
@@ -514,7 +514,7 @@ const fujitsuProducts = [
   {
     name: 'FI-7600',
     slug: 'fi-7600',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-88-297.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_88_297.jpg`,
     type: 'Departmental Series',
     overview: 'The fi-7600 achieves scanning speeds of 100 ppm/200 ipm (A4 landscape, color, 200/300 dpi), is capable of loading up to 300 sheets at a time and scanning up to as many as 44,000 sheets a day. With its high quality technologies and user-friendly design, the scanner is suitable for continuous high volume scanning.',
     specs: [
@@ -533,7 +533,7 @@ const fujitsuProducts = [
   {
     name: 'fi-6670',
     slug: 'fi-6670',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-79-343.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_79_343.jpg`,
     type: 'Departmental Series',
     overview: 'The fi-6670 delivers intelligent, reliable production scanning for a more productive work environment. Designed with outstanding paper handling, high scan speeds up to 90ppm/180ipm and intelligent productivity enhancement features, the fi-6670 scanner delivers the automation and dependability needed for production scanning applications.',
     specs: [
@@ -552,7 +552,7 @@ const fujitsuProducts = [
   {
     name: 'FI-7800',
     slug: 'fi-7800',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-101-428.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_101_428.jpg`,
     type: 'Departmental Series',
     overview: 'The fi-7800 achieves scanning speeds of 110 ppm/220 ipm (A4 landscape, color, 200/300 dpi), is capable of scanning up to as many as 100,000 sheets a day, and is highly optimized for centralized scanning. The scanner is designed with operator usability as its first priority.',
     specs: [
@@ -571,7 +571,7 @@ const fujitsuProducts = [
   {
     name: 'FI-7900',
     slug: 'fi-7900',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-103-420.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_103_420.jpg`,
     type: 'Departmental Series',
     overview: 'The fi-7900 achieves scanning speeds of 120 ppm/240 ipm (A4 landscape, color, 200/300 dpi), is capable of scanning up to as many as 120,000 sheets a day, and is highly optimized for centralized scanning. The scanner is designed with operator usability as its first priority.',
     specs: [
@@ -591,7 +591,7 @@ const fujitsuProducts = [
   {
     name: 'N7100',
     slug: 'n7100',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-75-364.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_75_364.jpg`,
     type: 'Network Series',
     overview: 'The N7100E network scanner secures stand-alone network operations and improves business processes through secure Ethernet connectivity and an extra-large touchscreen for customizable jobs.',
     specs: [
@@ -610,7 +610,7 @@ const fujitsuProducts = [
   {
     name: 'FI-7300',
     slug: 'fi-7300',
-    image: `${import.meta.env.BASE_URL}images/fujitsu-73-371.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fujitsu_73_371.jpg`,
     type: 'Network Series',
     overview: 'The fi-7300NX boasts a speed of 60 ppm/120 ipm (200/300 dpi) for scanning A4 portraits, loads up to 80 sheets at a time. Scan from the scanner with touch screen operation and various authentication methods for improved efficiency and security.',
     specs: [
