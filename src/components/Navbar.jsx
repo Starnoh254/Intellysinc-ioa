@@ -117,7 +117,6 @@ const Navbar = () => {
         { name: 'Microfilm Scanners', path: '/microfilm-scanners' },
         { name: 'Scanning Software', path: '/scanning-software' },
         { name: 'Servers', path: '/servers' },
-        { name: 'Document Management System', path: '/document-management-system' },
       ],
     },
     {
