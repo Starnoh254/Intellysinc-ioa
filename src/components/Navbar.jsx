@@ -88,6 +88,7 @@ const Navbar = () => {
         { name: 'About', path: '/About' },
         { name: 'Awards', path: '/Awards' },
         { name: 'CompanyInfo', path: '/CompanyInfo' },
+        { name: 'Contact', path: '/Contact' }, // Added Contact link
       ],
     },
     {
@@ -103,6 +104,20 @@ const Navbar = () => {
         { name: 'Sales & Marketing', path: '/SalesMarketing' },
         { name: 'Mobile Solutions', path: '/MobileSolutions' },
         { name: 'Security Services', path: '/SecurityServices' },
+      ],
+    },
+    {
+      title: 'Products',
+      links: [
+        { name: 'Avision Scanners', path: '/avision-scanners' },
+        { name: 'Brother Scanners', path: '/brother-scanners' },
+        { name: 'Canon Scanners', path: '/canon-scanners' },
+        { name: 'Fujitsu-RICOH Scanners', path: '/fujitsu-ricoh-scanners' },
+        { name: 'Kodak Scanners', path: '/kodak-scanners' },
+        { name: 'Microfilm Scanners', path: '/microfilm-scanners' },
+        { name: 'Scanning Software', path: '/scanning-software' },
+        { name: 'Servers', path: '/servers' },
+        { name: 'Document Management System', path: '/document-management-system' },
       ],
     },
     {

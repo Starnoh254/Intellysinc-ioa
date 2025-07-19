@@ -23,37 +23,32 @@ class AnalyticsService {
 
   // Track page view
   trackPageView() {
-    const pageView = {
+    const event = {
       type: 'pageview',
-      timestamp: Date.now(),
       url: window.location.href,
-      title: document.title,
-      referrer: document.referrer,
+      sessionId: this.sessionId,
       userAgent: navigator.userAgent,
-      screenResolution: `${screen.width}x${screen.height}`,
-      viewport: `${window.innerWidth}x${window.innerHeight}`,
-      sessionId: this.sessionId
+      referrer: document.referrer || '',
     };
-
-    this.events.push(pageView);
-    this.pageViews++;
-    this.saveToStorage();
-    this.sendToServer(pageView);
+    this.sendToServer(event);
   }
 
   // Track custom events
   trackEvent(eventName, properties = {}) {
+    // Defensive: eventName must be a non-empty string
+    if (!eventName || typeof eventName !== 'string') {
+      console.warn('AnalyticsService: eventName is required for event type');
+      return;
+    }
     const event = {
       type: 'event',
       name: eventName,
-      properties,
-      timestamp: Date.now(),
+      properties: properties || {},
+      url: window.location.href,
       sessionId: this.sessionId,
-      url: window.location.href
+      userAgent: navigator.userAgent,
+      referrer: document.referrer || '',
     };
-
-    this.events.push(event);
-    this.saveToStorage();
     this.sendToServer(event);
   }
 
@@ -181,17 +176,55 @@ class AnalyticsService {
 
   // Send event to server
   async sendToServer(event) {
+    // Only send analytics if the user is authenticated
+    if (!localStorage.getItem('token')) {
+      return;
+    }
+    // Defensive: Only allow valid types
+    const allowedTypes = ['pageview', 'event', 'error'];
+    if (!event || !allowedTypes.includes(event.type)) {
+      console.warn('AnalyticsService: Invalid analytics event type', event);
+      return;
+    }
+    // Defensive: url must be absolute
+    if (!event.url || !/^https?:\/\//.test(event.url)) {
+      event.url = window.location.href;
+    }
+    // Defensive: sessionId must be present
+    if (!event.sessionId) {
+      event.sessionId = this.sessionId;
+    }
+    // Defensive: userAgent must be present
+    if (!event.userAgent) {
+      event.userAgent = navigator.userAgent;
+    }
+    // Defensive: for type 'event', name must be present
+    if (event.type === 'event' && !event.name) {
+      console.warn('AnalyticsService: Missing event name for event type', event);
+      return;
+    }
     try {
       const response = await fetch('/api/analytics/track', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         },
         body: JSON.stringify(event)
       });
-
       if (!response.ok) {
-        throw new Error('Failed to send analytics data');
+        let errorMsg = 'Failed to send analytics data';
+        try {
+          const errorBody = await response.json();
+          errorMsg += ': ' + (errorBody.error || JSON.stringify(errorBody));
+          if (errorBody.details) {
+            errorMsg += ' Details: ' + JSON.stringify(errorBody.details);
+          }
+        } catch (e) {
+          // ignore JSON parse errors
+        }
+        console.error('AnalyticsService:', errorMsg, event);
+        throw new Error(errorMsg);
       }
     } catch (error) {
       console.error('Error sending analytics data:', error);

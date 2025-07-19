@@ -10,6 +10,7 @@ import LiveChatWidget from './components/LiveChatWidget';
 import AdminLiveChat from './components/AdminLiveChat';
 import ErrorBoundary from './components/ErrorBoundary';
 import { AuthProvider } from './contexts/AuthContext';
+import ProductDetail from './pages/ProductDetail';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
@@ -28,8 +29,10 @@ const Blog = lazy(() => import('./pages/Blog'));
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const Support = lazy(() => import('./pages/Support'));
 const CompanyInfo = lazy(() => import('./pages/CompanyInfo'));
+const Profile = lazy(() => import('./pages/Profile'));
 const AdminBlogManager = lazy(() => import('./components/AdminBlogManager'));
 const AdminAccess = lazy(() => import('./components/AdminAccess'));
+const AllProducts = lazy(() => import('./pages/AllProducts'));
 
 // New Service Pages
 const WorkflowAutomation = lazy(() => import('./pages/WorkflowAutomation'));
@@ -37,11 +40,21 @@ const QualityManagement = lazy(() => import('./pages/QualityManagement'));
 const SalesMarketing = lazy(() => import('./pages/SalesMarketing'));
 const MobileSolutions = lazy(() => import('./pages/MobileSolutions'));
 const SecurityServices = lazy(() => import('./pages/SecurityServices'));
+const KodakScanners = lazy(() => import('./pages/KodakScanners'));
 
 // New Analytics and Content Management Components
 const AnalyticsDashboard = lazy(() => import('./components/AnalyticsDashboard'));
 const AdvancedContentManager = lazy(() => import('./components/AdvancedContentManager'));
 const TestNewFeatures = lazy(() => import('./components/TestNewFeatures'));
+
+const AvisionScanners = lazy(() => import('./pages/AvisionScanners'));
+const BrotherScanners = lazy(() => import('./pages/BrotherScanners'));
+const CanonScanners = lazy(() => import('./pages/CanonScanners'));
+const FujitsuRicohScanners = lazy(() => import('./pages/FujitsuRicohScanners'));
+const MicrofilmScanners = lazy(() => import('./pages/MicrofilmScanners'));
+const Servers = lazy(() => import('./pages/Servers'));
+const DocumentManagementSystem = lazy(() => import('./pages/DocumentManagementSystem'));
+const ScanningSoftware = lazy(() => import('./pages/ScanningSoftware'));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -74,6 +87,18 @@ function AnimatedRoutes() {
           <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/Support" element={<Support />} />
           <Route path="/CompanyInfo" element={<CompanyInfo />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/kodak-scanners" element={<KodakScanners />} />
+          <Route path="/avision-scanners" element={<AvisionScanners />} />
+          <Route path="/brother-scanners" element={<BrotherScanners />} />
+          <Route path="/canon-scanners" element={<CanonScanners />} />
+          <Route path="/fujitsu-ricoh-scanners" element={<FujitsuRicohScanners />} />
+          <Route path="/microfilm-scanners" element={<MicrofilmScanners />} />
+          <Route path="/servers" element={<Servers />} />
+          <Route path="/document-management-system" element={<DocumentManagementSystem />} />
+          <Route path="/all-products" element={<AllProducts />} />
+          <Route path="/products/:category/:productSlug" element={<ProductDetail />} />
+          <Route path="/scanning-software" element={<ScanningSoftware />} />
           
           {/* Test route for new features */}
           <Route path="/test-features" element={<TestNewFeatures />} />
