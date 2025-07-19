@@ -367,14 +367,14 @@ const BrotherScanners = () => {
       <aside className="sidebar">
         <h2>Product Categories</h2>
         <ul>
-          <li>Avision Scanners</li>
+          <li><Link to="/avision-scanners">Avision Scanners</Link></li>
           <li className="active">Brother Scanners</li>
-          <li>Canon Scanners</li>
-          <li>Fujitsu-RICOH Scanners</li>
-          <li>Kodak Scanners</li>
-          <li>Microfilm Scanners</li>
-          <li>Scanning Software</li>
-          <li>Servers</li>
+          <li><Link to="/canon-scanners">Canon Scanners</Link></li>
+          <li><Link to="/fujitsu-ricoh-scanners">Fujitsu-RICOH Scanners</Link></li>
+          <li><Link to="/kodak-scanners">Kodak Scanners</Link></li>
+          <li><Link to="/microfilm-scanners">Microfilm Scanners</Link></li>
+          <li><Link to="/scanning-software">Scanning Software</Link></li>
+          <li><Link to="/servers">Servers</Link></li>
         </ul>
       </aside>
       <main className="product-main">

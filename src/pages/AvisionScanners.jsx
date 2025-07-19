@@ -993,13 +993,13 @@ const AvisionScanners = () => {
         <h2>Product Categories</h2>
         <ul>
           <li className="active">Avision Scanners</li>
-          <li>Brother Scanners</li>
-          <li>Canon Scanners</li>
-          <li>Fujitsu-RICOH Scanners</li>
-          <li>Kodak Scanners</li>
-          <li>Microfilm Scanners</li>
-          <li>Scanning Software</li>
-          <li>Servers</li>
+          <li><Link to="/brother-scanners">Brother Scanners</Link></li>
+          <li><Link to="/canon-scanners">Canon Scanners</Link></li>
+          <li><Link to="/fujitsu-ricoh-scanners">Fujitsu-RICOH Scanners</Link></li>
+          <li><Link to="/kodak-scanners">Kodak Scanners</Link></li>
+          <li><Link to="/microfilm-scanners">Microfilm Scanners</Link></li>
+          <li><Link to="/scanning-software">Scanning Software</Link></li>
+          <li><Link to="/servers">Servers</Link></li>
         </ul>
       </aside>
       <main className="product-main">
