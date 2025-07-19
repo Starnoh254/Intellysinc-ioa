@@ -8,7 +8,7 @@ const canonProducts = [
   {
     name: 'DR-F120',
     slug: 'dr-f120',
-    image: '/images/Canon_37_548.jpg',
+    image: `${import.meta.env.BASE_URL}images/Canon_37_548.jpg',
     type: 'Flatbed Scanner',
     details: {
       speed: 'A4 / LTR, Portrait, 200dpi: Black and White: 20ppm (simplex) / 36ipm (duplex); Grayscale: 20ppm (simplex) / 36ipm (duplex); Colour: 10ppm (simplex) / 18ipm (duplex)',
@@ -28,7 +28,7 @@ const canonProducts = [
   {
     name: 'DR-G2090',
     slug: 'dr-g2090',
-    image: '/images/Canon_38_544.jpg',
+    image: `${import.meta.env.BASE_URL}images/Canon_38_544.jpg',
     type: 'Production Scanner',
     overview: 'The DR-G2090 is a high-speed production scanner designed for large-volume document processing, offering advanced image quality and reliable paper handling.',
     specs: [
@@ -47,7 +47,7 @@ const canonProducts = [
   {
     name: 'DR-G2110',
     slug: 'dr-g2110',
-    image: '/images/Canon_39_540.jpg',
+    image: `${import.meta.env.BASE_URL}images/Canon_39_540.jpg',
     type: 'Production Scanner',
     overview: 'The DR-G2110 is a robust, high-speed production scanner with network capability, ideal for centralized scanning in large organizations.',
     specs: [
@@ -66,7 +66,7 @@ const canonProducts = [
   {
     name: 'DR-G2140',
     slug: 'dr-g2140',
-    image: '/images/Canon_40_536.jpg',
+    image: `${import.meta.env.BASE_URL}images/Canon_40_536.jpg',
     type: 'Production Scanner',
     overview: 'The DR-G2140 is a network-ready, ultra-fast production scanner with advanced paper handling and image processing for high-volume environments.',
     specs: [
@@ -85,7 +85,7 @@ const canonProducts = [
   {
     name: 'DR-X10C',
     slug: 'dr-x10c',
-    image: '/images/Canon_41_534.jpg',
+    image: `${import.meta.env.BASE_URL}images/Canon_41_534.jpg',
     type: 'Production Scanner',
     overview: 'The DR-X10C is a premium production scanner with exceptional image quality, high-speed scanning, and advanced paper protection features.',
     specs: [
@@ -102,32 +102,32 @@ const canonProducts = [
     ]
   },
   // 6000 Series
-  { name: 'DR-6010C', image: '/images/Canon_42_528.jpg', type: '6000 Series' },
-  { name: 'DR-6030C', image: '/images/Canon_43_524.jpg', type: '6000 Series' },
+  { name: 'DR-6010C', image: `${import.meta.env.BASE_URL}images/Canon_42_528.jpg', type: '6000 Series' },
+  { name: 'DR-6030C', image: `${import.meta.env.BASE_URL}images/Canon_43_524.jpg', type: '6000 Series' },
   // Portable Series
-  { name: 'P-215II', image: '/images/Canon_44_520.jpg', type: 'Portable Scanner' },
-  { name: 'P-208II', image: '/images/Canon_45_515.jpg', type: 'Portable Scanner' },
-  { name: 'Canon R10', image: '/images/Canon_47_510.jpg', type: 'Portable Scanner' },
-  { name: 'Canon R40', image: '/images/Canon_48_507.jpg', type: 'Portable Scanner' },
+  { name: 'P-215II', image: `${import.meta.env.BASE_URL}images/Canon_44_520.jpg', type: 'Portable Scanner' },
+  { name: 'P-208II', image: `${import.meta.env.BASE_URL}images/Canon_45_515.jpg', type: 'Portable Scanner' },
+  { name: 'Canon R10', image: `${import.meta.env.BASE_URL}images/Canon_47_510.jpg', type: 'Portable Scanner' },
+  { name: 'Canon R40', image: `${import.meta.env.BASE_URL}images/Canon_48_507.jpg', type: 'Portable Scanner' },
   // Network Series
-  { name: 'ScanFront 400', image: '/images/Canon_49_499.jpg', type: 'Network Scanner' },
+  { name: 'ScanFront 400', image: `${import.meta.env.BASE_URL}images/Canon_49_499.jpg', type: 'Network Scanner' },
   // M Series
-  { name: 'DR-M140', image: '/images/Canon_50_493.jpg', type: 'M Series' },
-  { name: 'DR-M160II', image: '/images/Canon_51_486.jpg', type: 'M Series' },
-  { name: 'DR-M260', image: '/images/Canon_52_483.jpg', type: 'M Series' },
-  { name: 'DR-M1060', image: '/images/Canon_53_480.jpg', type: 'M Series' },
+  { name: 'DR-M140', image: `${import.meta.env.BASE_URL}images/Canon_50_493.jpg', type: 'M Series' },
+  { name: 'DR-M160II', image: `${import.meta.env.BASE_URL}images/Canon_51_486.jpg', type: 'M Series' },
+  { name: 'DR-M260', image: `${import.meta.env.BASE_URL}images/Canon_52_483.jpg', type: 'M Series' },
+  { name: 'DR-M1060', image: `${import.meta.env.BASE_URL}images/Canon_53_480.jpg', type: 'M Series' },
   // C Series
-  { name: 'DR-C225 II', image: '/images/Canon_54_473.jpg', type: 'C Series' },
-  { name: 'DR-C225', image: '/images/Canon_58_459.jpg', type: 'C Series' },
-  { name: 'DR-C240', image: '/images/Canon_59_455.jpg', type: 'C Series' },
-  { name: 'DR-C230', image: '/images/Canon_60_454.jpg', type: 'C Series' },
-  { name: 'Canon DR-C225W II', image: '/images/Canon_61_452.jpg', type: 'C Series' },
+  { name: 'DR-C225 II', image: `${import.meta.env.BASE_URL}images/Canon_54_473.jpg', type: 'C Series' },
+  { name: 'DR-C225', image: `${import.meta.env.BASE_URL}images/Canon_58_459.jpg', type: 'C Series' },
+  { name: 'DR-C240', image: `${import.meta.env.BASE_URL}images/Canon_59_455.jpg', type: 'C Series' },
+  { name: 'DR-C230', image: `${import.meta.env.BASE_URL}images/Canon_60_454.jpg', type: 'C Series' },
+  { name: 'Canon DR-C225W II', image: `${import.meta.env.BASE_URL}images/Canon_61_452.jpg', type: 'C Series' },
   // Cheque Scanners
-  { name: 'CR-120', image: '/images/Canon_63_445.jpg', type: 'Cheque Scanner' },
-  { name: 'CR-150N', image: '/images/Canon-r10 (1).png', type: 'Cheque Scanner' },
+  { name: 'CR-120', image: `${import.meta.env.BASE_URL}images/Canon_63_445.jpg', type: 'Cheque Scanner' },
+  { name: 'CR-150N', image: `${import.meta.env.BASE_URL}images/Canon-r10 (1).png', type: 'Cheque Scanner' },
   // Other Canon
-  { name: 'DR-S130', image: '/images/Canon-r40 (2).jpg', type: 'Other Canon' },
-  { name: 'DR-S150', image: '/images/Canon-DRC225wII.webp', type: 'Other Canon' },
+  { name: 'DR-S130', image: `${import.meta.env.BASE_URL}images/Canon-r40 (2).jpg', type: 'Other Canon' },
+  { name: 'DR-S150', image: `${import.meta.env.BASE_URL}images/Canon-DRC225wII.webp', type: 'Other Canon' },
 ];
 
 export { canonProducts };

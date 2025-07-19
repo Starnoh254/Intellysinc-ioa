@@ -8,7 +8,7 @@ const avisionProducts = [
   {
     name: 'AD225WN',
     slug: 'ad225wn',
-    image: '/images/AD225WN.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD225WN.jpg',
     type: 'Avision Scanner',
     overview: 'The AD225WN is a compact and portable scanner designed for productivity with batch scanning, Wi-Fi, and network support. Ideal for offices needing flexible, high-speed scanning.',
     specs: [
@@ -27,7 +27,7 @@ const avisionProducts = [
   {
     name: 'AD225',
     slug: 'ad225',
-    image: '/images/AD225WN.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD225WN.jpg',
     type: 'Avision Scanner',
     overview: 'The AD225 is a versatile desktop scanner with a 25-sheet ADF, duplex scanning, and fast speeds. Perfect for small businesses and home offices.',
     specs: [
@@ -46,7 +46,7 @@ const avisionProducts = [
   {
     name: 'AD1205',
     slug: 'ad1205',
-    image: '/images/AD120.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD120.jpg',
     type: 'Avision Scanner',
     overview: 'The AD1205 is a compact scanner with a 50-sheet ADF and duplex scanning, designed for efficient document management in busy environments.',
     specs: [
@@ -65,7 +65,7 @@ const avisionProducts = [
   {
     name: 'AD130',
     slug: 'ad130',
-    image: '/images/AD130_1-600x600.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD130_1-600x600.jpg',
     type: 'Avision Scanner',
     overview: 'The AD130 offers high-speed duplex scanning and a robust ADF, making it ideal for medium-sized offices with demanding scanning needs.',
     specs: [
@@ -84,7 +84,7 @@ const avisionProducts = [
   {
     name: 'AV332U',
     slug: 'av332u',
-    image: '/images/AV332F-front-600x695.jpg',
+    image: `${import.meta.env.BASE_URL}images/AV332F-front-600x695.jpg',
     type: 'Avision Scanner',
     overview: 'The AV332U is a high-speed document scanner with advanced image processing and a robust ADF, perfect for busy offices needing reliable, high-volume scanning.',
     specs: [
@@ -103,7 +103,7 @@ const avisionProducts = [
   {
     name: 'AV332F',
     slug: 'av332f',
-    image: '/images/AV332F-front-600x695.jpg',
+    image: `${import.meta.env.BASE_URL}images/AV332F-front-600x695.jpg',
     type: 'Avision Scanner',
     overview: 'The AV332F features a flatbed design for scanning delicate or bound documents, with a fast ADF for batch jobs. Ideal for libraries and legal offices.',
     specs: [
@@ -123,7 +123,7 @@ const avisionProducts = [
   {
     name: 'AD340GFN',
     slug: 'ad340gfn',
-    image: '/images/AD225WN.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD225WN.jpg',
     type: 'Avision Scanner',
     overview: 'The AD340GFN is a network-ready, high-speed scanner with duplex capability and a large ADF, perfect for workgroups needing shared scanning resources.',
     specs: [
@@ -142,7 +142,7 @@ const avisionProducts = [
   {
     name: 'AD340GF',
     slug: 'ad340gf',
-    image: '/images/AD225WN.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD225WN.jpg',
     type: 'Avision Scanner',
     overview: 'The AD340GF is a fast, duplex document scanner with a 100-sheet ADF, designed for high-volume scanning in busy office environments.',
     specs: [
@@ -161,7 +161,7 @@ const avisionProducts = [
   {
     name: 'AD340GN',
     slug: 'ad340gn',
-    image: '/images/AD225WN.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD225WN.jpg',
     type: 'Avision Scanner',
     overview: 'The AD340GN is a network-enabled scanner with high-speed duplex scanning and a robust ADF, ideal for collaborative office settings.',
     specs: [
@@ -180,7 +180,7 @@ const avisionProducts = [
   {
     name: 'AD340G',
     slug: 'ad340g',
-    image: '/images/AD225WN.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD225WN.jpg',
     type: 'Avision Scanner',
     overview: 'The AD340G is a high-speed, duplex scanner with a large ADF, designed for efficient batch scanning in demanding office environments.',
     specs: [
@@ -199,7 +199,7 @@ const avisionProducts = [
   {
     name: 'AD340GWN',
     slug: 'ad340gwn',
-    image: '/images/AD225WN.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD225WN.jpg',
     type: 'Avision Scanner',
     overview: 'The AD340GWN is a wireless and network-ready scanner with high-speed duplex scanning, perfect for shared office environments.',
     specs: [
@@ -218,7 +218,7 @@ const avisionProducts = [
   {
     name: 'AD345G',
     slug: 'ad345g',
-    image: '/images/AD345G_1.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD345G_1.jpg`,
     type: 'Avision Scanner',
     overview: 'The AD345G is a robust, high-speed scanner with duplex capability and a 100-sheet ADF, ideal for large offices and heavy-duty scanning tasks.',
     specs: [
@@ -237,7 +237,7 @@ const avisionProducts = [
   {
     name: 'AD345GN',
     slug: 'ad345gn',
-    image: '/images/AD345G_1.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD345G_1.jpg',
     type: 'Avision Scanner',
     overview: 'The AD345GN adds network connectivity to the AD345G, making it perfect for shared office environments requiring fast, reliable scanning.',
     specs: [
@@ -256,7 +256,7 @@ const avisionProducts = [
   {
     name: 'AD345GWN',
     slug: 'ad345gwn',
-    image: '/images/AD345G_1.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD345G_1.jpg',
     type: 'Avision Scanner',
     overview: 'The AD345GWN is a wireless and network-ready scanner with high-speed duplex scanning, perfect for collaborative and flexible office setups.',
     specs: [
@@ -275,7 +275,7 @@ const avisionProducts = [
   {
     name: 'AD345GF',
     slug: 'ad345gf',
-    image: '/images/AD345G_1.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD345G_1.jpg',
     type: 'Avision Scanner',
     overview: 'The AD345GF is a high-speed, duplex scanner with a 100-sheet ADF, designed for efficient, high-volume scanning in demanding office environments.',
     specs: [
@@ -294,7 +294,7 @@ const avisionProducts = [
   {
     name: 'AD345GFN',
     slug: 'ad345gfn',
-    image: '/images/AD345G_1.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD345G_1.jpg',
     type: 'Avision Scanner',
     overview: 'The AD345GFN is a network-enabled, high-speed scanner with duplex capability and a large ADF, perfect for workgroups needing shared scanning resources.',
     specs: [
@@ -313,7 +313,7 @@ const avisionProducts = [
   {
     name: 'AD345GFWN',
     slug: 'ad345gfwn',
-    image: '/images/AD345G_1.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD345G_1.jpg',
     type: 'Avision Scanner',
     overview: 'The AD345GFWN is a wireless, network-ready, high-speed scanner with duplex capability, designed for flexible, high-volume office scanning.',
     specs: [
@@ -332,7 +332,7 @@ const avisionProducts = [
   {
     name: 'AD370',
     slug: 'ad370',
-    image: '/images/AD370_1-600x600.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD370_1-600x600.jpg',
     type: 'Avision Scanner',
     overview: 'The AD370 is a high-speed, heavy-duty scanner with a 100-sheet ADF and advanced image processing, perfect for large offices and scanning bureaus.',
     specs: [
@@ -351,7 +351,7 @@ const avisionProducts = [
   {
     name: 'AD370N',
     slug: 'ad370n',
-    image: '/images/AD370_1-600x600.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD370_1-600x600.jpg',
     type: 'Avision Scanner',
     overview: 'The AD370N is a network-enabled, high-speed scanner with a 100-sheet ADF, designed for collaborative, high-volume office environments.',
     specs: [
@@ -370,7 +370,7 @@ const avisionProducts = [
   {
     name: 'AD370WN',
     slug: 'ad370wn',
-    image: '/images/AD370_1-600x600.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD370_1-600x600.jpg',
     type: 'Avision Scanner',
     overview: 'The AD370WN is a wireless, network-ready, high-speed scanner with a 100-sheet ADF, perfect for flexible, high-volume scanning in modern offices.',
     specs: [
@@ -389,7 +389,7 @@ const avisionProducts = [
   {
     name: 'AD370F',
     slug: 'ad370f',
-    image: '/images/AD370F_1-600x600.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD370F_1-600x600.jpg',
     type: 'Avision Scanner',
     overview: 'The AD370F features a flatbed for delicate or bound documents and a high-speed ADF, making it ideal for legal, medical, and educational offices.',
     specs: [
@@ -409,7 +409,7 @@ const avisionProducts = [
   {
     name: 'AD370FWN',
     slug: 'ad370fwn',
-    image: '/images/AD370F_1-600x600.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD370F_1-600x600.jpg',
     type: 'Avision Scanner',
     overview: 'The AD370FWN is a wireless, network-ready flatbed scanner with a high-speed ADF, perfect for offices needing to scan books, IDs, and large batches.',
     specs: [
@@ -429,7 +429,7 @@ const avisionProducts = [
   {
     name: 'AD370FN',
     slug: 'ad370fn',
-    image: '/images/AD370F_1-600x600.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD370F_1-600x600.jpg',
     type: 'Avision Scanner',
     overview: 'The AD370FN is a network-enabled flatbed scanner with a high-speed ADF, designed for collaborative offices needing to scan a variety of document types.',
     specs: [
@@ -449,7 +449,7 @@ const avisionProducts = [
   {
     name: 'AD360GFN',
     slug: 'ad360gfn',
-    image: '/images/AD360G_A4.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD360G_A4.jpg',
     type: 'Avision Scanner',
     overview: 'The AD360GFN is a network-enabled, high-speed scanner with duplex capability and a 100-sheet ADF, perfect for workgroups needing shared scanning resources.',
     specs: [
@@ -468,7 +468,7 @@ const avisionProducts = [
   {
     name: 'AD360G',
     slug: 'ad360g',
-    image: '/images/AD360G_A4.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD360G_A4.jpg',
     type: 'Avision Scanner',
     overview: 'The AD360G is a high-speed, duplex scanner with a large ADF, designed for efficient batch scanning in demanding office environments.',
     specs: [
@@ -487,7 +487,7 @@ const avisionProducts = [
   {
     name: 'AD360GN',
     slug: 'ad360gn',
-    image: '/images/AD360G_A4.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD360G_A4.jpg',
     type: 'Avision Scanner',
     overview: 'The AD360GN is a network-enabled scanner with high-speed duplex scanning and a robust ADF, ideal for collaborative office settings.',
     specs: [
@@ -506,7 +506,7 @@ const avisionProducts = [
   {
     name: 'AD3100F',
     slug: 'ad3100f',
-    image: '/images/AD3100F_A4.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD3100F_A4.jpg',
     type: 'Avision Scanner',
     overview: 'The AD3100F is a flatbed scanner with a high-speed ADF, perfect for scanning books, IDs, and large batches in legal, medical, and educational offices.',
     specs: [
@@ -526,7 +526,7 @@ const avisionProducts = [
   {
     name: 'AD3100FN',
     slug: 'ad3100fn',
-    image: '/images/AD3100F_A4.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD3100F_A4.jpg',
     type: 'Avision Scanner',
     overview: 'The AD3100FN is a network-enabled flatbed scanner with a high-speed ADF, designed for collaborative offices needing to scan a variety of document types.',
     specs: [
@@ -546,7 +546,7 @@ const avisionProducts = [
   {
     name: 'AD3100N',
     slug: 'ad3100n',
-    image: '/images/AD3100F_A4.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD3100F_A4.jpg',
     type: 'Avision Scanner',
     overview: 'The AD3100N is a network-enabled, high-speed scanner with duplex capability and a large ADF, perfect for workgroups needing shared scanning resources.',
     specs: [
@@ -565,7 +565,7 @@ const avisionProducts = [
   {
     name: 'AD3100',
     slug: 'ad3100',
-    image: '/images/AD3100F_A4.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD3100F_A4.jpg',
     type: 'Avision Scanner',
     overview: 'The AD3100 is a high-speed, duplex scanner with a large ADF, designed for efficient batch scanning in demanding office environments.',
     specs: [
@@ -584,7 +584,7 @@ const avisionProducts = [
   {
     name: 'AD3100FWN',
     slug: 'ad3100fwn',
-    image: '/images/AD3100F_A4.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD3100F_A4.jpg',
     type: 'Avision Scanner',
     overview: 'The AD3100FWN is a wireless, network-ready flatbed scanner with a high-speed ADF, perfect for offices needing to scan books, IDs, and large batches.',
     specs: [
@@ -604,7 +604,7 @@ const avisionProducts = [
   {
     name: 'AD5800',
     slug: 'ad5800',
-    image: '/images/AD5800-Left-600x600.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD5800-Left-600x600.jpg',
     type: 'Avision Scanner',
     overview: 'The AD5800 is a heavy-duty, high-speed scanner with a 500-sheet ADF, designed for production-level scanning in service bureaus and large enterprises.',
     specs: [
@@ -623,7 +623,7 @@ const avisionProducts = [
   {
     name: 'AD6090',
     slug: 'ad6090',
-    image: '/images/AD6090N_1.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD6090N_1.jpg',
     type: 'Avision Scanner',
     overview: 'The AD6090 is a high-speed, heavy-duty scanner with a 300-sheet ADF, designed for large-scale document conversion and archiving.',
     specs: [
@@ -642,7 +642,7 @@ const avisionProducts = [
   {
     name: 'AD6090N',
     slug: 'ad6090n',
-    image: '/images/AD6090N_1.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD6090N_1.jpg',
     type: 'Avision Scanner',
     overview: 'The AD6090N is a network-enabled, high-speed scanner with a 300-sheet ADF, perfect for shared, high-volume scanning environments.',
     specs: [
@@ -661,7 +661,7 @@ const avisionProducts = [
   {
     name: 'AD8120U',
     slug: 'ad8120u',
-    image: '/images/AD8120U_1-600x600.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD8120U_1-600x600.jpg',
     type: 'Avision Scanner',
     overview: 'The AD8120U is a production-level scanner with a 500-sheet ADF and advanced image processing, ideal for service bureaus and large organizations.',
     specs: [
@@ -680,7 +680,7 @@ const avisionProducts = [
   {
     name: 'AD8120UN',
     slug: 'ad8120un',
-    image: '/images/AD8120U_1-600x600.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD8120U_1-600x600.jpg',
     type: 'Avision Scanner',
     overview: 'The AD8120UN is a network-enabled, production-level scanner with a 500-sheet ADF, designed for high-volume, shared scanning environments.',
     specs: [
@@ -699,7 +699,7 @@ const avisionProducts = [
   {
     name: 'AD8120P',
     slug: 'ad8120p',
-    image: '/images/AD8120U_1-600x600.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD8120U_1-600x600.jpg',
     type: 'Avision Scanner',
     overview: 'The AD8120P is a production-level scanner with a 500-sheet ADF and advanced paper handling, perfect for demanding, high-volume scanning tasks.',
     specs: [
@@ -718,7 +718,7 @@ const avisionProducts = [
   {
     name: 'AD8130U',
     slug: 'ad8130u',
-    image: '/images/AD8120U_1-600x600.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD8120U_1-600x600.jpg',
     type: 'Avision Scanner',
     overview: 'The AD8130U is a high-speed, production-level scanner with a 500-sheet ADF, designed for large-scale document conversion and archiving.',
     specs: [
@@ -737,7 +737,7 @@ const avisionProducts = [
   {
     name: 'AD8150',
     slug: 'ad8150',
-    image: '/images/AD8120U_1-600x600.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD8120U_1-600x600.jpg',
     type: 'Avision Scanner',
     overview: 'The AD8150 is a heavy-duty, high-speed scanner with a 500-sheet ADF, perfect for service bureaus and large organizations with demanding scanning needs.',
     specs: [
@@ -757,7 +757,7 @@ const avisionProducts = [
   {
     name: 'FB15',
     slug: 'fb15',
-    image: '/images/AV332F-front-600x695.jpg',
+    image: `${import.meta.env.BASE_URL}images/AV332F-front-600x695.jpg',
     type: 'Avision Scanner',
     overview: 'The FB15 is a compact flatbed scanner designed for high-resolution scanning of photos, documents, and delicate materials.',
     specs: [
@@ -775,7 +775,7 @@ const avisionProducts = [
   {
     name: 'FB10',
     slug: 'fb10',
-    image: '/images/AV332F-front-600x695.jpg',
+    image: `${import.meta.env.BASE_URL}images/AV332F-front-600x695.jpg',
     type: 'Avision Scanner',
     overview: 'The FB10 is an ultra-slim flatbed scanner ideal for scanning photos, documents, and fragile items with high clarity.',
     specs: [
@@ -793,7 +793,7 @@ const avisionProducts = [
   {
     name: 'FB25',
     slug: 'fb25',
-    image: '/images/AV332F-front-600x695.jpg',
+    image: `${import.meta.env.BASE_URL}images/AV332F-front-600x695.jpg',
     type: 'Avision Scanner',
     overview: 'The FB25 is a versatile flatbed scanner with high optical resolution, perfect for scanning books, photos, and documents.',
     specs: [
@@ -811,7 +811,7 @@ const avisionProducts = [
   {
     name: 'FB5100',
     slug: 'fb5100',
-    image: '/images/AV332F-front-600x695.jpg',
+    image: `${import.meta.env.BASE_URL}images/AV332F-front-600x695.jpg',
     type: 'Avision Scanner',
     overview: 'The FB5100 is a high-resolution flatbed scanner designed for professional photo and document scanning.',
     specs: [
@@ -829,7 +829,7 @@ const avisionProducts = [
   {
     name: 'FB6380E',
     slug: 'fb6380e',
-    image: '/images/AV332F-front-600x695.jpg',
+    image: `${import.meta.env.BASE_URL}images/AV332F-front-600x695.jpg',
     type: 'Avision Scanner',
     overview: 'The FB6380E is a large-format flatbed scanner designed for scanning oversized documents, artwork, and blueprints with high precision.',
     specs: [
@@ -848,7 +848,7 @@ const avisionProducts = [
   {
     name: 'ScanQ-DW',
     slug: 'scanq-dw',
-    image: '/images/SCAN-DW_2-600x600[1].jpg',
+    image: `${import.meta.env.BASE_URL}images/SCAN-DW_2-600x600[1].jpg',
     type: 'Avision Scanner',
     overview: 'The ScanQ-DW is a portable, wireless scanner designed for mobile professionals who need to scan documents on the go. It features Wi-Fi connectivity and battery operation.',
     specs: [
@@ -866,7 +866,7 @@ const avisionProducts = [
   {
     name: 'ScanQ-SW',
     slug: 'scanq-sw',
-    image: '/images/SCAN-DW_2-600x600[1].jpg',
+    image: `${import.meta.env.BASE_URL}images/SCAN-DW_2-600x600[1].jpg',
     type: 'Avision Scanner',
     overview: 'The ScanQ-SW is a compact, USB-powered scanner ideal for scanning receipts, business cards, and documents while traveling.',
     specs: [
@@ -884,7 +884,7 @@ const avisionProducts = [
   {
     name: 'AD120',
     slug: 'ad120',
-    image: '/images/AD120_1.jpg',
+    image: `${import.meta.env.BASE_URL}images/AD120_1.jpg',
     type: 'Avision Scanner',
     overview: 'The AD120 is a compact desktop scanner with a 50-sheet ADF and duplex scanning, perfect for small offices and home use.',
     specs: [
@@ -903,7 +903,7 @@ const avisionProducts = [
   {
     name: 'AN360W',
     slug: 'an360w',
-    image: '/images/AN360W_1.jpg',
+    image: `${import.meta.env.BASE_URL}images/AN360W_1.jpg',
     type: 'Avision Scanner',
     overview: 'The AN360W is a network-ready, wireless scanner with a 50-sheet ADF, designed for shared use in small and medium-sized offices.',
     specs: [
@@ -923,7 +923,7 @@ const avisionProducts = [
   {
     name: 'PaperAir 1000N',
     slug: 'paperair-1000n',
-    image: '/images/PaperAir-1000N-1[1].jpg',
+    image: `${import.meta.env.BASE_URL}images/PaperAir-1000N-1[1].jpg',
     type: 'Avision Scanner',
     overview: 'The PaperAir 1000N is a lightweight, portable scanner designed for quick scanning of documents, photos, and cards, with easy cloud integration.',
     specs: [
@@ -940,7 +940,7 @@ const avisionProducts = [
   {
     name: 'PaperAir 215',
     slug: 'paperair-215',
-    image: '/images/PaperAir-1000N-1[1].jpg',
+    image: `${import.meta.env.BASE_URL}images/PaperAir-1000N-1[1].jpg',
     type: 'Avision Scanner',
     overview: 'The PaperAir 215 is a portable scanner with advanced image processing, ideal for scanning documents and photos on the go.',
     specs: [
@@ -957,7 +957,7 @@ const avisionProducts = [
   {
     name: 'PaperAir 10',
     slug: 'paperair-10',
-    image: '/images/PaperAir-1000N-1[1].jpg',
+    image: `${import.meta.env.BASE_URL}images/PaperAir-1000N-1[1].jpg',
     type: 'Avision Scanner',
     overview: 'The PaperAir 10 is an ultra-portable scanner for quick, high-quality scans of documents and photos, perfect for home and travel use.',
     specs: [
