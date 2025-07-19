@@ -261,12 +261,69 @@ const serverProducts = [
     ]
   },
   // Dell Rack Servers
-  { name: 'PowerEdge R620 (10SFF)', slug: 'poweredge-r620-10sff', image: `${import.meta.env.BASE_URL}images/ID-46NEW_46-3.jpg`, type: 'Dell Rack Server' },
-  { name: 'PowerEdge R830', slug: 'poweredge-r830', image: `${import.meta.env.BASE_URL}images/ID-47NEW_47-1n.jpg`, type: 'Dell Rack Server' },
-  { name: 'PowerEdge R720', slug: 'poweredge-r720', image: `${import.meta.env.BASE_URL}images/ID-48NEW_48-1n.jpg`, type: 'Dell Rack Server' },
-  { name: 'PowerEdge R710 With 128GB RAM', slug: 'poweredge-r710-128gb', image: `${import.meta.env.BASE_URL}images/ID-49NEW_49-2.jpg`, type: 'Dell Rack Server' },
-  { name: 'PowerEdge R820 (8SFF)', slug: 'poweredge-r820-8sff', image: `${import.meta.env.BASE_URL}images/ID-50NEW_50-2.jpg`, type: 'Dell Rack Server' },
-  { name: 'PowerEdge R720 (8SFF)', slug: 'poweredge-r720-8sff', image: `${import.meta.env.BASE_URL}images/ID-26NEW_S26-2 (1).jpg`, type: 'Dell Rack Server' },
+  { name: 'PowerEdge R620 (10SFF)', slug: 'poweredge-r620-10sff', image: `${import.meta.env.BASE_URL}images/ID-46NEW_46-3.jpg`, type: 'Dell Rack Server',
+    overview: `The Dell PowerEdge R620 is a compact 1U rack server designed for businesses seeking a reliable and versatile solution for demanding workloads. Equipped with the Intel® Xeon® E5-2600 and E5-2600 v2 CPU family, this server ensures high performance and scalability, making it ideal for data-intensive applications and virtualisation.\n\nThe Dell PowerEdge R620 features robust build quality and comes with a 1-year warranty for added peace of mind. Whether you're running a virtualised environment or managing large-scale applications, the PowerEdge R620 delivers unmatched performance in a sleek and compact design.`,
+    specs: [
+      { label: 'Form Factor', value: '1U Rack' },
+      { label: 'Processor Series', value: 'Intel® Xeon® E5-2600 and E5-2600 v2' },
+      { label: 'Max Memory', value: '768 GB DDR3 (up to 1866 MHz)' },
+      { label: 'Memory Slots', value: '24 DIMM slots' },
+      { label: 'Max Storage', value: '10 TB SATA/SAS' },
+      { label: 'RAID Controllers', value: 'PERC H310, H710, H710P, S110' },
+      { label: 'Power Supply', value: 'Dual' },
+      { label: 'Remote Management', value: 'iDRAC7 Enterprise, Express' }
+    ]
+  },
+  { name: 'PowerEdge R830', slug: 'poweredge-r830', image: `${import.meta.env.BASE_URL}images/ID-47NEW_47-1n.jpg`, type: 'Dell Rack Server',
+    overview: `The Dell PowerEdge R830 Rack Server is a powerful 2U server designed for demanding applications such as machine learning, database analytics, and virtualization. With support for up to 4 Intel Xeon E5-4600 v4 processors and a massive memory capacity, this server delivers high performance, scalability, and reliability for modern workloads.\n\nThe Dell PowerEdge R830 Rack Server combines high-performance computing, scalability, and automated management features to meet the demands of modern IT environments. With competitive pricing, flexible configuration options, and robust support, it is an excellent choice for businesses aiming to achieve top-tier performance in a compact 2U rack design.`,
+    specs: [
+      { label: 'Brand', value: 'Dell' },
+      { label: 'Form Factor', value: '2U Rack' },
+      { label: 'Processor', value: 'Intel Xeon E5-4600 v4 product family' },
+      { label: 'Processor Sockets', value: '4' },
+      { label: 'Max RAM', value: '1536GB DDR4' },
+      { label: 'Max Storage', value: '48TB' },
+      { label: 'PCI Slots', value: '7' }
+    ]
+  },
+  { name: 'PowerEdge R720', slug: 'poweredge-r720', image: `${import.meta.env.BASE_URL}images/ID-48NEW_48-1n.jpg`, type: 'Dell Rack Server',
+    overview: `The Dell PowerEdge R720 is a powerful and versatile 2U rack server tailored for businesses that demand high performance, scalability, and robust storage. Designed for virtualisation, database management, and data-intensive applications, this server offers enterprise-grade reliability at a fraction of the cost.\n\nWith its robust performance, extensive memory capacity, and large storage options, the Dell PowerEdge R720 is an excellent choice for growing businesses, start-ups, and IT professionals seeking a reliable and cost-effective server solution.`,
+    specs: [
+      { label: 'Form Factor', value: '2U Rack' },
+      { label: 'Processor Series', value: 'Intel® Xeon® E5-2600/E5-2600 v2 Series' },
+      { label: 'Processor Sockets', value: '2' },
+      { label: 'Core Options', value: '4, 6, 8, 10, 12 cores' },
+      { label: 'Max Memory', value: '768GB DDR3' },
+      { label: 'Memory Slots', value: '24 DIMM slots' },
+      { label: 'Max Storage', value: '48TB SATA/SAS' }
+    ]
+  },
+  { name: 'PowerEdge R710 With 128GB RAM', slug: 'poweredge-r710-128gb', image: `${import.meta.env.BASE_URL}images/ID-49NEW_49-2.jpg`, type: 'Dell Rack Server',
+    overview: `The Dell PowerEdge R710 is a reliable and versatile 2U rack server designed for a variety of workloads, from virtualization to storage-heavy applications. Configured with 128GB of DDR3 RAM, dual Intel Xeon processors, and scalable storage options, it delivers strong performance at an affordable price.\n\nThe Dell PowerEdge R710 Server is a cost-effective and dependable solution for small to medium businesses looking for a balance of performance and scalability. With up to a 1-year warranty, this server offers outstanding value for any IT infrastructure.`,
+    specs: [
+      { label: 'Brand', value: 'Dell' },
+      { label: 'Form Factor', value: '2U Rack' },
+      { label: 'Processor', value: 'Intel Xeon 5500 and 5600 series' },
+      { label: 'Processor Sockets', value: '2' },
+      { label: 'Max RAM', value: '288GB DDR3 up to 1333MHz' },
+      { label: 'Memory Slots', value: '18 DIMM slots' },
+      { label: 'Max Storage', value: '18TB' },
+      { label: 'Hard Drive Bays', value: 'Up to 8 x 2.5” drives' },
+      { label: 'PCI Slots', value: '4' }
+    ]
+  },
+  { name: 'PowerEdge R820 (8SFF)', slug: 'poweredge-r820-8sff', image: `${import.meta.env.BASE_URL}images/ID-50NEW_50-2.jpg`, type: 'Dell Rack Server',
+    overview: `The Dell PowerEdge R820 is a high-performance 2U rack server designed for businesses that require exceptional computational power, large memory capacity, and robust storage. Engineered for demanding workloads and virtualisation environments, the R820 delivers enterprise-grade performance in a compact and efficient form factor.\n\nThis product ensures reliable performance, and every unit comes with a price match promise and 1-year warranty for peace of mind.`,
+    specs: [
+      { label: 'Form Factor', value: '2U Rack' },
+      { label: 'Processor Series', value: 'Intel® Xeon® E5-4600 CPU Family' },
+      { label: 'Processor Sockets', value: '4' },
+      { label: 'Max Memory', value: '1.5TB DDR3' },
+      { label: 'Memory Slots', value: '48 DIMM slots' },
+      { label: 'Max Storage', value: '8TB SATA/SAS' },
+      { label: 'PCI Slots', value: '7' }
+    ]
+  },
   { name: 'PowerEdge R210', slug: 'poweredge-r210', image: `${import.meta.env.BASE_URL}images/ID-27NEW_S27-2 (1).jpg`, type: 'Dell Rack Server' },
   { name: 'PowerEdge R230', slug: 'poweredge-r230', image: `${import.meta.env.BASE_URL}images/ID-28NEW_S28-2 (1).jpg`, type: 'Dell Rack Server' },
   { name: 'PowerEdge R330', slug: 'poweredge-r330', image: `${import.meta.env.BASE_URL}images/ID-29NEW_S29-1 NEW (1).jpg`, type: 'Dell Rack Server' },
