@@ -129,7 +129,7 @@ const Navbar = () => {
         <div className="navbar-container">
           <Link to="/" className="logo" onClick={handleLinkClick}>
             <img
-              src={`${import.meta.env.BASE_URL}images/logo-intellisync.png`}
+              src={`${import.meta.env.BASE_URL}images/logo-intellisync.jpg`}
               alt="intellisync-ioa Logo"
               className="logo-image"
             />
