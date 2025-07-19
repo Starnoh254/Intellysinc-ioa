@@ -5,76 +5,76 @@ const productCategories = [
   {
     category: 'Avision Scanners',
     products: [
-      { name: 'ad225wn', image: `${import.meta.env.BASE_URL}images/kodak-products/avision-ad225wn.jpg', specs: ['Type: Document Scanner'] },
-      { name: 'ad225', image: `${import.meta.env.BASE_URL}images/kodak-products/avision-ad225.jpg', specs: ['Type: Document Scanner'] },
+      { name: 'ad225wn', image: `${import.meta.env.BASE_URL}images/kodak-products/avision-ad225wn.jpg`, specs: ['Type: Document Scanner'] },
+      { name: 'ad225', image: `${import.meta.env.BASE_URL}images/kodak-products/avision-ad225.jpg`, specs: ['Type: Document Scanner'] },
       // ...add all Avision products
     ]
   },
   {
     category: 'Brother Scanners',
     products: [
-      { name: 'Brother DS-740D', image: `${import.meta.env.BASE_URL}images/kodak-products/brother-ds-740d.jpg', specs: ['Type: Mobile Scanner'] },
-      { name: 'Brother DS-940DW', image: `${import.meta.env.BASE_URL}images/kodak-products/brother-ds-940dw.jpg', specs: ['Type: Mobile Scanner'] },
+      { name: 'Brother DS-740D', image: `${import.meta.env.BASE_URL}images/kodak-products/brother-ds-740d.jpg`, specs: ['Type: Mobile Scanner'] },
+      { name: 'Brother DS-940DW', image: `${import.meta.env.BASE_URL}images/kodak-products/brother-ds-940dw.jpg`, specs: ['Type: Mobile Scanner'] },
       // ...add all Brother products
     ]
   },
   {
     category: 'Canon Scanners',
     products: [
-      { name: 'DR-F120', image: `${import.meta.env.BASE_URL}images/kodak-products/canon-dr-f120.jpg', specs: ['Type: Flatbed Scanner'] },
-      { name: 'DR-G2090', image: `${import.meta.env.BASE_URL}images/kodak-products/canon-dr-g2090.jpg', specs: ['Type: Production Scanner'] },
+      { name: 'DR-F120', image: `${import.meta.env.BASE_URL}images/kodak-products/canon-dr-f120.jpg`, specs: ['Type: Flatbed Scanner'] },
+      { name: 'DR-G2090', image: `${import.meta.env.BASE_URL}images/kodak-products/canon-dr-g2090.jpg`, specs: ['Type: Production Scanner'] },
       // ...add all Canon products
     ]
   },
   {
     category: 'Document Management System',
     products: [
-      { name: 'EDMS', image: `${import.meta.env.BASE_URL}images/kodak-products/edms.jpg', specs: ['Type: Electronic Document Management'] },
+      { name: 'EDMS', image: `${import.meta.env.BASE_URL}images/kodak-products/edms.jpg`, specs: ['Type: Electronic Document Management'] },
     ]
   },
   {
     category: 'Fujitsu-RICOH Scanners',
     products: [
-      { name: 'ScanSnap S1100i', image: `${import.meta.env.BASE_URL}images/kodak-products/fujitsu-scansnap-s1100i.jpg', specs: ['Type: ScanSnap Series'] },
-      { name: 'fi-7240', image: `${import.meta.env.BASE_URL}images/kodak-products/fujitsu-fi-7240.jpg', specs: ['Type: Flatbed Series'] },
+      { name: 'ScanSnap S1100i', image: `${import.meta.env.BASE_URL}images/kodak-products/fujitsu-scansnap-s1100i.jpg`, specs: ['Type: ScanSnap Series'] },
+      { name: 'fi-7240', image: `${import.meta.env.BASE_URL}images/kodak-products/fujitsu-fi-7240.jpg`, specs: ['Type: Flatbed Series'] },
       // ...add all Fujitsu-RICOH products
     ]
   },
   {
     category: 'Kodak Scanners',
     products: [
-      { name: 'ScanMate i940', image: `${import.meta.env.BASE_URL}images/kodak-products/scanmate-i940.jpg', specs: ['Type: Scanmate Series'] },
-      { name: 'Alaris S2070', image: `${import.meta.env.BASE_URL}images/kodak-products/alaris-s2070.jpg', specs: ['Type: S 2000 Series'] },
+      { name: 'ScanMate i940', image: `${import.meta.env.BASE_URL}images/kodak-products/scanmate-i940.jpg`, specs: ['Type: Scanmate Series'] },
+      { name: 'Alaris S2070', image: `${import.meta.env.BASE_URL}images/kodak-products/alaris-s2070.jpg`, specs: ['Type: S 2000 Series'] },
       // ...add all Kodak products
     ]
   },
   {
     category: 'Microfilm Scanners',
     products: [
-      { name: 'ScanPro 2500', image: `${import.meta.env.BASE_URL}images/kodak-products/scanpro-2500.jpg', specs: ['Type: ScanPro Series'] },
+      { name: 'ScanPro 2500', image: `${import.meta.env.BASE_URL}images/kodak-products/scanpro-2500.jpg`, specs: ['Type: ScanPro Series'] },
       // ...add all Microfilm products
     ]
   },
   {
     category: 'Scanning Software',
     products: [
-      { name: 'Kodak Capture Pro', image: `${import.meta.env.BASE_URL}images/kodak-products/kodak-capture-pro.jpg', specs: ['Type: Scanning Software'] },
-      { name: 'Kofax Express', image: `${import.meta.env.BASE_URL}images/kodak-products/kofax-express.jpg', specs: ['Type: Scanning Software'] },
+      { name: 'Kodak Capture Pro', image: `${import.meta.env.BASE_URL}images/kodak-products/kodak-capture-pro.jpg`, specs: ['Type: Scanning Software'] },
+      { name: 'Kofax Express', image: `${import.meta.env.BASE_URL}images/kodak-products/kofax-express.jpg`, specs: ['Type: Scanning Software'] },
       // ...add all Scanning Software products
     ]
   },
   {
     category: 'Servers',
     products: [
-      { name: 'ProLiant DL180 Gen10', image: `${import.meta.env.BASE_URL}images/kodak-products/proliant-dl180-gen10.jpg', specs: ['Type: HP Rack Server'] },
-      { name: 'PowerEdge R620', image: `${import.meta.env.BASE_URL}images/kodak-products/poweredge-r620.jpg', specs: ['Type: Dell Rack Server'] },
+      { name: 'ProLiant DL180 Gen10', image: `${import.meta.env.BASE_URL}images/kodak-products/proliant-dl180-gen10.jpg`, specs: ['Type: HP Rack Server'] },
+      { name: 'PowerEdge R620', image: `${import.meta.env.BASE_URL}images/kodak-products/poweredge-r620.jpg`, specs: ['Type: Dell Rack Server'] },
       // ...add all Server products
     ]
   },
   {
     category: 'Electronic Document Management Software',
     products: [
-      { name: 'EDMS', image: `${import.meta.env.BASE_URL}images/kodak-products/edms-software.jpg', specs: ['Type: Document Management Software'] },
+      { name: 'EDMS', image: `${import.meta.env.BASE_URL}images/kodak-products/edms-software.jpg`, specs: ['Type: Document Management Software'] },
       // ...add all EDMS products
     ]
   },

@@ -7,7 +7,7 @@ const brotherProducts = [
   {
     name: 'Brother DS-740D',
     slug: 'brother-ds-740d',
-    image: `${import.meta.env.BASE_URL}images/DS_740D (5).webp',
+    image: `${import.meta.env.BASE_URL}images/DS_740D (5).webp`,
     type: 'Brother Scanner',
     overview: 'The Brother DS-740D is a compact, portable duplex scanner ideal for mobile professionals and small offices. It offers fast double-sided scanning and USB-powered convenience.',
     specs: [
@@ -26,7 +26,7 @@ const brotherProducts = [
   {
     name: 'Brother DS-940DW',
     slug: 'brother-ds-940dw',
-    image: `${import.meta.env.BASE_URL}images/DS940DW (2).webp',
+    image: `${import.meta.env.BASE_URL}images/DS940DW (2).webp`,
     type: 'Brother Scanner',
     overview: 'The DS-940DW is a wireless, portable duplex scanner with a built-in battery and Wi-Fi, perfect for scanning on the go. It supports double-sided scanning and microSD storage.',
     specs: [
@@ -46,7 +46,7 @@ const brotherProducts = [
   {
     name: 'Brother ADS-1200',
     slug: 'brother-ads-1200',
-    image: `${import.meta.env.BASE_URL}images/ADS1200 (1).webp',
+    image: `${import.meta.env.BASE_URL}images/ADS1200 (1).webp`,
     type: 'Brother Scanner',
     overview: 'The Brother ADS-1200 is a compact, USB-powered desktop scanner with fast duplex scanning and a 20-sheet ADF, ideal for home offices and small businesses.',
     specs: [
@@ -65,7 +65,7 @@ const brotherProducts = [
   {
     name: 'Brother ADS-1700W',
     slug: 'brother-ads-1700w',
-    image: `${import.meta.env.BASE_URL}images/ADS1700W (1).webp',
+    image: `${import.meta.env.BASE_URL}images/ADS1700W (1).webp`,
     type: 'Brother Scanner',
     overview: 'The ADS-1700W is a wireless, compact desktop scanner with a color touchscreen, fast duplex scanning, and a 20-sheet ADF, perfect for small offices.',
     specs: [
@@ -84,7 +84,7 @@ const brotherProducts = [
   {
     name: 'Brother ADS-2200',
     slug: 'brother-ads-2200',
-    image: `${import.meta.env.BASE_URL}images/ADS2200 (2).webp',
+    image: `${import.meta.env.BASE_URL}images/ADS2200 (2).webp`,
     type: 'Brother Scanner',
     overview: 'The ADS-2200 is a high-speed desktop scanner with a 50-sheet ADF, duplex scanning, and versatile media handling, ideal for busy workgroups.',
     specs: [
@@ -103,7 +103,7 @@ const brotherProducts = [
   {
     name: 'Brother ADS-2400N',
     slug: 'brother-ads-2400n',
-    image: `${import.meta.env.BASE_URL}images/ApHandler (2).jpg',
+    image: `${import.meta.env.BASE_URL}images/ApHandler (2).jpg`,
     type: 'Brother Scanner',
     overview: 'The ADS-2400N is a network-ready desktop scanner with a 50-sheet ADF, fast duplex scanning, and robust media handling for shared office environments.',
     specs: [
@@ -122,7 +122,7 @@ const brotherProducts = [
   {
     name: 'Brother ADS-2700W',
     slug: 'brother-ads-2700w',
-    image: `${import.meta.env.BASE_URL}images/ApHandler (3)s.jpg',
+    image: `${import.meta.env.BASE_URL}images/ApHandler (3)s.jpg`,
     type: 'Brother Scanner',
     overview: 'The ADS-2700W is a wireless, network-ready scanner with a 50-sheet ADF, color touchscreen, and fast duplex scanning for flexible office workflows.',
     specs: [
@@ -141,7 +141,7 @@ const brotherProducts = [
   {
     name: 'Brother ADS-2800W',
     slug: 'brother-ads-2800w',
-    image: `${import.meta.env.BASE_URL}images/ADS-2800W (2).webp',
+    image: `${import.meta.env.BASE_URL}images/ADS-2800W (2).webp`,
     type: 'Brother Scanner',
     overview: 'The ADS-2800W is a wireless, network-ready scanner with a 50-sheet ADF, fast duplex scanning, and advanced image processing for busy offices.',
     specs: [
@@ -160,7 +160,7 @@ const brotherProducts = [
   {
     name: 'Brother ADS-3000N',
     slug: 'brother-ads-3000n',
-    image: `${import.meta.env.BASE_URL}images/ADS-3000N (2).webp',
+    image: `${import.meta.env.BASE_URL}images/ADS-3000N (2).webp`,
     type: 'Brother Scanner',
     overview: 'The ADS-3000N is a high-speed, network-ready scanner with a 50-sheet ADF, robust media handling, and advanced image processing for demanding office environments.',
     specs: [
@@ -179,7 +179,7 @@ const brotherProducts = [
   {
     name: 'Brother ADS-3600W',
     slug: 'brother-ads-3600w',
-    image: `${import.meta.env.BASE_URL}images/ADS3600W (2).webp',
+    image: `${import.meta.env.BASE_URL}images/ADS3600W (2).webp`,
     type: 'Brother Scanner',
     overview: 'The ADS-3600W is a wireless, network-ready scanner with a 50-sheet ADF, advanced image processing, and high-speed duplex scanning for demanding office environments.',
     specs: [
@@ -198,7 +198,7 @@ const brotherProducts = [
   {
     name: 'Brother PDS-6000F',
     slug: 'brother-pds-6000f',
-    image: `${import.meta.env.BASE_URL}images/PDS6000F (2).webp',
+    image: `${import.meta.env.BASE_URL}images/PDS6000F (2).webp`,
     type: 'Brother Scanner',
     overview: 'The PDS-6000F is a high-speed, flatbed scanner with a 100-sheet ADF, designed for scanning a wide range of documents, including fragile and bound materials.',
     specs: [
@@ -218,7 +218,7 @@ const brotherProducts = [
   {
     name: 'DS-640',
     slug: 'ds-640',
-    image: `${import.meta.env.BASE_URL}images/4300N12.jpg',
+    image: `${import.meta.env.BASE_URL}images/4300N12.jpg`,
     type: 'Brother Scanner',
     overview: 'The DS-640 is an ultra-portable, USB-powered scanner ideal for scanning documents, receipts, and cards on the go.',
     specs: [
@@ -235,7 +235,7 @@ const brotherProducts = [
   {
     name: 'ADS-3100',
     slug: 'ads-3100',
-    image: `${import.meta.env.BASE_URL}images/ADS4100_main.webp',
+    image: `${import.meta.env.BASE_URL}images/ADS4100_main.webp`,
     type: 'Brother Scanner',
     overview: 'The ADS-3100 is a compact desktop scanner with a 60-sheet ADF, fast duplex scanning, and advanced image processing for small and medium-sized offices.',
     specs: [
@@ -254,7 +254,7 @@ const brotherProducts = [
   {
     name: 'ADS-4100',
     slug: 'ads-4100',
-    image: `${import.meta.env.BASE_URL}images/ADS4100_main.webp',
+    image: `${import.meta.env.BASE_URL}images/ADS4100_main.webp`,
     type: 'Brother Scanner',
     overview: 'The ADS-4100 is a high-speed desktop scanner with a 60-sheet ADF, robust media handling, and advanced image processing for busy workgroups.',
     specs: [
@@ -273,7 +273,7 @@ const brotherProducts = [
   {
     name: 'ADS-4300N',
     slug: 'ads-4300n',
-    image: `${import.meta.env.BASE_URL}images/4300N12.jpg',
+    image: `${import.meta.env.BASE_URL}images/4300N12.jpg`,
     type: 'Brother Scanner',
     overview: 'The ADS-4300N is a network-ready desktop scanner with a 80-sheet ADF, fast duplex scanning, and robust media handling for shared office environments.',
     specs: [
@@ -292,7 +292,7 @@ const brotherProducts = [
   {
     name: 'ADS-4500W',
     slug: 'ads-4500w',
-    image: `${import.meta.env.BASE_URL}images/brother-ads-4500w-scanner.jpg',
+    image: `${import.meta.env.BASE_URL}images/brother-ads-4500w-scanner.jpg`,
     type: 'Brother Scanner',
     overview: 'The ADS-4500W is a wireless, network-ready scanner with a 80-sheet ADF, color touchscreen, and fast duplex scanning for flexible office workflows.',
     specs: [
@@ -311,7 +311,7 @@ const brotherProducts = [
   {
     name: 'ADS-4700W',
     slug: 'ads-4700w',
-    image: `${import.meta.env.BASE_URL}images/Brother_ADS4700W__01.webp',
+    image: `${import.meta.env.BASE_URL}images/Brother_ADS4700W__01.webp`,
     type: 'Brother Scanner',
     overview: 'The ADS-4700W is a wireless, network-ready scanner with a 100-sheet ADF, advanced image processing, and high-speed duplex scanning for demanding office environments.',
     specs: [
@@ -330,7 +330,7 @@ const brotherProducts = [
   {
     name: 'ADS-4900W',
     slug: 'ads-4900w',
-    image: `${import.meta.env.BASE_URL}images/ADS-4900Ww.jpg',
+    image: `${import.meta.env.BASE_URL}images/ADS-4900Ww.jpg`,
     type: 'Brother Scanner',
     overview: 'The ADS-4900W is a wireless, network-ready scanner with a 100-sheet ADF, advanced image processing, and ultra-fast duplex scanning for high-volume office environments.',
     specs: [

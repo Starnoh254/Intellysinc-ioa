@@ -4,11 +4,11 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import ProductInfo from '../components/ProductInfo';
 
 const microfilmProducts = [
-  { name: 'ScanPro 2500', slug: 'scanpro-2500', image: `${import.meta.env.BASE_URL}images/ScanPro-2500-Scanner.png', type: 'ScanPro Series', details: {} },
-  { name: 'ScanPro 2500 All-In-One', image: `${import.meta.env.BASE_URL}images/ScanPro--2500-Scanner.png', type: 'ScanPro Series' },
-  { name: 'ScanPro 3500', image: `${import.meta.env.BASE_URL}images/ScanPro-3500-Scanner.png', type: 'ScanPro Series' },
-  { name: 'ScanPro 3500 All-In-One', image: `${import.meta.env.BASE_URL}images/ScanPro--3500-Scanner.png', type: 'ScanPro Series' },
-  { name: 'ScanPro i9500 All-In-One', image: `${import.meta.env.BASE_URL}images/ScanPro-i9500-Scanner.png', type: 'ScanPro Series' },
+  { name: 'ScanPro 2500', slug: 'scanpro-2500', image: `${import.meta.env.BASE_URL}images/ScanPro-2500-Scanner.png`, type: 'ScanPro Series', details: {} },
+  { name: 'ScanPro 2500 All-In-One', image: `${import.meta.env.BASE_URL}images/ScanPro--2500-Scanner.png`, type: 'ScanPro Series' },
+  { name: 'ScanPro 3500', image: `${import.meta.env.BASE_URL}images/ScanPro-3500-Scanner.png`, type: 'ScanPro Series' },
+  { name: 'ScanPro 3500 All-In-One', image: `${import.meta.env.BASE_URL}images/ScanPro--3500-Scanner.png`, type: 'ScanPro Series' },
+  { name: 'ScanPro i9500 All-In-One', image: `${import.meta.env.BASE_URL}images/ScanPro-i9500-Scanner.png`, type: 'ScanPro Series' },
 ];
 
 export { microfilmProducts };
