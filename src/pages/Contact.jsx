@@ -85,8 +85,9 @@ const Contact = () => {
       icon: "📧",
       title: "Email Us",
       details: [
-        { text: "info@intellisync-ioa.com", link: "mailto:info@intellisync-ioa.com" },
-        { text: "support@intellisync-ioa.com", link: "mailto:support@intellisync-ioa.com" }
+        { text: "info@intellisync-oa.com", link: "mailto:info@intellisync-oa.com" },
+        { text: "support@intellisync-oa.com", link: "mailto:support@intellisync-oa.com" },
+        { text: "ezekiel.okeyo@intellisync-oa.com", link: "mailto:ezekiel.okeyo@intellisync-oa.com" }
       ]
     },
     {

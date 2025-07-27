@@ -115,8 +115,10 @@ const Navbar = () => {
         { name: 'Fujitsu-RICOH Scanners', path: '/fujitsu-ricoh-scanners' },
         { name: 'Kodak Scanners', path: '/kodak-scanners' },
         { name: 'Microfilm Scanners', path: '/microfilm-scanners' },
+        { name: 'Iris Scanners', path: '/iris-scanners' },
+         { name: 'Scan2X', path: '/scan2x' },
+        { name: 'Book2Net', path: '/book2net' },
         { name: 'Scanning Software', path: '/scanning-software' },
-        { name: 'Servers', path: '/servers' },
       ],
     },
     {

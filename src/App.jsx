@@ -52,8 +52,10 @@ const BrotherScanners = lazy(() => import('./pages/BrotherScanners'));
 const CanonScanners = lazy(() => import('./pages/CanonScanners'));
 const FujitsuRicohScanners = lazy(() => import('./pages/FujitsuRicohScanners'));
 const MicrofilmScanners = lazy(() => import('./pages/MicrofilmScanners'));
-const Servers = lazy(() => import('./pages/Servers'));
 const ScanningSoftware = lazy(() => import('./pages/ScanningSoftware'));
+const IrisScanners = lazy(() => import('./pages/IrisScanners'));
+const Scan2X = lazy(() => import('./pages/Scan2X'));
+const Book2Net = lazy(() => import('./pages/Book2Net'));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -93,9 +95,13 @@ function AnimatedRoutes() {
           <Route path="/canon-scanners" element={<CanonScanners />} />
           <Route path="/fujitsu-ricoh-scanners" element={<FujitsuRicohScanners />} />
           <Route path="/microfilm-scanners" element={<MicrofilmScanners />} />
-          <Route path="/servers" element={<Servers />} />
           <Route path="/all-products" element={<AllProducts />} />
           <Route path="/products/:category/:productSlug" element={<ProductDetail />} />
+          <Route path="/scanning-software" element={<ScanningSoftware />} />
+          <Route path="/iris-scanners" element={<IrisScanners />} />
+          <Route path="/scan2x" element={<Scan2X />} />
+          <Route path="/book2net/:productSlug" element={<Book2Net />} />
+          <Route path="/book2net" element={<Book2Net />} />
           <Route path="/scanning-software" element={<ScanningSoftware />} />
           
           {/* Test route for new features */}

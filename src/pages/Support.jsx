@@ -56,7 +56,12 @@ const Support = () => {
 
   // Handle email support
   const handleEmailSupport = () => {
-    window.location.href = 'mailto:support@intellisync-ioa.com?subject=Support Request';
+    window.location.href = 'mailto:support@intellisync-oa.com?subject=Support Request';
+  };
+
+  // Handle direct contact
+  const handleDirectContact = () => {
+    window.location.href = 'mailto:ezekiel.okeyo@intellisync-oa.com?subject=Direct Contact Request';
   };
 
   // Handle phone support
@@ -152,6 +157,16 @@ const Support = () => {
             </div>
             <h3>Email Us</h3>
             <button onClick={handleEmailSupport}>Send Email</button>
+          </div>
+          
+          <div className="contact-card">
+            <div className="contact-icon direct">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <h3>Direct Contact</h3>
+            <button onClick={handleDirectContact}>Contact Ezekiel</button>
           </div>
           
           <div className="contact-card">

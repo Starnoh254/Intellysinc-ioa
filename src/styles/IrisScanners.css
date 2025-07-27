@@ -1,0 +1,484 @@
+.product-page-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+
+.sidebar {
+  width: 240px;
+  background: #fff;
+  border-right: 1px solid #eee;
+  padding: 2rem 1rem;
+}
+.sidebar h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar li {
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #444;
+  transition: background 0.2s;
+}
+.sidebar li.active, .sidebar li:hover {
+  background: #e6f0fa;
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.product-main {
+  flex: 1;
+  padding: 2rem 3vw;
+}
+.product-main h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #222;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+.product-card:hover {
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.10);
+}
+.product-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  background: #f2f2f2;
+  border-radius: 8px;
+}
+.product-info h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0.2rem;
+  color: #1976d2;
+}
+.product-info p {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+}
+.view-item-btn {
+  display: none;
+  margin-top: 0.7rem;
+  background: #1976d2;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.product-card:hover .view-item-btn {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.iris-hero-card {
+  background: url('/images/iris/Readiris_Pro_17_104.jpg') center/cover no-repeat, #e0f7fa;
+  color: #004d56;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
+  max-width: 700px;
+  width: 100%;
+}
+.iris-hero-card h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #007c91;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.2);
+}
+.iris-hero-card p {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+  color: #004d56;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.12);
+}
+
+.iris-product-tabs-section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.iris-product-tabs-title {
+  font-size: 1.5rem;
+  color: #0097a7;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.iris-product-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.iris-product-tab {
+  background: #fff;
+  border: 1px solid #b2ebf2;
+  color: #0097a7;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  outline: none;
+}
+.iris-product-tab.active, .iris-product-tab:hover {
+  background: #e0f7fa;
+  color: #007c91;
+  border-bottom: 2px solid #00bcd4;
+  font-weight: 700;
+}
+.iris-product-tab-content {
+  background: #fff;
+  border: 1px solid #b2ebf2;
+  border-radius: 0 0 12px 12px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+.iris-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.2rem 2.2rem;
+  justify-items: center;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+.iris-product-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.iris-product-name {
+  font-size: 1.13rem;
+  font-weight: 600;
+  color: #222;
+  text-align: center;
+  margin-bottom: 1.1rem;
+  margin-top: 0;
+  letter-spacing: 0.01em;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+.iris-product-card {
+  background: #fff;
+  border: 1px solid #e6e9ef;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 180px;
+  transition: box-shadow 0.22s, border 0.22s, transform 0.22s cubic-bezier(.2,1.7,.6,.85);
+  overflow: hidden;
+  padding: 18px;
+  margin-bottom: 0.2rem;
+}
+.iris-product-card:hover {
+  box-shadow: 0 12px 32px rgba(0,151,167,0.18);
+  border-color: #00bcd4;
+  transform: scale(1.07);
+  z-index: 2;
+}
+.iris-product-image {
+  width: 100%;
+  height: 100%;
+  max-width: 144px;
+  max-height: 144px;
+  object-fit: cover;
+  background: #f7fafc;
+  border-radius: 12px;
+  margin: 0;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #f0f0f0;
+}
+
+.iris-hero-section {
+  background: #00b1c5;
+  padding: 0;
+  margin-bottom: 2.5rem;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 24px rgba(0,177,197,0.07);
+}
+.iris-subnav {
+  background: transparent;
+  padding: 0;
+}
+.iris-subnav-container {
+  max-width: 98vw;
+  margin: 0 auto;
+}
+.iris-subnav-list {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.iris-subnav-list li {
+  flex: 1 1 0;
+  background: #00b1c5;
+  color: #222;
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 1.2rem 0.5rem;
+  cursor: pointer;
+  border-right: 1px solid #00a0b2;
+  position: relative;
+  transition: background 0.18s, color 0.18s;
+  z-index: 1;
+}
+.iris-subnav-list li:last-child {
+  border-right: none;
+}
+.iris-subnav-list li.hovered,
+.iris-subnav-list li:hover {
+  background: #0097a7;
+  color: #fff;
+}
+.iris-dropdown-grid {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0,177,197,0.13);
+  border-radius: 0 0 12px 12px;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 1.5rem;
+  padding: 1.2rem 0.5rem;
+  z-index: 10;
+  min-width: 220px;
+  min-height: 90px;
+  animation: fadeInCard 0.18s;
+}
+.iris-dropdown-item {
+  color: #0097a7;
+  font-weight: 500;
+  font-size: 1.08rem;
+  text-decoration: none;
+  background: #e0f7fa;
+  border-radius: 6px;
+  padding: 0.7rem 0.5rem;
+  text-align: center;
+  transition: background 0.18s, color 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iris-dropdown-item:hover {
+  background: #00b1c5;
+  color: #fff;
+}
+
+.iris-dropdown-vertical-grid {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 440px;
+  max-width: 700px;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0,177,197,0.13);
+  border-radius: 0 0 16px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2.5rem;
+  padding: 1.5rem 2.5rem;
+  z-index: 10;
+  animation: fadeInCard 0.18s;
+}
+.iris-dropdown-card {
+  flex: 1 1 0;
+  background: #e0f7fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,177,197,0.07);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1.2rem 1rem;
+  min-width: 200px;
+  max-width: 320px;
+  gap: 1.2rem;
+}
+.iris-dropdown-card-img {
+  width: 64px;
+  height: 64px;
+  background: #b2ebf2;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.iris-dropdown-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.iris-dropdown-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.iris-dropdown-card-title {
+  font-size: 1.13rem;
+  font-weight: 700;
+  color: #0097a7;
+  margin-bottom: 0.5rem;
+}
+.iris-dropdown-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.iris-dropdown-menu-list li {
+  font-size: 1.01rem;
+  color: #007c91;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+  transition: color 0.18s;
+}
+.iris-dropdown-menu-list li:hover {
+  color: #00b1c5;
+  text-decoration: underline;
+}
+.iris-subnav-list li {
+  position: relative;
+  /* ensure dropdown is positioned relative to each nav item */
+} 
+
+.iris-dropdown-visual-grid {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 700px;
+  max-width: 1200px;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0,177,197,0.13);
+  border-radius: 0 0 16px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3.5rem;
+  padding: 2.5rem 3.5rem;
+  z-index: 10;
+  animation: fadeInCard 0.18s;
+}
+.iris-dropdown-visual-col {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2.5rem;
+  min-width: 320px;
+  max-width: 480px;
+}
+.iris-dropdown-visual-img {
+  width: 220px;
+  height: 280px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,177,197,0.07);
+  background: #f7f7f7;
+  margin-right: 1.5rem;
+}
+.iris-dropdown-visual-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 180px;
+}
+.iris-dropdown-visual-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+.iris-dropdown-visual-subheading {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 1.1rem;
+}
+.iris-dropdown-visual-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.iris-dropdown-visual-list-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.08rem;
+  color: #222;
+  margin-bottom: 0.7rem;
+  font-weight: 500;
+  gap: 0.5rem;
+}
+.iris-dropdown-visual-list-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  margin-right: 0.5rem;
+}
+.iris-dropdown-visual-os {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-left: 0.2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.iris-os-windows {
+  background-image: url('/images/iris/windows-icon.png');
+}
+.iris-os-mac {
+  background-image: url('/images/iris/mac-icon.png');
+} 

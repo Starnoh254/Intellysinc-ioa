@@ -1,0 +1,56 @@
+/* HeroGridHover.css */
+
+.hero-section {
+  padding: 40px 20px;
+  background: linear-gradient(to right, #d0e8ff, #f0f8ff);
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Hover Tabs */
+.hover-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.tab-item {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: white;
+  color: #0077cc;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.tab-item:hover,
+.tab-item.active {
+  background-color: #0077cc;
+  color: white;
+  border-color: #0077cc;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  font-weight: 500;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}

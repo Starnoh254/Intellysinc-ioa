@@ -6,6 +6,34 @@ const ProductInfo = ({ product, onRequestQuote, style = {} }) => {
 
   if (!product) return null;
 
+  if (product.slug === 'cyberglobe-culture') {
+    return (
+      <div className="product-info-page">
+        <h1>{product.name}</h1>
+        <img src={product.image} alt={product.name} className="product-info-image" />
+        <h2>Designed for detailed 3D imaging</h2>
+        <p>
+          Capturing an object from all sides without any gaps and presenting it online – it can’t be that difficult, can it? Until now it was, but with the CYBERGLOBE Culture it’s child’s play. Thanks to sophisticated technology. Anyone operating the 3D scanner only needs to press the button once and the device does the rest.
+        </p>
+        <p>
+          What was the challenge so far? If you wanted to digitize an object – let’s take a vase – you couldn’t do it completely and at the same time without distortions. If you place the vase on a table, the underside cannot be photographed, the table is in the way. A glass table wouldn’t help either, as the glass reflects light. If you pick up the vase to capture the underside, inaccuracies arise because the vase has to be moved, and the proportions are no longer correct. Creating complicated constructions to capture the vase from all perspectives is also useless, firstly because it is complicated, secondly because it is time-consuming and thirdly because the auxiliary construction itself gets in the way.
+        </p>
+        <p>
+          With the CYBERGLOBE Culture, on the other hand, you can achieve seamless images, top quality, enormous efficiency and cost-effective production. All at the touch of a button. Anyone can easily operate the CYBERGLOBE Culture, you don’t need to be an IT expert.
+        </p>
+        <p>
+          How is all this possible? Two things are crucial: the 80-megapixel camera, which moves in a semicircle from top to bottom, stops repeatedly and takes pictures, and the object support on which the object is placed. The support table rotates around its own axis in line with the movement of the camera. This enables the object to be captured without any gaps and without any loss of quality. This also applies to objects that are much more flexible than a vase, such as a rope.
+        </p>
+        <p>
+          The four LED lights, the color calibration and the reflector also help to ensure that the digitized object looks exactly like the original, down to the smallest detail. No shadows, no reflections. Another important aspect: the CYBERGLOBE Culture is mobile and can be easily moved to the objects to be digitized.
+        </p>
+        <p>
+          The CYBERGLOBE Culture camera takes pictures from 250 positions, after which the software automatically merges all the images into one large whole. Up to seven objects can be digitized per hour. Anyone operating the CYBERGLOBE Culture only needs to place the object – with a maximum diameter and a maximum height of 46 cm – on the slide and press the button. The process can run in parallel, and you can do something else in the meantime.
+        </p>
+      </div>
+    );
+  }
+
   // Product overview/description
   let overview = product.overview || '';
   if (!overview && product.slug === 'ad225wn') {

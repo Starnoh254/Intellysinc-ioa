@@ -2,6 +2,7 @@ import React from 'react';
 import './AvisionScanners.css';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import ProductInfo from '../components/ProductInfo';
+import ProductSidebar from '../components/ProductSidebar';
 
 const avisionProducts = [
   {
@@ -1175,19 +1176,7 @@ const AvisionScanners = () => {
 
   return (
     <div className="product-page-container">
-      <aside className="sidebar">
-        <h2>Product Categories</h2>
-        <ul>
-          <li className="active">Avision Scanners</li>
-          <li><Link to="/brother-scanners">Brother Scanners</Link></li>
-          <li><Link to="/canon-scanners">Canon Scanners</Link></li>
-          <li><Link to="/fujitsu-ricoh-scanners">Fujitsu-RICOH Scanners</Link></li>
-          <li><Link to="/kodak-scanners">Kodak Scanners</Link></li>
-          <li><Link to="/microfilm-scanners">Microfilm Scanners</Link></li>
-          <li><Link to="/scanning-software">Scanning Software</Link></li>
-          <li><Link to="/servers">Servers</Link></li>
-        </ul>
-      </aside>
+      <ProductSidebar />
       <main className="product-main">
         <h1>Avision Scanners</h1>
         <div className="product-grid">

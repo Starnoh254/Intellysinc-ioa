@@ -27,7 +27,7 @@ const Chatbot = ({ onOpenLiveChat }) => {
     }
     
     if (text.includes('contact') || text.includes('support') || text.includes('help')) {
-      return "You can reach us at support@intellisync-ioa.com or call +254-722-952-138. We're available 24/7 for urgent issues.";
+      return "You can reach us at support@intellisync-oa.com or call +254-722-952-138. We're available 24/7 for urgent issues.";
     }
     
     if (text.includes('demo') || text.includes('trial') || text.includes('test')) {

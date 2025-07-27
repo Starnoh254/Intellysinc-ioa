@@ -409,13 +409,14 @@ const About = () => {
           <h2>Contact Us</h2>
           <div className="about-contact-flex">
             <div className="about-contact-info">
-              <div><FaEnvelope /> <a href="mailto:info@intellisync-ioa.com">info@intellisync-ioa.com</a></div>
+              <div><FaEnvelope /> <a href="mailto:info@intellisync-oa.com">info@intellisync-oa.com</a></div>
+              <div><FaEnvelope /> <a href="mailto:ezekiel.okeyo@intellisync-oa.com">ezekiel.okeyo@intellisync-oa.com</a></div>
               <div><FaPhone /> +254 722 952 138 | +254 746 657 031 | +254 735 993 939</div>
               <div><FaGlobe /> <a href="https://www.intellisync-ioa.com" target="_blank" rel="noopener noreferrer">www.intellisync-ioa.com</a></div>
               <div>P. O. Box 27346-0100, Nairobi, Kenya</div>
             </div>
             <div className="about-contact-cta">
-              <a href="mailto:info@intellisync-ioa.com" className="about-contact-btn">Get in Touch</a>
+              <a href="mailto:info@intellisync-oa.com" className="about-contact-btn">Get in Touch</a>
             </div>
           </div>
         </section>

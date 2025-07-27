@@ -6,7 +6,6 @@ import { brotherProducts } from './BrotherScanners';
 import { canonProducts } from './CanonScanners';
 import { fujitsuProducts } from './FujitsuRicohScanners';
 import { microfilmProducts } from './MicrofilmScanners';
-import { serverProducts } from './Servers';
 import { scanningSoftwareProducts } from './ScanningSoftware';
 import ProductInfo from '../components/ProductInfo';
 
@@ -18,7 +17,6 @@ const categoryMap = {
   'canon-scanners': canonProducts,
   'fujitsu-ricoh-scanners': fujitsuProducts,
   'microfilm-scanners': microfilmProducts,
-  'servers': serverProducts,
   'scanning-software': scanningSoftwareProducts,
 };
 

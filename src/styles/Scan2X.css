@@ -1,0 +1,158 @@
+.scan2x-hero {
+  background: linear-gradient(90deg, #e1f6fa 0%, #f4fafd 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,138,150,0.07);
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin-bottom: 2.5rem;
+}
+
+
+.scan2x-feature-card-content {
+  margin-top: 0.7rem;
+  font-size: 1.04rem;
+  color: #222;
+  line-height: 1.6;
+  opacity: 1;
+  transform: none;
+  overflow: visible;
+  transition: none;
+  pointer-events: auto;
+  height: auto;
+  max-height: none;
+}
+
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.scan2x-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  justify-items: center;
+}
+
+/* About-style card appearance */
+.scan2x-feature-card {
+  background: #f8fafc;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(30,64,175,0.06);
+  padding: 1.5rem 1rem 1.1rem 1rem;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.18s, border 0.18s;
+  min-width: 220px;
+  max-width: 340px;
+  width: 100%;
+  outline: none;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scan2x-feature-card:hover, .scan2x-feature-card:focus {
+  box-shadow: 0 6px 18px rgba(30,64,175,0.12);
+  transform: translateY(-2px) scale(1.02);
+  background: #e1f6fa;
+  border-color: #008a96;
+}
+.scan2x-feature-card.open {
+  background: #e1f6fa;
+  box-shadow: 0 8px 32px rgba(0,138,150,0.13);
+  border-color: #008a96;
+}
+
+.scan2x-feature-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #008a96;
+  margin-bottom: 0.3rem;
+  user-select: none;
+}
+.scan2x-feature-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  color: #4f46e5;
+  margin-right: 0.45rem;
+}
+.scan2x-feature-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4f46e5;
+  margin-bottom: 0.5rem;
+}
+.scan2x-feature-card-arrow {
+  font-size: 1.1rem;
+  margin-left: 0.7rem;
+  color: #008a96;
+  transition: transform 0.18s;
+}
+.scan2x-feature-card.open .scan2x-feature-card-arrow {
+  transform: rotate(180deg);
+}
+.scan2x-feature-card-content {
+  margin-top: 0.7rem;
+  font-size: 1.04rem;
+  color: #222;
+  line-height: 1.6;
+  animation: fadeInCard 0.23s;
+}
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 900px) {
+  .scan2x-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+  .scan2x-feature-card {
+    min-width: 90vw;
+    max-width: 98vw;
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .scan2x-feature-card {
+    min-width: 90vw;
+    max-width: 98vw;
+    margin: 0 auto;
+  }
+  .scan2x-features-cards {
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+}
+
+.scan2x-interface {
+  background: #e1f6fa;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,138,150,0.09);
+  padding: 2rem 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.scan2x-brochure {
+  background: #f4fafd;
+  border-radius: 14px;
+  box-shadow: 0 1px 6px rgba(0,138,150,0.05);
+  padding: 1.2rem 1.4rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 700px) {
+  .scan2x-hero, .scan2x-feature, .scan2x-interface, .scan2x-brochure {
+    padding: 1.1rem 0.7rem;
+    border-radius: 10px;
+  }
+}

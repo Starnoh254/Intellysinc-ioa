@@ -1,0 +1,111 @@
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  width: 300px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 1.2rem 1rem;
+  transition: box-shadow 0.2s;
+}
+
+.product-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.16);
+}
+
+.product-image {
+  width: 220px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 0.7rem;
+  margin-bottom: 1.1rem;
+  background: #f7f7f7;
+}
+
+.product-info {
+  text-align: center;
+}
+
+.product-info-page {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.product-info-page h1 {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.product-info-page h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1976d2;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.product-info-page img.product-info-image {
+  width: 340px;
+  height: 260px;
+  object-fit: contain;
+  border-radius: 1rem;
+  background: #f4f6fa;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  margin-bottom: 1.2rem;
+}
+
+.product-info-page p {
+  color: #333;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 0.7rem;
+  text-align: justify;
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    width: 95vw;
+    padding: 1rem 0.5rem;
+  }
+  .product-image {
+    width: 90vw;
+    height: 140px;
+  }
+}
+
+@media (max-width: 700px) {
+  .product-info-page {
+    padding: 1.2rem 0.5rem;
+  }
+  .product-info-page img.product-info-image {
+    width: 98vw;
+    height: 180px;
+  }
+  .product-info-page h1 {
+    font-size: 1.4rem;
+  }
+  .product-info-page h2 {
+    font-size: 1.1rem;
+  }
+} 

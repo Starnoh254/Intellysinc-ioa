@@ -64,14 +64,6 @@ const productCategories = [
     ]
   },
   {
-    category: 'Servers',
-    products: [
-      { name: 'ProLiant DL180 Gen10', image: `${import.meta.env.BASE_URL}images/kodak-products/proliant-dl180-gen10.jpg`, specs: ['Type: HP Rack Server'] },
-      { name: 'PowerEdge R620', image: `${import.meta.env.BASE_URL}images/kodak-products/poweredge-r620.jpg`, specs: ['Type: Dell Rack Server'] },
-      // ...add all Server products
-    ]
-  },
-  {
     category: 'Electronic Document Management Software',
     products: [
       { name: 'EDMS', image: `${import.meta.env.BASE_URL}images/kodak-products/edms-software.jpg`, specs: ['Type: Document Management Software'] },

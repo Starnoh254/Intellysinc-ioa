@@ -1,0 +1,37 @@
+.book2net-filter-bar {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.book2net-filter-bar ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 2rem;
+}
+
+.book2net-filter-bar li {
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  padding-top: 5px; /* Space for the border */
+  border-top: 3px solid transparent; /* Placeholder for active state */
+  transition: color 0.3s ease;
+}
+
+.book2net-filter-bar li:hover {
+  color: #000;
+}
+
+.book2net-filter-bar li.active {
+  color: #000;
+  border-top-color: #d9534f; /* Red color from hero button */
+}

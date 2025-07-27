@@ -133,7 +133,8 @@ function CompanyInfo() {
           OA Office Automation Limited<br />
           P.O.Box 27346-0100, Nairobi, Kenya<br />
           Phone: <a href="tel:+254722952138">+254 722952138</a><br />
-          Email: <a href="mailto:info@intellisync-ioa.com">info@intellisync-ioa.com</a><br />
+          Email: <a href="mailto:info@intellisync-oa.com">info@intellisync-oa.com</a><br />
+          Contact: <a href="mailto:ezekiel.okeyo@intellisync-oa.com">ezekiel.okeyo@intellisync-oa.com</a><br />
         </p>
       </Section>
     </div>
