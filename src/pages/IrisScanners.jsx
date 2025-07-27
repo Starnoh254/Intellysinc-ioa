@@ -77,27 +77,347 @@ export default function IrisScanners() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedVariant, setSelectedVariant] = useState("/eshop/Coaching");
+  const [activeCategory, setActiveCategory] = useState('pdf-ocr'); // New state for hero navigation
   const handleQuantityChange = (e) => setQuantity(parseInt(e.target.value));
   const handleIncrement = () => setQuantity(prev => prev + 1);
   const handleDecrement = () => quantity > 1 && setQuantity(prev => prev - 1);
   const handleVariantChange = (e) => setSelectedVariant(e.target.value);
-  // Remove dropdownContent and hoveredMenu state
-  // Remove all dropdown rendering logic from the heroSection
 
+  // New hero section with navigation and content based on the images
   const heroSection = (
     <section className="iris-hero-section">
-      <nav className="iris-subnav">
-        <div className="iris-subnav-container">
-          <ul className="iris-subnav-list">
-            <li>PDF & OCR software</li>
-            <li>Capture & Classification</li>
-            <li>Document scanners</li>
-            <li>Handheld & Pen scanners</li>
-            <li>Portable scanners</li>
-            <li>Services & warranty</li>
+      {/* Navigation Bar */}
+      <nav className="iris-hero-nav">
+        <div className="iris-hero-nav-container">
+          <ul className="iris-hero-nav-list">
+            <li 
+              className={activeCategory === 'pdf-ocr' ? 'active' : ''}
+              onClick={() => setActiveCategory('pdf-ocr')}
+            >
+              PDF & OCR software
+            </li>
+            <li 
+              className={activeCategory === 'capture-classification' ? 'active' : ''}
+              onClick={() => setActiveCategory('capture-classification')}
+            >
+              Capture & Classification
+            </li>
+            <li 
+              className={activeCategory === 'document-scanners' ? 'active' : ''}
+              onClick={() => setActiveCategory('document-scanners')}
+            >
+              Document scanners
+            </li>
+            <li 
+              className={activeCategory === 'handheld-pen-scanners' ? 'active' : ''}
+              onClick={() => setActiveCategory('handheld-pen-scanners')}
+            >
+              Handheld & Pen scanners
+            </li>
+            <li 
+              className={activeCategory === 'portable-scanners' ? 'active' : ''}
+              onClick={() => setActiveCategory('portable-scanners')}
+            >
+              Portable scanners
+            </li>
+            <li 
+              className={activeCategory === 'services-warranty' ? 'active' : ''}
+              onClick={() => setActiveCategory('services-warranty')}
+            >
+              Services & warranty
+            </li>
           </ul>
         </div>
       </nav>
+
+      {/* Content Area */}
+      <div className="iris-hero-content">
+        {activeCategory === 'pdf-ocr' && (
+          <div className="iris-hero-content-grid">
+            <div className="iris-hero-left">
+              <div className="iris-hero-product-box">
+                <div className="iris-hero-product-image">
+                  <img src="/images/iris/pdf-manager-box.jpg" alt="PDF Manager" />
+                </div>
+              </div>
+            </div>
+            <div className="iris-hero-right">
+              <h3>PDF Manager :</h3>
+              <h4>Product range comparison</h4>
+              <ul className="iris-hero-product-list">
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  Readiris PDF Essential
+                  <span className="iris-hero-os-icons">🪟 🍎</span>
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  Readiris PDF Elite
+                  <span className="iris-hero-os-icons">🪟 🍎</span>
+                </li>
+              </ul>
+            </div>
+            <div className="iris-hero-right">
+              <h3>OCR Solutions :</h3>
+              <h4>Product range comparison</h4>
+              <ul className="iris-hero-product-list">
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  Readiris Pro 17
+                  <span className="iris-hero-os-icons">🪟</span>
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  Readiris Corporate 17
+                  <span className="iris-hero-os-icons">🪟</span>
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  Readiris Dyslexic
+                  <span className="iris-hero-os-icons">🪟</span>
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  Readiris Pro 17
+                  <span className="iris-hero-os-icons">🍎</span>
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  Readiris Corporate 17
+                  <span className="iris-hero-os-icons">🍎</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
+
+        {activeCategory === 'capture-classification' && (
+          <div className="iris-hero-content-grid">
+            <div className="iris-hero-left">
+              <div className="iris-hero-product-box">
+                <div className="iris-hero-product-image">
+                  <img src="/images/iris/irismart-box.jpg" alt="IRISmart" />
+                </div>
+              </div>
+            </div>
+            <div className="iris-hero-right">
+              <h3>Classification software :</h3>
+              <ul className="iris-hero-product-list">
+                <li>
+                  <span className="iris-hero-product-icon">📁</span>
+                  IRISMart File
+                  <span className="iris-hero-os-icons">🪟</span>
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📁</span>
+                  IRISMart File Security
+                  <span className="iris-hero-os-icons">🪟</span>
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📁</span>
+                  IRISPowerscan 12
+                  <span className="iris-hero-os-icons">🪟</span>
+                </li>
+              </ul>
+            </div>
+            <div className="iris-hero-right">
+              <h3>Business card software :</h3>
+              <ul className="iris-hero-product-list">
+                <li>
+                  <span className="iris-hero-product-icon">📇</span>
+                  Cardiris Corporate 5 for 1 PC
+                  <span className="iris-hero-os-icons">🪟</span>
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📇</span>
+                  Cardiris Corporate SMB 5 for 5 PC
+                  <span className="iris-hero-os-icons">🪟</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
+
+        {activeCategory === 'document-scanners' && (
+          <div className="iris-hero-content-grid">
+            <div className="iris-hero-left">
+              <div className="iris-hero-product-box">
+                <div className="iris-hero-product-image">
+                  <img src="/images/iris/camera-book-scanner.jpg" alt="Camera & Book Scanner" />
+                </div>
+              </div>
+            </div>
+            <div className="iris-hero-right">
+              <h3>Camera & Book Scanner :</h3>
+              <h4>Product range comparison</h4>
+              <ul className="iris-hero-product-list">
+                <li>
+                  <span className="iris-hero-product-icon">📷</span>
+                  IRIScan Desk 6
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📷</span>
+                  IRIScan Desk 6 Pro
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📷</span>
+                  IRIScan Desk 6 DYSLEXIC
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📷</span>
+                  IRIScan Desk 6 Business
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📷</span>
+                  IRIScan Desk 7 Pro
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📷</span>
+                  IRIScan Desk 7 Business
+                </li>
+              </ul>
+            </div>
+            <div className="iris-hero-right">
+              <h3>Document Scanner & Visualizer :</h3>
+              <ul className="iris-hero-product-list">
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  Iriscan Visualizer 7
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  Iriscan Visualizer 7 Dyslexic
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
+
+        {activeCategory === 'handheld-pen-scanners' && (
+          <div className="iris-hero-content-grid">
+            <div className="iris-hero-left">
+              <div className="iris-hero-product-box">
+                <div className="iris-hero-product-image">
+                  <img src="/images/iris/pen-scanner.jpg" alt="Pen Scanner" />
+                </div>
+              </div>
+            </div>
+            <div className="iris-hero-right">
+              <h3>Pen Scanner & Reading Pen :</h3>
+              <ul className="iris-hero-product-list">
+                <li>
+                  <span className="iris-hero-product-icon">✏️</span>
+                  IRISPen Reader 8
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">✏️</span>
+                  IRISPen Air 8
+                </li>
+              </ul>
+            </div>
+            <div className="iris-hero-right">
+              <h3>Handheldscanners :</h3>
+              <h4>Product range comparison</h4>
+              <ul className="iris-hero-product-list">
+                <li>
+                  <span className="iris-hero-product-icon">📖</span>
+                  IRIScan Book 5
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📖</span>
+                  IRIScan Book 5 Wifi
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
+
+        {activeCategory === 'portable-scanners' && (
+          <div className="iris-hero-content-grid">
+            <div className="iris-hero-left">
+              <div className="iris-hero-product-box">
+                <div className="iris-hero-product-image">
+                  <img src="/images/iris/single-sheetfed.jpg" alt="Single-sheetfed Scanner" />
+                </div>
+              </div>
+            </div>
+            <div className="iris-hero-right">
+              <h3>Single-sheetfed :</h3>
+              <h4>Product range comparison</h4>
+              <ul className="iris-hero-product-list">
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  IRIScan Anywhere 6 Wifi
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  IRIScan Anywhere 6 Wifi Duplex
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  IRIScan Express 4
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  IRIScan Executive 4
+                </li>
+              </ul>
+            </div>
+            <div className="iris-hero-right">
+              <h3>Multi-page sheetfed :</h3>
+              <h4>Product range comparison</h4>
+              <ul className="iris-hero-product-list">
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  IRIScan Pro 5
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">📄</span>
+                  IRIScan Pro 5 File
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
+
+        {activeCategory === 'services-warranty' && (
+          <div className="iris-hero-content-grid">
+            <div className="iris-hero-left">
+              <div className="iris-hero-product-box">
+                <div className="iris-hero-product-image">
+                  <img src="/images/iris/extended-warranty.jpg" alt="Extended Warranty" />
+                </div>
+              </div>
+            </div>
+            <div className="iris-hero-right">
+              <h3>Extended Warranty :</h3>
+              <ul className="iris-hero-product-list">
+                <li>
+                  <span className="iris-hero-product-icon">🏆</span>
+                  IRISCare 3 years extended warranty
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">🏆</span>
+                  IRISCare 4 year extended warranty
+                </li>
+              </ul>
+            </div>
+            <div className="iris-hero-right">
+              <h3>Coaching :</h3>
+              <ul className="iris-hero-product-list">
+                <li>
+                  <span className="iris-hero-product-icon">💻</span>
+                  1H coaching
+                </li>
+                <li>
+                  <span className="iris-hero-product-icon">💻</span>
+                  3H coaching
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
+      </div>
     </section>
   );
 
