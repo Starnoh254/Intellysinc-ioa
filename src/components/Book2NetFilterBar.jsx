@@ -11,11 +11,6 @@ const filterCategories = [
   'ARCHIVE SCANNERS',
   'BOOK SCANNERS',
   'CAMERAS',
-  'DOCUMENT SCANNERS',
-  'MUSEUM SCANNERS',
-  'PUBLIC USE SCANNERS',
-  'REPROGRAPHIC SYSTEMS',
-  'V-SHAPE',
 ];
 
 const Book2NetFilterBar = ({ activeFilter, setActiveFilter }) => {

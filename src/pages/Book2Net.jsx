@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import Book2NetHero from '../components/Book2NetHero';
 import ProductSidebar from '../components/ProductSidebar';
 import ProductInfo from '../components/ProductInfo';
 import Book2NetFilterBar from '../components/Book2NetFilterBar';
@@ -431,7 +430,6 @@ export default function Book2Net() {
     <div className="product-page-container">
       <ProductSidebar />
       <main className="product-main">
-        <Book2NetHero />
         <h1 style={{ textAlign: 'center' }}>Scanners, Reprosystems & cameras</h1>
         <Book2NetFilterBar
           activeFilter={activeFilter}
