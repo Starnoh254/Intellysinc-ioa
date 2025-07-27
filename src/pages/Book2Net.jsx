@@ -325,15 +325,6 @@ const book2netProducts = [
     specs: [{ label: 'Scan Size', value: 'A3' }],
   },
   {
-    name: 'Compact Camera Z',
-    slug: 'camera-z',
-    image: '/images/book2net/camera.jpg',
-    type: 'Camera',
-    overview: 'A compact camera for documentation.',
-    categories: ['CAMERAS', 'DOCUMENT SCANNERS'],
-    specs: [{ label: 'Resolution', value: '24MP' }],
-  },
-  {
     name: 'FUJIFILM GFX100S',
     slug: 'gfx100s',
     image: '/images/book2net/camera1.jpg',
