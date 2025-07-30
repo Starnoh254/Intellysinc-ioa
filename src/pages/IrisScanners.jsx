@@ -81,7 +81,11 @@ export default function IrisScanners() {
   const handleQuantityChange = (e) => setQuantity(parseInt(e.target.value));
   const handleIncrement = () => setQuantity(prev => prev + 1);
   const handleDecrement = () => quantity > 1 && setQuantity(prev => prev - 1);
-  const handleVariantChange = (e) => setSelectedVariant(e.target.value);
+  const handleVariantChange = (e) => {
+    const path = e.target.value;
+    setSelectedVariant(path);
+    navigate(path);
+  };
 
   // New hero section with navigation and content based on the images
   const heroSection = (
@@ -137,7 +141,7 @@ export default function IrisScanners() {
             <div className="iris-hero-left">
               <div className="iris-hero-product-box">
                 <div className="iris-hero-product-image">
-                  <img src="/images/iris/pdf-manager-box.jpg" alt="PDF Manager" />
+                  <img src="/images/iris/pdf_manager.png" alt="PDF & OCR Solutions" />
                 </div>
               </div>
             </div>
@@ -145,47 +149,61 @@ export default function IrisScanners() {
               <h3>PDF Manager :</h3>
               <h4>Product range comparison</h4>
               <ul className="iris-hero-product-list">
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  Readiris PDF Essential
-                  <span className="iris-hero-os-icons">🪟 🍎</span>
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  Readiris PDF Elite
-                  <span className="iris-hero-os-icons">🪟 🍎</span>
-                </li>
+                <Link to="/iris-scanners/readiris-pdf-essential">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    Readiris PDF Essential
+                    <span className="iris-hero-os-icons">🪟 🍎</span>
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/readiris-pdf-elite">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    Readiris PDF Elite
+                    <span className="iris-hero-os-icons">🪟 🍎</span>
+                  </li>
+                </Link>
               </ul>
             </div>
             <div className="iris-hero-right">
               <h3>OCR Solutions :</h3>
               <h4>Product range comparison</h4>
               <ul className="iris-hero-product-list">
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  Readiris Pro 17
-                  <span className="iris-hero-os-icons">🪟</span>
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  Readiris Corporate 17
-                  <span className="iris-hero-os-icons">🪟</span>
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  Readiris Dyslexic
-                  <span className="iris-hero-os-icons">🪟</span>
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  Readiris Pro 17
-                  <span className="iris-hero-os-icons">🍎</span>
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  Readiris Corporate 17
-                  <span className="iris-hero-os-icons">🍎</span>
-                </li>
+                <Link to="/iris-scanners/readiris-pro">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    Readiris Pro 17 Windows
+                    <span className="iris-hero-os-icons">🪟</span>
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/readiris-corporate">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    Readiris Corporate 17 Windows
+                    <span className="iris-hero-os-icons">🪟</span>
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/readiris-dyslexic">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    Readiris Dyslexic 2.0
+                    <span className="iris-hero-os-icons">🪟</span>
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/readiris-pro-17-mac">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    Readiris Pro 17 Mac
+                    <span className="iris-hero-os-icons">🍎</span>
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/readiris-corporate-17-mac">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    Readiris Corporate 17 Mac
+                    <span className="iris-hero-os-icons">🍎</span>
+                  </li>
+                </Link>
               </ul>
             </div>
           </div>
@@ -196,43 +214,53 @@ export default function IrisScanners() {
             <div className="iris-hero-left">
               <div className="iris-hero-product-box">
                 <div className="iris-hero-product-image">
-                  <img src="/images/iris/irismart-box.jpg" alt="IRISmart" />
+                  <img src="/images/iris/IRISmart.png" alt="Capture & Classification" />
                 </div>
               </div>
             </div>
             <div className="iris-hero-right">
               <h3>Classification software :</h3>
               <ul className="iris-hero-product-list">
-                <li>
-                  <span className="iris-hero-product-icon">📁</span>
-                  IRISMart File
-                  <span className="iris-hero-os-icons">🪟</span>
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📁</span>
-                  IRISMart File Security
-                  <span className="iris-hero-os-icons">🪟</span>
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📁</span>
-                  IRISPowerscan 12
-                  <span className="iris-hero-os-icons">🪟</span>
-                </li>
+                <Link to="/iris-scanners/irismart-file">
+                  <li>
+                    <span className="iris-hero-product-icon">📁</span>
+                    IRISMart File
+                    <span className="iris-hero-os-icons">🪟</span>
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/irismart-file-security">
+                  <li>
+                    <span className="iris-hero-product-icon">📁</span>
+                    IRISMart File Security
+                    <span className="iris-hero-os-icons">🪟</span>
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/irispowerscan-12">
+                  <li>
+                    <span className="iris-hero-product-icon">📁</span>
+                    IRISPowerscan 12
+                    <span className="iris-hero-os-icons">🪟</span>
+                  </li>
+                </Link>
               </ul>
             </div>
             <div className="iris-hero-right">
               <h3>Business card software :</h3>
               <ul className="iris-hero-product-list">
-                <li>
-                  <span className="iris-hero-product-icon">📇</span>
-                  Cardiris Corporate 5 for 1 PC
-                  <span className="iris-hero-os-icons">🪟</span>
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📇</span>
-                  Cardiris Corporate SMB 5 for 5 PC
-                  <span className="iris-hero-os-icons">🪟</span>
-                </li>
+                <Link to="/iris-scanners/cardiris-corporate-5-for-1-pc">
+                  <li>
+                    <span className="iris-hero-product-icon">📇</span>
+                    Cardiris Corporate 5 for 1 PC
+                    <span className="iris-hero-os-icons">🪟</span>
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/cardiris-corporate-smb-5-for-5-pc">
+                  <li>
+                    <span className="iris-hero-product-icon">📇</span>
+                    Cardiris Corporate SMB 5 for 5 PC
+                    <span className="iris-hero-os-icons">🪟</span>
+                  </li>
+                </Link>
               </ul>
             </div>
           </div>
@@ -243,7 +271,7 @@ export default function IrisScanners() {
             <div className="iris-hero-left">
               <div className="iris-hero-product-box">
                 <div className="iris-hero-product-image">
-                  <img src="/images/iris/camera-book-scanner.jpg" alt="Camera & Book Scanner" />
+                  <img src="/images/iris/camera_book_scanner.png" alt="Document Scanners" />
                 </div>
               </div>
             </div>
@@ -251,43 +279,65 @@ export default function IrisScanners() {
               <h3>Camera & Book Scanner :</h3>
               <h4>Product range comparison</h4>
               <ul className="iris-hero-product-list">
-                <li>
-                  <span className="iris-hero-product-icon">📷</span>
-                  IRIScan Desk 6
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📷</span>
-                  IRIScan Desk 6 Pro
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📷</span>
-                  IRIScan Desk 6 DYSLEXIC
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📷</span>
-                  IRIScan Desk 6 Business
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📷</span>
-                  IRIScan Desk 7 Pro
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📷</span>
-                  IRIScan Desk 7 Business
-                </li>
+                <Link to="/iris-scanners/iriscan-desk-6">
+                  <li>
+                    <span className="iris-hero-product-icon">📷</span>
+                    IRIScan Desk 6
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-desk-6-pro">
+                  <li>
+                    <span className="iris-hero-product-icon">📷</span>
+                    IRIScan Desk 6 Pro
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-desk-6-dyslexic">
+                  <li>
+                    <span className="iris-hero-product-icon">📷</span>
+                    IRIScan Desk 6 DYSLEXIC
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-desk-6-business-refurbished">
+                  <li>
+                    <span className="iris-hero-product-icon">📷</span>
+                    IRIScan Desk 6 Business - refurbished
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-desk-6-business">
+                  <li>
+                    <span className="iris-hero-product-icon">📷</span>
+                    IRIScan Desk 6 Business
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-desk-7-pro">
+                  <li>
+                    <span className="iris-hero-product-icon">📷</span>
+                    IRIScan Desk 7 Pro
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-desk-7-business">
+                  <li>
+                    <span className="iris-hero-product-icon">📷</span>
+                    IRIScan Desk 7 Business
+                  </li>
+                </Link>
               </ul>
             </div>
             <div className="iris-hero-right">
               <h3>Document Scanner & Visualizer :</h3>
               <ul className="iris-hero-product-list">
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  Iriscan Visualizer 7
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  Iriscan Visualizer 7 Dyslexic
-                </li>
+                <Link to="/iris-scanners/iriscan-visualizer-7">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    Iriscan Visualizer 7
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-visualizer-7-dyslexic">
+                  <li>
+                    <span className="iris-hero-product-icon">🏆</span>
+                    IRIScan Visualizer 7 DYSLEXIC
+                  </li>
+                </Link>
               </ul>
             </div>
           </div>
@@ -298,35 +348,55 @@ export default function IrisScanners() {
             <div className="iris-hero-left">
               <div className="iris-hero-product-box">
                 <div className="iris-hero-product-image">
-                  <img src="/images/iris/pen-scanner.jpg" alt="Pen Scanner" />
+                  <img src="/images/iris/pen_scanner.jpg" alt="Handheld & Pen scanners" />
                 </div>
               </div>
             </div>
             <div className="iris-hero-right">
               <h3>Pen Scanner & Reading Pen :</h3>
               <ul className="iris-hero-product-list">
-                <li>
-                  <span className="iris-hero-product-icon">✏️</span>
-                  IRISPen Reader 8
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">✏️</span>
-                  IRISPen Air 8
-                </li>
+                <Link to="/iris-scanners/irispen-reader-8">
+                  <li>
+                    <span className="iris-hero-product-icon">✏️</span>
+                    IRISPen Reader 8
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/irispen-air-8">
+                  <li>
+                    <span className="iris-hero-product-icon">✏️</span>
+                    IRISPen Air 8
+                  </li>
+                </Link>
               </ul>
             </div>
             <div className="iris-hero-right">
               <h3>Handheldscanners :</h3>
               <h4>Product range comparison</h4>
               <ul className="iris-hero-product-list">
-                <li>
-                  <span className="iris-hero-product-icon">📖</span>
-                  IRIScan Book 5
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📖</span>
-                  IRIScan Book 5 Wifi
-                </li>
+                <Link to="/iris-scanners/iriscan-book-5">
+                  <li>
+                    <span className="iris-hero-product-icon">📖</span>
+                    IRIScan Book 5
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-book-5-wifi">
+                  <li>
+                    <span className="iris-hero-product-icon">📖</span>
+                    IRIScan Book 5 Wifi
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-anywhere-6-wifi">
+                  <li>
+                    <span className="iris-hero-product-icon">📖</span>
+                    IRIScan Anywhere 6 Wifi
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-anywhere-6-wifi-duplex">
+                  <li>
+                    <span className="iris-hero-product-icon">📖</span>
+                    IRIScan Anywhere 6 Wifi Duplex
+                  </li>
+                </Link>
               </ul>
             </div>
           </div>
@@ -337,7 +407,7 @@ export default function IrisScanners() {
             <div className="iris-hero-left">
               <div className="iris-hero-product-box">
                 <div className="iris-hero-product-image">
-                  <img src="/images/iris/single-sheetfed.jpg" alt="Single-sheetfed Scanner" />
+                  <img src="/images/iris/single_sheetfed.png" alt="Portable Scanners" />
                 </div>
               </div>
             </div>
@@ -345,36 +415,48 @@ export default function IrisScanners() {
               <h3>Single-sheetfed :</h3>
               <h4>Product range comparison</h4>
               <ul className="iris-hero-product-list">
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  IRIScan Anywhere 6 Wifi
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  IRIScan Anywhere 6 Wifi Duplex
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  IRIScan Express 4
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  IRIScan Executive 4
-                </li>
+                <Link to="/iris-scanners/iriscan-anywhere-6-wifi">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    IRIScan Anywhere 6 Wifi
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-anywhere-6-wifi-duplex">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    IRIScan Anywhere 6 Wifi Duplex
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-express-4">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    IRIScan Express 4
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-executive-4">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    IRIScan Executive 4
+                  </li>
+                </Link>
               </ul>
             </div>
             <div className="iris-hero-right">
               <h3>Multi-page sheetfed :</h3>
               <h4>Product range comparison</h4>
               <ul className="iris-hero-product-list">
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  IRIScan Pro 5
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">📄</span>
-                  IRIScan Pro 5 File
-                </li>
+                <Link to="/iris-scanners/iriscan-pro-5">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    IRIScan Pro 5
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscan-pro-5-file">
+                  <li>
+                    <span className="iris-hero-product-icon">📄</span>
+                    IRIScan Pro 5 File
+                  </li>
+                </Link>
               </ul>
             </div>
           </div>
@@ -385,34 +467,42 @@ export default function IrisScanners() {
             <div className="iris-hero-left">
               <div className="iris-hero-product-box">
                 <div className="iris-hero-product-image">
-                  <img src="/images/iris/extended-warranty.jpg" alt="Extended Warranty" />
+                  <img src="/images/iris/extended_warranty.png" alt="Extended Warranty" />
                 </div>
               </div>
             </div>
             <div className="iris-hero-right">
               <h3>Extended Warranty :</h3>
               <ul className="iris-hero-product-list">
-                <li>
-                  <span className="iris-hero-product-icon">🏆</span>
-                  IRISCare 3 years extended warranty
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">🏆</span>
-                  IRISCare 4 year extended warranty
-                </li>
+                <Link to="/iris-scanners/iriscare-3-years-extended-warranty">
+                  <li>
+                    <span className="iris-hero-product-icon">🏆</span>
+                    IRISCare 3 years extended warranty
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/iriscare-4-year-extended-warranty">
+                  <li>
+                    <span className="iris-hero-product-icon">🏆</span>
+                    IRISCare 4 year extended warranty
+                  </li>
+                </Link>
               </ul>
             </div>
             <div className="iris-hero-right">
               <h3>Coaching :</h3>
               <ul className="iris-hero-product-list">
-                <li>
-                  <span className="iris-hero-product-icon">💻</span>
-                  1H coaching
-                </li>
-                <li>
-                  <span className="iris-hero-product-icon">💻</span>
-                  3H coaching
-                </li>
+                <Link to="/iris-scanners/1h-coaching">
+                  <li>
+                    <span className="iris-hero-product-icon">💻</span>
+                    1H coaching
+                  </li>
+                </Link>
+                <Link to="/iris-scanners/3h-coaching">
+                  <li>
+                    <span className="iris-hero-product-icon">💻</span>
+                    3H coaching
+                  </li>
+                </Link>
               </ul>
             </div>
           </div>

@@ -11,6 +11,7 @@ import AdminLiveChat from './components/AdminLiveChat';
 import ErrorBoundary from './components/ErrorBoundary';
 import { AuthProvider } from './contexts/AuthContext';
 import ProductDetail from './pages/ProductDetail';
+import ProductDetailPage from './pages/ProductDetailPage';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
@@ -99,6 +100,7 @@ function AnimatedRoutes() {
           <Route path="/products/:category/:productSlug" element={<ProductDetail />} />
           <Route path="/scanning-software" element={<ScanningSoftware />} />
           <Route path="/iris-scanners" element={<IrisScanners />} />
+          <Route path="/iris-scanners/:productSlug" element={<ProductDetailPage />} />
           <Route path="/scan2x" element={<Scan2X />} />
           <Route path="/book2net/:productSlug" element={<Book2Net />} />
           <Route path="/book2net" element={<Book2Net />} />
