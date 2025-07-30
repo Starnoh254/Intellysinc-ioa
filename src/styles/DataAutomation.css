@@ -63,7 +63,102 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 4rem 2rem;
-  background-color: #868484;
+  background: linear-gradient(135deg, #f0f4fa 0%, #e5f7fa 100%);
+  color: #004080 !important;
+}
+
+.split-section *:not([style*='color: #000']):not([style*='color: black']) {
+  color: #004080 !important;
+  filter: brightness(0.7) sepia(1) hue-rotate(180deg) saturate(5) !important;
+}
+
+.split-section .section-header {
+  color: #004080 !important;
+}
+
+.split-section .dm-feature-list li,
+.split-section .lively-list li {
+  color: #004080 !important;
+}
+
+.split-section .feature-icon {
+  color: #ff9800 !important;
+}
+
+.split-section .feature-icon, .split-section .iris-hero-product-icon, .split-section .dm-feature-list li span, .split-section .lively-list li span {
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: #004080 !important;
+}
+
+.split-section .dm-feature-list li span:only-child, .split-section .lively-list li span:only-child, .split-section .iris-hero-product-icon {
+  color: #004080 !important;
+  filter: none !important;
+}
+
+.split-section .gradient-underline::after {
+  background: #004080 !important;
+}
+
+.split-section .highlight {
+  color: #004080 !important;
+  background: none !important;
+}
+
+.split-section .section-header {
+  color: #000 !important;
+}
+
+.split-section .dm-feature-list li,
+.split-section .lively-list li {
+  color: #000 !important;
+}
+
+.split-section .feature-icon {
+  color: #000 !important;
+}
+
+.split-section .gradient-underline::after {
+  background: #000 !important;
+}
+
+.split-section .highlight {
+  color: #000 !important;
+  background: none !important;
+}
+
+.split-section .section-header {
+  color: #155fa0;
+}
+
+.split-section .dm-feature-list li,
+.split-section .lively-list li {
+  color: #11203a;
+}
+
+.split-section .feature-icon {
+  color: #3694d7;
+}
+
+.split-section .gradient-underline::after {
+  background: linear-gradient(to right, #60c3ff, #43e97b);
+}
+
+.split-section .section-header {
+  color: #1a5dab;
+}
+
+.split-section .dm-feature-list li,
+.split-section .lively-list li {
+  color: #23395d;
+}
+
+.split-section .feature-icon {
+  color: #1a5dab;
+}
+
+.split-section .gradient-underline::after {
+  background: linear-gradient(to right, #60c3ff, #43e97b);
 }
 
 .split-half {

@@ -112,17 +112,16 @@ const Contact = () => {
       icon: "🕒",
       title: "Business Hours",
       details: [
-        { text: "Mon - Fri: 8:00 AM - 4:00 PM", link: null },
-        { text: "Sat: 9:00 AM - 1:00 PM", link: null }
+        { text: "Mon - Fri: 8:00 AM - 5:00 PM", link: null }
       ]
     }
   ];
 
   const socialLinks = [
-    { icon: "fab fa-linkedin", url: "https://linkedin.com/company/intellisync-ioa", label: "LinkedIn" },
-    { icon: "fab fa-twitter", url: "https://twitter.com/intellisync_ioa", label: "Twitter" },
-    { icon: "fab fa-facebook", url: "https://facebook.com/intellisync.ioa", label: "Facebook" },
-    { icon: "fab fa-instagram", url: "https://instagram.com/intellisync_ioa", label: "Instagram" }
+    { icon: "fab fa-linkedin", url: "https://linkedin.com/company/intellisync-oa", label: "LinkedIn" },
+    { icon: "fab fa-twitter", url: "https://twitter.com/intellisync_oa", label: "Twitter" },
+    { icon: "fab fa-facebook", url: "https://facebook.com/intellisync.oa", label: "Facebook" },
+    { icon: "fab fa-instagram", url: "https://instagram.com/intellisync_oa", label: "Instagram" }
   ];
 
   return (

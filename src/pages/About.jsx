@@ -371,7 +371,7 @@ const About = () => {
       {/* Why OA / Key Components */}
       <div className="about-main-card about-components-card">
         <section className="about-section">
-          <h2>Why intellisync-ioa</h2>
+          <h2>Why intellisync-oa</h2>
           <p className="about-components-intro">
             IntelliSync Office Automation leverages the use of technology to streamline and improve office tasks and workflows. By integrating Software, Hardware, Processes and Businesses to reduce errors, and optimize resource management.
           </p>
@@ -412,7 +412,7 @@ const About = () => {
               <div><FaEnvelope /> <a href="mailto:info@intellisync-oa.com">info@intellisync-oa.com</a></div>
               <div><FaEnvelope /> <a href="mailto:ezekiel.okeyo@intellisync-oa.com">ezekiel.okeyo@intellisync-oa.com</a></div>
               <div><FaPhone /> +254 722 952 138 | +254 746 657 031 | +254 735 993 939</div>
-              <div><FaGlobe /> <a href="https://www.intellisync-ioa.com" target="_blank" rel="noopener noreferrer">www.intellisync-ioa.com</a></div>
+              <div><FaGlobe /> <a href="https://www.intellisync-oa.com" target="_blank" rel="noopener noreferrer">www.intellisync-oa.com</a></div>
               <div>P. O. Box 27346-0100, Nairobi, Kenya</div>
             </div>
             <div className="about-contact-cta">
