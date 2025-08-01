@@ -125,7 +125,7 @@ jobs:
           fi
           
           # Clean up dev dependencies after build (optional - saves space)
-          echo "Cleaning up dev dependencies..."
+          echo "Cleaning up dev dependencies...."
           if command -v npm >/dev/null 2>&1; then
             npm prune --omit=dev
           else
