@@ -94,7 +94,9 @@ function App() {
     }
   };
 
-  if (!loggedIn) return <AdminLogin onLogin={handleLogin} />;
+  if (!loggedIn) {
+    return <AdminLogin onLogin={handleLogin} />;
+  }
 
   return (
     <div style={{ minHeight: '100vh', background: '#f7fafd' }}>
