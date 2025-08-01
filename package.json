@@ -9,7 +9,7 @@
     "build": "npm run prebuild && vite build",
     "prebuild": "node scripts/check-imports.cjs",
     "preview": "vite preview",
-    "lint": "eslint .",
+    "lint": "eslint ."
   },
   "dependencies": {
     "canvas": "^3.1.2",
