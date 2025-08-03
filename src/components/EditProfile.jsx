@@ -57,14 +57,14 @@ const avatarOptionStyle = (selected) => ({
 });
 
 const AVATAR_OPTIONS = [
-  '/public/images/avatar1.png',
-  '/public/images/avatar2.png',
-  '/public/images/avatar3.png',
-  '/public/images/avatar4.png',
-  '/public/images/avatar5.png',
-  '/public/images/avatar6.png',
-  '/public/images/avatar7.png',
-  '/public/images/avatar8.png',
+  '/public/images/avatar1.webp',
+  '/public/images/avatar2.webp',
+  '/public/images/avatar3.webp',
+  '/public/images/avatar4.webp',
+  '/public/images/avatar5.webp',
+  '/public/images/avatar6.webp',
+  '/public/images/avatar7.webp',
+  '/public/images/avatar8.webp',
 ];
 
 const EditProfile = ({ onClose }) => {

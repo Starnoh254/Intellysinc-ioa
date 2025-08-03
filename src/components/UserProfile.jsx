@@ -67,14 +67,14 @@ const avatarOptionStyle = (selected) => ({
 });
 
 const AVATAR_OPTIONS = [
-  '/images/avatar1.png',
-  '/images/avatar2.png',
-  '/images/avatar3.png',
-  '/images/avatar4.png',
-  '/images/avatar5.png',
-  '/images/avatar6.png',
-  '/images/avatar7.png',
-  '/images/avatar8.png',
+  '/images/avatar1.webp',
+  '/images/avatar2.webp',
+  '/images/avatar3.webp',
+  '/images/avatar4.webp',
+  '/images/avatar5.webp',
+  '/images/avatar6.webp',
+  '/images/avatar7.webp',
+  '/images/avatar8.webp',
 ];
 
 // Simple calendar grid for confirmed appointments

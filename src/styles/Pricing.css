@@ -1,6 +1,6 @@
 .pricing-page {
   min-height: 100vh;
-  background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), url('/images/pricing-hero-bg.jpg');
+  background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), url('/images/pricing-hero-bg.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -13,7 +13,7 @@
 .pricing-hero {
   text-align: center;
   padding: 120px 20px 80px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('/images/pricing-hero-overlay.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('/images/pricing-hero-overlay.webp');
   background-size: cover;
   background-position: center;
 }
@@ -100,7 +100,7 @@
 /* Pricing Plans Section */
 .pricing-plans {
   padding: 80px 20px;
-  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('/images/pricing-plans-bg.jpg');
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('/images/pricing-plans-bg.webp');
   background-size: cover;
   background-position: center;
 }
@@ -240,7 +240,7 @@
 /* Add-ons Section */
 .pricing-addons {
   padding: 80px 20px;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/pricing-addons-bg.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/pricing-addons-bg.webp');
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -335,7 +335,7 @@
 /* FAQ Section */
 .pricing-faq {
   padding: 80px 20px;
-  background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), url('/images/pricing-faq-bg.jpg');
+  background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), url('/images/pricing-faq-bg.webp');
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -378,7 +378,7 @@
 /* CTA Section */
 .pricing-cta {
   padding: 80px 20px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/pricing-cta-bg.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/pricing-cta-bg.webp');
   background-size: cover;
   background-position: center;
   text-align: center;

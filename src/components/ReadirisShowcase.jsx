@@ -8,7 +8,7 @@ export default function ReadirisShowcase() {
       <div className="ri-col ri-left">
         <img
           className="ri-box"
-          src="/images/readiris-pdf-elite-box.png"
+          src="/images/readiris-pdf-elite-box.webp"
           alt="Readiris PDF Elite box"
         />
 
@@ -31,7 +31,7 @@ export default function ReadirisShowcase() {
       <div className="ri-col ri-center">
         <img
           className="ri-box ri-box-big"
-          src="/images/readiris-17-box.png"
+          src="/images/readiris-17-box.webp"
           alt="Readiris 17 box"
         />
       </div>

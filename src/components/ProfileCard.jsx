@@ -54,7 +54,7 @@ const ProfileCard = ({ user, onClose }) => {
       <div style={cardStyle} onClick={e => e.stopPropagation()}>
         <button style={closeBtnStyle} onClick={onClose} aria-label="Close">×</button>
         <img
-          src={user.avatarUrl || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name || user.email)}`}
+          src={user.avatarUrl || `/images/avatar1.webp` /* fallback to webp avatar */}
           alt="Avatar"
           style={avatarStyle}
         />

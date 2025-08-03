@@ -46,7 +46,7 @@ Ready to begin your automation journey? [Contact us](/contact) today to learn mo
           author: 'IntelliSync Team',
           category: 'Company Updates',
           tags: ['welcome', 'introduction', 'automation'],
-          featuredImage: '/images/welcome-bg.jpg',
+          featuredImage: '/images/welcome-bg.webp',
           seoScore: 85,
           readingTime: 3,
           wordCount: 120,

@@ -27,7 +27,7 @@ body,
   flex-direction: column;
   justify-content: center;
   padding: 60px 20px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('/images/dm-hero-overlay.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('/images/dm-hero-overlay.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -99,7 +99,7 @@ body,
 /* Features Section */
 .dm-features {
   padding: 80px 20px;
-  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('/images/dm-features-bg.jpg');
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('/images/dm-features-bg.webp');
   background-size: cover;
   background-position: center;
 }
@@ -174,7 +174,7 @@ body,
 /* Document Types Section */
 .dm-document-types {
   padding: 80px 20px;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/dm-document-types-bg.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/dm-document-types-bg.webp');
   background-size: cover;
   background-position: center;
 }
@@ -266,7 +266,7 @@ body,
 /* Workflow Section */
 .dm-workflow {
   padding: 80px 20px;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/dm-workflow-bg.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/dm-workflow-bg.webp');
   background-size: cover;
   background-position: center;
 }
@@ -395,7 +395,7 @@ body,
 
 /* Core Capabilities */
 .dm-card-section:nth-of-type(2) {
-  background: linear-gradient(rgba(30,64,175,0.7), rgba(79,70,229,0.7)), url('/images/dm-features-bg.jpg');
+  background: linear-gradient(rgba(30,64,175,0.7), rgba(79,70,229,0.7)), url('/images/dm-features-bg.webp');
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -411,7 +411,7 @@ body,
 
 /* Smart Capture & Workflow Automation */
 .dm-card-section:nth-of-type(4) {
-  background: linear-gradient(rgba(59,130,246,0.7), rgba(245,158,11,0.7)), url('/images/dm-workflow-bg.jpg');
+  background: linear-gradient(rgba(59,130,246,0.7), rgba(245,158,11,0.7)), url('/images/dm-workflow-bg.webp');
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -419,7 +419,7 @@ body,
 
 /* Security & Compliance */
 .dm-card-section:nth-of-type(5) {
-  background: linear-gradient(rgba(31,41,55,0.7), rgba(75,85,99,0.7)), url('/images/dm-hero-overlay.jpg');
+  background: linear-gradient(rgba(31,41,55,0.7), rgba(75,85,99,0.7)), url('/images/dm-hero-overlay.webp');
   background-size: cover;
   background-position: center;
   color: #fff;

@@ -68,7 +68,7 @@ const AdminBlogManager = () => {
       slug: blogService.generateSlug(formData.title),
       author: {
         ...formData.author,
-        avatar: formData.author.avatar || '/images/freepik/rm378-03c.jpg'
+        avatar: formData.author.avatar || '/images/freepik/rm378-03c.webp'
       }
     };
 

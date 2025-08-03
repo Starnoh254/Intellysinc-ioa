@@ -8,7 +8,7 @@ export default function Book2NetHero() {
     <section className="book2net-hero-grid">
       {/* Left: Main Image & Text */}
       <div className="hero-main-grid">
-        <div className="hero-image-container" style={{backgroundImage: 'url(/images/book2net/hero.jpg)'}}>
+        <div className="hero-image-container" style={{backgroundImage: 'url(/images/book2net/hero.webp)'}}>
           <div className="hero-overlay-content">
             <h1 className="hero-title">M150 CAMERA</h1>
             <p className="hero-desc">
