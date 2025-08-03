@@ -57,7 +57,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} intellisync-ioa. All rights reserved.</p>
+        <p>&copy; 2025 intellisync-oa. All rights reserved.</p>
       </div>
     </footer>
   );
